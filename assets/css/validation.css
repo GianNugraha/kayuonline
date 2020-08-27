@@ -1,0 +1,8 @@
+form label {
+  border: 0;
+  margin-bottom: 0px;
+  display: block;
+}
+form .error {
+  color: #ff0000;
+}
