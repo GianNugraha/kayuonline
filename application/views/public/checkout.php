@@ -200,3 +200,14 @@
 </div>
 
 </section>
+
+<script >
+  function changeFunc() {
+    var selectBox = document.getElementById("selectBox");
+    var subtotal = document.getElementById("subtotal").value;
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    valueSelect.innerHTML=selectedValue;
+    var jumlahBayar = subtotal*1 + selectedValue*1;
+    valueJmlBayar.innerHTML=jumlahBayar;
+}
+</script>

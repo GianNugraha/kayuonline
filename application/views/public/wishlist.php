@@ -252,6 +252,7 @@
                 // document.write("<p>Perulangan ke-" + i + "</p>")
 
                 var nilai = document.getElementById("stepper").value;
+                alert(nilai);
                 var total = document.getElementById("harga").value;
                 var jumlah = document.getElementById("jumlah").value;
                 valueSteper.innerHTML= nilai*total;
