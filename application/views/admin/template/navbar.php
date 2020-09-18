@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url(); ?>assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/Logo-hitam.png">
+  <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/Logo-hitam.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Admin | Kayu Online
@@ -30,8 +30,8 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-         <img src="<?php echo base_url(); ?>assets/images/Logo-hitam.png" style="border-radius: 100px; width: 50px; height: 50px;" /> <?php echo $_SESSION['namaUser']; ?>
+      <div class="logo"><a href="<?php echo base_url('admin'); ?>" class="simple-text logo-normal">
+         <img src="<?php echo base_url(); ?>assets/img/Logo-hitam.png" style="border-radius: 100px; width: 50px; height: 50px;" /> <?php echo $_SESSION['namaUser']; ?>
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">

@@ -1,5 +1,5 @@
 <?php
-foreach ($join2 as $key): 
+foreach ($joinTable as $key): 
   echo "<pre>";
   print_r($key);
   echo "</pre>";

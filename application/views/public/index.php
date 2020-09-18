@@ -1,304 +1,189 @@
-<section class="wrapper">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="<?php echo base_url('assets/images/slide1.jpeg')?>" alt="First slide">
-                            <div class="carousel-caption">
-                                <h3 class="h3-slide-1">KayuOnline</h3>
-                                <p class="p-slide-1">Suplayer kayu terbaik di indonesia</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="<?php echo base_url('assets/images/slide2.jpeg')?>" alt="Second slide">
-                            <div class="carousel-caption">
-                                <h3></h3>
-                                <p></p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="<?php echo base_url('assets/images/slide3.jpeg')?>" alt="Third slide">
-                            <div class="carousel-caption">
-                                <h3></h3>
-                                <p> </p>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                        <span ></span></a><a class="right carousel-control"
-                        href="#carousel-example-generic" data-slide="next"><span >
-                        </span></a>
-                    </div>
-                </div>
-            </div>
+ <?php
+// foreach ($productKO as $our): 
+//     echo "<pre>";
+//     print_r($our);
+//     echo "</pre>";
+// endforeach;
+    // die();
+?>  
+<!-- slider -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="<?= base_url('assets/img/Slider-1.png'); ?>" alt=" First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Kayu Online</h1>
+          <h3>Suplayer Kayu Terbaik Di Indonesia</h3>
         </div>
-        <div id="push">
-    </div>
-<!--End Slider-->
-</section>
-<section class="team" style="padding-top: 50px">
-    <div class="container">
-        <div class="tab" style="text-align: center">
-          <button class="tablinks" onclick="openTab(event, 'Kayu Olahan')" id="defaultOpen">Kayu Olahan</button>
-          <button class="tablinks" onclick="openTab(event, 'Decking')">Decking</button>
-          <button class="tablinks" onclick="openTab(event, 'Pintu')">Pintu</button>
-          <button class="tablinks" onclick="openTab(event, 'Kusen')">Kusen</button>
-          <button class="tablinks" onclick="openTab(event, 'Lis Profil')">Lis Profil</button>
-          <button class="tablinks" onclick="openTab(event, 'Tangga')">Tangga</button>
       </div>
-      <div  id="Kayu Olahan"  class="row  sub_content tabcontent">
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="dreamz-team ">
-                <div class="box">
-                    <img class="img-box" src="<?php echo base_url('assets/images/Eksotik-GSL.jpeg')?>">
-                    <div class="box-content">
-                        <div class="content">
-                            <h3 class="title">Eksotik - GSL</h3>
-                            <span class="post">Rp. 8,000,000</span>
-                            <ul class="icon">
-                                <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                <li><a href="<?php echo base_url('toko/produk')?>" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_prof">
-                    <center><h3 class="names">Eksotik - GSL</h3>
-                        <p class="description">Rp. 8,000,000</p>
-                    </center>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="dreamz-team">
-                <div class="box">
-                    <img class="img-box" src="<?php echo base_url('assets/images/nyatoh 1.png')?>">
-                    <div class="box-content">
-                        <div class="content">
-                            <h3 class="title">Nyatoh</h3>
-                            <span class="post">Rp. 7,000,000</span>
-                            <ul class="icon">
-                                <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_prof">
-                    <center><h3 class="names">Nyatoh</h3>
-                        <p class="description">Rp. 7,000,000</p>
-                    </center>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="dreamz-team">
-                <div class="box">
-                    <img class="img-box" src="<?php echo base_url('assets/images/Merbau.png')?>">
-                    <div class="box-content">
-                        <div class="content">
-                            <h3 class="title">Merbau</h3>
-                            <span class="post">Rp. 88,000 - Rp. 12,000,000</span>
-                            <ul class="icon">
-                                <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_prof">
-                    <center><h3 class="names">Merbau</h3>
-                        <p class="description">Rp. 88,000 - Rp. 12,000,000</p>
-                    </center>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="dreamz-team">
-                <div class="box">
-                    <img class="img-box" src="<?php echo base_url('assets/images/Eksotik - BR.png')?>">
-                    <div class="box-content">
-                        <div class="content">
-                            <h3 class="title">Eksotik - BR</h3>
-                            <span class="post">Rp. 9,000,000</span>
-                            <ul class="icon">
-                                <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_prof">
-                    <center><h3 class="names">Eksotik - BR</h3>
-                        <p class="description">Rp. 9,000,000</p>
-                    </center>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="dreamz-team">
-                <div class="box">
-                    <img class="img-box" src="<?php echo base_url('assets/images/Eksotik - MG.png')?>">
-                    <div class="box-content">
-                        <div class="content">
-                            <h3 class="title">Eksotik - MG</h3>
-                            <span class="post">Rp. 22,000,000</span>
-                            <ul class="icon">
-                                <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_prof">
-                    <center><h3 class="names">Eksotik - MG</h3>
-                        <p class="description">Rp. 22,000,000</p>
-                    </center>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="dreamz-team">
-                <div class="box">
-                    <img class="img-box" src="<?php echo base_url('assets/images/Default.png')?>">
-                    <div class="box-content">
-                        <div class="content">
-                            <h3 class="title">Matoa</h3>
-                            <span class="post">Rp. 7,000,000</span>
-                            <ul class="icon">
-                                <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_prof">
-                    <center><h3 class="names">Matoa</h3>
-                        <p class="description">Rp. 7,000,000</p>
-                    </center>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="dreamz-team">
-                <div class="box">
-                    <img class="img-box" src="<?php echo base_url('assets/images/Default.png')?>">
-                    <div class="box-content">
-                        <div class="content">
-                            <h3 class="title">Jati</h3>
-                            <span class="post">Rp. 5,000,000 – Rp. 10,000,000</span>
-                            <ul class="icon">
-                                <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_prof">
-                    <center><h3 class="names">Jati</h3>
-                        <p class="description"> Rp. 5,000,000 – Rp. 10,000,000 </p>
-                    </center>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="dreamz-team">
-                <div class="box">
-                    <img class="img-box" src="<?php echo base_url('assets/images/Default.png')?>">
-                    <div class="box-content">
-                        <div class="content">
-                            <h3 class="title">Krikis</h3>
-                            <span class="post">Rp. 9,000,000</span>
-                            <ul class="icon">
-                                <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_prof">
-                    <center><h3 class="names">Krikis</h3>
-                        <p class="description">Rp. 9,000,000</p>
-                    </center>
-                </div>
-            </div>
-        </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="<?= base_url('assets/img/Slider-2.png'); ?>" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="<?= base_url('assets/img/Slider-3.png'); ?>" alt="Third slide">
+      </div>
     </div>
-    <div  id="Decking"  class="row  sub_content tabcontent">
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="dreamz-team ">
-                <div class="box">
-                    <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                    <div class="box-content">
-                        <div class="content">
-                            <h3 class="title">Merbau</h3>
-                            <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                            <ul class="icon">
-                                <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_prof">
-                    <center><h3 class="names">Merbau</h3>
-                        <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                    </center>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div  id="Pintu"  class="row  sub_content tabcontent">
-        <center>
-            <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
-        </center>
-    </div>
-    <div  id="Kusen"  class="row  sub_content tabcontent">
-        <center>
-            <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
-        </center>
-    </div>
-    <div  id="Lis Profil"  class="row  sub_content tabcontent">
-        <center>
-            <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
-        </center>
-    </div>
-    <div  id="Tangga"  class="row  sub_content tabcontent">
-        <center>
-            <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
-        </center>
-    </div>
-</div>
-</section>
-<section class="clients">
-    <div class="container">
-        <div class="row sub_content">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="col-lg-6  wow slideInLeft" data-wow-duration="1s">
-                    <div class="img-hover-zoom--colorize col "><img src="<?php echo base_url('assets/images/home1.jpeg')?>" style=" width: 100%; " class="img-fluid" alt="Responsive image"></div>
-                </div>
-                <div class="col-lg-6  wow slideInLeft" data-wow-duration="1s">
-                    <div class="img-hover-zoom--colorize col "><img src="<?php echo base_url('assets/images/home2.jpeg')?>" style=" width: 100%;" class="img-fluid" alt="Responsive image"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
-<!--start footer-->
+  <!-- filter -->
+
+  <!-- Nav tabs -->
+  <br>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'kayuolahan')" id="defaultOpen">Kayu olahan</button>
+    <button class="tablinks" onclick="openCity(event, 'decking')">Decking</button>
+    <button class="tablinks" onclick="openCity(event, 'kusen')">Kusen</button>
+    <button class="tablinks" onclick="openCity(event, 'pintu')">Pintu</button>
+    <button class="tablinks" onclick="openCity(event, 'lis_profil')">Lis Profil</button>
+    <button class="tablinks" onclick="openCity(event, 'tangga')">Tangga</button>
+  </div>
+
+  <br>
+  <br>
+
+  <div id="kayuolahan" class="tabcontent">
+    <div class="container">
+      <div class="row">
+        <?php
+        if (!empty($productKO)){
+        foreach ($productKO as $key): 
+            ?>
+        <div class="col-md-3">
+          <div class="product-top">
+            <div class="thumb-img">
+              <a href="<?php echo base_url('produk?kategori=KO&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
+              <a href="<?php echo base_url('produk?kategori=KO&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a>
+            </div>
+            <div class="overlay">
+              <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
+                <span><i class="fa fa-eye" title="Quick View"></i></span>
+              </div> <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+              <a class="btn btn-secondary" href="viewcart.html"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+            </div>
+          </div>
+
+          <div class="product-buttom text-center">
+            <h3><?= $key->name ?></h3>
+            <h5><?php if ($key->max_price != $key->min_price) { ?>
+                <p class="description">Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php }else{ ?>
+                <p class="description">Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php } ?>
+        </h5>
+          </div>
+          <br />
+        </div>
+    <?php endforeach;
+    }
+    else{
+    ?>
+    <center>
+        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+    </center>
+<?php } ?>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="decking" class="tabcontent">
+    <div class="container">
+      <div class="row">
+        <?php
+        if (!empty($productDK)){
+        foreach ($productDK as $key): 
+            ?>
+        <div class="col-md-3">
+          <div class="product-top">
+            <div class="thumb-img">
+              <a href="<?php echo base_url('produk?kategori=DK&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
+              <a href="<?php echo base_url('produk?kategori=DK&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a>
+            </div>
+            <div class="overlay">
+              <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
+                <span><i class="fa fa-eye" title="Quick View"></i></span>
+              </div> <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+              <a class="btn btn-secondary" href="viewcart.html"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+            </div>
+          </div>
+
+          <div class="product-buttom text-center">
+            <h3><?= $key->name ?></h3>
+            <h5><?php if ($key->max_price != $key->min_price) { ?>
+                <p class="description">Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php }else{ ?>
+                <p class="description">Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php } ?>
+        </h5>
+          </div>
+          <br />
+        </div>
+    <?php endforeach;
+    }
+    else{
+    ?>
+    <center>
+        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+    </center>
+<?php } ?>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="kusen" class="tabcontent">
+    <div class="container">
+      <h2 style="text-align: center; font-weight: bold;">COMING SOON !</h2>
+    </div>
+  </div>
+
+  <div id="pintu" class="tabcontent">
+    <div class="container">
+      <h2 style="text-align: center; font-weight: bold;">COMING SOON !</h2>
+    </div>
+  </div>
+
+  <div id="lis_profil" class="tabcontent">
+    <div class="container">
+      <h2 style="text-align: center; font-weight: bold;">COMING SOON !</h2>
+    </div>
+  </div>
+
+  <div id="tangga" class="tabcontent">
+    <div class="container">
+      <h2 style="text-align: center; font-weight: bold;">COMING SOON !</h2>
+    </div>
+  </div>
+
+
+
+  <!-- banner -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-hover-zoom img-hover-zoom--xyz">
+          <img class="img-hover" src="<?= base_url('assets/img/banner2.png'); ?>" alt="Another Image zoom-on-hover effect">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-hover-zoom img-hover-zoom--xyz">
+          <img class="img-hover" src="<?= base_url('assets/img/banner1.png'); ?>" alt="Another Image zoom-on-hover effect">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- akhir banner -->

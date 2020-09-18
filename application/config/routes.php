@@ -60,7 +60,8 @@ $route['kebijakan-privasi'] = 'home/kebijakan_privasi';
 $route['layanan-pelanggan'] = 'home/layanan_pelanggan';
 // $route['kayu-online'] = 'home/index';
 $route['tentang-kami'] = 'home/tentang_kami';
-$route['toko/produk'] = 'home/produk';
+$route['produk'] = 'home/produk';
+// $route['toko/produk'] = 'home/produk';
 $route['gudang-kami'] = 'home/gudang_kami';
 $route['wishlist'] = 'home/wishlist';
 $route['checkout'] = 'home/checkout';
@@ -70,3 +71,9 @@ $route['admin/status-transaksi'] = 'admin/status_transaksi';
 $route['admin/add-admin'] = 'admin/add_admin';
 $route['admin/daftar-admin'] = 'admin/daftar_admin';
 $route['coba-data'] = 'home/join';
+$route['kayu-olahan'] = 'home/kayu_olahan';
+$route['user-login'] = 'home/user_login';
+$route['user-registration'] = 'home/user_registration';
+$route['forgot'] = 'home/user_forgot_pass';
+
+

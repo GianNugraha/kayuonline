@@ -23,7 +23,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		// echo $_SESSION['nama']; 
-		if (isset($_SESSION['logged_in'])) {
+		if (isset($_SESSION['logged_in']) and $_SESSION['role'] =='admin') {
 			$data['produk'] = $this->m_kayu_online->getProduk();
 			$data['content'] = 'admin/dashboard';
 			$data['allNotif'] = $this->m_kayu_online->getAllNotif();
@@ -179,12 +179,6 @@ class Admin extends CI_Controller {
 				'status' => 'active'
 			);
 
-			// $where = array(
-			// 	'username' => $namaPengguna,
-			// 	'role' => 'admin',
-			// 	'status' => 'active'
-			// );
-
 			$cek_user = $this->m_kayu_online->cek_admin($namaPengguna);
 
 			if($cek_user > 0){
@@ -221,12 +215,6 @@ class Admin extends CI_Controller {
 				'status' => 'disactive'
 			);
 
-			// $where = array(
-			// 	'username' => $namaPengguna,
-			// 	'role' => 'admin',
-			// 	'status' => 'not-active', 'active'
-			// );
-
 			if($cek_user > 0){
 				$this->session->set_flashdata('msg', array('class' => 'danger', 'message'=> 'nama pengguna sudah digunakan, silahkan pilih opsi nama lain'));
 				redirect(base_url("login"));
@@ -245,9 +233,6 @@ class Admin extends CI_Controller {
 				}
 			}
 		}
-		
-
-
 	}
 
 	public function konfirmasi_admin($id, $param){

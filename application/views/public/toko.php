@@ -1,625 +1,1062 @@
-<section class="wrapper">
-
-<!--End Slider-->
-
-    <section class="team" style="padding-top: 50px">
-        <div class="container">
-            <div class="tab" style="text-align: center">
-                  <button class="tablinks" onclick="openTab(event, 'enam')" id="defaultOpen"><img src="<?php echo base_url('assets/images/enam.png')?>"></button>
-                  <!-- <button class="tablinks" onclick="openTab(event, 'lima')"><img src="images/lima.png"></button> -->
-                  <button class="tablinks" onclick="openTab(event, 'empat')"><img src="<?php echo base_url('assets/images/empat.png')?>"></button>
-                  <button class="tablinks" onclick="openTab(event, 'tiga')"><img src="<?php echo base_url('assets/images/tiga.png')?>"></button>
-                  <button class="tablinks" onclick="openTab(event, 'more')"><img src="<?php echo base_url('assets/images/more.png')?>"></button>
-            </div>
-            <div  id="enam"  class="row  sub_content tabcontent">
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/woocommerce.png')?>">
-                            <div class="box-content">
-                                <div class="content">
-                                    <h3 class="title">Decking [1]</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Decking [1]</h3>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/woocommerce.png')?>">
-                            <div class="box-content">
-                                <div class="content">
-                                    <h3 class="title">Kayu Olahan [8]</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Kayu Olahan [8]</h3>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau.png')?>">
-                            <div class="box-content">
-                                <!-- <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="<?php echo base_url('toko/produk')?>" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                            <div class="box-content">
-                               <!--  <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                            <div class="box-content">
-                                <!-- <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                            <div class="box-content">
-                                <!-- <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                            <div class="box-content">
-                                <!-- <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <div  id="empat"  class="row  sub_content tabcontent">
-                <div class="col-lg-3 col-md-4 col-sm-3">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/woocommerce.png')?>">
-                            <div class="box-content">
-                                <div class="content">
-                                    <h3 class="title">Decking [1]</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Decking [1]</h3>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-3">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/woocommerce.png')?>">
-                            <div class="box-content">
-                                <div class="content">
-                                    <h3 class="title">Kayu Olahan [8]</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Kayu Olahan [8]</h3>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-3">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                            <div class="box-content">
-                                <!-- <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-3">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                            <div class="box-content">
-                                <!-- <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-3">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                            <div class="box-content">
-                                <!-- <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div  id="tiga"  class="row  sub_content tabcontent">
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/woocommerce.png')?>">
-                            <div class="box-content">
-                                <div class="content">
-                                    <h3 class="title">Decking [1]</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Decking [1]</h3>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/woocommerce.png')?>">
-                            <div class="box-content">
-                                <div class="content">
-                                    <h3 class="title">Kayu Olahan [8]</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Kayu Olahan [8]</h3>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                            <div class="box-content">
-                                <!-- <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="dreamz-team ">
-                        <div class="box">
-                            <img class="img-box" src="<?php echo base_url('assets/images/merbau-decking.png')?>">
-                            <div class="box-content">
-                                <!-- <ul class="icon-utama">
-                                    <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                </ul> -->
-                                <div class="content">
-                                    <h3 class="title">Merbau</h3>
-                                    <span class="post"> Rp. 27,000 – Rp. 114,000 </span>
-                                    <ul class="icon">
-                                        <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                        <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team_prof">
-                            <center><h3 class="names">Merbau</h3>
-                            <p class="description"> Rp. 27,000 – Rp. 114,000 </p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div  id="more"  class="row  sub_content tabcontent">
-                <div class="row toko2" style="margin-bottom: 20px">
-                    <a href="#">
-                        <div class="col-lg-2 col-md-2 col-sm-2">
-                            <div class="dreamz-team ">
-                                <div class="box">
-                                    <img class="img-box" src="<?php echo base_url('assets/images/woocommerce.png')?>">
-                                    <div class="box-content">
-                                        <div class="content">
-                                            <h3 class="title">Decking [1]</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team_prof">
-                                    <center><h3 class="names">Decking [1]</h3>
-                                    </center>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="col-lg-2 col-md-2 col-sm-2">
-                            <div class="dreamz-team ">
-                                <div class="box">
-                                    <img class="img-box" src="<?php echo base_url('assets/images/woocommerce.png')?>">
-                                    <div class="box-content">
-                                        <div class="content">
-                                            <h3 class="title">Kayu Olahan [8]</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team_prof">
-                                    <center><h3 class="names">Kayu Olahan [8]</h3>
-                                    </center>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="row toko" >
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <div class="dreamz-team ">
-                            <div class="box">
-                                <img class="img-box" src="<?php echo base_url('assets/images/Eksotik-GSL.jpeg')?>">
-                                <div class="box-content">
-                                    <!-- <ul class="icon-utama">
-                                        <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                    </ul> -->
-                                    <div class="content">
-                                        <h3 class="title">Eksotik - BR</h3>
-                                        <span class="post">Rp. 9,000,000</span>
-                                        <ul class="icon">
-                                            <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                            <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-8">
-                        <div class="dreamz-team " style="padding-top: 25px">
-                            <div >
-                                <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                                <h1 >Eksotik - BR</h1>
-                            </div>
-                            <div >
-                                <h3 class="names"></h3>
-                                <h3 class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s. </h3>
-                            </div>
-                            <!-- <div >
-                                <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <div class="">
-                            <div style="padding-top: 25px">
-                                <h3 class="names">Rp9,000,000</h3>
-                                <h5>AVAILABILITY: <a class="disabled" href="">IN-STOCK</a></h5>
-                                <input style="margin-bottom: 10px" type="submit" name="Add To Cart" class="btn btn-block btn-info" value="Add To Cart">
-                                <div title="Lihat Produk"><a href="produk.html" ><i class="fa fa-eye"></i>  Lihat Produk</a></div>
-                                <!-- <div><a href="#"><i class="fa fa-refresh" title="Compare"></i> Compare</a></div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row toko" >
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <div class="dreamz-team ">
-                            <div class="box">
-                                <img class="img-box" src="<?php echo base_url('assets/images/Eksotik-GSL.jpeg')?>">
-                                <div class="box-content">
-                                    <!-- <ul class="icon-utama">
-                                        <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                    </ul> -->
-                                    <div class="content">
-                                        <h3 class="title">Eksotik - BR</h3>
-                                        <span class="post">Rp. 9,000,000</span>
-                                        <ul class="icon">
-                                            <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                            <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-8">
-                        <div class="dreamz-team " style="padding-top: 25px">
-                            <div >
-                                <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                                <h1 >Eksotik - BR</h1>
-                            </div>
-                            <div >
-                                <h3 class="names"></h3>
-                                <h3 class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s. </h3>
-                            </div>
-                            <!-- <div >
-                                <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <div class="">
-                            <div style="padding-top: 25px">
-                                <h3 class="names">Rp9,000,000</h3>
-                                <h5>AVAILABILITY: <a class="disabled" href="">IN-STOCK</a></h5>
-                                <input style="margin-bottom: 10px" type="submit" name="Add To Cart" class="btn btn-block btn-info" value="Add To Cart">
-                                <div title="Lihat Produk"><a href="produk.html"><i class="fa fa-eye"></i>  Lihat Produk</a></div>
-                                <!-- <div><a href="#"><i class="fa fa-refresh" title="Compare"></i> Compare</a></div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row toko" >
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <div class="dreamz-team ">
-                            <div class="box">
-                                <img class="img-box" src="<?php echo base_url('assets/images/Eksotik-GSL.jpeg')?>">
-                                <div class="box-content">
-                                    <!-- <ul class="icon-utama">
-                                        <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                    </ul> -->
-                                    <div class="content">
-                                        <h3 class="title">Eksotik - BR</h3>
-                                        <span class="post">Rp. 9,000,000</span>
-                                        <ul class="icon">
-                                            <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                            <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-8">
-                        <div class="dreamz-team " style="padding-top: 25px">
-                            <div >
-                                <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                                <h1 >Eksotik - BR</h1>
-                            </div>
-                            <div >
-                                <h3 class="names"></h3>
-                                <h3 class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s. </h3>
-                            </div>
-                            <!-- <div >
-                                <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <div class="">
-                            <div style="padding-top: 25px">
-                                <h3 class="names">Rp9,000,000</h3>
-                                <h5>AVAILABILITY: <a class="disabled" href="">IN-STOCK</a></h5>
-                                <input style="margin-bottom: 10px" type="submit" name="Add To Cart" class="btn btn-block btn-info" value="Add To Cart">
-                                <div title="Lihat Produk"><a href="produk.html"><i class="fa fa-eye" ></i>  Lihat Produk</a></div>
-                                <!-- <div><a href="#"><i class="fa fa-refresh" title="Compare"></i> Compare</a></div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row toko" >
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <div class="dreamz-team ">
-                            <div class="box">
-                                <img class="img-box" src="<?php echo base_url('assets/images/Eksotik-GSL.jpeg')?>">
-                                <div class="box-content">
-                                    <!-- <ul class="icon-utama">
-                                        <li><a href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-refresh" title="Compare"></i></a></li>
-                                    </ul> -->
-                                    <div class="content">
-                                        <h3 class="title">Eksotik - BR</h3>
-                                        <span class="post">Rp. 9,000,000</span>
-                                        <ul class="icon">
-                                            <!-- <li><a href="wishlist.html" title="Tambah Ke Keranjang"><i class="fa fa-plus" ></i></a></li> -->
-                                            <li><a href="produk.html" title="Lihat Produk"><i class="fa fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-8">
-                        <div class="dreamz-team " style="padding-top: 25px">
-                            <div >
-                                <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                                <h1 >Eksotik - BR</h1>
-                            </div>
-                            <div >
-                                <h3 class="names"></h3>
-                                <h3 class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s. </h3>
-                            </div>
-                            <!-- <div >
-                                <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <div class="">
-                            <div style="padding-top: 25px">
-                                <h3 class="names">Rp9,000,000</h3>
-                                <h5>AVAILABILITY: <a class="disabled" href="">IN-STOCK</a></h5>
-                                <input style="margin-bottom: 10px" type="submit" name="Add To Cart" class="btn btn-block btn-info" value="Add To Cart">
-                                <div title="Lihat Produk"><a href="produk.html"><i class="fa fa-eye" ></i>  Lihat Produk</a></div>
-                                <!-- <div><a href="#"><i class="fa fa-refresh" title="Compare"></i> Compare</a></div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div> 
+<!-- bradcrom -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <ul class="bradcrom-links">
+            <li><a href="index.html">Home</a><a> / </a><span>Shop</span></li>
+          </ul>
         </div>
-    </section>
-    <section class="feature_bottom" style="padding-bottom: 40PX">
-        <div class="container">
-            <div class="col-lg-6  wow slideInLeft" data-wow-duration="1s">
-                <div class="img-hover-zoom--colorize col "><img src="<?php echo base_url('assets/images/home1.jpeg')?>" style=" width: 100%; padding-top:40px;" class="img-fluid" alt="Responsive image"></div>
+      </div>
+    </div>
+  </div>
+  <!-- bradcrom -->
+
+  <!-- tabs -->
+  <div class="tab-filter">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="filter">
+            <div id="mySidenav" class="filnav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <p style="font-size: 15px; margin-left: 20px;"><a href="index.html">Home</a>/<a
+                  href="toko.html">Product</a></p>
+              <div style="margin-left: 20px; margin-top: 20px;" class="iner_filter2">
+                <h5 class="widged_title">PRODUCT CATEGORIES</h5>
+                <a class="widget_a" href="">Decking</a>
+                <button class="accordion-2">Kayu olahan</button>
+                <div class="panel">
+                  <div class="ex">
+                    <a href="#">Eksotik - BR</a>
+                  </div>
+                  <div class="ex">
+                    <a href="#">Eksotik - GSL</a>
+                  </div>
+                  <div class="ex">
+                    <a href="#">Eksotik - MG</a>
+                  </div>
+                  <div class="ex">
+                    <a href="#">Indah M</a>
+                  </div>
+                  <div class="ex">
+                    <a href="#">Jati</a>
+                  </div>
+                  <div class="ex">
+                    <a href="#">Krikis</a>
+                  </div>
+                  <div class="ex">
+                    <a href="#">Matoa</a>
+                  </div>
+                  <div class="ex">
+                    <a href="#">Merbau</a>
+                  </div>
+                  <div class="ex">
+                    <a href="#">Nyatoh</a>
+                  </div>
+                </div>
+                <div class="Kusen">
+                  <a class="widget_a" href="">Kusen</a>
+                </div>
+                <div class="lisprofil">
+                  <a class="widget_a" href="">Lis Profil</a>
+                </div>
+                <div class="pintu">
+                  <a class="widget_a" href="">Pintu</a>
+                </div>
+                <div class="tangga">
+                  <a class="widget_a" href="">Tangga</a>
+                </div>
+
+                <div class="tag">
+                  <h4 style="font-size: 20px; margin-top: 30px;">TAGS</h4>
+                </div>
+
+                <div class="tags-btn">
+                  <div class="btn-tags">
+                    <ul>
+                      <a href="">Decking</a>
+                      <a href="">Kayu Olahan</a>
+                    </ul>
+                    <ul>
+                      <a href="">Kusen</a>
+                    </ul>
+                    <ul>
+                      <a href="">Lis Profil</a>
+                      <a href="">Pintu</a>
+                      <a href="">Tangga</a>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
-            <div class="col-lg-6  wow slideInLeft" data-wow-duration="1s">
-                <div class="img-hover-zoom--colorize col "><img src="<?php echo base_url('assets/images/home2.jpeg')?>" style=" width: 100%; padding-top:40px;" class="img-fluid" alt="Responsive image"></div>
-            </div>
+
+            <span style="cursor: pointer;" onclick="openNav()">
+              <p style="margin-top: 25px;"><i class="fa fa-filter" aria-hidden="true"></i><span> Filter</span></p>
+            </span>
+
+            <script>
+              function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+              }
+
+              function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+              }
+            </script>
+            <!-- <a class="filter" href="#">
+              <p><i class="fa fa-filter" aria-hidden="true"></i><span> Filter</span></p>
+            </a> -->
+          </div>
         </div>
-    </section>
-</section>
+        <div class="col-sm">
+          <ul class="tabs-column">
+            <li data-tab-target="#column-6" class="active tab"><img class="tab_img" src="<?= base_url() ?>assets/img/6.png" alt=""></li>
+            <li data-tab-target="#column-5" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/5.png" alt=""></li>
+            <li data-tab-target="#column-4" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/4.png" alt=""></li>
+            <li data-tab-target="#column-3" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/3.png" alt=""></li>
+            <li data-tab-target="#column-1" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/1.png" alt=""></li>
+          </ul>
+
+        </div>
+        <div class="col-sm">
+          <div class="sort-by">
+            <div class="dropdown">
+              <select name="menu_sort" class="menu-dropdown" id="">
+                <option value="default">Default sorting</option>
+                <option value="popular">Sort by popularity</option>
+                <option value="rating">Sort by average rating</option>
+                <option value="lasted">Sort by latest</option>
+                <option value="high">Sort by price: low to high</option>
+                <option value="low">Sort by price: high to low</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- akhir tabs -->
+
+  <!-- name produk kami -->
+  <section class="title">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h5>Produk Kami</h5>
+          <hr>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- tabs conten -->
+  <div class="container">
+    <div class="col-sm-12">
+      <div class="tab-content">
+        <div id="column-6" data-tab-content class="active">
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="product-top">
+                <div class="thumb-img">
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                </div>
+                <div class="overlay">
+                  <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
+                    <span><i class="fa fa-eye" title="Quick View"></i></span>
+                  </div>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                </div>
+              </div>
+
+              <div class="product-buttom text-center">
+                <!-- <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-half-o"></i> -->
+                <h3>Eksotik - BR</h3>
+                <h5>Rp.500.00</h5>
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+              <div class="product-top">
+                <div class="thumb-img">
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                </div>
+                <div class="overlay">
+                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                </div>
+              </div>
+
+              <div class="product-buttom text-center">
+                <!-- <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-half-o"></i> -->
+                <h3>Eksotik - BR</h3>
+                <h5>Rp.500.00</h5>
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+              <div class="product-top">
+                <div class="thumb-img">
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                </div>
+                <div class="overlay">
+                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                </div>
+              </div>
+
+              <div class="product-buttom text-center">
+                <!-- <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-half-o"></i> -->
+                <h3>Eksotik - BR</h3>
+                <h5>Rp.500.00</h5>
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+              <div class="product-top">
+                <div class="thumb-img">
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                </div>
+                <div class="overlay">
+                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                </div>
+              </div>
+
+              <div class="product-buttom text-center">
+                <!-- <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-half-o"></i> -->
+                <h3>Eksotik - BR</h3>
+                <h5>Rp.500.00</h5>
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+              <div class="product-top">
+                <div class="thumb-img">
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                </div>
+                <div class="overlay">
+                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                </div>
+              </div>
+
+              <div class="product-buttom text-center">
+                <!-- <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-half-o"></i> -->
+                <h3>Eksotik - BR</h3>
+                <h5>Rp.500.00</h5>
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+              <div class="product-top">
+                <div class="thumb-img">
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                </div>
+                <div class="overlay">
+                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                </div>
+              </div>
+
+              <div class="product-buttom text-center">
+                <!-- <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-half-o"></i> -->
+                <h3>Eksotik - BR</h3>
+                <h5>Rp.500.00</h5>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div id="column-5" data-tab-content>
+          <div class="container">
+            <div class="row">
+              <div class="sm-col-5">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - BR</h3>
+                  <h5>Rp.500.00</h5>
+                </div>
+              </div>
+
+              <div class="sm-col-5">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - BR</h3>
+                  <h5>Rp.500.00</h5>
+                </div>
+              </div>
+
+              <div class="sm-col-5">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - BR</h3>
+                  <h5>Rp.500.00</h5>
+                </div>
+              </div>
+
+              <div class="sm-col-5">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - BR</h3>
+                  <h5>Rp.500.00</h5>
+                </div>
+              </div>
+
+              <div class="sm-col-5">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - BR</h3>
+                  <h5>Rp.500.00</h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div id="column-4" data-tab-content>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/gl.jpeg" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar2"></a>
+                  </div>
+
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - GSL</h3>
+                  <h5>Rp. 8,000,000</h5>
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar2"></a>
+                  </div>
+
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - GSL</h3>
+                  <h5>Rp. 8,000,000</h5>
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - GSL</h3>
+                  <h5>Rp. 8,000,000</h5>
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - GSL</h3>
+                  <h5>Rp. 8,000,000</h5>
+                </div>
+                <br>
+              </div>
+
+              <div class="col-md-3">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - GSL</h3>
+                  <h5>Rp. 8,000,000</h5>
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - GSL</h3>
+                  <h5>Rp. 8,000,000</h5>
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - BR</h3>
+                  <h5>Rp.500.00</h5>
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  </div>
+                  <div class="overlay">
+                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  </div>
+                </div>
+
+                <div class="product-buttom text-center">
+                  <!-- <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <i class="fa fa-star-half-o"></i> -->
+                  <h3>Eksotik - BR</h3>
+                  <h5>Rp.500.00</h5>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <div id="column-3" data-tab-content>
+          <div class="row">
+            <div class="col-sm">
+              <div class="product-top">
+                <div class="thumb-img">
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                </div>
+
+                <div class="overlay">
+                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                </div>
+              </div>
+
+              <div class="product-buttom text-center">
+                <!-- <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <i class="fa fa-star-half-o"></i> -->
+                <h3 style="font-size: 25px;">Eksotik - GSL</h3>
+                <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
+              </div>
+            </div>
+
+            <div class="col-sm">
+              <div class="product-top">
+                <div class="thumb-img">
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                </div>
+
+                <div class="overlay">
+                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                </div>
+              </div>
+
+              <div class="product-buttom text-center">
+                <!-- <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <i class="fa fa-star-half-o"></i> -->
+                <h3 style="font-size: 25px;">Eksotik - GSL</h3>
+                <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
+              </div>
+            </div>
+
+            <div class="col-sm">
+              <div class="product-top">
+                <div class="thumb-img">
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                </div>
+
+                <div class="overlay">
+                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                </div>
+              </div>
+
+              <div class="product-buttom text-center">
+                <!-- <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <i class="fa fa-star-half-o"></i> -->
+                <h3 style="font-size: 25px;">Eksotik - GSL</h3>
+                <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="column-1" data-tab-content>
+          <div class="column-1">
+            <div class="container">
+              <div style=" padding: 15px 15px;" class="row">
+                <div class="col-sm-3">
+                  <div class="col-sm">
+                    <div class="product-top">
+                      <div class="thumb-img">
+                        <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                        <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                      </div>
+
+                      <!-- <div class="overlay">
+                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                      </div> -->
+                    </div>
+
+                    <!-- <div class="title-images text-center"> -->
+                    <!-- <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-half-o"></i> -->
+                    <!-- <h3 style="font-size: 25px;">Eksotik - GSL</h3>
+                      <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div>
+                    <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
+                    <h4>Eksotik - BR</h4>
+                    <hr>
+                    <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat debitis
+                      voluptatem iusto
+                      voluptatibus, nulla officia aperiam veritatis accusamus consequatur vero rerum.</p>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div>
+                    <div class="price">
+                      <span>Rp</span><span>9,000,000</span>
+                    </div>
+                    <div class="stok">
+                      <p>AVAILABLE : <span class="in-stok">IN STOK</span></p>
+                    </div>
+                    <div class="btn-add">
+                      <a href="#"><span class="link">Add to cart</span></a>
+                    </div>
+                    <div class="Quick_view">
+                      <a class="title-quick" href="produk.html"><i class="fa fa-eye" title="Quick View"></i> Quick
+                        View</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column-1">
+            <div class="container">
+              <div style=" padding: 15px 15px;" class="row">
+                <div class="col-sm-3">
+                  <div class="col-sm">
+                    <div class="product-top">
+                      <div class="thumb-img">
+                        <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                        <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                      </div>
+
+                      <!-- <div class="overlay">
+                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                      </div> -->
+                    </div>
+
+                    <!-- <div class="title-images text-center"> -->
+                    <!-- <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-half-o"></i> -->
+                    <!-- <h3 style="font-size: 25px;">Eksotik - GSL</h3>
+                      <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div>
+                    <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
+                    <h4>Eksotik - BR</h4>
+                    <hr>
+                    <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat debitis
+                      voluptatem iusto
+                      voluptatibus, nulla officia aperiam veritatis accusamus consequatur vero rerum.</p>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div>
+                    <div class="price">
+                      <span>Rp</span><span>9,000,000</span>
+                    </div>
+                    <div class="stok">
+                      <p>AVAILABLE : <span class="in-stok">IN STOK</span></p>
+                    </div>
+                    <div class="btn-add">
+                      <a href="#"><span class="link">Add to cart</span></a>
+                    </div>
+                    <div class="Quick_view">
+                      <a class="title-quick" href="produk.html"><i class="fa fa-eye" title="Quick View"></i> Quick
+                        View</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- banner -->
+  <div class="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-hover-zoom img-hover-zoom--xyz">
+            <img class="img-hover" src="<?= base_url() ?>assets/img/banner2.png" alt="Another Image zoom-on-hover effect">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-hover-zoom img-hover-zoom--xyz">
+            <img class="img-hover" src="<?= base_url() ?>assets/img/banner1.png" alt="Another Image zoom-on-hover effect">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- akhir banner -->
+
+   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <!-- icon -->
+
+
+  <!-- short by -->
+
+  <script>const tabs = document.querySelectorAll('[data-tab-target]')
+    const tabContents = document.querySelectorAll('[data-tab-content]')
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.tabTarget)
+        tabContents.forEach(tabContent => {
+          tabContent.classList.remove('active')
+        })
+        tabs.forEach(tab => {
+          tab.classList.remove('active')
+        })
+        tab.classList.add('active')
+        target.classList.add('active')
+      })
+    })</script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script> -->
+
+
+
+  <!-- javaScript Boot -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- Optional JavaScript -->
+
+  <!-- scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>var btn = $('#button');
+
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+      } else {
+        btn.removeClass('show');
+      }
+    });
+
+    btn.on('click', function (e) {
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, '300');
+    });</script>
+  <!-- scroll -->
+
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    // document.getElementById("defaultOpen").click();
+  </script>
+
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+
+  <!-- acordion -->
+  <script>
+    var acc = document.getElementsByClassName("accordion-2");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+  <!-- acordion -->
+  <!-- search -->
+  <script>
+    $(document).ready(function () {
+      $(".fa-search").click(function () {
+        $("icon").toggleClass("active");
+        $("input[type='text']").toggleClass("active");
+      });
+    });
+  </script>
+
+  <script>
+    const sidedrawer = document.querySelector(".sidedrawer");
+    const backdrop = document.querySelector(".backdrop")
+    const bars = document.getElementById("bars");
+
+    bars.addEventListener("click", () => {
+      sidedrawer.classList.add('active');
+      backdrop.classList.add('show');
+    });
+
+    backdrop.addEventListener('click', () => {
+      sidedrawer.classList.remove("active");
+      backdrop.classList.remove("show");
+    });
+  </script>
+
+  <!-- stepper -->
+  <script>
+    var inc = document.getElementsByClassName("stepper");
+    for (i = 0; i < inc.length; i++) {
+      var incI = inc[i].querySelector("input"),
+        id = incI.getAttribute("id"),
+        min = incI.getAttribute("min"),
+        max = incI.getAttribute("max"),
+        step = incI.getAttribute("step");
+      document
+        .getElementById(id)
+        .previousElementSibling.setAttribute(
+          "onclick",
+          "stepperInput('" + id + "', -" + step + ", " + min + ")"
+        );
+      document
+        .getElementById(id)
+        .nextElementSibling.setAttribute(
+          "onclick",
+          "stepperInput('" + id + "', " + step + ", " + max + ")"
+        );
+    }
+
+    function stepperInput(id, s, m) {
+      var el = document.getElementById(id);
+      if (s > 0) {
+        if (parseInt(el.value) < m) {
+          el.value = parseInt(el.value) + s;
+        }
+      } else {
+        if (parseInt(el.value) > m) {
+          el.value = parseInt(el.value) + s;
+        }
+      }
+    }
+  </script>
+

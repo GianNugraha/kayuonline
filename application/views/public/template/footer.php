@@ -1,138 +1,224 @@
-<footer class="footer">
+<!-- footer -->
+  <div class="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-3 col-lg-3">
-                <center><a href="<?php echo base_url()?>"><img src="<?php echo base_url('assets/images/Group-151.png')?>" style="margin-top: 40px; margin-bottom: 40px; width: 200px; height: 220px;" class="img-fluid" alt="Responsive image"></a></center>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-9">
-                <div class="form-group">
-                    <input type="text" name="nama" class="form-control" placeholder="Masukkan Email Anda Untuk Berlangganan Email Kami" required>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <input type="submit" name="Subscribe" class="btn btn-block btn-info" value="Subscribe">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-2 col-md-2 col-lg-2">
-                <div class="">
-                    <h4><span>&copy; 2020 Kayuonline</span></h4>
-                </div>
-                 <div class="">
-                    <span><a href="#"><img style="height: 40px; width: 40px;" src="<?php echo base_url('assets/images/facebook.png')?>"></a></span>
-                    <span><a href="#"><img style="height: 40px; width: 40px;" src="<?php echo base_url('assets/images/instagram.png')?>"></a></span>
-                </div>
-            </div>
-            <div class="col-sm-1 col-md-1 col-lg-1">
-                <div class="">
-                    <a href="<?php echo base_url('faq')?>"><h4><span>FAQ</span></h4></a>
-                </div>
-            </div>
-            <div class="col-sm-2 col-md-2 col-lg-2">
-                <div class="">
-                    <a href="<?php echo base_url('kebijakan-privasi')?>"><h4><span>Kebijakan Privasi</span></h4></a>
-                </div>
-            </div>
-            <div class="col-sm-2 col-md-2 col-lg-2">
-                <div class="">
-                    <a href="<?php echo base_url('layanan-pelanggan')?>"><h4><span>Layanan Pelanggan</span></h4></a>
-                </div>
-            </div>
-            <div class="col-sm-2 col-md-2 col-lg-2">
-               <!--  <div class="">
-                    <span> <img style="height: 130%; width: 130%" src="images/bank.png"> </span>
-                </div> -->
-            </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <img style="width: 180px;" class="logo-footer" src="<?= base_url('assets/img/footer.png'); ?>" alt="">
         </div>
-        <div class="row">
-            <div class="">
-                <center><span> <img class="bank" src="<?php echo base_url('assets/images/bank.png')?>"> </span></center>
+        <div class="col-sm-8">
+          <form class="form" action="">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Masukan Email Anda" aria-label="Recipient's username"
+                aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Subcribe</button>
+              </div>
             </div>
+          </form>
+          <!-- <span class="iconify" data-icon="logos:facebook" data-inline="false"></span>
+          <a class="instagram" href="#"><img style="margin-top: 15px;"
+              src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a> -->
+
+          <div class="row" style="margin-top: 60px;">
+            <div class="col-6">
+              <div class="list_footer">
+                <ul>
+                  <li><a href="faq.html">Faq</a></li>
+                  <li><a href="kebijakanprivasi.html">Kebijakan Privasi</a></li>
+                  <li><a href="layananpelanggan.html">Layanan Pelanggan</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-6">
+              <img width="100%" src="<?php echo base_url('assets/img/bank.png'); ?>" alt="">
+            </div>
+          </div>
         </div>
+
+      </div>
     </div>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Bisa Bantu Saya?" class="float" target="_blank">
-        <i class="fa fa-whatsapp my-float"></i>
-    </a>
-</footer>
-<!--end footer-->
+  </div>
+
+  <div class="footer_socialmedia">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <h5 class="copyright">© 2020 Kayuonline - All Right reserved!</h5>
+        </div>
+        <div class="col-6">
+          <div class="social_media">
+            <ul>
+              <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/facebook.png'); ?>" alt=""></a></li>
+              <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/instagram.png'); ?>" alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- akhir footer -->
 
 
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.10.2.min.js')?>"></script>
-<script src="<?php echo base_url('assets/js/bootstrap.min.js')?>"></script>
-<script src="<?php echo base_url('assets/js/jquery.easing.1.3.js')?>"></script>
-<script src="<?php echo base_url('assets/js/retina-1.1.0.min.js')?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.cookie.js')?>"></script> <!-- jQuery cookie -->
-<script type="text/javascript" src="<?php echo base_url('assets/js/styleswitch.js')?>"></script> <!-- Style Colors Switcher -->
-<script src="<?php echo base_url('assets/js/jquery.fractionslider.js')?>" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.smartmenus.min.js')?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.smartmenus.bootstrap.min.js')?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.jcarousel.js')?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/jflickrfeed.js')?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.magnific-popup.min.js')?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.isotope.min.js')?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/swipe.js')?>"></script>
-<!-- <script type="text/javascript" src="<?php //echo base_url('assets/js/jquery-scrolltofixed-min.js')?>"></script> -->
-<script src="<?php echo base_url('assets/js/main.js')?>"></script>
 
-<!-- Start Style Switcher -->
-<!-- <div class="switcher"></div> -->
-<!-- End Style Switcher -->
-<script>
-    $(window).load(function(){
-        $('.slider').fractionSlider({
-            'fullWidth': 			true,
-            'controls': 			true,
-            'responsive': 			true,
-            'dimensions': 			"1720,450",
-            'timeout' :             5000,
-            'increase': 			true,
-            'pauseOnHover': 		true,
-            'slideEndAnimation': 	false,
-            'autoChange':           true
-        });
+
+  <!-- javaScript Boot -->
+ 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- Optional JavaScript -->
+
+  <!-- scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>var btn = $('#button');
+
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+      } else {
+        btn.removeClass('show');
+      }
     });
-</script>
 
-    <!-- WARNING: Wow.js doesn't work in IE 9 or less -->
-    <!--[if gte IE 9 | !IE ]><!-->
-        <script type="text/javascript" src="<?php echo base_url('assets/js/wow.min.js')?>"></script>
-        <script>
-            // WOW Animation
-            new WOW().init();
-        </script>
-        <script>
-            function openTab(evt, tabName) {
-              var i, tabcontent, tablinks;
-              tabcontent = document.getElementsByClassName("tabcontent");
-              for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
+    btn.on('click', function (e) {
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, '300');
+    });</script>
+  <!-- scroll -->
+
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
+
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <!-- search -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".fa-search").click(function () {
+        $("icon").toggleClass("active");
+        $("input[type='text']").toggleClass("active");
+      });
+    });
+  </script>
+
+  <!-- sidedrawer -->
+
+  <script>
+    const sidedrawer = document.querySelector(".sidedrawer");
+    const backdrop = document.querySelector(".backdrop")
+    const bars = document.getElementById("bars");
+
+    bars.addEventListener("click", () => {
+      sidedrawer.classList.add('active');
+      backdrop.classList.add('show');
+    });
+
+    backdrop.addEventListener('click', () => {
+      sidedrawer.classList.remove("active");
+      backdrop.classList.remove("show");
+    });
+  </script>
+
+  <script>
+    var inc = document.getElementsByClassName("stepper");
+    for (i = 0; i < inc.length; i++) {
+      var incI = inc[i].querySelector("input"),
+        id = incI.getAttribute("id"),
+        min = incI.getAttribute("min"),
+        max = incI.getAttribute("max"),
+        step = incI.getAttribute("step");
+      document
+        .getElementById(id)
+        .previousElementSibling.setAttribute(
+          "onclick",
+          "stepperInput('" + id + "', -" + step + ", " + min + ")"
+        );
+      document
+        .getElementById(id)
+        .nextElementSibling.setAttribute(
+          "onclick",
+          "stepperInput('" + id + "', " + step + ", " + max + ")"
+        );
+    }
+
+    function stepperInput(id, s, m) {
+      var el = document.getElementById(id);
+      if (s > 0) {
+        if (parseInt(el.value) < m) {
+          el.value = parseInt(el.value) + s;
         }
-
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-    </script>
-
-    <script type="text/javascript">
-        
-
-    function openSearch() {
-        document.getElementById("myOverlay").style.display = "block";
+      } else {
+        if (parseInt(el.value) > m) {
+          el.value = parseInt(el.value) + s;
+        }
+      }
     }
+  </script>
 
-    function closeSearch() {
-        document.getElementById("myOverlay").style.display = "none";
-    }
+  <script >
+    jQuery(document).ready(function($){         
 
-    </script>
-    <![endif]-->
+      $('.option').on({
+       'click': function(){
+        // alert('masuk');
+        var angka= $(this).val();
+        words = angka.split('+');
+        var stock = words[1];
+        var harga = words[0];
+        var sold = words[2];
+        // var stock = $(this).val();
+        hargaPerUkuran.innerHTML=harga.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        // alert ()
+        hargaPerUkuran2.innerHTML=stock;
+        hargaPerUkuran3.innerHTML=sold;
+            // var stock= $(this).val();
+            // alert(angka);
+               // $('#change-image').attr('src', base_url+'/'+$thumbnail);
+             }
+           });
+    });
+
+  </script>
 
 </body>
+
 </html>

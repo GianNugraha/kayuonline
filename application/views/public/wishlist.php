@@ -122,7 +122,7 @@
 </div>
 
 </section>
-
+<!-- 
 <script >
         $('.btn-number').click(function(e){
             e.preventDefault();
@@ -238,4 +238,4 @@
         $('input[type="button"]').click(function(e){
            $(this).closest('thead').remove()
        })
-    </script>
+    </script> -->

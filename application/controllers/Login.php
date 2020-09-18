@@ -34,6 +34,7 @@ class Login extends CI_Controller{
                 'idUser' => $idUser,
                 'namaUser' => $namaUser,
                 'status' => "login",
+                'role' => 'admin',
                 'logged_in' => TRUE
                 );
             // session_start();
