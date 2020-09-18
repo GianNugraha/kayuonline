@@ -9,26 +9,26 @@
                     <center><h2><span>KayuOnline.co</span></h2></center>
                 </div>
                 <div class="row sub_content" style="background-color: #f0f5f1;">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         <div class="dividerHeading" style="text-align: center;">
                             <h3><span>Siapa Kami?</span></h3>
                             <p>Kami adalah perusahaan supplier kayu terbaik di indonesia yang telah berpengalaman selama beberapa tahun dalam industri kayu. <br/>Dengan dukungan tim yang solid dan sumber daya serta lingkungan yang mendukung, kami yakin apapun kebutuhan yang Anda inginkan  dapat kami penuhi</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         <div class="dividerHeading">
                             <img src="<?php echo base_url('assets/images/kontak1.png')?>" class="img-responsive" alt=""/>
                         </div>
                     </div>
                 </div>
                 <div class="row sub_content " style="margin-top: 25px; background-color: #f0f5f1;">
-                    <div class="col-lg-6 col-md-6 col-sm-6 ">
+                    <div class="col-lg-5 col-md-5 col-sm-5 ">
                         <div class="dividerHeading">
                             <img src="<?php echo base_url('assets/images/kontak2.png')?>" class="img-responsive" alt=""/>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         <div class="dividerHeading" style="text-align: center;">
                             <h3><span>Mengapa Harus Kami?</span></h3>
                             <p>
@@ -39,20 +39,20 @@
                 </div>
             </div>
         </section>
-		<section class="clients">
-			<div class="container">
-				<div class="row sub_content">
-					<div class="col-lg-12 col-md-12 col-sm-12">
-						<div class="col-lg-6  wow slideInLeft" data-wow-duration="1s">
+        <section class="clients">
+            <div class="container">
+                <div class="row sub_content">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="col-lg-6  wow slideInLeft" data-wow-duration="1s">
                             <div class="img-hover-zoom--colorize col "><img src="<?php echo base_url('assets/images/home1.jpeg')?>" style=" width: 100%; " class="img-fluid" alt="Responsive image"></div>
                         </div>
                         <div class="col-lg-6  wow slideInLeft" data-wow-duration="1s">
                             <div class="img-hover-zoom--colorize col "><img src="<?php echo base_url('assets/images/home2.jpeg')?>" style=" width: 100%;" class="img-fluid" alt="Responsive image"></div>
                         </div>
-					</div>
-				</div>
-			</div>
-		</section>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Parallax & Get Quote Section -->
         <!-- end Parallax & Get Quote Section -->
-	</section>
+    </section>

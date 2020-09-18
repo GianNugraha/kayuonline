@@ -82,7 +82,7 @@ endforeach;
                         </div>
                         <?php }else{ ?>
                             <div class="pintu">
-                                <a class="widget_a" href="">pintu</a>
+                                <a class="widget_a" href="">Pintu</a>
                             </div>
                         <?php } ?>
 
@@ -199,6 +199,7 @@ endforeach;
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
+                    <form action="<?= base_url('wishlist');?>" method="post">
                     <h1 style="font-weight: bold;"><?php echo $name; ?></h1>
                     <?php if ($priceMax == $priceMin) { ?>
                     <h3 style="margin-top: 10px;">Rp <?php echo number_format($priceMax,2,',','.'); ?></h3>
@@ -243,15 +244,17 @@ endforeach;
                     </div>
                     <div style="margin-top: 20px;" class="input-spinner">
                         <span class="stepper input">
-                            <button>–</button>
+                            <!-- <button>–</button> -->
                             <input style="text-align: center; width: 80px;" type="number" id="stepper" value="1" min="1"
                                 max="100" step="1">
-                            <button>+</button>
+                            <!-- <button>+</button> -->
                         </span>
                     </div>
-                    <div class="buy-now-1">
-                        <a href="viewcart.html">Pesan Sekarang</a>
-                    </div>
+                    <center> <div class="form-group " style="padding-top: 20px">
+                            <input type="submit" name="proses" class="btn btn-block btn-danger" value="Proses">
+                        </div> </center>
+                    
+                    </form>
                 </div>
             </div>
         </div>
@@ -866,39 +869,37 @@ endforeach;
 
 
     <!-- input-spinner -->
-     <script>
-    var inc = document.getElementsByClassName("stepper");
-    for (i = 0; i < inc.length; i++) {
-      var incI = inc[i].querySelector("input"),
-        id = incI.getAttribute("id"),
-        min = incI.getAttribute("min"),
-        max = incI.getAttribute("max"),
-        step = incI.getAttribute("step");
-      document
-        .getElementById(id)
-        .previousElementSibling.setAttribute(
-          "onclick",
-          "stepperInput('" + id + "', -" + step + ", " + min + ")"
-        );
-      document
-        .getElementById(id)
-        .nextElementSibling.setAttribute(
-          "onclick",
-          "stepperInput('" + id + "', " + step + ", " + max + ")"
-        );
-    }
+    <script>var inc = document.getElementsByClassName("stepper");
+        for (i = 0; i < inc.length; i++) {
+            var incI = inc[i].querySelector("input"),
+                id = incI.getAttribute("id"),
+                min = incI.getAttribute("min"),
+                max = incI.getAttribute("max"),
+                step = incI.getAttribute("step");
+            document
+                .getElementById(id)
+                .previousElementSibling.setAttribute(
+                    "onclick",
+                    "stepperInput('" + id + "', -" + step + ", " + min + ")"
+                );
+            document
+                .getElementById(id)
+                .nextElementSibling.setAttribute(
+                    "onclick",
+                    "stepperInput('" + id + "', " + step + ", " + max + ")"
+                );
+        }
 
-    function stepperInput(id, s, m) {
-      var el = document.getElementById(id);
-      if (s > 0) {
-        if (parseInt(el.value) < m) {
-          el.value = parseInt(el.value) + s;
-        }
-      } else {
-        if (parseInt(el.value) > m) {
-          el.value = parseInt(el.value) + s;
-        }
-      }
-    }
-  </script>
+        function stepperInput(id, s, m) {
+            var el = document.getElementById(id);
+            if (s > 0) {
+                if (parseInt(el.value) < m) {
+                    el.value = parseInt(el.value) + s;
+                }
+            } else {
+                if (parseInt(el.value) > m) {
+                    el.value = parseInt(el.value) + s;
+                }
+            }
+        }</script>
 </body>

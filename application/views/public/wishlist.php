@@ -14,7 +14,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="procces-II">
                 <a class="next-2" href="<?php echo base_url('checkout')?>">
-                    <h1 class="procces-II">02</h1>
+                    <h1 style=" font-size: 3.5rem;">02</h1>
                     <h4 class="shop-2">Detail Checkout</h4>
                     <p class="item-2">Periksa daftar item Anda.</p>
                 </a>
@@ -61,7 +61,7 @@
                     </tr>
                 </thead>
             </table>
-            <table class="table" border="1">
+            <!-- <table class="table" border="1">
                 <thead>
                     <tr>
                         <td rowspan="4" >
@@ -89,16 +89,19 @@
                         <td>Rp. <span id = "valueSteper"></span></td>
                     </tr>
                 </thead>
-            </table>
+            </table> -->
+    </div>
+    <div class="form-group">
+        <input style="background-color: #888" type="submit" onclick="updateValue()" name="keranjang" class="btn btn-block" value="Perbarui Keranjang">
     </div>
 </div>
 
 <!-- tabel -->
-        <span style="float: right; margin-top: 20px">
+        <!-- <span style="float: right; margin-top: 20px">
             <div class="form-group">
                 <input style="background-color: #888" type="submit" onclick="updateValue()" name="keranjang" class="btn btn-block" value="Perbarui Keranjang">
             </div>
-        </span>
+        </span> -->
     </div>
 </div>
 <div class="container" style="margin-bottom: 30px">
@@ -112,7 +115,7 @@
         </table>
         <span style="float: center; margin-top: 20px">
             <div class="form-group">
-                <input style="background-color: black" type="submit" name="pesan" class="btn btn-block" value="Proses Ke Pesanan">
+                <input style="background-color: grey" type="submit" name="pesan" class="btn btn-block" value="Proses Ke Pesanan">
             </div>
         </span>
         <!-- <div class="form-group col-md-2" style="margin-top: -20px; text-align: center" >
@@ -239,3 +242,32 @@
            $(this).closest('thead').remove()
        })
     </script> -->
+
+    <script >
+        document.getElementById("defaultOpen").click();
+
+
+        function updateValue(){
+            for(let i = 0; i < 2; i++){
+                // document.write("<p>Perulangan ke-" + i + "</p>")
+
+                var nilai = document.getElementById("stepper").value;
+                var total = document.getElementById("harga").value;
+                var jumlah = document.getElementById("jumlah").value;
+                valueSteper.innerHTML= nilai*total;
+                var hasilKali = nilai*total;
+                valueSteper2.innerHTML= valueSteper.innerHTML;
+                valueSteper3.innerHTML= jumlah;
+                var hasilJumlah=jumlah*1;
+                valueSteper4.innerHTML=hasilJumlah+hasilKali;
+            }
+
+
+        }
+
+        $('input[type="button"]').click(function(e){
+           $(this).closest('thead').remove()
+       })
+
+//end //
+    </script>

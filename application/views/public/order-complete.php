@@ -14,7 +14,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="procces-II" style="margin-top: 30px;">
                 <a class="next-2" href="<?php echo base_url('checkout')?>">
-                    <h1 style="color: black;" class="procces-II">02</h1>
+                    <h1 style="color: black;  font-size: 3.5rem;">02</h1>
                     <h4 style="color: black;" class="shop-2">Detail Checkout</h4>
                     <p style="color: black;" class="item-2">Periksa daftar item Anda.</p>
                 </a>

@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>KayuOnline | Pilihan Kayu Terbaik Untuk Anda</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/Logo-hitam.png')?>"/>
   <!-- Bootstrap CSS -->
   <!-- <link rel="stylesheet" href="<?= base_url('assets/js/main.js'); ?>"> -->
   

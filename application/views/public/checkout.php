@@ -26,7 +26,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="procces-II">
                 <a class="next-2" href="<?php echo base_url('checkout')?>">
-                    <h1 style="color: black;" class="procces-II">02</h1>
+                    <h1 style="color: black; font-size: 3.5rem;">02</h1>
                     <h4 style="color: black;" class="shop-2">Detail Pembayaran</h4>
                     <p style="color: black;" class="item-2">Periksa daftar item Anda.</p>
                 </a>
@@ -51,50 +51,6 @@
                         <label for="name">Nama Lengkap <span title="required" style="color:red" >*</span></label>
                         <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
                     </div>
-
-                    <!-- <div class="form-group">
-                       <label for="exampleInputEmail1">Company Name (Optional)</label>
-                       <input type="text" name="tempat" class="form-control" placeholder="Company Name" required>
-                   </div> -->
-                    <!-- <div class="form-group">
-                        <label for="exampleInputEmail1">Negara <span title="required" style="color:red" >*</span></label>
-                        <select name="provinsi" class="form-control" required>
-                          <option value=""> -- Negara -- </option>
-                          <option value="Afghanistan">Afghanistan</option>
-                          <option value="Albania">Albania</option>
-                          <option value="jawatengah">Jawa Tengah</option>
-                          <option value="yogyakarta">D.I. Yogyakarta</option>
-                          <option value="jawatimur">Jawa Timur</option>
-                          <option value="aceh">Aceh</option>
-                          <option value="sumaterautara">Sumatera Utara</option>
-                          <option value="sumaterabarat">Sumatera Barat</option>
-                          <option value="riau">Riau</option>
-                          <option value="jambi">Jambi</option>
-                          <option value="sumateraselatan">Sumatera Selatan</option>
-                          <option value="lampung">Lampung</option>
-                          <option value="kalimantanbarat">Kalimantan Barat</option>
-                          <option value="kalimantantengah">Kalimantan Tengah</option>
-                          <option value="kalimantanselatan">Kalimantan Selatan</option>
-                          <option value="kalimantantimur">Kalimantan Timur</option>
-                          <option value="sulawesiutara">Sulawesi Utara</option>
-                          <option value="sulawesitengah">Sulawesi Tengah</option>
-                          <option value="sulawesiselatan">Sulawesi Selatan</option>
-                          <option value="sulawesitenggara">Sulawesi Tenggara</option>
-                          <option value="maluku">Maluku</option>
-                          <option value="bali">Bali</option>
-                          <option value="nusatenggarabarat">Nusa Tenggara Barat</option>
-                          <option value="nusatenggaratimur">Nusa Tenggara Timur</option>
-                          <option value="papua">Papua</option>
-                          <option value="bengkulu">Bengkulu</option>
-                          <option value="malukuutara">Maluku Utara</option>
-                          <option value="banten">Banten</option>
-                          <option value="bangkabelitung">Bangka Belitung</option>
-                          <option value="gorontalo">Gorontalo</option>
-                          <option value="kepulauanriau">Kepulauan Riau</option>
-                          <option value="papuabarat">Papua Barat</option>
-                          <option value="sulawesibarat">Sulawesi Barat</option>
-                      </select>
-                    </div> -->
 
                     <div class="form-group">
                        <label for="exampleInputEmail1">Alamat Pengiriman <span title="required" style="color:red" >*</span></label>
