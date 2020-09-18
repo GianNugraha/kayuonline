@@ -833,6 +833,14 @@ header .overlay__list ul li a:hover {
   display: block;
 }
 
+ style="margin-top: 100px;"
+ 
+ @media only screen and (max-width: 600px) {
+  .input-spinner {
+    margin-top: 100px;
+  }
+
+}
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}

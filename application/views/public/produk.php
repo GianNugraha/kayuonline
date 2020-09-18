@@ -238,25 +238,36 @@ endforeach;
                                 style=" color: red;"><span id = "hargaPerUkuran2"></strong>
                             LEFT</span>
                     </div>
-                    <div style="height:9px;" class="progress">
+                    <div style="height:9px; margin-bottom: 15px" class="progress">
                         <div class="progress-bar bg-danger" role="progressbar" style="width: 1%" aria-valuenow="100"
                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <div style="margin-top: 20px;" class="input-spinner">
+                    <div class="input-spinner">
                         <span class="stepper input">
 
                         </span>
                     </div>
+                    <span>
+                     <div style="width: 150px; height: 10px ; padding-bottom: 20px" class="input-group">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-type="minus" data-field="quant[1]">
+                              <span class="glyphicon glyphicon-minus">-</span>
+                          </button>
+                      </span>
+                      <input style="height: 33px; text-align: center" type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="100">
+                      <span class="input-group-btn">
+                        <button type="button"  class="btn btn-success btn-number" data-type="plus" data-type="plus" data-field="quant[1]">
+                          <span class="glyphicon glyphicon-plus">+</span>
+                      </button>
+                  </span>
+              </div>
+                    </span>
                     <center> <div class="form-group " style="padding-top: 20px">
                             <input type="submit" name="proses" class="btn btn-block btn-danger" value="Proses">
                         </div> </center>
                     
                     </form>
 
-                            <button>–</button>
-                            <input style="text-align: center; width: 80px;" type="number" id="stepper" value="1" min="1" max="100" step="1">
-                            <button>+</button>
-                        </span>
                     </div>
                    <!--  <div class="buy-now-1">
                         <a href="viewcart.html">Pesan Sekarang</a>
@@ -761,7 +772,7 @@ endforeach;
             </a>
         </div>
     </div>
-
+</body>
     <!-- Optional JavaScript -->
 
 
@@ -915,4 +926,85 @@ endforeach;
                 }
             }
         }</script>
-</body>
+
+
+<script >
+    $('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='"+fieldName+"']");
+    var currentVal = parseInt(input.val());
+    if (!isNaN(currentVal)) {
+        if(type == 'minus') {
+            
+            if(currentVal > input.attr('min')) {
+                input.val(currentVal - 1).change();
+            } 
+            if(parseInt(input.val()) == input.attr('min')) {
+                // $(this).attr('disabled', true);
+            }
+
+        } else if(type == 'plus') {
+
+            if(currentVal < input.attr('max')) {
+                input.val(currentVal + 1).change();
+            }
+            if(parseInt(input.val()) == input.attr('max')) {
+                $(this).attr('disabled', true);
+            }
+
+        }
+    } else {
+        input.val(0);
+    }
+});
+$('.input-number').focusin(function(){
+   $(this).data('oldValue', $(this).val());
+});
+$('.input-number').change(function() {
+    
+    minValue =  parseInt($(this).attr('min'));
+    maxValue =  parseInt($(this).attr('max'));
+    valueCurrent = parseInt($(this).val());
+    
+    name = $(this).attr('name');
+    if(valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the minimum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    if(valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the maximum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    
+    
+});
+$(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+<style >
+    @media only screen and (max-width: 600px) {
+      .input-spinner {
+        margin-top: 100px;
+    }
+</style>
