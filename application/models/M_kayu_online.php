@@ -277,7 +277,7 @@ class M_kayu_online extends CI_Model{
         return $userID?$userID:FALSE;
     }
 
-    public function coba(){
+    public function nyobaan(){
        
     }
 
