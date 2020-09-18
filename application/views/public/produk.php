@@ -258,7 +258,7 @@ endforeach;
                             <button>+</button>
                         </span>
                     </div>
-                    <div class="buy-now-1">
+                   <!--  <div class="buy-now-1">
                         <a href="viewcart.html">Pesan Sekarang</a>
                     </div><br>
                     <div class="addtowishlist">
@@ -267,7 +267,7 @@ endforeach;
                                 Add to Wishlist
                             </i>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
