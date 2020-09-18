@@ -244,13 +244,19 @@ endforeach;
                     <div style="margin-top: 20px;" class="input-spinner">
                         <span class="stepper input">
                             <button>–</button>
-                            <input style="text-align: center; width: 80px;" type="number" id="stepper" value="1" min="1"
-                                max="100" step="1">
+                            <input style="text-align: center; width: 80px;" type="number" id="stepper" value="1" min="1" max="100" step="1">
                             <button>+</button>
                         </span>
                     </div>
                     <div class="buy-now-1">
                         <a href="viewcart.html">Pesan Sekarang</a>
+                    </div><br>
+                    <div class="addtowishlist">
+                        <a href="wishlist.php">
+                            <i class="fa fa-heart-o">
+                                Add to Wishlist
+                            </i>
+                        </a>
                     </div>
                 </div>
             </div>
