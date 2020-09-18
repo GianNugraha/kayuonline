@@ -96,18 +96,26 @@
         <ul class="bar-links">
           <li>
             <?php if (isset($_SESSION['logged_in']) and $_SESSION['role'] =='user') { ?>
-              <span class="dropbtn"><i class="fa fa-user"></i>My Account</span>
-              <div class="dropdown-content">
-                <a href="<?php echo base_url('admin'); ?>">Halaman Admin</a>
-                <a href="#">Profil Saya</a>
-                <a onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('home/logout') ?>"><i class="fa fa-sign-out"></i>     Keluar</a>
-            <?php }else{ ?>
-                <span class="dropbtn"><i class="fa fa-user"></i>Masuk / Daftar</span>
-                <div class="dropdown-content">
-                    <a href="<?php echo base_url('user-login') ?>">Masuk</a>
-                    <a href="<?php echo base_url('user-registration') ?>">Daftar</a>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" style="background-color: transparent;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span><i class="fa fa-user"></i> Akun Saya</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Profil</a>
+                  <hr>
+                  <span style="margin-left: 20px"><a onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('home/logout') ?>"><i class="fa fa-sign-out"></i>     Keluar</a></span>
                 </div>
-
+              </div>
+            <?php }else{ ?>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" style="background-color: transparent;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span><i class="fa fa-user"></i> Masuk / Daftar</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="<?php echo base_url('user-login') ?>">Masuk</a>
+                  <a class="dropdown-item" href="<?php echo base_url('user-registration') ?>">Daftar</a>
+                </div>
+              </div>
             <?php } ?>
           </li>
         </ul>
@@ -145,7 +153,7 @@
   <!-- navbar -->
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="<?= base_url(); ?>">
         <img src="<?= base_url('assets/img/logo.png'); ?>" width="50" height="50" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
