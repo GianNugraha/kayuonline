@@ -67,12 +67,12 @@
               <a href="<?php echo base_url('produk?kategori=KO&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
               <a href="<?php echo base_url('produk?kategori=KO&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a>
             </div>
-            <div class="overlay">
+            <!-- <div class="overlay">
               <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
                 <span><i class="fa fa-eye" title="Quick View"></i></span>
               </div> <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
               <a class="btn btn-secondary" href="viewcart.html"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-            </div>
+            </div> -->
           </div>
 
           <div class="product-buttom text-center">
@@ -112,12 +112,12 @@
               <a href="<?php echo base_url('produk?kategori=DK&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
               <a href="<?php echo base_url('produk?kategori=DK&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a>
             </div>
-            <div class="overlay">
+            <!-- <div class="overlay">
               <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
                 <span><i class="fa fa-eye" title="Quick View"></i></span>
               </div> <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
               <a class="btn btn-secondary" href="viewcart.html"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-            </div>
+            </div> -->
           </div>
 
           <div class="product-buttom text-center">

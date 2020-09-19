@@ -1,3 +1,36 @@
+<?php
+$sku = $this->input->get('sku');
+$option_sizes = $this->input->get('option_sizes');
+$pecah = explode("+", $option_sizes);
+$price = $pecah[0];
+$size = $pecah[3];
+$jumlah = $this->input->get('quant[1]');
+$nama_produk = $this->input->get('nama_produk');
+$foto = $this->input->get('foto');
+$total = ($jumlah*$price);
+$id = $this->input->get('id');
+// $sku = $this->input->get('sku');
+
+echo "nama produk = ". $nama_produk."<br>";
+echo "ukuran = ". $size."<br>";
+echo "kode produk = ". $sku."<br>";
+echo "jumlah produk = ". $jumlah."<br>";
+echo "id produk = ". $id."<br>";
+echo "gambar produk = ". $foto."<br>";
+echo "Total = ". $total."<br>";
+        // echo "option_sizes = ". $option_sizes."<br>";
+
+echo "harga produk = ". $price;
+        // $size = $this->input->post('size');
+        // $price = $this->input->post('price');
+// die();
+// foreach ($orders as $key): 
+//     echo "<pre>";
+//     print_r($key);
+//     echo "</pre>";
+// endforeach;
+?>
+
 <section class="wrapper">
 
 <div class="container">
@@ -37,27 +70,26 @@
                     <tr>
                         <td rowspan="4" >
                             <input type="button" title="Hapus" value="X" style="margin-bottom: 20px">
-                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url('assets/images/Merbau.png')?>" alt="">
+                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$foto?>" alt="">
                         </td>
                         <td>ukuran</td>
-                        <td>Merbau - 1 Meter³ (210-390 x 11 x 7)</td>
+                        <td><?= $nama_produk; ?> - <?= $size ?> </td>
                     </tr>
                     <tr>
                         <td>Harga</td>
-                        <td>Rp. <span>12000000</span></td>
-                        <input type="hidden" id="harga" value="12000000">
+                        <td>Rp. <span><?= $price ?></span></td>
+                        <input type="hidden" id="harga" value="<?= $price ?>">
                     </tr>
                     <tr>
                         <td>Jumlah</td>
-                        <td>
-                            <span class="stepper input">
-                                <input style="width: 80px; line-height: normal; text-align: center; width: 80px;" type="number" id="stepper" value="1" min="1" max="100" step="1">
-                            </span>
-                        </td>
+                        <td> <span><?= $jumlah ?></span></td>
+                        <input type="hidden" id="harga" value="<?= $jumlah ?>">
+                        
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td>Rp. <span id = "valueSteper"></span></td>
+                        <td> <span><?= $total ?></span></td>
+                        <input type="hidden" id="harga" value="<?= $total ?>">
                     </tr>
                 </thead>
             </table>

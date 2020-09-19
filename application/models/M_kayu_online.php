@@ -277,8 +277,8 @@ class M_kayu_online extends CI_Model{
         return $userID?$userID:FALSE;
     }
 
-    public function nyobaan(){
-       
-    }
+ //   	public function input_data_admin($data,$table){
+	// 	$this->db->insert($table,$data);
+	// }	
 
 }

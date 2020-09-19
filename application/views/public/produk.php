@@ -1,9 +1,9 @@
 <?php
-// foreach ($productKO as $key): 
-//     echo "<pre>";
-//     print_r($key);
-//     echo "</pre>";
-// endforeach;
+foreach ($tampil as $key): 
+    echo "<pre>";
+    print_r($key);
+    echo "</pre>";
+endforeach;
 
 foreach ($tampil as $key): 
     $foto = $key->image;
@@ -14,7 +14,7 @@ foreach ($tampil as $key):
     $priceMin = $key->min_price;
     $sku = $key->product_code;
     $stock = 0;
-    // $sold = $key->sold;
+    $id = $key->product_id;
     $sold = 0;
 endforeach;
 ?>
@@ -199,72 +199,77 @@ endforeach;
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <form action="<?= base_url('wishlist');?>" method="post">
-                    <h1 style="font-weight: bold;"><?php echo $name; ?></h1>
-                    <?php if ($priceMax == $priceMin) { ?>
-                    <h3 style="margin-top: 10px;">Rp <?php echo number_format($priceMax,2,',','.'); ?></h3>
-                    <?php } else{ ?>
-                        <h4>Rp <?php echo number_format($priceMin,2,',','.'); ?>  -  Rp <?php echo number_format($priceMax,2,',','.'); ?></h4>
-                    <?php } ?>
+                    <form action="<?= base_url('wishlist');?>" method="get">
+                        <input type="hidden" name="nama_produk" value="<?php echo $name; ?>">
+                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                        <input type="hidden" name="sku" value="<?php echo $sku; ?>">
+                        <h1 style="font-weight: bold;"><?php echo $name; ?></h1>
+                        <?php if ($priceMax == $priceMin) { ?>
+                        <h3 style="margin-top: 10px;">Rp <?php echo number_format($priceMax,2,',','.'); ?></h3>
+                        <?php } else{ ?>
+                            <h4>Rp <?php echo number_format($priceMin,2,',','.'); ?>  -  Rp <?php echo number_format($priceMax,2,',','.'); ?></h4>
+                        <?php } ?>
 
-                    <h4 style="margin-top: 10px;"><?php echo $name; ?></h4>
-                    <p style="margin-top: 10px;"><?php echo $desc; ?>
-                    </p>
-                    <div class="ukuran">
-                        <h5>Ukuran
-                            
-                            <span>
-                                <div class="row">
-                                    <?php
-                                    foreach ($produk as $key): 
+                        <h4 style="margin-top: 10px;"><?php echo $name; ?></h4>
+                        <p style="margin-top: 10px;"><?php echo $desc; ?>
+                        </p>
+                        <div class="ukuran">
+                            <h5>Ukuran
+                                
+                                <span>
+                                    <div class="row">
+                                        <?php
+                                        foreach ($produk as $key): 
+                                            ?>
+                                            <div class="col-lg-5 col-md-5 col-sm-5">
+                                                <input id="option" class="option" type="radio" name="option_sizes" value="<?php echo $key->price; ?> + <?php echo $key->stock; ?> + <?php echo $key->sold; ?> + <?php echo $key->size; ?>">
+                                                <label for="option"><span ><?php echo $key->size; ?></span></label>
+                                                <input type="hidden" name="foto" value="<?php echo $foto; ?>">
+                                                <!-- <input type="hidden" name="price" value="<?php echo $key->price; ?>"> -->
+                                                <input type='hidden' class='stock' name='stock' value='<?= $key->stock; ?>' />
+                                            </div>
+                                            <?php 
+                                        endforeach;
                                         ?>
-                                        <div class="col-lg-5 col-md-5 col-sm-5">
-                                            <input id="option" class="option" type="radio" name="option_sizes" value="<?php echo $key->price; ?> + <?php echo $key->stock; ?> + <?php echo $key->sold; ?>">
-                                            <label for="option"><span ><?php echo $key->size; ?></span></label>
-                                            <input type='hidden' class='stock' value='<?= $key->stock; ?>' />
-                                        </div>
-                                        <?php 
-                                    endforeach;
-                                    ?>
-                                </div>
-                            </span>
-                            
-                        </h5>
-                    </div>
-                    <h3>Rp <span id = "hargaPerUkuran"></span></h3>
-                    <div class="stok">
-                        <span style="font-weight: bold;">SOLD<strong style="color: red;"><span id = "hargaPerUkuran3"></strong></span>
-                        <span style="margin-left: 200px; font-weight: bold;">ONLY <strong
-                                style=" color: red;"><span id = "hargaPerUkuran2"></strong>
-                            LEFT</span>
-                    </div>
-                    <div style="height:9px; margin-bottom: 15px" class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 1%" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <div class="input-spinner">
-                        <span class="stepper input">
+                                    </div>
+                                </span>
+                                
+                            </h5>
+                        </div>
+                        <h3>Rp <span id = "hargaPerUkuran"></span></h3>
+                        <div class="stok">
+                            <span style="font-weight: bold;">SOLD<strong style="color: red;"><span id = "hargaPerUkuran3"></strong></span>
+                            <span style="margin-left: 200px; font-weight: bold;">ONLY <strong
+                                    style=" color: red;"><span id = "hargaPerUkuran2"></strong>
+                                LEFT</span>
+                        </div>
+                        <div style="height:9px; margin-bottom: 15px" class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 1%" aria-valuenow="100"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="input-spinner">
+                            <span class="stepper input">
 
-                        </span>
-                    </div>
-                    <span>
-                     <div style="width: 150px; height: 10px ; padding-bottom: 20px" class="input-group">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-type="minus" data-field="quant[1]">
-                              <span class="glyphicon glyphicon-minus">-</span>
+                            </span>
+                        </div>
+                        <span>
+                         <div style="width: 150px; height: 10px ; padding-bottom: 20px" class="input-group">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus">-</span>
+                              </button>
+                          </span>
+                          <input style="height: 33px; text-align: center" type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="100">
+                          <span class="input-group-btn">
+                            <button type="button"  class="btn btn-success btn-number" data-type="plus" data-type="plus" data-field="quant[1]">
+                              <span class="glyphicon glyphicon-plus">+</span>
                           </button>
                       </span>
-                      <input style="height: 33px; text-align: center" type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="100">
-                      <span class="input-group-btn">
-                        <button type="button"  class="btn btn-success btn-number" data-type="plus" data-type="plus" data-field="quant[1]">
-                          <span class="glyphicon glyphicon-plus">+</span>
-                      </button>
-                  </span>
-              </div>
-                    </span>
-                    <center> <div class="form-group " style="padding-top: 20px">
-                            <input type="submit" name="proses" class="btn btn-block btn-danger" value="Proses">
-                        </div> </center>
+                  </div>
+                        </span>
+                        <center> <div class="form-group " style="padding-top: 20px">
+                                <input type="submit" name="proses" class="btn btn-block btn-danger" value="Proses">
+                            </div> </center>
                     
                     </form>
 

@@ -20,7 +20,7 @@
 <body>
 
   <!-- sidedrawer -->
-  <div class="sidedrawer">
+  <!-- <div class="sidedrawer" style="width: 45%">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -73,7 +73,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- navbar mobile -->
 
   <div class="backdrop">
@@ -124,7 +124,7 @@
         <!-- <a class="search-brand" href="#">
           <img src="img/search.png" width="15" height="15" alt="">
         </a> -->
-        <div class="wrap">
+        <!-- <div class="wrap">
           <div class="searchbar">
             <form action="/action_page.php">
               <input type="text" placeholder="search">
@@ -133,18 +133,18 @@
               </div>
             </form>
           </div>
-        </div>
+        </div> -->
       </div>
-      <div class="p-2">
+      <!-- <div class="p-2">
         <a class="search-brand" href="#">
           <img src="<?= base_url('assets/img/heart.png'); ?>" width="15" height="15" alt="">
         </a>
-      </div>
-      <div class="p-2">
+      </div> -->
+      <!-- <div class="p-2">
         <a class="search-brand" href="#">
           <img src="<?= base_url('assets/img/restore.png'); ?>" width="15" height="15" alt="">
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
   <hr>

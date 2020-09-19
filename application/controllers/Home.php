@@ -141,6 +141,29 @@ class Home extends CI_Controller {
 
 	public function wishlist()
 	{
+		error_reporting(0);
+    	$option_sizes = $this->input->post('option_sizes');
+    	$pecah = explode("+", $option_sizes);
+    	$price = $pecah[0];
+    	$size = $pecah[3];
+    	$nama_produk = $this->input->post('nama_produk');
+    	$foto = $this->input->post('foto');
+    	$sku = $this->input->post('sku');
+    	// $size = $this->input->post('size');
+    	// $price = $this->input->post('price');
+    	
+    	$jumlah = $this->input->post('quant[1]');
+    	$total = ($jumlah*$price);
+    	$id = $this->input->post('id');
+		$data['orders'] = array(
+    		'sku_product' => $sku,
+    		'nama_product' => $nama_produk,
+    		'gambar_product' => $foto,
+    		'id_product' => $id,
+    		'jumlah' => $jumlah,
+    		'harga' => $price,
+    		'total' => $total
+    	);
 		$data['content'] = 'public/wishlist';
 		$this->load->view('public/template/layout',$data);
 	}
@@ -405,6 +428,10 @@ class Home extends CI_Controller {
     	$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Password Berhasil di ganti, silahkan Login'));
             redirect(base_url("home/user_login"));
 
+    }
+
+    public function prosesPemesanan(){
+    	
     }
 
  

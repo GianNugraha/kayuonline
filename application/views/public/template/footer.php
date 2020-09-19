@@ -225,9 +225,10 @@
         // alert('masuk');
         var angka= $(this).val();
         words = angka.split('+');
-        var stock = words[1];
         var harga = words[0];
+        var stock = words[1];
         var sold = words[2];
+        var ukuran = words[3];
         // var stock = $(this).val();
         hargaPerUkuran.innerHTML=harga.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         // alert ()
