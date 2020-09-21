@@ -268,10 +268,20 @@ endforeach;
                   </div>
                         </span>
                         <center> <div class="form-group " style="padding-top: 20px">
+                            <?php if (isset($_SESSION['logged_in']) and $_SESSION['role'] =='user') { ?>
                                 <input type="submit" name="proses" class="btn btn-block btn-danger" value="Proses">
+                            <?php }else{ ?>
+                            
+                        <?php } ?>
                             </div> </center>
                     
                     </form>
+                     <?php if (!isset($_SESSION['logged_in'] )) {  ?>
+                                 <a class="dropdown-item"  onclick="return confirm('Anda Harus Login Terlebih Dahulu?')" href="<?php echo base_url('user-login') ?>"><input type="submit" name="proses" class="btn btn-block btn-danger" value="Proses"></a>
+                            <?php }else{ ?>
+                            
+                        <?php } ?>
+                   
 
                     </div>
                    <!--  <div class="buy-now-1">
