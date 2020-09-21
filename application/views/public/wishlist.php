@@ -1,34 +1,12 @@
 <?php
-$sku = $this->input->get('sku');
-$option_sizes = $this->input->get('option_sizes');
-$pecah = explode("+", $option_sizes);
-$price = $pecah[0];
-$size = $pecah[3];
-$jumlah = $this->input->get('quant[1]');
-$nama_produk = $this->input->get('nama_produk');
-$foto = $this->input->get('foto');
-$total = ($jumlah*$price);
-$id = $this->input->get('id');
-// $sku = $this->input->get('sku');
 
-echo "nama produk = ". $nama_produk."<br>";
-echo "ukuran = ". $size."<br>";
-echo "kode produk = ". $sku."<br>";
-echo "jumlah produk = ". $jumlah."<br>";
-echo "id produk = ". $id."<br>";
-echo "gambar produk = ". $foto."<br>";
-echo "Total = ". $total."<br>";
-        // echo "option_sizes = ". $option_sizes."<br>";
 
-echo "harga produk = ". $price;
-        // $size = $this->input->post('size');
-        // $price = $this->input->post('price');
-// die();
-// foreach ($orders as $key): 
+// foreach ($order as $key): 
 //     echo "<pre>";
 //     print_r($key);
 //     echo "</pre>";
 // endforeach;
+// die();
 ?>
 
 <section class="wrapper">
@@ -67,63 +45,49 @@ echo "harga produk = ". $price;
         <div class="row">
             <table class="table" border="1">
                 <thead>
+                    <?php  if (!empty($order)){ 
+                     foreach ($order as $key):  ?>
                     <tr>
                         <td rowspan="4" >
-                            <input type="button" title="Hapus" value="X" style="margin-bottom: 20px">
-                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$foto?>" alt="">
+                            <a href="<?php echo base_url('home/delete_order/').$key['id']?>"><input type="button" title="Hapus" value="X" style="margin-bottom: 20px"></a>
+                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$key['gambar_product']?>" alt="">
                         </td>
                         <td>ukuran</td>
-                        <td><?= $nama_produk; ?> - <?= $size ?> </td>
+                        <td><?= $key['nama_product']; ?> - <?= $key['ukuran'] ?> </td>
                     </tr>
                     <tr>
                         <td>Harga</td>
-                        <td>Rp. <span><?= $price ?></span></td>
-                        <input type="hidden" id="harga" value="<?= $price ?>">
+                        <td>Rp. <span><?= $key['harga'] ?></span></td>
+                        <!-- <input type="hidden" id="harga" value="<?= $key->harga ?>"> -->
                     </tr>
                     <tr>
                         <td>Jumlah</td>
-                        <td> <span><?= $jumlah ?></span></td>
-                        <input type="hidden" id="harga" value="<?= $jumlah ?>">
+                        <td> <span><?= $key['jumlah'] ?></span></td>
+                        <!-- <input type="hidden" id="harga" value="<?= $key->jumlah ?>"> -->
                         
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td> <span><?= $total ?></span></td>
-                        <input type="hidden" id="harga" value="<?= $total ?>">
+                        <td> <span><?= $key['total'] ?></span></td>
+                        <!-- <input type="hidden" id="harga" value="<?= $key->total ?>"> -->
                     </tr>
                 </thead>
+                <?php endforeach; 
+                    } else {
+                ?>
+                <center>
+                        <div class="container">
+                          <h2 style="text-align: center; font-weight: bold;">Wishlist Kosong !</h2>
+                      </div>
+                  </center>
+                  <?php } ?>
             </table>
-            <!-- <table class="table" border="1">
-                <thead>
-                    <tr>
-                        <td rowspan="4" >
-                            <input type="button" title="Hapus" value="X" style="margin-bottom: 20px">
-                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url('assets/images/Merbau.png')?>" alt="">
-                        </td>
-                        <td>ukuran</td>
-                        <td>Merbau - 1 Meter³ (210-390 x 11 x 7)</td>
-                    </tr>
-                    <tr>
-                        <td>Harga</td>
-                        <td>Rp. <span>12000000</span></td>
-                        <input type="hidden" id="harga" value="12000000">
-                    </tr>
-                    <tr>
-                        <td>Jumlah</td>
-                        <td>
-                            <span class="stepper input">
-                                <input style="width: 80px; line-height: normal; text-align: center; width: 80px;" type="number" id="stepper" value="1" min="1" max="100" step="1">
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td>Rp. <span id = "valueSteper"></span></td>
-                    </tr>
-                </thead>
-            </table> -->
+            <div >
+                <a href="<?= base_url() ?>"><input style="background-color: green" type="submit" name="beli lagi" class="btn btn-block" value="Tambah Produk?"></a>
+            </div>
+        
     </div>
-    <div class="form-group">
+    <div style="margin-top: 50px" class="form-group">
         <input style="background-color: #888" type="submit" onclick="updateValue()" name="keranjang" class="btn btn-block" value="Perbarui Keranjang">
     </div>
 </div>

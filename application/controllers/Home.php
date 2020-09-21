@@ -141,29 +141,8 @@ class Home extends CI_Controller {
 
 	public function wishlist()
 	{
-		error_reporting(0);
-    	$option_sizes = $this->input->post('option_sizes');
-    	$pecah = explode("+", $option_sizes);
-    	$price = $pecah[0];
-    	$size = $pecah[3];
-    	$nama_produk = $this->input->post('nama_produk');
-    	$foto = $this->input->post('foto');
-    	$sku = $this->input->post('sku');
-    	// $size = $this->input->post('size');
-    	// $price = $this->input->post('price');
-    	
-    	$jumlah = $this->input->post('quant[1]');
-    	$total = ($jumlah*$price);
-    	$id = $this->input->post('id');
-		$data['orders'] = array(
-    		'sku_product' => $sku,
-    		'nama_product' => $nama_produk,
-    		'gambar_product' => $foto,
-    		'id_product' => $id,
-    		'jumlah' => $jumlah,
-    		'harga' => $price,
-    		'total' => $total
-    	);
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
 		$data['content'] = 'public/wishlist';
 		$this->load->view('public/template/layout',$data);
 	}
@@ -221,8 +200,8 @@ class Home extends CI_Controller {
 				'role' => 'user'
 			);
 
+	
 			$cek_user = $this->m_kayu_online->cek_user($namaPengguna);
-
 			if($cek_user > 0){
 				$this->session->set_flashdata('msg', array('class' => 'danger', 'message'=> 'nama pengguna sudah digunakan, silahkan pilih opsi nama lain'));
 				redirect(base_url("user-registration"));
@@ -293,12 +272,16 @@ class Home extends CI_Controller {
         foreach ($getUser as $key):
             $idUser = $key['id'];
             $namaUser = $key['nama'];
+            $no_hp = $key['no_hp'];
+            $email = $key['email'];
         endforeach;
         
         if($cek > 0){
             $data_session = array(
                 'idUser' => $idUser,
                 'namaUser' => $namaUser,
+                'no_hp' => $no_hp,
+                'email' => $email,
                 'status' => "login",
                 'role' => 'user',
                 'logged_in' => TRUE
@@ -431,6 +414,42 @@ class Home extends CI_Controller {
     }
 
     public function prosesPemesanan(){
+    	error_reporting(0);
+    	$sku = $this->input->post('sku');
+    	$option_sizes = $this->input->post('option_sizes');
+    	$pecah = explode("+", $option_sizes);
+    	$price = $pecah[0];
+    	$size = $pecah[3];
+    	$jumlah = $this->input->post('quant[1]');
+    	$nama_produk = $this->input->post('nama_produk');
+    	$foto = $this->input->post('foto');
+    	$total = ($jumlah*$price);
+    	$id = $this->input->post('id');
+
+    	$data = array(
+    		'id_pemesan' => $this->session->userdata('idUser'),
+    		'sku_product' => $sku,
+    		'nama_product' => $nama_produk,
+    		'ukuran' => $size,
+    		'gambar_product' =>  $foto,
+    		'id_product' => $id,
+    		'jumlah' => $jumlah,
+    		'harga' => $price, 
+    		'total' => $total,
+    		'status' => 'pesan'
+    	);
+
+    	$this->m_kayu_online->input_data_orders($data,'orders');
+    	redirect(base_url("wishlist"));
+    	
+    }
+
+    public function delete_order(){
+    	// $this->dataencryption->enc_dec("decrypt", $this->uri->segment('2'));
+    	$id = $this->uri->segment('3');
+    	$this->m_kayu_online->hapus_order($id);
+		// $this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Order Berhasil !'));
+		redirect(base_url("wishlist")); 
     	
     }
 

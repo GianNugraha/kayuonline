@@ -1,8 +1,12 @@
 <?php
+// echo "<pre>";
+// print_r($this->session->userdata());
+// echo "</pre>";
+
 foreach ($tampil as $key): 
-    echo "<pre>";
-    print_r($key);
-    echo "</pre>";
+    // echo "<pre>";
+    // print_r($key);
+    // echo "</pre>";
 endforeach;
 
 foreach ($tampil as $key): 
@@ -199,7 +203,7 @@ endforeach;
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <form action="<?= base_url('wishlist');?>" method="get">
+                    <form action="<?= base_url('proses-pemesanan');?>" method="post">
                         <input type="hidden" name="nama_produk" value="<?php echo $name; ?>">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <input type="hidden" name="sku" value="<?php echo $sku; ?>">
@@ -222,7 +226,7 @@ endforeach;
                                         foreach ($produk as $key): 
                                             ?>
                                             <div class="col-lg-5 col-md-5 col-sm-5">
-                                                <input id="option" class="option" type="radio" name="option_sizes" value="<?php echo $key->price; ?> + <?php echo $key->stock; ?> + <?php echo $key->sold; ?> + <?php echo $key->size; ?>">
+                                                <input id="option" required class="option" type="radio" name="option_sizes" value="<?php echo $key->price; ?> + <?php echo $key->stock; ?> + <?php echo $key->sold; ?> + <?php echo $key->size; ?>">
                                                 <label for="option"><span ><?php echo $key->size; ?></span></label>
                                                 <input type="hidden" name="foto" value="<?php echo $foto; ?>">
                                                 <!-- <input type="hidden" name="price" value="<?php echo $key->price; ?>"> -->

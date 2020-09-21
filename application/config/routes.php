@@ -75,5 +75,6 @@ $route['kayu-olahan'] = 'home/kayu_olahan';
 $route['user-login'] = 'home/user_login';
 $route['user-registration'] = 'home/user_registration';
 $route['forgot'] = 'home/user_forgot_pass';
+$route['proses-pemesanan'] = 'home/prosesPemesanan';
 
 

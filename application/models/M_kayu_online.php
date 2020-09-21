@@ -51,7 +51,8 @@ class M_kayu_online extends CI_Model{
 
 	public function cek_user($namaPengguna){		
 		$sql = $this->db->query("SELECT * FROM users where username='$namaPengguna' and role='user'  ");
-		return $cek_user = $sql->result_array();
+
+		return $cek_user = $sql->num_rows();
 	}
 
 	public function cek_admin2($namaPengguna, $id){		
@@ -277,8 +278,88 @@ class M_kayu_online extends CI_Model{
         return $userID?$userID:FALSE;
     }
 
- //   	public function input_data_admin($data,$table){
-	// 	$this->db->insert($table,$data);
-	// }	
+    public function input_data_orders($data,$table){
+    	$id_pemesan = $this->session->userdata('idUser');
+    	echo "<pre>";
+    	print_r($data);
+    	echo "</pre>";
+    	echo "batas";
+    	// $get['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array();
+    	$id_pemesan = $this->session->userdata('idUser');
+    	// $get['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
+    	$cek_orders = $this->m_kayu_online->cek_order($data['id_pemesan'], $data['sku_product'], $data['ukuran']);
+
+    	if($cek_orders > 0){
+    		$get['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array();
+    		// echo"<pre>";
+    		// print_r($get['order']);
+    		// echo "</pre>"; 
+
+    		foreach ($get['order'] as $key ) {
+    			echo"<pre>";
+    			print_r($key);
+    			echo "</pre>"; 
+    			if ( $data['sku_product'] == $key['sku_product'] and $data['ukuran'] ==  $key['ukuran'] and $data['id_pemesan'] == $key['id_pemesan']) {
+    				// echo "masuk";
+    				$statement = "masuk";
+    				if ($statement == "masuk" and $data['sku_product'] == $key['sku_product'] and $data['ukuran'] ==  $key['ukuran'] and $data['id_pemesan'] == $key['id_pemesan']) {
+    					$jumlahBayar = $key['total'] + $data['total'];
+    					$jumlahProduk = $key['jumlah'] + $data['jumlah'];
+    					$dataUpdate = array(
+    						'jumlah' => $jumlahProduk,
+    						'total' => $jumlahBayar
+    					);
+    					$this->db->where('id_pemesan', $id_pemesan);
+    					$this->db->where('sku_product', $data['sku_product']);
+    					return $this->db->update($table,$dataUpdate);
+    				}
+    				else{
+    					echo "tidak masuk";
+    					die();
+    				}
+    				// $jumlahBayar = $key['total'] + $data['total'];
+    				// $jumlahProduk = $key['jumlah'] + $data['jumlah'];
+    			// }
+    			}else{
+    				// echo "tidak masuk";
+    				// $statement = "tidak masuk"; 
+    				// $jumlahBayar = $key['total'];
+    				// $jumlahProduk = $key['jumlah'] ;
+    			}
+
+    		} die();
+    		
+    		// $dataUpdate = array(
+    		// 	'jumlah' => $jumlahProduk,
+    		// 	'total' => $jumlahBayar
+    		// );
+    		// $this->db->where('id_pemesan', $id_pemesan);
+    		// $this->db->where('sku_product', $data['sku_product']);
+    		// return $this->db->update($table,$dataUpdate);
+
+    		// echo "sudah ada data";
+    		// die();
+    	}
+    	else{
+    		$this->db->insert($table,$data);
+    	}
+	}
+
+   	public function getOrders($param){
+		return $this->db->get_where('orders', array('id_pemesan' => $param));
+	}	
+
+	public function cek_order($id_pemesan, $sku, $ukuran){		
+		// echo $id_pemesan.'<br>' ;
+		// echo $sku.'<br>' ;
+		// echo $ukuran.'<br>' ;
+		$sql = $this->db->query("SELECT * FROM orders where id_pemesan='$id_pemesan' and sku_product='$sku' and ukuran='$ukuran' ");
+		return $sql->num_rows();
+	}
+
+	public function hapus_order($id){    
+		$this->db->where('id', $id);    
+		return $this->db->delete('orders'); // Untuk mengeksekusi perintah delete data  
+	}
 
 }
