@@ -153,6 +153,23 @@ class M_kayu_online extends CI_Model{
 		return $data->result();
 	}
 
+	public function getAllProduct() {
+		// $db = $this->load->database('second', TRUE);
+		$this->db->select("p.*")->from("products p");
+		$this->db->select("c.category_code, c.category_name")->from("product_categories c");
+		$this->db->select("s.product_id, MAX(s.price) AS max_price, MIN(s.price) AS min_price")->from("product_has_sizes s");
+		$this->db->select("i.image, i.thumbnail_image, i.first")->from("product_images i");
+		$this->db->group_by("s.product_id")->where("s.product_id = p.id");
+		$this->db->where("p.category_id = c.id");
+		$this->db->where("i.product_id = p.id");
+		// $this->db->where("p.name = '$param'");
+		// $this->db->where("c.id = p.category_id");
+		// $this->db->where("c.category_code = '$category'");
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+
 	public function getUkuran($param, $category) {
 		// $this->db->select("p.*")->from("products p");
 		$this->db->select("p.*")->from("products p");
@@ -360,6 +377,12 @@ class M_kayu_online extends CI_Model{
 	public function hapus_order($id){    
 		$this->db->where('id', $id);    
 		return $this->db->delete('orders'); // Untuk mengeksekusi perintah delete data  
+	}
+
+	public function get_total_biaya($id){
+		// echo $id; die();
+		$sql = $this->db->query("SELECT SUM(total) as total FROM orders WHERE id_pemesan = '$id'");
+		return $sql->result();
 	}
 
 }

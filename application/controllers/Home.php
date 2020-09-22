@@ -54,7 +54,7 @@ class Home extends CI_Controller {
 
 	public function toko()
 	{
-		$data['produk'] = $this->m_kayu_online->getProduk();
+		$data['produk'] = $this->m_kayu_online->getAllProduct();
 		$data['content'] = 'public/toko';
 		$this->load->view('public/template/layout',$data);
 	}
@@ -142,6 +142,7 @@ class Home extends CI_Controller {
 	public function wishlist()
 	{
 		$id_pemesan = $this->session->userdata('idUser');
+		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
 		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
 		$data['content'] = 'public/wishlist';
 		$this->load->view('public/template/layout',$data);
@@ -149,12 +150,19 @@ class Home extends CI_Controller {
 
 	public function checkout()
 	{
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
+		// $data['total_biaya']=$this->m_kayu_online->get_total_biaya_perproduct($id_pemesan);
+		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
 		$data['content'] = 'public/checkout';
 		$this->load->view('public/template/layout',$data);
 	}
 
 	public function order_complete()
 	{
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
+		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
 		$data['content'] = 'public/order-complete';
 		$this->load->view('public/template/layout',$data);
 	}

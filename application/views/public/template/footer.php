@@ -43,9 +43,9 @@
             <div class="col-6">
               <div class="list_footer">
                 <ul>
-                  <li><a href="faq.html">Faq</a></li>
-                  <li><a href="kebijakanprivasi.html">Kebijakan Privasi</a></li>
-                  <li><a href="layananpelanggan.html">Layanan Pelanggan</a></li>
+                  <li><a href="<?= base_url('faq') ?>">Faq</a></li>
+                  <li><a href="<?= base_url('kebijakan-privasi')?>">Kebijakan Privasi</a></li>
+                  <li><a href="<?php echo base_url('layanan-pelanggan')?>">Layanan Pelanggan</a></li>
                 </ul>
               </div>
             </div>

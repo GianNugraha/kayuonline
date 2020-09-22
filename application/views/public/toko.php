@@ -1,4 +1,10 @@
-<!-- bradcrom -->
+<?php 
+// foreach ($produk as $key): 
+//     echo "<pre>";
+//     print_r($key);
+//     echo "</pre>";
+// endforeach;
+ ?><!-- bradcrom -->
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <div class="row">
@@ -160,11 +166,12 @@
       <div class="tab-content">
         <div id="column-6" data-tab-content class="active">
           <div class="row">
+            <?php foreach ($produk as $key) { ?>
             <div class="col-sm-2">
               <div class="product-top">
                 <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+                  <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                 </div>
                 <div class="overlay">
                   <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
@@ -175,147 +182,33 @@
                 </div>
               </div>
 
-              <div class="product-buttom text-center">
+              <div class="product-buttom text-center" style="padding-bottom: 30px">
                 <!-- <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-half-o"></i>
                 <i class="fa fa-star-half-o"></i> -->
-                <h3>Eksotik - BR</h3>
-                <h5>Rp.500.00</h5>
+                <h3><?= $key->name ?></h3>
+                <h3>(<?= $key->category_name; ?>)</h3>
+                <?php if ($key->max_price == $key->min_price) { ?>
+                <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
+                <?php } else{ ?>
+                  <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
+                <?php } ?>
               </div>
             </div>
-
-            <div class="col-sm-2">
-              <div class="product-top">
-                <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                </div>
-                <div class="overlay">
-                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                </div>
-              </div>
-
-              <div class="product-buttom text-center">
-                <!-- <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-half-o"></i> -->
-                <h3>Eksotik - BR</h3>
-                <h5>Rp.500.00</h5>
-              </div>
-            </div>
-
-            <div class="col-sm-2">
-              <div class="product-top">
-                <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                </div>
-                <div class="overlay">
-                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                </div>
-              </div>
-
-              <div class="product-buttom text-center">
-                <!-- <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-half-o"></i> -->
-                <h3>Eksotik - BR</h3>
-                <h5>Rp.500.00</h5>
-              </div>
-            </div>
-
-            <div class="col-sm-2">
-              <div class="product-top">
-                <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                </div>
-                <div class="overlay">
-                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                </div>
-              </div>
-
-              <div class="product-buttom text-center">
-                <!-- <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-half-o"></i> -->
-                <h3>Eksotik - BR</h3>
-                <h5>Rp.500.00</h5>
-              </div>
-            </div>
-
-            <div class="col-sm-2">
-              <div class="product-top">
-                <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                </div>
-                <div class="overlay">
-                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                </div>
-              </div>
-
-              <div class="product-buttom text-center">
-                <!-- <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-half-o"></i> -->
-                <h3>Eksotik - BR</h3>
-                <h5>Rp.500.00</h5>
-              </div>
-            </div>
-
-            <div class="col-sm-2">
-              <div class="product-top">
-                <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                </div>
-                <div class="overlay">
-                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                </div>
-              </div>
-
-              <div class="product-buttom text-center">
-                <!-- <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-half-o"></i> -->
-                <h3>Eksotik - BR</h3>
-                <h5>Rp.500.00</h5>
-              </div>
-            </div>
-
+          <?php } ?>
           </div>
 
         </div>
         <div id="column-5" data-tab-content>
           <div class="container">
             <div class="row">
+              <?php foreach ($produk as $key) { ?>
               <div class="sm-col-5">
                 <div class="product-top">
                   <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
                     <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                   </div>
                   <div class="overlay">
@@ -331,117 +224,26 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-half-o"></i>
                 <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - BR</h3>
-                  <h5>Rp.500.00</h5>
+                <h3><?= $key->name ?></h3>
+                <?php if ($key->max_price == $key->min_price) { ?>
+                  <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
+                <?php } else{ ?>
+                  <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
+                <?php } ?>
                 </div>
               </div>
-
-              <div class="sm-col-5">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - BR</h3>
-                  <h5>Rp.500.00</h5>
-                </div>
-              </div>
-
-              <div class="sm-col-5">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - BR</h3>
-                  <h5>Rp.500.00</h5>
-                </div>
-              </div>
-
-              <div class="sm-col-5">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - BR</h3>
-                  <h5>Rp.500.00</h5>
-                </div>
-              </div>
-
-              <div class="sm-col-5">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - BR</h3>
-                  <h5>Rp.500.00</h5>
-                </div>
-              </div>
-
+              <?php } ?>
             </div>
           </div>
         </div>
         <div id="column-4" data-tab-content>
           <div class="container">
             <div class="row">
+              <?php foreach ($produk as $key) { ?>
               <div class="col-md-3">
                 <div class="product-top">
                   <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/gl.jpeg" class="gambar1"></a>
+                    <a href="produk.html"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
                     <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar2"></a>
                   </div>
 
@@ -458,203 +260,26 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                     <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - GSL</h3>
-                  <h5>Rp. 8,000,000</h5>
+                    <h3><?= $key->name ?></h3>
+                    <?php if ($key->max_price == $key->min_price) { ?>
+                      <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
+                    <?php } else{ ?>
+                      <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
+                    <?php } ?>
                 </div>
               </div>
-
-
-              <div class="col-md-3">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar2"></a>
-                  </div>
-
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - GSL</h3>
-                  <h5>Rp. 8,000,000</h5>
-                </div>
-              </div>
-
-
-              <div class="col-md-3">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - GSL</h3>
-                  <h5>Rp. 8,000,000</h5>
-                </div>
-              </div>
-
-
-              <div class="col-md-3">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - GSL</h3>
-                  <h5>Rp. 8,000,000</h5>
-                </div>
-                <br>
-              </div>
-
-              <div class="col-md-3">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - GSL</h3>
-                  <h5>Rp. 8,000,000</h5>
-                </div>
-              </div>
-
-
-              <div class="col-md-3">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - GSL</h3>
-                  <h5>Rp. 8,000,000</h5>
-                </div>
-              </div>
-
-
-              <div class="col-md-3">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - BR</h3>
-                  <h5>Rp.500.00</h5>
-                </div>
-              </div>
-
-
-              <div class="col-md-3">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                  </div>
-                  <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                  </div>
-                </div>
-
-                <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-half-o"></i> -->
-                  <h3>Eksotik - BR</h3>
-                  <h5>Rp.500.00</h5>
-                </div>
-              </div>
-
-
-
+              <?php } ?>
             </div>
           </div>
         </div>
 
         <div id="column-3" data-tab-content>
           <div class="row">
+            <?php foreach ($produk as $key) { ?>
             <div class="col-sm">
               <div class="product-top">
                 <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                  <a href="produk.html"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
                   <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                 </div>
 
@@ -671,65 +296,20 @@
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star-half-o"></i>
                   <i class="fa fa-star-half-o"></i> -->
-                <h3 style="font-size: 25px;">Eksotik - GSL</h3>
-                <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
+                  <h3><?= $key->name ?></h3>
+                  <?php if ($key->max_price == $key->min_price) { ?>
+                    <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
+                  <?php } else{ ?>
+                    <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
+                  <?php } ?>
               </div>
             </div>
-
-            <div class="col-sm">
-              <div class="product-top">
-                <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                </div>
-
-                <div class="overlay">
-                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                </div>
-              </div>
-
-              <div class="product-buttom text-center">
-                <!-- <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-half-o"></i> -->
-                <h3 style="font-size: 25px;">Eksotik - GSL</h3>
-                <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
-              </div>
-            </div>
-
-            <div class="col-sm">
-              <div class="product-top">
-                <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                </div>
-
-                <div class="overlay">
-                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                </div>
-              </div>
-
-              <div class="product-buttom text-center">
-                <!-- <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-half-o"></i> -->
-                <h3 style="font-size: 25px;">Eksotik - GSL</h3>
-                <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
-              </div>
-            </div>
-
+            <?php } ?>
           </div>
         </div>
 
         <div id="column-1" data-tab-content>
+          <?php foreach ($produk as $key) { ?>
           <div class="column-1">
             <div class="container">
               <div style=" padding: 15px 15px;" class="row">
@@ -737,42 +317,28 @@
                   <div class="col-sm">
                     <div class="product-top">
                       <div class="thumb-img">
-                        <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
+                        <a href="produk.html"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
                         <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                       </div>
-
-                      <!-- <div class="overlay">
-                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                      </div> -->
                     </div>
-
-                    <!-- <div class="title-images text-center"> -->
-                    <!-- <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-half-o"></i> -->
-                    <!-- <h3 style="font-size: 25px;">Eksotik - GSL</h3>
-                      <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
-                    </div> -->
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div>
-                    <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                    <h4>Eksotik - BR</h4>
+                    <h3 class="names"><a href="#"> <?php echo strtoupper($key->name); ?> </a>, <a href="#"><?= strtoupper($key->category_name) ?></a></h3>
+                    <h4><?= $key->name; ?></h4>
                     <hr>
-                    <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat debitis
-                      voluptatem iusto
-                      voluptatibus, nulla officia aperiam veritatis accusamus consequatur vero rerum.</p>
+                    <p style="font-size: 12px;"><?= $key->description ?></p>
                   </div>
                 </div>
                 <div class="col-sm-3">
                   <div>
                     <div class="price">
-                      <span>Rp</span><span>9,000,000</span>
+                      <?php if ($key->max_price == $key->min_price) { ?>
+                        <span>Rp. <?= number_format($key->max_price,2,'.',','); ?></span>
+                      <?php }else{ ?>
+                        <span>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></span>
+                      <?php } ?>
                     </div>
                     <div class="stok">
                       <p>AVAILABLE : <span class="in-stok">IN STOK</span></p>
@@ -789,66 +355,7 @@
               </div>
             </div>
           </div>
-
-          <div class="column-1">
-            <div class="container">
-              <div style=" padding: 15px 15px;" class="row">
-                <div class="col-sm-3">
-                  <div class="col-sm">
-                    <div class="product-top">
-                      <div class="thumb-img">
-                        <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-4.jpeg" class="gambar1"></a>
-                        <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                      </div>
-
-                      <!-- <div class="overlay">
-                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
-                      </div> -->
-                    </div>
-
-                    <!-- <div class="title-images text-center"> -->
-                    <!-- <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-half-o"></i> -->
-                    <!-- <h3 style="font-size: 25px;">Eksotik - GSL</h3>
-                      <h5 style="font-size: 18px;">Rp. 8,000,000</h5>
-                    </div> -->
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div>
-                    <h3 class="names"><a href="#"> EKSOTIK - BR </a>, <a href="#"> KAYU OLAHAN</a></h3>
-                    <h4>Eksotik - BR</h4>
-                    <hr>
-                    <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat debitis
-                      voluptatem iusto
-                      voluptatibus, nulla officia aperiam veritatis accusamus consequatur vero rerum.</p>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div>
-                    <div class="price">
-                      <span>Rp</span><span>9,000,000</span>
-                    </div>
-                    <div class="stok">
-                      <p>AVAILABLE : <span class="in-stok">IN STOK</span></p>
-                    </div>
-                    <div class="btn-add">
-                      <a href="#"><span class="link">Add to cart</span></a>
-                    </div>
-                    <div class="Quick_view">
-                      <a class="title-quick" href="produk.html"><i class="fa fa-eye" title="Quick View"></i> Quick
-                        View</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <?php } ?>
 
         </div>
       </div>

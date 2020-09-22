@@ -1,12 +1,9 @@
 <?php
 
 
-// foreach ($order as $key): 
-//     echo "<pre>";
-//     print_r($key);
-//     echo "</pre>";
-// endforeach;
-// die();
+foreach ($total_biaya as $total): 
+   $jumlah_bayar = $total->total;
+endforeach;
 ?>
 
 <section class="wrapper">
@@ -49,7 +46,8 @@
                      foreach ($order as $key):  ?>
                     <tr>
                         <td rowspan="4" >
-                            <a href="<?php echo base_url('home/delete_order/').$key['id']?>"><input type="button" title="Hapus" value="X" style="margin-bottom: 20px"></a>
+                            <!-- <a href="<?php echo base_url('home/delete_order/').$key['id']?>"><input type="button" title="Hapus" value="X" style="margin-bottom: 20px"></a> -->
+                            <a href="<?php echo base_url('home/delete_order/').$key['id']?>"><i class="fa fa-trash-o" title="Hapus"></i></a>
                             <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$key['gambar_product']?>" alt="">
                         </td>
                         <td>ukuran</td>
@@ -57,7 +55,7 @@
                     </tr>
                     <tr>
                         <td>Harga</td>
-                        <td>Rp. <span><?= $key['harga'] ?></span></td>
+                        <td>Rp. <span><?php echo number_format($key['harga'],2,',','.'); ?></span></td>
                         <!-- <input type="hidden" id="harga" value="<?= $key->harga ?>"> -->
                     </tr>
                     <tr>
@@ -68,7 +66,7 @@
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td> <span><?= $key['total'] ?></span></td>
+                        <td> <span><?php echo number_format($key['total'],2,',','.'); ?></span></td>
                         <!-- <input type="hidden" id="harga" value="<?= $key->total ?>"> -->
                     </tr>
                 </thead>
@@ -83,13 +81,13 @@
                   <?php } ?>
             </table>
             <div >
-                <a href="<?= base_url() ?>"><input style="background-color: green" type="submit" name="beli lagi" class="btn btn-block" value="Tambah Produk?"></a>
+                <a href="<?= base_url('toko') ?>"><input style="background-color: green" type="submit" name="beli lagi" class="btn btn-block" value="Belanja Lagi?"></a>
             </div>
         
     </div>
-    <div style="margin-top: 50px" class="form-group">
+    <!-- <div style="margin-top: 50px" class="form-group">
         <input style="background-color: #888" type="submit" onclick="updateValue()" name="keranjang" class="btn btn-block" value="Perbarui Keranjang">
-    </div>
+    </div> -->
 </div>
 
 <!-- tabel -->
@@ -105,7 +103,8 @@
       <table class="order-detail" border="1" style="width:100% ; text-align: center;">
         <tr >
             <td class="td_price"> <strong>Jumlah Total Harga Produk</strong> </td>
-            <td class="td_price"> <strong>Rp. <span id = "valueSteper2"></strong></td>
+            <!-- <td class="td_price"> <strong>Rp. <span id = "valueSteper2"></strong></td> -->
+            <td class="td_price"> <strong>Rp. <?php echo number_format($jumlah_bayar,2,',','.'); ?></strong></td>
                 <input type="hidden" id="jumlah" value="13000">
             </tr>
         </table>

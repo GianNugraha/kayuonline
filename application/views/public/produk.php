@@ -3,11 +3,11 @@
 // print_r($this->session->userdata());
 // echo "</pre>";
 
-foreach ($tampil as $key): 
+// foreach ($tampil as $key): 
     // echo "<pre>";
     // print_r($key);
     // echo "</pre>";
-endforeach;
+// endforeach;
 
 foreach ($tampil as $key): 
     $foto = $key->image;

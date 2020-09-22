@@ -1,4 +1,15 @@
-<section class="wrapper">
+<?php 
+foreach ($total_biaya as $total): 
+   $jumlah_bayar = $total->total;
+   // echo $jumlah_bayar; die();
+endforeach;
+// foreach ($order as $key): 
+//     echo "<pre>";
+//     print_r($key);
+//     echo "</pre>";
+// endforeach;
+ ?>
+ <section class="wrapper">
 
 <div class="container">
     <div class="row" style="margin-top: 30px; margin-bottom: 30px">
@@ -49,7 +60,7 @@
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="name">Nama Lengkap <span title="required" style="color:red" >*</span></label>
-                        <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
+                        <input type="text" name="nama" value="<?= $this->session->userdata('namaUser') ?>" class="form-control" placeholder="Nama Lengkap" required>
                     </div>
 
                     <div class="form-group">
@@ -68,11 +79,11 @@
                    </div>
                    <div class="form-group">
                        <label >Kontak <span title="required" style="color:red" >*</span></label>
-                       <input type="text" name="phone" class="form-control" placeholder="+6281295701234" required>
+                       <input type="text" name="phone" class="form-control" value="<?= $this->session->userdata('no_hp')?>" placeholder="+6281295701234" required>
                    </div>
                    <div class="form-group">
                        <label >Email <span title="required" style="color:red" >*</span></label>
-                       <input for="exampleInputEmail1" type="email" name="email" class="form-control" placeholder="Contoh@Email.com" required>
+                       <input for="exampleInputEmail1" type="email" name="email" value="<?=$this->session->userdata('email')?>" class="form-control" placeholder="Contoh@Email.com" required>
                    </div>
             <div class="form-group">
                 <label>Pesan Ke Pengirim (optional)</label>
@@ -103,22 +114,24 @@
                 </div>
             </div>
         </div>
+        <?php foreach ($order as $key) { ?>
         <div class="row">
             <div class="col-md-6">
-                <p>Eksotik - BR <b>x1</b></p>
+                <p><?= $key['nama_product']; ?> (<?= $key['ukuran'] ?>) <b>x <?=  $key['jumlah'] ?></b></p>
             </div>
              <div class="col-md-6">
-                <p style="text-align: right">Rp. 9,000,000</p>
+                <p style="text-align: right">Rp. <?php $hargaProd = ($key['jumlah'] * $key['harga']); echo number_format($hargaProd,2,',','.'); ?></p>
             </div>
         </div>
-        <div class="row">
+      <?php } ?>
+        <!-- <div class="row">
             <div class="col-md-6">
                 <p>Eksotik - MG <b>x2</b></p>
             </div>
              <div class="col-md-6">
                 <p style="text-align: right">Rp. 44,000,000</p>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-6">
                 <div class="header">
@@ -127,8 +140,8 @@
             </div>
              <div class="col-md-6">
                 <div class="header">
-                    <h5 style="text-align: right"><b>Rp. 53,000,000</b></h5>
-                    <input type="hidden" id="subtotal" value="53000000">
+                    <h5 style="text-align: right"><b>Rp. <?= number_format($jumlah_bayar,2,',','.'); ?></b></h5>
+                    <input type="hidden" id="subtotal" value="<?= $jumlah_bayar ?>">
                 </div>
             </div>
         </div>
@@ -152,7 +165,7 @@
             </div>
              <div class="col-md-6">
                 <div style="text-align: right">
-                    <select id="selectBox" onchange="changeFunc();" style="height: 20px; text-align: center" name="pengiriman"  required>
+                    <select id="selectBox" onchange="changeFunc();" style="height: 30px; text-align: center" name="pengiriman"  required>
                       <option selected value="0"> -- None -- </option>
                       <option value="14000">J&T</option>
                       <option value="12000">Tiki</option>
@@ -181,12 +194,12 @@
             </div>
              <div class="col-md-6">
                 <div style="text-align: right">
-                    <select style="height: 20px; text-align: center;" name="pengiriman"  required>
+                    <select style="height: 30px; text-align: center;" name="pengiriman"  required>
                       <option selected> -- Pilih Bank -- </option>
                       <option value="mandiri">Mandiri</option>
                       <option value="bri">BRI</option>
                       <option value="bca">BCA</option>
-                      <option value="BNI">BNI</option>
+                      <option value="bni">BNI</option>
                   </select>
               </div>
             </div>

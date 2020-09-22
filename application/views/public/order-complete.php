@@ -1,3 +1,8 @@
+<?php
+foreach ($total_biaya as $total): 
+   $jumlah_bayar = $total->total;
+endforeach;
+?>
 <section class="wrapper">
 
 <div class="container">
@@ -37,9 +42,9 @@
                 <br>
                 <ul>
                     <li class="order">Nomor Order : <strong>7202</strong> </li>
-                    <li class="date">Tanggal : <strong>30 Juli 2020</strong> </li>
+                    <li class="date">Tanggal : <strong><?php echo date('d-m-Y'); ?></strong> </li>
                     <li class="total-3">Jumlah : <strong>Rp. 24,013,000</strong> </li>
-                    <li class="payment">Metode Pembayaran : <strong>Pembayaran Via Transfer Bank</strong></li>
+                    <li class="payment">Metode Pembayaran : <strong>Pembayaran Via Transfer Bank </strong></li>
                     <li class="payment">Silahkan Transfer ke Nomor Rekening Ini : <strong>Hira Karya Abadi</strong> / <strong>4412 2212 1298</strong></li>
                 </ul>
             </div>
@@ -52,13 +57,17 @@
             <td> <strong>PRODUK</strong> </td>
             <td> <strong>JUMLAH</strong></td>
         </tr>
+
+        <?php foreach ($order as $key ) { ?>
         <tr>
-            <td>Merbau - 1 Meter³ (210-390 x 11 x 7) × 2</td>
-            <td> <strong>Rp12,000,000</strong> </td>
+            <td><?= $key['nama_product']; ?> - <?= $key['ukuran'] ?> × <?= $key['jumlah'] ?></td>
+            <td>Rp.  <?php $hargaProd = ($key['jumlah'] * $key['harga']); echo number_format($hargaProd,2,',','.'); ?> </td>
         </tr>
+        <?php } ?>
+
         <tr>
             <td> <strong>SUBTOTAL:</strong> </td>
-            <td> <strong>Rp24,000,000</strong> </td>
+            <td> <strong>Rp. <?php echo number_format($jumlah_bayar,2,',','.'); ?></strong> </td>
         </tr>
         <tr>
             <td> <strong>JNE:</strong> </td>
