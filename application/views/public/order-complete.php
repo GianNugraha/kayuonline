@@ -1,4 +1,14 @@
 <?php
+$pengiriman = $this->input->post('pengiriman');
+$bank = $this->input->post('bank');
+
+if ($bank == 'Mandiri') {
+    $no_rek = '1320 0226 98 998';
+}elseif ($bank == 'BRI') {
+    $no_rek = '20 121 444 4532';
+}elseif ($bank == 'BCA') {
+    $no_rek = '30 212 422 3241';
+}
 foreach ($total_biaya as $total): 
    $jumlah_bayar = $total->total;
 endforeach;
@@ -43,9 +53,9 @@ endforeach;
                 <ul>
                     <li class="order">Nomor Order : <strong>7202</strong> </li>
                     <li class="date">Tanggal : <strong><?php echo date('d-m-Y'); ?></strong> </li>
-                    <li class="total-3">Jumlah : <strong>Rp. 24,013,000</strong> </li>
-                    <li class="payment">Metode Pembayaran : <strong>Pembayaran Via Transfer Bank </strong></li>
-                    <li class="payment">Silahkan Transfer ke Nomor Rekening Ini : <strong>Hira Karya Abadi</strong> / <strong>4412 2212 1298</strong></li>
+                    <li class="total-3">Jumlah : <strong>Rp. <?php echo number_format($jumlah_bayar,2,',','.'); ?></strong> </li>
+                    <li class="payment">Metode Pembayaran : <strong>Pembayaran Via Transfer Bank (<?= $bank; ?>)</strong></li>
+                    <li class="payment">Silahkan Transfer ke Nomor Rekening Ini : a/n <strong>Hira Karya Abadi</strong> / <strong><?= $no_rek; ?></strong></li>
                 </ul>
             </div>
         </div>
@@ -60,7 +70,7 @@ endforeach;
 
         <?php foreach ($order as $key ) { ?>
         <tr>
-            <td><?= $key['nama_product']; ?> - <?= $key['ukuran'] ?> × <?= $key['jumlah'] ?></td>
+            <td><?= $key['nama_product']; ?> - <?= $key['ukuran'] ?> × <?= $key['jumlah'] ?> <i>(<?= $key['harga']; ?>)</i></td>
             <td>Rp.  <?php $hargaProd = ($key['jumlah'] * $key['harga']); echo number_format($hargaProd,2,',','.'); ?> </td>
         </tr>
         <?php } ?>
@@ -79,7 +89,7 @@ endforeach;
         </tr>
         <tr>
             <td> <strong style="color: black">JUMLAH YANG HARUS DI BAYAR:</strong> </td>
-            <td> <strong style="color: black">Rp24,013,000</strong> </td>
+            <td> <strong style="color: black">Rp.<?php echo number_format($jumlah_bayar,2,',','.'); ?></strong> </td>
         </tr>
     </table>
     <form role="form" action="transfer.php" method="post" enctype="multipart/form-data">

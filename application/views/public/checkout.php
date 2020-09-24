@@ -172,12 +172,12 @@ endforeach;
             </div>
             <div class="col-md-6">
               <div style="text-align: right">
-                <select style="height: 30px; text-align: center;" name="pengiriman"  required>
-                  <option selected> -- Pilih Bank -- </option>
-                  <option value="mandiri">Mandiri</option>
-                  <option value="bri">BRI</option>
-                  <option value="bca">BCA</option>
-                  <option value="bni">BNI</option>
+                <select style="height: 30px; text-align: center;" name="bank" required  >
+                  <option value=""> -- Pilih Bank -- </option>
+                  <option value="Mandiri">Mandiri</option>
+                  <option value="BRI">BRI</option>
+                  <option value="BCA">BCA</option>
+                  <!-- <option value="bni">BNI</option> -->
                 </select>
               </div>
             </div>

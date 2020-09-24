@@ -69,7 +69,7 @@
     <div style="text-align: center;" class="btn_download">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+               <!--  <div class="col-sm-12">
                     <div class="btn_content">
                         <ul class="btn_content">
                             <li class="btn_content">
@@ -77,7 +77,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

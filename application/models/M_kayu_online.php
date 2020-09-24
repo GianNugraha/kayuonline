@@ -294,66 +294,29 @@ class M_kayu_online extends CI_Model{
         return $userID?$userID:FALSE;
     }
 
+    public function cek_orderStatus($id_pemesan, $sku, $ukuran){		
+		$sql = $this->db->query("SELECT * FROM orders where id_pemesan='$id_pemesan' and sku_product='$sku' and ukuran='$ukuran' ");
+		return $sql->result_array();
+	}
+
     public function input_data_orders($data,$table){
     	$id_pemesan = $this->session->userdata('idUser');
-    	// echo "<pre>";
-    	// print_r($data);
-    	// echo "</pre>";
-    	// echo "batas";
-    	// $get['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array();
     	$id_pemesan = $this->session->userdata('idUser');
-    	$cek_orders = $this->m_kayu_online->cek_order($data['id_pemesan'], $data['sku_product'], $data['ukuran']);
+    	$update_product = $this->m_kayu_online->cek_orderStatus($data['id_pemesan'], $data['sku_product'], $data['ukuran']);
+    	if (!empty($update_product)) {
+    		foreach ($update_product as $key ) {
+	    		$jumlahBayar = $key['total'] + $data['total'];
+	    		$jumlahProduk = $key['jumlah'] + $data['jumlah'];
+	    		$dataUpdate = array(
+	    			'jumlah' => $jumlahProduk,
+	    			'total' => $jumlahBayar
+	    		);
+	    		$this->db->where('id_pemesan', $id_pemesan);
+	    		$this->db->where('sku_product', $data['sku_product']);
+	    		$this->db->where('ukuran', $data['ukuran']);
+	    		return $this->db->update($table,$dataUpdate);
 
-    	if($cek_orders > 0){
-    		$get['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array();
-    		// echo"<pre>";
-    		// print_r($get['order']);
-    		// echo "</pre>"; 
-
-    		foreach ($get['order'] as $key ) {
-    			// echo"<pre>";
-    			// print_r($key);
-    			// echo "</pre>"; 
-    			if ( $data['sku_product'] == $key['sku_product'] and $data['ukuran'] ==  $key['ukuran'] and $data['id_pemesan'] == $key['id_pemesan']) {
-    				// echo "masuk";
-    				$statement = "masuk";
-    				if ($statement == "masuk" and $data['sku_product'] == $key['sku_product'] and $data['ukuran'] ==  $key['ukuran'] and $data['id_pemesan'] == $key['id_pemesan']) {
-    					$jumlahBayar = $key['total'] + $data['total'];
-    					$jumlahProduk = $key['jumlah'] + $data['jumlah'];
-    					$dataUpdate = array(
-    						'jumlah' => $jumlahProduk,
-    						'total' => $jumlahBayar
-    					);
-    					$this->db->where('id_pemesan', $id_pemesan);
-    					$this->db->where('sku_product', $data['sku_product']);
-    					return $this->db->update($table,$dataUpdate);
-    				}
-    				else{
-    					echo "tidak masuk";
-    					// die();
-    				}
-    				// $jumlahBayar = $key['total'] + $data['total'];
-    				// $jumlahProduk = $key['jumlah'] + $data['jumlah'];
-    			// }
-    			}else{
-    				// echo "tidak masuk";
-    				// $statement = "tidak masuk"; 
-    				// $jumlahBayar = $key['total'];
-    				// $jumlahProduk = $key['jumlah'] ;
-    			}
-
-    		}	
-    		
-    		// $dataUpdate = array(
-    		// 	'jumlah' => $jumlahProduk,
-    		// 	'total' => $jumlahBayar
-    		// );
-    		// $this->db->where('id_pemesan', $id_pemesan);
-    		// $this->db->where('sku_product', $data['sku_product']);
-    		// return $this->db->update($table,$dataUpdate);
-
-    		// echo "sudah ada data";
-    		// die();
+    		}
     	}
     	else{
     		$this->db->insert($table,$data);
@@ -364,10 +327,7 @@ class M_kayu_online extends CI_Model{
 		return $this->db->get_where('orders', array('id_pemesan' => $param));
 	}	
 
-	public function cek_order($id_pemesan, $sku, $ukuran){		
-		// echo $id_pemesan.'<br>' ;
-		// echo $sku.'<br>' ;
-		// echo $ukuran.'<br>' ;
+	public function cek_order($id_pemesan, $sku, $ukuran){	;
 		$sql = $this->db->query("SELECT * FROM orders where id_pemesan='$id_pemesan' and sku_product='$sku' and ukuran='$ukuran' ");
 		return $sql->num_rows();
 	}

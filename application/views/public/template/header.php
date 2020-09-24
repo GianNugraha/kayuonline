@@ -27,6 +27,37 @@
 </head>
 
 <body>
+  <!-- Start of LiveChat (www.livechatinc.com) code -->
+<!-- <script type="text/javascript">
+  window.__lc = window.__lc || {};
+  window.__lc.license = 12235308;
+  (function() {
+    var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+    lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+  })();
+</script>
+<noscript>
+<a href="https://www.livechatinc.com/chat-with/12235308/" rel="nofollow">Chat with us</a>,
+powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+</noscript> -->
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f6c59faf0e7167d00135146/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<!-- End of LiveChat code -->
 
   <!-- sidedrawer -->
   <!-- <div class="sidedrawer" style="width: 45%">
@@ -163,7 +194,7 @@
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="<?= base_url(); ?>">
-        <img src="<?= base_url('assets/img/logo.png'); ?>" width="50" height="50" alt="">
+        <img src="<?= base_url('assets/img/Logo-hitam.png'); ?>" width="50" height="50" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
