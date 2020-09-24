@@ -92,7 +92,7 @@ endforeach;
 
         <div class="form-group">
             <div>
-                <button type="submit" name="bayar" class="btn btn-default btn-primary">konfirmasi</button>
+                <button type="submit" style="background-color: green; color: white" name="bayar" class="btn btn-default">konfirmasi</button>
             </div>
         </form>
 </div>

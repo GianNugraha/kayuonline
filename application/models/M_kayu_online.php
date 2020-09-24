@@ -246,14 +246,13 @@ class M_kayu_online extends CI_Model{
 		// return $query->result();
 	}
 
-	public function getThumbnail($param, $category) {
-		// $this->db->select('thumbnail');
-		// $this->db->from('product_thumbnail2');
-		// $this->db->where('product_thumbnail2.name', $param);
-		// $this->db->where('product_thumbnail2.kode_product', $category);
-		
-		// $query = $this->db->get();
-		// return $query->result();
+	public function getThumbnail($category, $param) {
+		$this->db->select('thumbnail');
+		$this->db->from('product_thumbnail');
+		$this->db->where('product_thumbnail.name', $param);
+		$this->db->where('product_thumbnail.kode_product', $category);
+		$query = $this->db->get();
+		return $query->result();
 	}
 
 
@@ -297,13 +296,12 @@ class M_kayu_online extends CI_Model{
 
     public function input_data_orders($data,$table){
     	$id_pemesan = $this->session->userdata('idUser');
-    	echo "<pre>";
-    	print_r($data);
-    	echo "</pre>";
-    	echo "batas";
+    	// echo "<pre>";
+    	// print_r($data);
+    	// echo "</pre>";
+    	// echo "batas";
     	// $get['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array();
     	$id_pemesan = $this->session->userdata('idUser');
-    	// $get['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
     	$cek_orders = $this->m_kayu_online->cek_order($data['id_pemesan'], $data['sku_product'], $data['ukuran']);
 
     	if($cek_orders > 0){
@@ -313,9 +311,9 @@ class M_kayu_online extends CI_Model{
     		// echo "</pre>"; 
 
     		foreach ($get['order'] as $key ) {
-    			echo"<pre>";
-    			print_r($key);
-    			echo "</pre>"; 
+    			// echo"<pre>";
+    			// print_r($key);
+    			// echo "</pre>"; 
     			if ( $data['sku_product'] == $key['sku_product'] and $data['ukuran'] ==  $key['ukuran'] and $data['id_pemesan'] == $key['id_pemesan']) {
     				// echo "masuk";
     				$statement = "masuk";
@@ -332,7 +330,7 @@ class M_kayu_online extends CI_Model{
     				}
     				else{
     					echo "tidak masuk";
-    					die();
+    					// die();
     				}
     				// $jumlahBayar = $key['total'] + $data['total'];
     				// $jumlahProduk = $key['jumlah'] + $data['jumlah'];
@@ -344,7 +342,7 @@ class M_kayu_online extends CI_Model{
     				// $jumlahProduk = $key['jumlah'] ;
     			}
 
-    		} die();
+    		}	
     		
     		// $dataUpdate = array(
     		// 	'jumlah' => $jumlahProduk,
@@ -384,5 +382,27 @@ class M_kayu_online extends CI_Model{
 		$sql = $this->db->query("SELECT SUM(total) as total FROM orders WHERE id_pemesan = '$id'");
 		return $sql->result();
 	}
+
+	public function getCountWishlist($param){
+		if ($param != 'NULL') {
+			$this->db->select('COUNT(id) as total');
+			$this->db->group_by('id_pemesan'); 
+			$this->db->where('id_pemesan', $param);
+			$this->db->order_by('total'); 
+			$hasil = $this->db->get('orders');
+			return $hasil;
+		}else{
+			$hasil = 0;
+			return $hasil;
+		}
+	}
+
+	public function edit_order($param){
+		// echo $id; die();
+		$id = $this->dataencryption->enc_dec("decrypt", $param);
+		return $this->db->get_where('orders', array('id' => $id));
+		// return $sql->result();
+	}
+	
 
 }

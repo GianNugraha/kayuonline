@@ -1,16 +1,17 @@
 <?php 
-// foreach ($produk as $key): 
-//     echo "<pre>";
-//     print_r($key);
-//     echo "</pre>";
+// foreach($countWishlist->result_array() as $row):
+//    // $kota = $row['kota'];
+//  $total = $row['total'];
+//    // echo $total ; echo "</br>";
 // endforeach;
- ?><!-- bradcrom -->
+ ?>
+ <!-- bradcrom -->
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <div class="row">
         <div class="col-sm">
           <ul class="bradcrom-links">
-            <li><a href="index.html">Home</a><a> / </a><span>Shop</span></li>
+            <li><a href="<?= base_url(); ?>">Beranda</a><a> / </a><span>Toko</span></li>
           </ul>
         </div>
       </div>
@@ -514,7 +515,7 @@
     });
   </script>
 
-  <script>
+ <!--  <script>
     const sidedrawer = document.querySelector(".sidedrawer");
     const backdrop = document.querySelector(".backdrop")
     const bars = document.getElementById("bars");
@@ -528,7 +529,7 @@
       sidedrawer.classList.remove("active");
       backdrop.classList.remove("show");
     });
-  </script>
+  </script> -->
 
   <!-- stepper -->
   <script>

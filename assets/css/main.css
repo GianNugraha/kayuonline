@@ -848,3 +848,49 @@ header .overlay__list ul li a:hover {
 .dropdown:hover .dropbtn {}
 /*# sourceMappingURL=main.css.map */
 
+.navbar .notification {
+  position: absolute;
+  top: 5px;
+  border: 1px solid #FFF;
+  right: auto;
+  font-size: 9px;
+  background: #f44336;
+  color: #FFFFFF;
+  min-width: 20px;
+  padding: 0px 5px;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 19px;
+  vertical-align: middle;
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar .notification {
+    position: absolute;
+    top: 245px;
+    border: 1px solid #FFF;
+    right: auto;
+    font-size: 9px;
+    background: #f44336;
+    color: #FFFFFF;
+    min-width: 20px;
+    padding: 0px 5px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 19px;
+    vertical-align: middle;
+    display: block;
+  }
+}
+.navbar .collapse .navbar-nav .nav-item .nav-link .notification {
+  top: 0px;
+}
+
+.sidebar .nav-mobile-menu .notification {
+    float: left;
+    line-height: 30px;
+    margin-right: 8px;
+  }

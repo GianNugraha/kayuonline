@@ -47,8 +47,12 @@ endforeach;
                     <tr>
                         <td rowspan="4" >
                             <!-- <a href="<?php echo base_url('home/delete_order/').$key['id']?>"><input type="button" title="Hapus" value="X" style="margin-bottom: 20px"></a> -->
+
                             <a href="<?php echo base_url('home/delete_order/').$key['id']?>"><i class="fa fa-trash-o" title="Hapus"></i></a>
                             <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$key['gambar_product']?>" alt="">
+
+                            <!-- <a href="<?php echo base_url('home/edit_order/').$key['id']?>"><button><i class="fa fa-pencil" title="edit"></i></button></a>
+                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$key['gambar_product']?>" alt=""> -->
                         </td>
                         <td>ukuran</td>
                         <td><?= $key['nama_product']; ?> - <?= $key['ukuran'] ?> </td>
@@ -81,7 +85,7 @@ endforeach;
                   <?php } ?>
             </table>
             <div >
-                <a href="<?= base_url('toko') ?>"><input style="background-color: green" type="submit" name="beli lagi" class="btn btn-block" value="Belanja Lagi?"></a>
+                <a href="<?= base_url('toko') ?>"><input style="background-color: green; color: white" type="submit" name="beli lagi" class="btn btn-block" value="Belanja Lagi?"></a>
             </div>
         
     </div>
@@ -99,7 +103,7 @@ endforeach;
     </div>
 </div>
 <div class="container" style="margin-bottom: 30px">
-    <form action="checkout.html">
+    <form action="<?= base_url('checkout') ?>">
       <table class="order-detail" border="1" style="width:100% ; text-align: center;">
         <tr >
             <td class="td_price"> <strong>Jumlah Total Harga Produk</strong> </td>
@@ -110,7 +114,7 @@ endforeach;
         </table>
         <span style="float: center; margin-top: 20px">
             <div class="form-group">
-                <input style="background-color: grey" type="submit" name="pesan" class="btn btn-block" value="Proses Ke Pesanan">
+                <input style="background-color: green; color: white" type="submit" name="pesan" class="btn btn-block" value="Proses Ke Pesanan">
             </div>
         </span>
         <!-- <div class="form-group col-md-2" style="margin-top: -20px; text-align: center" >

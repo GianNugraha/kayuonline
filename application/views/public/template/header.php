@@ -1,3 +1,12 @@
+<?php 
+  foreach($countWishlist->result_array() as $row):
+   // $kota = $row['kota'];
+   $total = $row['total'];
+   // echo $total ; echo "</br>";
+  endforeach;
+  // $active = $this->uri->segment(2);
+ ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -162,12 +171,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="<?php echo base_url('tentang-kami')?>"><span class="nav-menu">Tentang Kami</span></a>
+          <a class="nav-item nav-link" href="<?php echo base_url('tentang-kami')?>"><span class="nav-menu">Tentang Kami </span></a>
           <a class="nav-item nav-link" href="<?php echo base_url('toko')?>"><span class="nav-menu">Toko</span></a>
           <a class="nav-item nav-link" href="<?php echo base_url('gudang-kami')?>"><span class="nav-menu">Gudang Kami</span></a>
-          <div class="shopping-bag">
-            <a class="navbar-brand" href="#">
+          <div class="shopping-bag" title="wishlist">
+            <a class="navbar-brand" href="<?php echo base_url('wishlist')?>">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+              <!-- <i class="fa fa-shopping-bag" aria-hidden="true"><span class="notification"><?= $total ?></span></i> -->
             </a>
           </div>
         </div>

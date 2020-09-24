@@ -31,7 +31,7 @@
               <input type="text" class="form-control" placeholder="Masukan Email Anda" aria-label="Recipient's username"
                 aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit">Subcribe</button>
+                <button class="btn btn-outline-secondary" type="submit">Subscribe</button>
               </div>
             </div>
           </form>
