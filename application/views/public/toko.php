@@ -176,19 +176,14 @@
                 </div>
                 <div class="overlay">
                   <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
-                    <span><i class="fa fa-eye" title="Quick View"></i></span>
+                    <!-- <span><i class="fa fa-eye" title="Quick View"></i></span> -->
                   </div>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  <!-- <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a> -->
+                  <!-- <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a> -->
                 </div>
               </div>
 
               <div class="product-buttom text-center" style="padding-bottom: 30px">
-                <!-- <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-half-o"></i> -->
                 <h3><?= $key->name ?></h3>
                 <h3>(<?= $key->category_name; ?>)</h3>
                 <?php if ($key->max_price == $key->min_price) { ?>
@@ -434,7 +429,8 @@
 
   <!-- scroll -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script>var btn = $('#button');
+  <script>
+    var btn = $('#button');
 
     $(window).scroll(function () {
       if ($(window).scrollTop() > 300) {
@@ -447,7 +443,8 @@
     btn.on('click', function (e) {
       e.preventDefault();
       $('html, body').animate({ scrollTop: 0 }, '300');
-    });</script>
+    });
+  </script>
   <!-- scroll -->
 
   <script>

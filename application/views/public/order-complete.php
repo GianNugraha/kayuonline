@@ -2,7 +2,8 @@
 $pengiriman = $this->input->post('pengiriman');
 $bank = $this->input->post('bank');
 foreach ($reservasi as $res ) {
-  $bank = $res['bank'];
+    $idPK = $res['id'];
+    $bank = $res['bank'];
     if ($bank == 'Mandiri') {
         $no_rek = '1320 0226 98 998';
     }elseif ($bank == 'BRI') {
@@ -19,6 +20,15 @@ endforeach;
 <section class="wrapper">
 
 <div class="container">
+    <?php
+    if (!empty($this->session->flashdata('msg'))) {
+        $message = $this->session->flashdata('msg');
+        ?>
+        <div class="alert alert-<?php echo $message['class']?>" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <center><?php echo $message['message'] ?></center>
+        </div>
+    <?php } ?>
     <div class="row" style="margin-top: 30px; margin-bottom: 30px">
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="proced-1" style="margin-top: 30px;">
@@ -95,7 +105,7 @@ endforeach;
             <td> <strong style="color: black">Rp.<?php echo number_format($jumlah_bayar,2,',','.'); ?></strong> </td>
         </tr>
     </table>
-    <form role="form" action="transfer.php" method="post" enctype="multipart/form-data">
+    <form role="form" action="<?= base_url('home/upload_trf/'.$this->dataencryption->enc_dec("encrypt", $idPK)); ?>" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label>Unggah Bukti Transfer</label>
             <div>
@@ -107,8 +117,9 @@ endforeach;
             <div>
                 <button type="submit" style="background-color: green; color: white" name="bayar" class="btn btn-default">konfirmasi</button>
             </div>
-        </form>
-</div>
+        </div>
+    </form>
+
 </div>
 <div class="container" style="margin-bottom: 30px">
     

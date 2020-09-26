@@ -483,24 +483,6 @@ class Home extends CI_Controller {
     	
     }
 
-  //   public function edit_order(){
-  //   	// $this->dataencryption->enc_dec("decrypt", $this->uri->segment('2'));
-  //   	$id = $this->dataencryption->enc_dec("encrypt", $this->uri->segment('3'));
-  //   	$data['tampil'] = $this->m_kayu_online->edit_order($id);
-  //   	foreach ($data['tampil']->result_array() as $key ) {
-  //   		echo "<pre>";
-  //   		print_r($key);
-  //   		echo "</pre>";
-  //   	}
-  //   	die();
-		// $data['content'] = 'public/index';
-		// $this->load->view('public/template/layout',$data);
-  // //   	$this->m_kayu_online->hapus_order($id);
-		// // // $this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Order Berhasil !'));
-		// // redirect(base_url("wishlist")); 
-    	
-  //   }
-
     public function reservasi(){
     	$id = $this->dataencryption->enc_dec("decrypt", $this->uri->segment('3'));
     	$nama = $this->input->post('nama');
@@ -532,6 +514,30 @@ class Home extends CI_Controller {
 
     	$this->m_kayu_online->input_data_reservasi($data,'reservasi');
     	redirect(base_url("order-complete"));
+    }
+
+      public function upload_trf(){
+      	$id = $this->dataencryption->enc_dec("decrypt", $this->uri->segment('3'));
+    	$id_pemesan = $this->dataencryption->enc_dec("encrypt", $this->session->userdata('idUser'));
+    	$result = $this->m_kayu_online->upload_trf($id, $id_pemesan);
+    	if ($result['bukti_transaksi'] == 'Error'){
+    		$this->session->set_flashdata('msg', array('class' => 'danger', 'message'=> 'Upload Gagal, File Yang Anda Unggah Tidak Sesuai'));
+    		redirect(base_url().'order-complete');
+
+    	}
+    	else{
+    		redirect(base_url().'end-transaction');
+    	}
+    	redirect('end-transaction');
+    }
+
+    public function end_transaction(){
+    	$id_pemesan = $this->session->userdata('idUser');
+		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
+    	$data['reservasi'] = $this->m_kayu_online->getReservasi($id_pemesan);
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
+    	$data['content'] = 'public/end-transaction';
+		$this->load->view('public/template/layout',$data);
     }
 
  

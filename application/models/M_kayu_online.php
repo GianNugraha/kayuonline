@@ -428,6 +428,77 @@ class M_kayu_online extends CI_Model{
 		$id = $param;	
 		return $this->db->get_where('reservasi', array('id_pemesan' => $id, 'status' => 'proses_3'))->result_array();
 	}
+
+	function do_upload($images)
+	{
+		// $config['upload_path']          = 'assets/img/';
+		// $config['allowed_types']        = 'gif|jpg|png|jpeg';
+		// $config['max_size']				= '1000';
+		// $config['max_width']  			= '1024';
+		// $config['max_height'] 			= '768';
+		// // $config['max_size']             = 1000;
+		$config['overwrite']            = true;
+
+
+		$config['upload_path'] = 'assets/img/bukti_tf/';
+		$config['allowed_types'] = 'jpg|png|jpeg';
+		$config['max_size']	= '10000';
+		$config['max_width']  = '10024';
+		$config['max_height']  = '10000';
+
+
+
+		$this->load->library('upload');
+		$this->upload->initialize($config);
+
+		if ( ! $this->upload->do_upload($images))
+		{
+			$data = array(
+				'data' => '',
+				'resp_msg' => $this->upload->display_errors(),
+				'resp_code' => "99"
+			);
+		}
+		else
+		{
+			$data = array(
+				'data' => $this->upload->data(),
+				'upload_path' => $config['upload_path'],
+				'resp_msg' =>'Upload Sukses',
+				'resp_code' => "00"
+			);
+
+		}
+
+		return $data;
+
+	}
+
+	public function upload_trf($id, $id_pemesan){
+		// print_r($_FILES['gambar']['name']); 
+		// die();
+
+		if (!empty($_FILES['gambar']['name'])) {
+			$image = $this->do_upload('gambar');
+			if($image['resp_code']=='00'){
+				$img = $image['upload_path'].$image['data']['file_name'];
+			}else{
+				$img="Error";
+			}
+		} else {
+			$img = $this->input->post('gambar');
+		}
+
+		// echo $img; die();
+		$data = array(
+			'bukti_transaksi'=>$img
+		);
+		$id_pemesan = $this->dataencryption->enc_dec("decrypt", $id_pemesan);
+		$this->db->where('id', $id);
+		$this->db->where('id_pemesan', $id_pemesan);
+		$this->db->update('reservasi',$data);
+		return $data;
+	}
 	
 
 }
