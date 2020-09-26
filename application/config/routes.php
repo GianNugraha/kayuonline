@@ -69,6 +69,7 @@ $route['order-complete'] = 'home/order_complete';
 $route['pemberitahuan'] = 'admin/pemberitahuan';
 $route['admin/status-transaksi'] = 'admin/status_transaksi';
 $route['admin/add-admin'] = 'admin/add_admin';
+$route['admin/add-produk'] = 'admin/add_produk';
 $route['admin/daftar-admin'] = 'admin/daftar_admin';
 $route['coba-data'] = 'home/join';
 $route['kayu-olahan'] = 'home/kayu_olahan';

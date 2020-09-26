@@ -11,7 +11,7 @@ class Produk extends CI_Controller {
  
 	function produk(){
 		$data['produk'] = $this->m_kayu_online->produk()->result();
-		// $this->load->view('v_user.php',$data);
+		$data['product'] = $this->m_kayu_online->product()->result();
 		$data['content'] = 'public/index';
 		$this->load->view('public/template/layout',$data);
 

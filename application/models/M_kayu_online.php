@@ -7,11 +7,25 @@ class M_kayu_online extends CI_Model{
     }
 
 	public function getProduk(){
-		// return $this->db->get('produk');
+		return $this->db->get('products');
+		// $this->db->select('*')
+		// ->from('products')
+		// ->join('product_has_sizes','product_has_sizes.price = products.category_id');
+		// $query = $this->db->get();
+		// return $query->result();
 	}
 
 	public function getUsers(){
 		return $this->db->get('users');
+	}
+
+	public function getProduct()
+	{
+		return $this->db->from('product_categories')
+		->join('products','products.category_id = product_categories.id')
+		// ->join('product_sizes','product_sizes.size = product_has_sizes.product_size_id')
+		->get()
+		->result();
 	}
 
 	public function getAdmin(){
@@ -38,6 +52,22 @@ class M_kayu_online extends CI_Model{
 	public function input_data_user($data,$table){
 		$this->db->insert($table,$data);
 	}
+	public function input_produk($data, $datas, $datass)
+	{
+		$this->db->insert('products',$data);
+		$this->db->insert('product_has_sizes',$datas);
+		$this->db->insert('product_sizes',$datass);
+	}
+
+	public function update_produk($data, $datas, $datass, $id, $id_has_sizes, $id_sizes)
+	{	
+		$this->db->where('id',$id);
+		$this->db->update('products',$data);
+		$this->db->where('id',$id_sizes);
+		$this->db->update('product_has_sizes',$datas);
+		$this->db->where('id',$id_has_sizes);
+		$this->db->update('product_sizes',$datass);
+	}
 
 	public function update_data_admin($data,$table, $id){
 		$this->db->where('id', $id);
@@ -48,10 +78,26 @@ class M_kayu_online extends CI_Model{
 		$sql = $this->db->query("SELECT * FROM users where username='$namaPengguna' and role='admin' and status='active' ");
 		return $cek_user = $sql->num_rows();
 	}
+	public function getAllProductCategories()
+	{
+		$query = $this->db->query("SELECT * FROM product_categories");
+		return $query->result_array();
+	}
+
+	public function getAllProductSizes()
+	{
+		$query = $this->db->query("SELECT * FROM product_sizes");
+		return $query->result_array();
+	}
+	public function getAllProductHasSizes()
+	{
+		$query = $this->db->query("SELECT * FROM product_has_sizes");
+		return $query->result_array();
+	}
 
 	public function cek_user($namaPengguna){		
 		$sql = $this->db->query("SELECT * FROM users where username='$namaPengguna' and role='user'  ");
-		return $cek_user = $sql->result_array();
+		return $cek_user = $sql->num_rows();
 	}
 
 	public function cek_admin2($namaPengguna, $id){		
@@ -63,6 +109,17 @@ class M_kayu_online extends CI_Model{
 	public function hapus_admin($id){    
 		$this->db->where('id', $id);    
 		return $this->db->delete('users'); // Untuk mengeksekusi perintah delete data  
+	}
+	public function hapus_produk($id)
+	{
+		$this->db->where('id', $id);    
+		return $this->db->delete('products'); 
+	}
+
+	public function getProdukById($id)
+	{
+		$this->db->where('id',$id);
+		return $this->db->get('products');
 	}
 
 	public function getAdminById($id){

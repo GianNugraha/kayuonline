@@ -14,9 +14,9 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">Daftar Tabel Admin</h4>
-                  <p class="card-category"> Ini Merupakan Daftar User Kayu Online</p>
+                  <p class="card-category"> Ini Merupakan Daftar Admin Kayu Online</p>
                 </div>
-                <a title="tambah" href="add-admin">
+                <a href="add-admin">
                   <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">
                     <i class="material-icons">add_task</i>
                   Tambah Admin
@@ -37,7 +37,7 @@
                       ?>
                       <thead class=" text-primary">
                         <th>
-                          Nomor
+                          No
                         </th>
                         <th>
                           Nama
@@ -117,7 +117,7 @@
                       ?>
                       <thead class="">
                         <th>
-                          Nomor
+                          No
                         </th>
                         <th>
                           Nama
@@ -179,6 +179,109 @@
                         else{
                           echo "<center><h3>TIDAK ADA DATA !</h3></center>";
                         } ?>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Daftar Tabel Produk</h4>
+                  <p class="card-category"> Ini Merupakan Daftar Produk Kayu Online</p>
+                </div>
+                <a href="add-produk">
+                  <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">
+                    <i class="material-icons">add_task</i>
+                  Tambah Produk Baru
+                </div>
+                </a>
+                <!-- <div style="margin-top: 20px;" class="card-header-primary col-md-2">
+                  <h4 class="card-title ">Tambah Admin</h4>
+                  <a href="#">
+                    <i title="Ubah" class="material-icons" style="color: white">add_task</i>
+                  </a>
+                  Tambah Admin
+                </div> -->
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <?php 
+                        if (!empty($product)){
+                      ?>
+                      <thead class=" text-primary">
+                        <th>
+                          No
+                        </th>
+                        <th>
+                          SKU
+                        </th>
+                        <th>
+                          Produk Kategori
+                        </th>
+                        <th>
+                          Produk
+                        </th>
+                        <th>
+                          Harga
+                        </th>
+                        <th>
+                          Ukuran
+                        </th>
+                        <th>
+                          Stok
+                        </th>
+                        <th colspan="2" style="text-align: center;">
+                          Aksi
+                        </th>
+                      </thead>
+                      <tbody>
+                        <?php
+                        $nomor = 1;
+                        foreach ($product as $key): 
+                        ?>
+                        <tr>
+                          <td>
+                            <?php echo $nomor ?>
+                          </td>
+                          <td>
+                            <?php echo $key->product_code; ?>
+                          </td>
+                          <td>
+                            <?php echo $key->category_name; ?>
+                          </td>
+                          <td>
+                            <?php echo $key->name; ?>
+                          </td>
+                          <td>
+                            <!-- <?php echo $key->price; ?> -->
+                          </td>
+                          <td>
+                            <!-- <?php echo $key->size; ?> -->
+                          </td>
+                          <td>
+                            <!-- <?php echo $key->stock; ?> -->
+                          </td>
+                          
+                          <td>
+                              <a href="<?php echo base_url('admin/edit_produk/'.$this->dataencryption->enc_dec("encrypt", $key->id)) ?>">
+                                <i title="Ubah" class="material-icons">edit</i>
+                              </a>
+                          </td>
+                          <td>
+                              <a href="<?php echo base_url('admin/delete/'.$this->dataencryption->enc_dec("encrypt", $key->id)) ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')">
+                                <i style="color: red" title="Hapus" class="material-icons">delete_forever</i>
+                              </a>
+                          </td>
+                          
+                        </tr>
+                        <?php $nomor+=1; endforeach;
+                        ?>
+                        <?php }
+                        else{
+                          echo "<center><h3>TIDAK ADA DATA !</h3></center>";
+                        } ?>
+                      </tbody>
                     </table>
                   </div>
                 </div>
