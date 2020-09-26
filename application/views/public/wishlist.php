@@ -29,7 +29,7 @@ endforeach;
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <a class="next-3" href="<?php echo base_url('order-complete')?>">
+            <a class="next-3" href="">
                 <h1 class="proced-3">03</h1>
                 <h4 class="shop-3">Pesanan Selesai</h4>
                 <p class="item-3">Tinjau dan Kirim Pesanan Anda.</p>
@@ -48,7 +48,7 @@ endforeach;
                         <td rowspan="4" >
                             <!-- <a href="<?php echo base_url('home/delete_order/').$key['id']?>"><input type="button" title="Hapus" value="X" style="margin-bottom: 20px"></a> -->
 
-                            <a href="<?php echo base_url('home/delete_order/').$key['id']?>"><i class="fa fa-trash-o" title="Hapus"></i></a>
+                            <a onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Item Ini ?')" href="<?php echo base_url('home/delete_order/').$key['id']?>"><i class="fa fa-trash-o" title="Hapus"></i></a>
                             <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$key['gambar_product']?>" alt="">
 
                             <!-- <a href="<?php echo base_url('home/edit_order/').$key['id']?>"><button><i class="fa fa-pencil" title="edit"></i></button></a>

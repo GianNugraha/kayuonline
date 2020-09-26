@@ -3,11 +3,22 @@ foreach ($total_biaya as $total):
    $jumlah_bayar = $total->total;
    // echo $jumlah_bayar; die();
 endforeach;
-// foreach ($order as $key): 
-//     echo "<pre>";
-//     print_r($key);
-//     echo "</pre>";
-// endforeach;
+if (!empty($reservasi)) {
+  foreach ($reservasi as $key): 
+    $status = $key['status'];
+    $alamat = $key['alamat_pemesan'];
+    $pos = $key['kode_pos'];
+    $kota = $key['kota'];
+    $note = $key['note'];
+    // echo "<pre>";
+    // print_r($key);
+    // echo "</pre>";
+  endforeach;
+}
+else{
+
+  $status = '';
+}
  ?>
  <section class="wrapper">
 
@@ -42,43 +53,77 @@ endforeach;
     </div>
     <div class="row" style="margin-left:0;margin-right:0;">
       <div class="col-md-7">
-        <form action="<?= base_url('order-complete') ?>" method="post">
+        <form action="<?= base_url('home/reservasi/').$this->dataencryption->enc_dec("encrypt", $this->session->userdata('idUser')); ?>" method="post">
           <div class="header">
             <h3>RINCIAN PENAGIHAN</h3>
           </div>
           <hr style="border:1px solid black">
+          <?php if (!empty($reservasi)) { ?>
 
-          <div class="form-group">
-            <label for="name">Nama Lengkap <span title="required" style="color:red" >*</span></label>
-            <input type="text" name="nama" value="<?= $this->session->userdata('namaUser') ?>" class="form-control" placeholder="Nama Lengkap" required>
+            <div class="form-group">
+              <label for="name">Nama Lengkap <span title="required" style="color:red" >*</span></label>
+              <input type="text" name="nama" value="<?= $this->session->userdata('namaUser') ?>" class="form-control" placeholder="Nama Lengkap" required>
+            </div>
+
+            <div class="form-group">
+             <label for="exampleInputEmail1">Alamat Pengiriman <span title="required" style="color:red" >*</span></label>
+             <input type="text" name="tempat" value="<?= $alamat; ?>" class="form-control" placeholder="Alamat" required>
+           </div>
+
+           <div class="form-group">
+             <label >Kode Pos<span title="required" style="color:red" >*</span></label>
+             <input type="text" value="<?= $pos; ?>" onkeypress="return hanyaAngka(event)" name="pastcode" class="form-control" placeholder="Kode Pos" required>
+           </div>
+
+           <div class="form-group">
+             <label >Kabupaten / Kota<span title="required" style="color:red" >*</span></label>
+             <input type="text" value="<?= $kota; ?>" name="kota" class="form-control" placeholder="Kabupaten / Kota" required>
+           </div>
+           <div class="form-group">
+             <label >Kontak <span title="required" style="color:red" >*</span></label>
+             <input type="text" name="hp" onkeypress="return hanyaAngka(event)" class="form-control" value="<?= $this->session->userdata('no_hp')?>" placeholder="+6281295701234" required>
+           </div>
+           <div class="form-group">
+             <label >Email <span title="required" style="color:red" >*</span></label>
+             <input for="exampleInputEmail1" type="email" name="email" value="<?=$this->session->userdata('email')?>" class="form-control" placeholder="Contoh@Email.com" required>
+           </div>
+           <div class="form-group">
+            <label>Pesan Ke Pengirim (optional)</label>
+            <textarea  cols="50" rows="3" name="note" class="form-control" placeholder="Mas/Mbak .. Jika barang sudah sampai mohon telepon saya terlebih dahulu" > <?= $note; ?></textarea>
           </div>
-
+        <?php }else{ ?>
           <div class="form-group">
-           <label for="exampleInputEmail1">Alamat Pengiriman <span title="required" style="color:red" >*</span></label>
-           <input type="text" name="tempat" class="form-control" placeholder="Alamat" required>
-         </div>
+              <label for="name">Nama Lengkap <span title="required" style="color:red" >*</span></label>
+              <input type="text" name="nama" value="<?= $this->session->userdata('namaUser') ?>" class="form-control" placeholder="Nama Lengkap" required>
+            </div>
 
-         <div class="form-group">
-           <label >Kode Pos<span title="required" style="color:red" >*</span></label>
-           <input type="text" name="pastcode" class="form-control" placeholder="Kode Pos" required>
-         </div>
+            <div class="form-group">
+             <label for="exampleInputEmail1">Alamat Pengiriman <span title="required" style="color:red" >*</span></label>
+             <input type="text" name="tempat" class="form-control" placeholder="Alamat" required>
+           </div>
 
-         <div class="form-group">
-           <label >Kabupaten / Kota<span title="required" style="color:red" >*</span></label>
-           <input type="text" name="kota" class="form-control" placeholder="Kabupaten / Kota" required>
-         </div>
-         <div class="form-group">
-           <label >Kontak <span title="required" style="color:red" >*</span></label>
-           <input type="text" name="phone" class="form-control" value="<?= $this->session->userdata('no_hp')?>" placeholder="+6281295701234" required>
-         </div>
-         <div class="form-group">
-           <label >Email <span title="required" style="color:red" >*</span></label>
-           <input for="exampleInputEmail1" type="email" name="email" value="<?=$this->session->userdata('email')?>" class="form-control" placeholder="Contoh@Email.com" required>
-         </div>
-         <div class="form-group">
-          <label>Pesan Ke Pengirim (optional)</label>
-          <textarea name="alamat" cols="50" rows="3" name="alamat" class="form-control" placeholder="Mas/Mbak .. Jika barang sudah sampai mohon telepon saya terlebih dahulu" ></textarea>
-        </div>
+           <div class="form-group">
+             <label >Kode Pos<span title="required" style="color:red" >*</span></label>
+             <input type="text"  onkeypress="return hanyaAngka(event)" name="pastcode" class="form-control" placeholder="Kode Pos" required>
+           </div>
+
+           <div class="form-group">
+             <label >Kabupaten / Kota<span title="required" style="color:red" >*</span></label>
+             <input type="text"  name="kota" class="form-control" placeholder="Kabupaten / Kota" required>
+           </div>
+           <div class="form-group">
+             <label >Kontak <span title="required" style="color:red" >*</span></label>
+             <input type="text" name="hp" onkeypress="return hanyaAngka(event)" class="form-control" value="<?= $this->session->userdata('no_hp')?>" placeholder="+6281295701234" required>
+           </div>
+           <div class="form-group">
+             <label >Email <span title="required" style="color:red" >*</span></label>
+             <input for="exampleInputEmail1" type="email" name="email" value="<?=$this->session->userdata('email')?>" class="form-control" placeholder="Contoh@Email.com" required>
+           </div>
+           <div class="form-group">
+            <label>Pesan Ke Pengirim (optional)</label>
+            <textarea  cols="50" rows="3" name="note" class="form-control" placeholder="Mas/Mbak .. Jika barang sudah sampai mohon telepon saya terlebih dahulu" > </textarea>
+          </div>
+        <?php } ?>
     </div>
 
     <div class="col-md-5" style="border-style: ridge">
@@ -183,9 +228,19 @@ endforeach;
             </div>
           </div>
           <div class="form-group col-md-5" style="margin-top: 20px" >
-            <input style="background-color: green; color: white" type="submit" name="order" class="btn btn-block" value="Proses Pesanan">
+            <!-- <input style="background-color: green; color: white" type="submit" name="order" class="btn btn-block" value="Proses Pesanan"> -->
+            <?php if ($status != 'proses_3') { ?>
+              <input style="background-color: green; color: white" type="submit" name="order" class="btn btn-block" value="Proses Pesanan">
+            <?php }?>
           </div>
     </form>
+    <?php
+
+     if ($status == 'proses_3') { ?>
+      <div class="form-group col-md-5" style="margin-top: 20px" >
+      <a href="<?= base_url('order-complete') ;?>"><input style="background-color: green; color: white" type="submit" name="order" class="btn btn-block" value="Proses Pesanan"></a>
+    </div>
+    <?php } ?>
 </div>
   
 </div>
@@ -202,3 +257,23 @@ endforeach;
     valueJmlBayar.innerHTML=jumlahBayar;
 }
 </script>
+
+<script >
+    function hanyaAngka(evt) {
+          var charCode = (evt.which) ? evt.which : event.keyCode
+           if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+            return false;
+          return true;
+        }
+    
+        $(document).ready(function(){       
+            $('.form-checkbox').click(function(){
+                if($(this).is(':checked')){
+                    $('.form-password').attr('type','text');
+                }else{
+                    $('.form-password').attr('type','password');
+                }
+            });
+        });
+  </script>

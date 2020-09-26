@@ -301,7 +301,6 @@ class M_kayu_online extends CI_Model{
 
     public function input_data_orders($data,$table){
     	$id_pemesan = $this->session->userdata('idUser');
-    	$id_pemesan = $this->session->userdata('idUser');
     	$update_product = $this->m_kayu_online->cek_orderStatus($data['id_pemesan'], $data['sku_product'], $data['ukuran']);
     	if (!empty($update_product)) {
     		foreach ($update_product as $key ) {
@@ -362,6 +361,15 @@ class M_kayu_online extends CI_Model{
 		$id = $this->dataencryption->enc_dec("decrypt", $param);
 		return $this->db->get_where('orders', array('id' => $id));
 		// return $sql->result();
+	}
+
+	public function input_data_reservasi($data,$table){
+    	$this->db->insert($table,$data);
+	}
+
+	public function getReservasi($param){
+		$id = $param;	
+		return $this->db->get_where('reservasi', array('id_pemesan' => $id, 'status' => 'proses_3'))->result_array();
 	}
 	
 

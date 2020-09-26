@@ -169,6 +169,7 @@ class Home extends CI_Controller {
 	public function checkout()
 	{
 		$id_pemesan = $this->session->userdata('idUser');
+		$data['reservasi'] = $this->m_kayu_online->getReservasi($id_pemesan);
 		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
 		// $data['total_biaya']=$this->m_kayu_online->get_total_biaya_perproduct($id_pemesan);
@@ -180,6 +181,7 @@ class Home extends CI_Controller {
 	public function order_complete()
 	{
 		$id_pemesan = $this->session->userdata('idUser');
+		$data['reservasi'] = $this->m_kayu_online->getReservasi($id_pemesan);
 		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
 		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
@@ -481,22 +483,55 @@ class Home extends CI_Controller {
     	
     }
 
-    public function edit_order(){
-    	// $this->dataencryption->enc_dec("decrypt", $this->uri->segment('2'));
-    	$id = $this->dataencryption->enc_dec("encrypt", $this->uri->segment('3'));
-    	$data['tampil'] = $this->m_kayu_online->edit_order($id);
-    	foreach ($data['tampil']->result_array() as $key ) {
-    		echo "<pre>";
-    		print_r($key);
-    		echo "</pre>";
-    	}
-    	die();
-		$data['content'] = 'public/index';
-		$this->load->view('public/template/layout',$data);
-  //   	$this->m_kayu_online->hapus_order($id);
-		// // $this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Order Berhasil !'));
-		// redirect(base_url("wishlist")); 
+  //   public function edit_order(){
+  //   	// $this->dataencryption->enc_dec("decrypt", $this->uri->segment('2'));
+  //   	$id = $this->dataencryption->enc_dec("encrypt", $this->uri->segment('3'));
+  //   	$data['tampil'] = $this->m_kayu_online->edit_order($id);
+  //   	foreach ($data['tampil']->result_array() as $key ) {
+  //   		echo "<pre>";
+  //   		print_r($key);
+  //   		echo "</pre>";
+  //   	}
+  //   	die();
+		// $data['content'] = 'public/index';
+		// $this->load->view('public/template/layout',$data);
+  // //   	$this->m_kayu_online->hapus_order($id);
+		// // // $this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Order Berhasil !'));
+		// // redirect(base_url("wishlist")); 
     	
+  //   }
+
+    public function reservasi(){
+    	$id = $this->dataencryption->enc_dec("decrypt", $this->uri->segment('3'));
+    	$nama = $this->input->post('nama');
+    	$alamat = $this->input->post('tempat');
+    	$kode_pos = $this->input->post('pastcode');
+    	$kota = $this->input->post('kota');
+    	$hp = $this->input->post('hp');
+    	$email = $this->input->post('email');
+    	$note = $this->input->post('note');
+    	$bank = $this->input->post('bank');
+
+    	$data = array(
+    		'id_pemesan' => $id,
+    		'nama_pemesan' => $nama,
+    		'alamat_pemesan' => $alamat,
+    		'kode_pos' => $kode_pos,
+    		'kota' =>  $kota,
+    		'kontak' => $hp,
+    		'email' => $email,
+    		'note' => $note, 
+    		'bank' => $bank,
+    		'status' => 'proses_3'
+    	);
+
+    	// echo "<pre>";
+    	// print_r($data);
+    	// echo "</pre>";
+    	// die;
+
+    	$this->m_kayu_online->input_data_reservasi($data,'reservasi');
+    	redirect(base_url("order-complete"));
     }
 
  

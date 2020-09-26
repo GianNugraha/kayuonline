@@ -19,7 +19,7 @@
 }
 </style>
 <!-- footer -->
-  <div class="footer">
+  <div class="footer" style="background-color: #E4E4E4;">
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
@@ -51,6 +51,15 @@
             </div>
             <div class="col-6">
               <img width="100%" src="<?php echo base_url('assets/img/bank.png'); ?>" alt="">
+            </div>
+          </div>
+          <div class="row" >
+            <div class="col-6">
+              <div class="list_footer">
+                <ul class="whatsap">
+                  <li><a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Saya Ingin Memesan" target="_blank"><img class="logo_wa" style="width: 20px;" src="<?php echo base_url('assets/img/whatsapp.png'); ?>" alt=""><span class="font_wa" >Ingin Memesan? <i>Hubungi Kami !</i></span></a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

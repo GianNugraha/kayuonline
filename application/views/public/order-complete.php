@@ -1,14 +1,17 @@
 <?php
 $pengiriman = $this->input->post('pengiriman');
 $bank = $this->input->post('bank');
-
-if ($bank == 'Mandiri') {
-    $no_rek = '1320 0226 98 998';
-}elseif ($bank == 'BRI') {
-    $no_rek = '20 121 444 4532';
-}elseif ($bank == 'BCA') {
-    $no_rek = '30 212 422 3241';
+foreach ($reservasi as $res ) {
+  $bank = $res['bank'];
+    if ($bank == 'Mandiri') {
+        $no_rek = '1320 0226 98 998';
+    }elseif ($bank == 'BRI') {
+        $no_rek = '20 121 444 4532';
+    }elseif ($bank == 'BCA') {
+        $no_rek = '30 212 422 3241';
+    }
 }
+
 foreach ($total_biaya as $total): 
    $jumlah_bayar = $total->total;
 endforeach;
@@ -37,7 +40,7 @@ endforeach;
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="procces-3" style="margin-top: 30px;">
-            <a class="next-3" href="<?php echo base_url('order-complete')?>">
+            <a class="next-3" href="">
                 <h1 style="color: black;" class="proced-3">03</h1>
                 <h4 style="color: black;" class="shop-3">Pesanan Selesai</h4>
                 <p style="color: black;" class="item-3">Tinjau dan Kirim Pesanan Anda.</p>
