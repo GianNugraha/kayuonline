@@ -1,9 +1,7 @@
 <?php
-foreach ($tampil as $key): 
-    echo "<pre>";
-    print_r($key);
-    echo "</pre>";
-endforeach;
+// echo "<pre>";
+// print_r($this->session->userdata());
+// echo "</pre>";
 
 foreach ($tampil as $key): 
     $foto = $key->image;
@@ -26,7 +24,7 @@ endforeach;
             <div class="row">
                 <div class="col-sm">
                     <ul class="bradcrom-links">
-                        <li><a href="#">Home</a><a> / </a><span>FAQ</span></li>
+                        <li><a href="<?= base_url() ?>">Home</a><a> / </a><span>Produk</span></li>
                     </ul>
                 </div>
             </div>
@@ -166,15 +164,18 @@ endforeach;
 
                 <div class="col-lg-1 col-md-1 col-sm-1">
                     <div class="smal-img-row">
+                        <?php 
+                        foreach ($thumbnail as $key): 
+                        ?>
+
                         <div class="smal-img-col">
-                            <img src="<?= base_url() ?>assets/img/lg-2.png" alt="" width="100%" height="80px" class="SmallImg">
+                            <img src="<?= base_url().$key->thumbnail; ?>" alt="" width="100%" height="80px" class="SmallImg">
                         </div>
-                        <div class="smal-img-col">
-                            <img src="<?= base_url() ?>assets/img/lg-3.png" alt="" width="100%" height="80px" class="SmallImg">
-                        </div>
-                        <div class="smal-img-col">
-                            <img src="<?= base_url() ?>assets/img/lg-4.jpeg" alt="" width="100%" height="80px" class="SmallImg">
-                        </div>
+
+                        <?php 
+                        endforeach;
+                        ?>
+
                     </div>
                 </div>
 
@@ -199,7 +200,7 @@ endforeach;
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <form action="<?= base_url('wishlist');?>" method="get">
+                    <form action="<?= base_url('proses-pemesanan');?>" method="post">
                         <input type="hidden" name="nama_produk" value="<?php echo $name; ?>">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <input type="hidden" name="sku" value="<?php echo $sku; ?>">
@@ -222,7 +223,7 @@ endforeach;
                                         foreach ($produk as $key): 
                                             ?>
                                             <div class="col-lg-5 col-md-5 col-sm-5">
-                                                <input id="option" class="option" type="radio" name="option_sizes" value="<?php echo $key->price; ?> + <?php echo $key->stock; ?> + <?php echo $key->sold; ?> + <?php echo $key->size; ?>">
+                                                <input id="option" required class="option" type="radio" name="option_sizes" value="<?php echo $key->price; ?> + <?php echo $key->stock; ?> + <?php echo $key->sold; ?> + <?php echo $key->size; ?>">
                                                 <label for="option"><span ><?php echo $key->size; ?></span></label>
                                                 <input type="hidden" name="foto" value="<?php echo $foto; ?>">
                                                 <!-- <input type="hidden" name="price" value="<?php echo $key->price; ?>"> -->

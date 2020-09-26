@@ -19,6 +19,8 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['productDK'] = $this->m_kayu_online->getProductCategory(1);
 		$data['productKO'] = $this->m_kayu_online->getProductCategory(2);
 		$data['productPT'] = $this->m_kayu_online->getProductCategory(3);
@@ -54,13 +56,17 @@ class Home extends CI_Controller {
 
 	public function toko()
 	{
-		$data['produk'] = $this->m_kayu_online->getProduk();
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
+		$data['produk'] = $this->m_kayu_online->getAllProduct();
 		$data['content'] = 'public/toko';
 		$this->load->view('public/template/layout',$data);
 	}
 
 	public function tentang_kami()
 	{
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['produk'] = $this->m_kayu_online->getProduk();
 		$data['content'] = 'public/tentang-kami';
 		$this->load->view('public/template/layout',$data);
@@ -75,6 +81,8 @@ class Home extends CI_Controller {
 		// }
 		
 		// $data['toko'] = $this->m_kayu_online->getAllProduk();
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['produk'] = $this->m_kayu_online->getProduk();
 		$data['content'] = 'public/gudang-kami';
 		$this->load->view('public/template/layout',$data);
@@ -82,8 +90,10 @@ class Home extends CI_Controller {
 
 	public function produk()
 	{
+		$id_pemesan = $this->session->userdata('idUser');
 		$param = $this->input->get('nama');
 		$category = $this->input->get('kategori');
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['productDK'] = $this->m_kayu_online->getProductCategory(1);
 		$data['productKO'] = $this->m_kayu_online->getProductCategory(2);
 		$data['productPT'] = $this->m_kayu_online->getProductCategory(3);
@@ -96,7 +106,7 @@ class Home extends CI_Controller {
 		$data['produk'] = $this->m_kayu_online->getUkuran($param, $category);
 		$data['maks'] = $this->m_kayu_online->getPriceMax($param, $category);
 		$data['min'] = $this->m_kayu_online->getPriceMin($param, $category);
-		$data['thumbnail'] = $this->m_kayu_online->getThumbnail($param, $category);
+		$data['thumbnail'] = $this->m_kayu_online->getThumbnail($category, $param);
 
 		//print_r(json_encode($data['produk']));exit();
 		// echo "<pre>";
@@ -116,6 +126,8 @@ class Home extends CI_Controller {
 		// }
 		
 		// $data['toko'] = $this->m_kayu_online->getAllProduk();
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['content'] = 'public/faq';
 		$this->load->view('public/template/layout',$data);
 	}
@@ -129,53 +141,50 @@ class Home extends CI_Controller {
 		// }
 		
 		// $data['toko'] = $this->m_kayu_online->getAllProduk();
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['content'] = 'public/kebijakan-privasi';
 		$this->load->view('public/template/layout',$data);
 	}
 
 	public function layanan_pelanggan()
 	{
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['content'] = 'public/layanan-pelanggan';
 		$this->load->view('public/template/layout',$data);
 	}
 
 	public function wishlist()
 	{
-		error_reporting(0);
-    	$option_sizes = $this->input->post('option_sizes');
-    	$pecah = explode("+", $option_sizes);
-    	$price = $pecah[0];
-    	$size = $pecah[3];
-    	$nama_produk = $this->input->post('nama_produk');
-    	$foto = $this->input->post('foto');
-    	$sku = $this->input->post('sku');
-    	// $size = $this->input->post('size');
-    	// $price = $this->input->post('price');
-    	
-    	$jumlah = $this->input->post('quant[1]');
-    	$total = ($jumlah*$price);
-    	$id = $this->input->post('id');
-		$data['orders'] = array(
-    		'sku_product' => $sku,
-    		'nama_product' => $nama_produk,
-    		'gambar_product' => $foto,
-    		'id_product' => $id,
-    		'jumlah' => $jumlah,
-    		'harga' => $price,
-    		'total' => $total
-    	);
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
+		// $data['countWishlist'] = $this->m_kayu_online->getCountWishlist($this->session->userdata('idUser'));
+		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
+		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
 		$data['content'] = 'public/wishlist';
 		$this->load->view('public/template/layout',$data);
 	}
 
 	public function checkout()
 	{
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['reservasi'] = $this->m_kayu_online->getReservasi($id_pemesan);
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
+		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
+		// $data['total_biaya']=$this->m_kayu_online->get_total_biaya_perproduct($id_pemesan);
+		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
 		$data['content'] = 'public/checkout';
 		$this->load->view('public/template/layout',$data);
 	}
 
 	public function order_complete()
 	{
+		$id_pemesan = $this->session->userdata('idUser');
+		$data['reservasi'] = $this->m_kayu_online->getReservasi($id_pemesan);
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
+		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
+		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
 		$data['content'] = 'public/order-complete';
 		$this->load->view('public/template/layout',$data);
 	}
@@ -221,8 +230,8 @@ class Home extends CI_Controller {
 				'role' => 'user'
 			);
 
+	
 			$cek_user = $this->m_kayu_online->cek_user($namaPengguna);
-
 			if($cek_user > 0){
 				$this->session->set_flashdata('msg', array('class' => 'danger', 'message'=> 'nama pengguna sudah digunakan, silahkan pilih opsi nama lain'));
 				redirect(base_url("user-registration"));
@@ -293,12 +302,16 @@ class Home extends CI_Controller {
         foreach ($getUser as $key):
             $idUser = $key['id'];
             $namaUser = $key['nama'];
+            $no_hp = $key['no_hp'];
+            $email = $key['email'];
         endforeach;
         
         if($cek > 0){
             $data_session = array(
                 'idUser' => $idUser,
                 'namaUser' => $namaUser,
+                'no_hp' => $no_hp,
+                'email' => $email,
                 'status' => "login",
                 'role' => 'user',
                 'logged_in' => TRUE
@@ -431,7 +444,94 @@ class Home extends CI_Controller {
     }
 
     public function prosesPemesanan(){
+    	error_reporting(0);
+    	$sku = $this->input->post('sku');
+    	$option_sizes = $this->input->post('option_sizes');
+    	$pecah = explode("+", $option_sizes);
+    	$price = $pecah[0];
+    	$size = $pecah[3];
+    	$jumlah = $this->input->post('quant[1]');
+    	$nama_produk = $this->input->post('nama_produk');
+    	$foto = $this->input->post('foto');
+    	$total = ($jumlah*$price);
+    	$id = $this->input->post('id');
+
+    	$data = array(
+    		'id_pemesan' => $this->session->userdata('idUser'),
+    		'sku_product' => $sku,
+    		'nama_product' => $nama_produk,
+    		'ukuran' => $size,
+    		'gambar_product' =>  $foto,
+    		'id_product' => $id,
+    		'jumlah' => $jumlah,
+    		'harga' => $price, 
+    		'total' => $total,
+    		'status' => 'pesan'
+    	);
+
+    	$this->m_kayu_online->input_data_orders($data,'orders');
+    	redirect(base_url("wishlist"));
     	
+    }
+
+    public function delete_order(){
+    	// $this->dataencryption->enc_dec("decrypt", $this->uri->segment('2'));
+    	$id = $this->uri->segment('3');
+    	$this->m_kayu_online->hapus_order($id);
+		// $this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Order Berhasil !'));
+		redirect(base_url("wishlist")); 
+    	
+    }
+
+  //   public function edit_order(){
+  //   	// $this->dataencryption->enc_dec("decrypt", $this->uri->segment('2'));
+  //   	$id = $this->dataencryption->enc_dec("encrypt", $this->uri->segment('3'));
+  //   	$data['tampil'] = $this->m_kayu_online->edit_order($id);
+  //   	foreach ($data['tampil']->result_array() as $key ) {
+  //   		echo "<pre>";
+  //   		print_r($key);
+  //   		echo "</pre>";
+  //   	}
+  //   	die();
+		// $data['content'] = 'public/index';
+		// $this->load->view('public/template/layout',$data);
+  // //   	$this->m_kayu_online->hapus_order($id);
+		// // // $this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Order Berhasil !'));
+		// // redirect(base_url("wishlist")); 
+    	
+  //   }
+
+    public function reservasi(){
+    	$id = $this->dataencryption->enc_dec("decrypt", $this->uri->segment('3'));
+    	$nama = $this->input->post('nama');
+    	$alamat = $this->input->post('tempat');
+    	$kode_pos = $this->input->post('pastcode');
+    	$kota = $this->input->post('kota');
+    	$hp = $this->input->post('hp');
+    	$email = $this->input->post('email');
+    	$note = $this->input->post('note');
+    	$bank = $this->input->post('bank');
+
+    	$data = array(
+    		'id_pemesan' => $id,
+    		'nama_pemesan' => $nama,
+    		'alamat_pemesan' => $alamat,
+    		'kode_pos' => $kode_pos,
+    		'kota' =>  $kota,
+    		'kontak' => $hp,
+    		'email' => $email,
+    		'note' => $note, 
+    		'bank' => $bank,
+    		'status' => 'proses_3'
+    	);
+
+    	// echo "<pre>";
+    	// print_r($data);
+    	// echo "</pre>";
+    	// die;
+
+    	$this->m_kayu_online->input_data_reservasi($data,'reservasi');
+    	redirect(base_url("order-complete"));
     }
 
  

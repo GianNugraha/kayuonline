@@ -19,7 +19,7 @@
 }
 </style>
 <!-- footer -->
-  <div class="footer">
+  <div class="footer" style="background-color: #E4E4E4;">
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
@@ -31,7 +31,7 @@
               <input type="text" class="form-control" placeholder="Masukan Email Anda" aria-label="Recipient's username"
                 aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit">Subcribe</button>
+                <button class="btn btn-outline-secondary" type="submit">Subscribe</button>
               </div>
             </div>
           </form>
@@ -43,9 +43,9 @@
             <div class="col-6">
               <div class="list_footer">
                 <ul>
-                  <li><a href="faq.html">Faq</a></li>
-                  <li><a href="kebijakanprivasi.html">Kebijakan Privasi</a></li>
-                  <li><a href="layananpelanggan.html">Layanan Pelanggan</a></li>
+                  <li><a href="<?= base_url('faq') ?>">Faq</a></li>
+                  <li><a href="<?= base_url('kebijakan-privasi')?>">Kebijakan Privasi</a></li>
+                  <li><a href="<?php echo base_url('layanan-pelanggan')?>">Layanan Pelanggan</a></li>
                 </ul>
               </div>
             </div>
@@ -53,14 +53,23 @@
               <img width="100%" src="<?php echo base_url('assets/img/bank.png'); ?>" alt="">
             </div>
           </div>
+          <div class="row" >
+            <div class="col-6">
+              <div class="list_footer">
+                <ul class="whatsap">
+                  <li><a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Saya Ingin Memesan" target="_blank"><img class="logo_wa" style="width: 20px;" src="<?php echo base_url('assets/img/whatsapp.png'); ?>" alt=""><span class="font_wa" >Ingin Memesan? <i>Hubungi Kami !</i></span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
-  <a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Bisa Bantu Saya?" class="float" target="_blank">
+  <!-- <a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Bisa Bantu Saya?" class="float" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
-    </a>
+    </a> -->
 
   <div class="footer_socialmedia">
     <div class="container">

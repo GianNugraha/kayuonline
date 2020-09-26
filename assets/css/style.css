@@ -812,7 +812,7 @@ background-color: #ccc;
 
  /* footer */
  .footer {
-   background-color: #F8F8F8;
+   background-color: #E4E4E4;
    margin-top: 70px;
  }
 
@@ -827,6 +827,21 @@ background-color: #ccc;
   margin-top: 35px;
   margin-bottom: 35px;
 }
+
+@media only screen and (max-width: 600px) {
+  .whatsap{
+    margin-top: -60px
+  }
+  .logo_wa{
+    margin-top: -4px
+  }
+  .font_wa{
+    font-size: 9px;
+   margin-left: 2px;
+    
+  }
+}
+
 
  .form {
    margin-top: 40px;

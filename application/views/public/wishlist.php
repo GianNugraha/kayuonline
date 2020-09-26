@@ -1,34 +1,9 @@
 <?php
-$sku = $this->input->get('sku');
-$option_sizes = $this->input->get('option_sizes');
-$pecah = explode("+", $option_sizes);
-$price = $pecah[0];
-$size = $pecah[3];
-$jumlah = $this->input->get('quant[1]');
-$nama_produk = $this->input->get('nama_produk');
-$foto = $this->input->get('foto');
-$total = ($jumlah*$price);
-$id = $this->input->get('id');
-// $sku = $this->input->get('sku');
 
-echo "nama produk = ". $nama_produk."<br>";
-echo "ukuran = ". $size."<br>";
-echo "kode produk = ". $sku."<br>";
-echo "jumlah produk = ". $jumlah."<br>";
-echo "id produk = ". $id."<br>";
-echo "gambar produk = ". $foto."<br>";
-echo "Total = ". $total."<br>";
-        // echo "option_sizes = ". $option_sizes."<br>";
 
-echo "harga produk = ". $price;
-        // $size = $this->input->post('size');
-        // $price = $this->input->post('price');
-// die();
-// foreach ($orders as $key): 
-//     echo "<pre>";
-//     print_r($key);
-//     echo "</pre>";
-// endforeach;
+foreach ($total_biaya as $total): 
+   $jumlah_bayar = $total->total;
+endforeach;
 ?>
 
 <section class="wrapper">
@@ -54,7 +29,7 @@ echo "harga produk = ". $price;
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <a class="next-3" href="<?php echo base_url('order-complete')?>">
+            <a class="next-3" href="">
                 <h1 class="proced-3">03</h1>
                 <h4 class="shop-3">Pesanan Selesai</h4>
                 <p class="item-3">Tinjau dan Kirim Pesanan Anda.</p>
@@ -67,65 +42,56 @@ echo "harga produk = ". $price;
         <div class="row">
             <table class="table" border="1">
                 <thead>
+                    <?php  if (!empty($order)){ 
+                     foreach ($order as $key):  ?>
                     <tr>
                         <td rowspan="4" >
-                            <input type="button" title="Hapus" value="X" style="margin-bottom: 20px">
-                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$foto?>" alt="">
+                            <!-- <a href="<?php echo base_url('home/delete_order/').$key['id']?>"><input type="button" title="Hapus" value="X" style="margin-bottom: 20px"></a> -->
+
+                            <a onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Item Ini ?')" href="<?php echo base_url('home/delete_order/').$key['id']?>"><i class="fa fa-trash-o" title="Hapus"></i></a>
+                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$key['gambar_product']?>" alt="">
+
+                            <!-- <a href="<?php echo base_url('home/edit_order/').$key['id']?>"><button><i class="fa fa-pencil" title="edit"></i></button></a>
+                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url().$key['gambar_product']?>" alt=""> -->
                         </td>
                         <td>ukuran</td>
-                        <td><?= $nama_produk; ?> - <?= $size ?> </td>
+                        <td><?= $key['nama_product']; ?> - <?= $key['ukuran'] ?> </td>
                     </tr>
                     <tr>
                         <td>Harga</td>
-                        <td>Rp. <span><?= $price ?></span></td>
-                        <input type="hidden" id="harga" value="<?= $price ?>">
+                        <td>Rp. <span><?php echo number_format($key['harga'],2,',','.'); ?></span></td>
+                        <!-- <input type="hidden" id="harga" value="<?= $key->harga ?>"> -->
                     </tr>
                     <tr>
                         <td>Jumlah</td>
-                        <td> <span><?= $jumlah ?></span></td>
-                        <input type="hidden" id="harga" value="<?= $jumlah ?>">
+                        <td> <span><?= $key['jumlah'] ?></span></td>
+                        <!-- <input type="hidden" id="harga" value="<?= $key->jumlah ?>"> -->
                         
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td> <span><?= $total ?></span></td>
-                        <input type="hidden" id="harga" value="<?= $total ?>">
+                        <td> <span><?php echo number_format($key['total'],2,',','.'); ?></span></td>
+                        <!-- <input type="hidden" id="harga" value="<?= $key->total ?>"> -->
                     </tr>
                 </thead>
+                <?php endforeach; 
+                    } else {
+                ?>
+                <center>
+                        <div class="container">
+                          <h2 style="text-align: center; font-weight: bold;">Wishlist Kosong !</h2>
+                      </div>
+                  </center>
+                  <?php } ?>
             </table>
-            <!-- <table class="table" border="1">
-                <thead>
-                    <tr>
-                        <td rowspan="4" >
-                            <input type="button" title="Hapus" value="X" style="margin-bottom: 20px">
-                            <img class="imgMobile" style="width: 75px; height: 140px" src="<?php echo base_url('assets/images/Merbau.png')?>" alt="">
-                        </td>
-                        <td>ukuran</td>
-                        <td>Merbau - 1 Meter³ (210-390 x 11 x 7)</td>
-                    </tr>
-                    <tr>
-                        <td>Harga</td>
-                        <td>Rp. <span>12000000</span></td>
-                        <input type="hidden" id="harga" value="12000000">
-                    </tr>
-                    <tr>
-                        <td>Jumlah</td>
-                        <td>
-                            <span class="stepper input">
-                                <input style="width: 80px; line-height: normal; text-align: center; width: 80px;" type="number" id="stepper" value="1" min="1" max="100" step="1">
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td>Rp. <span id = "valueSteper"></span></td>
-                    </tr>
-                </thead>
-            </table> -->
+            <div >
+                <a href="<?= base_url('toko') ?>"><input style="background-color: green; color: white" type="submit" name="beli lagi" class="btn btn-block" value="Belanja Lagi?"></a>
+            </div>
+        
     </div>
-    <div class="form-group">
+    <!-- <div style="margin-top: 50px" class="form-group">
         <input style="background-color: #888" type="submit" onclick="updateValue()" name="keranjang" class="btn btn-block" value="Perbarui Keranjang">
-    </div>
+    </div> -->
 </div>
 
 <!-- tabel -->
@@ -137,17 +103,18 @@ echo "harga produk = ". $price;
     </div>
 </div>
 <div class="container" style="margin-bottom: 30px">
-    <form action="checkout.html">
+    <form action="<?= base_url('checkout') ?>">
       <table class="order-detail" border="1" style="width:100% ; text-align: center;">
         <tr >
             <td class="td_price"> <strong>Jumlah Total Harga Produk</strong> </td>
-            <td class="td_price"> <strong>Rp. <span id = "valueSteper2"></strong></td>
+            <!-- <td class="td_price"> <strong>Rp. <span id = "valueSteper2"></strong></td> -->
+            <td class="td_price"> <strong>Rp. <?php echo number_format($jumlah_bayar,2,',','.'); ?></strong></td>
                 <input type="hidden" id="jumlah" value="13000">
             </tr>
         </table>
         <span style="float: center; margin-top: 20px">
             <div class="form-group">
-                <input style="background-color: grey" type="submit" name="pesan" class="btn btn-block" value="Proses Ke Pesanan">
+                <input style="background-color: green; color: white" type="submit" name="pesan" class="btn btn-block" value="Proses Ke Pesanan">
             </div>
         </span>
         <!-- <div class="form-group col-md-2" style="margin-top: -20px; text-align: center" >

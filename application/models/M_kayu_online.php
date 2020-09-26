@@ -97,6 +97,7 @@ class M_kayu_online extends CI_Model{
 
 	public function cek_user($namaPengguna){		
 		$sql = $this->db->query("SELECT * FROM users where username='$namaPengguna' and role='user'  ");
+
 		return $cek_user = $sql->num_rows();
 	}
 
@@ -209,6 +210,23 @@ class M_kayu_online extends CI_Model{
 		return $data->result();
 	}
 
+	public function getAllProduct() {
+		// $db = $this->load->database('second', TRUE);
+		$this->db->select("p.*")->from("products p");
+		$this->db->select("c.category_code, c.category_name")->from("product_categories c");
+		$this->db->select("s.product_id, MAX(s.price) AS max_price, MIN(s.price) AS min_price")->from("product_has_sizes s");
+		$this->db->select("i.image, i.thumbnail_image, i.first")->from("product_images i");
+		$this->db->group_by("s.product_id")->where("s.product_id = p.id");
+		$this->db->where("p.category_id = c.id");
+		$this->db->where("i.product_id = p.id");
+		// $this->db->where("p.name = '$param'");
+		// $this->db->where("c.id = p.category_id");
+		// $this->db->where("c.category_code = '$category'");
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+
 	public function getUkuran($param, $category) {
 		// $this->db->select("p.*")->from("products p");
 		$this->db->select("p.*")->from("products p");
@@ -285,14 +303,13 @@ class M_kayu_online extends CI_Model{
 		// return $query->result();
 	}
 
-	public function getThumbnail($param, $category) {
-		// $this->db->select('thumbnail');
-		// $this->db->from('product_thumbnail2');
-		// $this->db->where('product_thumbnail2.name', $param);
-		// $this->db->where('product_thumbnail2.kode_product', $category);
-		
-		// $query = $this->db->get();
-		// return $query->result();
+	public function getThumbnail($category, $param) {
+		$this->db->select('thumbnail');
+		$this->db->from('product_thumbnail');
+		$this->db->where('product_thumbnail.name', $param);
+		$this->db->where('product_thumbnail.kode_product', $category);
+		$query = $this->db->get();
+		return $query->result();
 	}
 
 
@@ -334,8 +351,83 @@ class M_kayu_online extends CI_Model{
         return $userID?$userID:FALSE;
     }
 
- //   	public function input_data_admin($data,$table){
-	// 	$this->db->insert($table,$data);
-	// }	
+    public function cek_orderStatus($id_pemesan, $sku, $ukuran){		
+		$sql = $this->db->query("SELECT * FROM orders where id_pemesan='$id_pemesan' and sku_product='$sku' and ukuran='$ukuran' ");
+		return $sql->result_array();
+	}
+
+    public function input_data_orders($data,$table){
+    	$id_pemesan = $this->session->userdata('idUser');
+    	$update_product = $this->m_kayu_online->cek_orderStatus($data['id_pemesan'], $data['sku_product'], $data['ukuran']);
+    	if (!empty($update_product)) {
+    		foreach ($update_product as $key ) {
+	    		$jumlahBayar = $key['total'] + $data['total'];
+	    		$jumlahProduk = $key['jumlah'] + $data['jumlah'];
+	    		$dataUpdate = array(
+	    			'jumlah' => $jumlahProduk,
+	    			'total' => $jumlahBayar
+	    		);
+	    		$this->db->where('id_pemesan', $id_pemesan);
+	    		$this->db->where('sku_product', $data['sku_product']);
+	    		$this->db->where('ukuran', $data['ukuran']);
+	    		return $this->db->update($table,$dataUpdate);
+
+    		}
+    	}
+    	else{
+    		$this->db->insert($table,$data);
+    	}
+	}
+
+   	public function getOrders($param){
+		return $this->db->get_where('orders', array('id_pemesan' => $param));
+	}	
+
+	public function cek_order($id_pemesan, $sku, $ukuran){	;
+		$sql = $this->db->query("SELECT * FROM orders where id_pemesan='$id_pemesan' and sku_product='$sku' and ukuran='$ukuran' ");
+		return $sql->num_rows();
+	}
+
+	public function hapus_order($id){    
+		$this->db->where('id', $id);    
+		return $this->db->delete('orders'); // Untuk mengeksekusi perintah delete data  
+	}
+
+	public function get_total_biaya($id){
+		// echo $id; die();
+		$sql = $this->db->query("SELECT SUM(total) as total FROM orders WHERE id_pemesan = '$id'");
+		return $sql->result();
+	}
+
+	public function getCountWishlist($param){
+		if ($param != 'NULL') {
+			$this->db->select('COUNT(id) as total');
+			$this->db->group_by('id_pemesan'); 
+			$this->db->where('id_pemesan', $param);
+			$this->db->order_by('total'); 
+			$hasil = $this->db->get('orders');
+			return $hasil;
+		}else{
+			$hasil = 0;
+			return $hasil;
+		}
+	}
+
+	public function edit_order($param){
+		// echo $id; die();
+		$id = $this->dataencryption->enc_dec("decrypt", $param);
+		return $this->db->get_where('orders', array('id' => $id));
+		// return $sql->result();
+	}
+
+	public function input_data_reservasi($data,$table){
+    	$this->db->insert($table,$data);
+	}
+
+	public function getReservasi($param){
+		$id = $param;	
+		return $this->db->get_where('reservasi', array('id_pemesan' => $id, 'status' => 'proses_3'))->result_array();
+	}
+	
 
 }

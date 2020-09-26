@@ -65,7 +65,7 @@
           <div class="product-top">
             <div class="thumb-img">
               <a href="<?php echo base_url('produk?kategori=KO&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
-              <a href="<?php echo base_url('produk?kategori=KO&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a>
+              <!-- <a href="<?php echo base_url('produk?kategori=KO&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a> -->
             </div>
             <!-- <div class="overlay">
               <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
@@ -110,7 +110,7 @@
           <div class="product-top">
             <div class="thumb-img">
               <a href="<?php echo base_url('produk?kategori=DK&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
-              <a href="<?php echo base_url('produk?kategori=DK&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a>
+              <!-- <a href="<?php echo base_url('produk?kategori=DK&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a> -->
             </div>
             <!-- <div class="overlay">
               <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
