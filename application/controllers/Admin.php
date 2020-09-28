@@ -460,6 +460,20 @@ class Admin extends CI_Controller {
 
 
 	}
+
+	public function get_product_byCategory(){
+		// echo "masuk";
+    	$id = $this->input->get('id');
+    	$sku = $this->input->get('sku');
+    	$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+    	$data['productPerCategory'] = $this->m_kayu_online->get_product_byCategory($id, $sku);
+		// echo "<pre>";
+		// print_r($data['productPerCategory']);
+		// echo "</pre>";
+		// die();
+		$data['content'] = 'admin/product-by-name';
+		$this->load->view('admin/template/layout',$data);
+    }
 	
 
 

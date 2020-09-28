@@ -28,6 +28,18 @@ class M_kayu_online extends CI_Model{
 		->result();
 	}
 
+	// public function getProduct()
+	// {
+	// 	return $this->db->from('products')
+	// 	->join('product_categories','product_categories.id = products.category_id')
+	// 	->join('product_has_sizes','product_has_sizes.product_id = products.id')
+	// 	->join('product_sizes','product_sizes.id = product_has_sizes.product_id')
+	// 	->join('product_images','product_images.product_id = products.id')
+
+	// 	->get()
+	// 	->result();
+	// }
+
 	public function getAdmin(){
 		return $this->db->get_where('users', array('role' => 'admin', 'status' => 'active'));
 	}
@@ -498,6 +510,21 @@ class M_kayu_online extends CI_Model{
 		$this->db->where('id_pemesan', $id_pemesan);
 		$this->db->update('reservasi',$data);
 		return $data;
+	}
+
+	public function get_product_byCategory($param, $condition){
+
+		return $this->db->from('products')
+		->join('product_categories','product_categories.id = products.category_id')
+		->join('product_has_sizes','product_has_sizes.product_id = products.id')
+		->join('product_sizes','product_sizes.id = product_has_sizes.product_size_id')
+		->join('product_images','product_images.product_id = products.id')
+		->where('product_has_sizes.product_id = products.id')
+		// ->where('product_sizes.id = product_has_sizes.product_size_id')
+		->where('products.category_id', $param)
+		->where('products.product_code', $condition)
+		->get()
+		->result();
 	}
 	
 
