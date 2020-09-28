@@ -53,7 +53,7 @@
               <img width="100%" src="<?php echo base_url('assets/img/bank.png'); ?>" alt="">
             </div>
           </div>
-          <div class="row" >
+          <!-- <div class="row" >
             <div class="col-6">
               <div class="list_footer">
                 <ul class="whatsap">
@@ -61,15 +61,15 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
       </div>
     </div>
   </div>
-  <!-- <a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Bisa Bantu Saya?" class="float" target="_blank">
+  <a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Bisa Bantu Saya?" class="float" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
-    </a> -->
+    </a>
 
   <div class="footer_socialmedia">
     <div class="container">
