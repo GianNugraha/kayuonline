@@ -17,7 +17,7 @@ class Login extends CI_Controller{
         $password = $this->input->post('password');
         $where = array(
             'username' => $username,
-            'password' => $password,
+            'password' => $this->dataencryption->enc_dec("encrypt", $password),
             'role' => 'admin',
             'status' => 'active'
             );

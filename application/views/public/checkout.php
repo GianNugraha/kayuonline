@@ -26,17 +26,25 @@ else{
     <div class="row" style="margin-top: 30px; margin-bottom: 30px">
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="proced-1">
+              <?php  if (!empty($order)){ ?>
                 <a class="next-1" href="<?php echo base_url('wishlist')?>">
-                    <h1 style="color: black;" class="proced-1">01</h1>
-                    <h4 style="color: black;" class="shop-1">Keranjang Belanja</h4>
-                    <p style="color: black" class="item-1">Kelola daftar item Anda.</p>
+              <?php } else{ ?>
+                <a class="next-3" href="">
+              <?php } ?>
+                  <h1 style="color: black;" class="proced-1">01</h1>
+                  <h4 style="color: black;" class="shop-1">Keranjang Belanja</h4>
+                  <p style="color: black" class="item-1">Kelola daftar item Anda.</p>
                 </a>
             </div>
 
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="procces-II">
+              <?php  if (!empty($order)){ ?>
                 <a class="next-2" href="<?php echo base_url('checkout')?>">
+              <?php } else{ ?>
+                <a class="next-3" href="">
+              <?php } ?>
                     <h1 style="color: black; font-size: 3.5rem;">02</h1>
                     <h4 style="color: black;" class="shop-2">Detail Pembayaran</h4>
                     <p style="color: black;" class="item-2">Periksa daftar item Anda.</p>
@@ -44,7 +52,11 @@ else{
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <a class="next-3" href="<?php echo base_url('order-complete')?>">
+            <?php  if (!empty($order)){ ?>
+                <a class="next-3" href="<?php echo base_url('order-complete')?>">
+              <?php } else{ ?>
+                <a class="next-3" href="">
+              <?php } ?>
                 <h1 class="proced-3">03</h1>
                 <h4 class="shop-3">Pesanan Selesai</h4>
                 <p class="item-3">Tinjau dan Kirim Pesanan Anda.</p>

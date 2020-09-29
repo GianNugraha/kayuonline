@@ -130,6 +130,27 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/layout',$data);
 	}
 
+	public function daftar_bukti_tf()
+	{
+		// if($_POST){
+		// 	$data['discipline'] = $this->toornament_model->getToornamentByCategory();
+		// }else{
+		// 	$data['discipline'] = $this->toornament_model->getAllGame();
+		// }
+		
+		// $data['toko'] = $this->m_kayu_online->getAllProduk();
+		$data['buktiTf'] = $this->m_kayu_online->getBuktiTf();
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		// $data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		// echo "<pre>";
+		// print_r($data['allNotif']);
+		// echo "<pre>";
+		// die();
+		// $data['adminBlok'] = $this->m_kayu_online->getDaftarBlok();
+		$data['content'] = 'admin/daftar-transfer';
+		$this->load->view('admin/template/layout',$data);
+	}
+
 	public function pemberitahuan()
 	{
 		// $urlEnc = $this->dataencryption->enc_dec("decrypt", $this->uri->segment('2'));
@@ -229,7 +250,7 @@ class Admin extends CI_Controller {
 				'nama' => $nama,
 				'email' => $email,
 				'username' => $namaPengguna,
-				'password' => $sandi,
+				'password' => $this->dataencryption->enc_dec("encrypt", $sandi),
 				'no_hp' => $hp,
 				'role' => 'admin',
 				'status' => 'active'
@@ -265,7 +286,7 @@ class Admin extends CI_Controller {
 				'nama' => $nama,
 				'email' => $email,
 				'username' => $namaPengguna,
-				'password' => $sandi,
+				'password' => $this->dataencryption->enc_dec("encrypt", $sandi),
 				'no_hp' => $hp,
 				'role' => 'admin',
 				'status' => 'disactive'
@@ -300,7 +321,7 @@ class Admin extends CI_Controller {
 				'status' => 'active'
 			);
 			$this->m_kayu_online->terima_admin($id, $data);
-			$this->m_kayu_online->update_Notifikasi($admin_reg, 'kurang');
+			$this->m_kayu_online->update_Notifikasi($admin_reg, 'kurang', 'admin_reg');
 			$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Pendaftaran Admin Di Izinkan'));
 			redirect(base_url("admin/daftar-admin")); 
 		}
@@ -308,13 +329,39 @@ class Admin extends CI_Controller {
 			$data = array(
 				'status' => 'blok'
 			);
-			$this->m_kayu_online->update_Notifikasi($admin_reg, 'kurang');
+			$this->m_kayu_online->update_Notifikasi($admin_reg, 'kurang', 'admin_reg');
 			$this->m_kayu_online->tolak_admin($id, $data );
 			$this->session->set_flashdata('msg', array('class' => 'danger', 'message'=> 'Pendaftaran Admin Tidak Di izinkan'));
 			redirect(base_url("admin/daftar-admin"));
 		}
 		
 	}
+
+	public function proses_bukti($id, $param){
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif()->result_array();
+		$bukti_transfer = ($data['allNotif'][0]['bukti_transfer']);
+		$id = $this->dataencryption->enc_dec("decrypt", $id);
+		if ($param == 'terima') {
+			$data = array(
+				'status' => 'done'
+			);
+			$this->m_kayu_online->terima_transfer($id, $data);
+			$this->m_kayu_online->update_Notifikasi($bukti_transfer, 'kurang', 'bukti_transfer');
+			$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Bukti Pembayaran di Sah kan'));
+			redirect(base_url("admin/daftar-bukti-tf")); 
+		}
+		else{
+			$data = array(
+				'status' => 'tolak'
+			);
+			$this->m_kayu_online->update_Notifikasi($bukti_transfer, 'kurang', 'bukti_transfer');
+			$this->m_kayu_online->tolak_bukti($id, $data );
+			$this->session->set_flashdata('msg', array('class' => 'danger', 'message'=> 'Bukti Transfer di Tolak'));
+			redirect(base_url("admin/daftar-bukti-tf"));
+		}
+		
+	}
+
 	public function delete($id)
 	{
     // Memanggil function hapus_produk dengan parameter $id di dalam ProductModel dan menampungnya di variabel hapus

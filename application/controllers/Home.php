@@ -169,7 +169,7 @@ class Home extends CI_Controller {
 	public function checkout()
 	{
 		$id_pemesan = $this->session->userdata('idUser');
-		$data['reservasi'] = $this->m_kayu_online->getReservasi($id_pemesan);
+		$data['reservasi'] = $this->m_kayu_online->lihatReservasi($id_pemesan);
 		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
 		// $data['total_biaya']=$this->m_kayu_online->get_total_biaya_perproduct($id_pemesan);
@@ -518,17 +518,23 @@ class Home extends CI_Controller {
 
       public function upload_trf(){
       	$id = $this->dataencryption->enc_dec("decrypt", $this->uri->segment('3'));
+      	$data['allNotif'] = $this->m_kayu_online->getAllNotif(0);
+    		foreach ($data['allNotif']->result() as $key ) {
+    			$bukti_transfer = $key->bukti_transfer;
+    		}
     	$id_pemesan = $this->dataencryption->enc_dec("encrypt", $this->session->userdata('idUser'));
     	$result = $this->m_kayu_online->upload_trf($id, $id_pemesan);
-    	if ($result['bukti_transaksi'] == 'Error'){
+    	if ($result['bukti_transaksi'] == 'Error'){ 
     		$this->session->set_flashdata('msg', array('class' => 'danger', 'message'=> 'Upload Gagal, File Yang Anda Unggah Tidak Sesuai'));
     		redirect(base_url().'order-complete');
 
     	}
     	else{
+    		// $bukti_transfer = ($data['allNotif'][0]['bukti_transfer']);
+    		$this->m_kayu_online->update_notif_tf($bukti_transfer);
     		redirect(base_url().'end-transaction');
     	}
-    	redirect('end-transaction');
+    	// redirect('end-transaction');
     }
 
     public function end_transaction(){

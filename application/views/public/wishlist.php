@@ -21,7 +21,11 @@ endforeach;
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="procces-II">
-                <a class="next-2" href="<?php echo base_url('checkout')?>">
+                <?php  if (!empty($order)){ ?>
+                    <a class="next-2" href="<?php echo base_url('checkout')?>">
+                    <?php } else{ ?>
+                        <a class="next-3" href="">
+                        <?php } ?>
                     <h1 style=" font-size: 3.5rem;">02</h1>
                     <h4 class="shop-2">Detail Checkout</h4>
                     <p class="item-2">Periksa daftar item Anda.</p>
@@ -29,7 +33,11 @@ endforeach;
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <a class="next-3" href="">
+            <?php  if (!empty($order)){ ?>
+                <a class="next-3" href="<?php echo base_url('order-complete')?>">
+            <?php } else{ ?>
+                <a class="next-3" href="">
+            <?php } ?>
                 <h1 class="proced-3">03</h1>
                 <h4 class="shop-3">Pesanan Selesai</h4>
                 <p class="item-3">Tinjau dan Kirim Pesanan Anda.</p>

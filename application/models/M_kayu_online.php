@@ -145,6 +145,11 @@ class M_kayu_online extends CI_Model{
 		return $this->db->get('users'); 
 	}
 
+	public function getBuktiTf(){    
+		$this->db->where('status', 'proses_3');    
+		return $this->db->get('reservasi'); 
+	}
+
 	public function getDaftarBlok(){    
 		$this->db->where('status', 'blok');    
 		return $this->db->get('users'); 
@@ -155,16 +160,26 @@ class M_kayu_online extends CI_Model{
 		return $this->db->update('users' ,$param);
 	}
 	
+	public function terima_transfer($id, $param){
+		$this->db->where('id', $id);
+		return $this->db->update('reservasi' ,$param);
+	}
+
 	public function tolak_admin($id, $param){
 		$this->db->where('id', $id);
 		return $this->db->update('users' ,$param);
+	}
+
+	public function tolak_bukti($id, $param){
+		$this->db->where('id', $id);
+		return $this->db->update('reservasi' ,$param);
 	}
 
 	public function getAllNotif(){
 		return $this->db->get('notifikasi'); 
 	}
 
-	public function update_Notifikasi($nilai, $param){
+	public function update_Notifikasi($nilai, $param, $table){
 		$nilai_awal = $nilai;
 		$nilai_update = $nilai_awal;
 		if ($param=='tambah') {
@@ -172,7 +187,25 @@ class M_kayu_online extends CI_Model{
 		} elseif ($param=='kurang') {
 			$nilai_update = $nilai_awal - 1;
 		}
-		return $this->db->query("UPDATE notifikasi SET admin_reg = REPLACE(admin_reg, '$nilai_awal', '$nilai_update')");
+		if ($table == 'admin_reg') {
+			return $this->db->query("UPDATE notifikasi SET admin_reg = REPLACE(admin_reg, '$nilai_awal', '$nilai_update')");
+		}
+		elseif ($table == 'bukti_transfer') {
+			return $this->db->query("UPDATE notifikasi SET bukti_transfer = REPLACE(bukti_transfer, '$nilai_awal', '$nilai_update')");
+		}
+		elseif ($table == 'stock') {
+			return $this->db->query("UPDATE notifikasi SET stock = REPLACE(stock, '$nilai_awal', '$nilai_update')");
+		}
+		
+		// return $this->db->update('users' ,$param);
+	}
+
+	public function update_notif_tf($param){
+		$nilai_awal = $param;
+		$nilai_update = $nilai_awal+1;
+		// echo " nilai awal : ".$nilai_awal;
+		return $data['update'] = $this->db->query("UPDATE notifikasi SET bukti_transfer = REPLACE(bukti_transfer, '$nilai_awal', '$nilai_update')");
+		// var_dump($data['update']); die();
 		// return $this->db->update('users' ,$param);
 	}
 
@@ -508,7 +541,8 @@ class M_kayu_online extends CI_Model{
 
 		// echo $img; die();
 		$data = array(
-			'bukti_transaksi'=>$img
+			'bukti_transaksi'=>$img,
+			'status' => 'proses_3'
 		);
 		$id_pemesan = $this->dataencryption->enc_dec("decrypt", $id_pemesan);
 		$this->db->where('id', $id);

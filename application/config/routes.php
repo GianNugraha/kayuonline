@@ -71,6 +71,7 @@ $route['admin/status-transaksi'] = 'admin/status_transaksi';
 $route['admin/add-admin'] = 'admin/add_admin';
 $route['admin/add-produk'] = 'admin/add_produk';
 $route['admin/daftar-admin'] = 'admin/daftar_admin';
+$route['admin/daftar-bukti-tf'] = 'admin/daftar_bukti_tf';
 $route['coba-data'] = 'home/join';
 $route['kayu-olahan'] = 'home/kayu_olahan';
 $route['user-login'] = 'home/user_login';
