@@ -31,3 +31,8 @@ endforeach;
         </div>
     </div>
 </div>
+
+<div class="container" style="margin-top: 40px">
+            <a href="#"><div class="p" style="color: #5cb85c; font-size: 20px; text-align: center"> Lihat Riwayat Pembelian? </div></a>
+</div>
+

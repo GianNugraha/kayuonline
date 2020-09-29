@@ -168,7 +168,7 @@ else{
               </div>
             </div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-6">
               <div class="header">
                 <p><b>PENGIRIMAN</b></p>
@@ -179,8 +179,8 @@ else{
                 <p  style="text-align: right">Biaya Pengiriman: Rp. <span id = "valueSelect"></span></p>
               </div>
             </div>
-          </div>
-          <div class="row">
+          </div> -->
+          <!-- <div class="row">
             <div class="col-md-6">
               <div class="header">
                 <p><b>JASA PENGIRIMAN</b></p>
@@ -196,7 +196,7 @@ else{
                 </select>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="row">
             <div class="col-md-6">
               <div class="header">
@@ -205,7 +205,8 @@ else{
             </div>
             <div class="col-md-6">
               <div class="header">
-                <h5 style="text-align: right"><b>Rp. <span id = "valueJmlBayar"></span></b></h5>
+                <h5 style="text-align: right"><b>Rp. <?= number_format($jumlah_bayar,2,',','.'); ?></span></b></h5>
+                <!-- <h5 style="text-align: right"><b>Rp. <span id = "valueJmlBayar"></span></b></h5> -->
               </div>
             </div>
           </div>
