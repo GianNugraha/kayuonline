@@ -79,6 +79,7 @@ $route['forgot'] = 'home/user_forgot_pass';
 $route['proses-pemesanan'] = 'home/prosesPemesanan';
 $route['end-transaction'] = 'home/end_transaction';
 $route['admin/get-product-byCategory'] = 'admin/get_product_byCategory';
+$route['riwayat'] = 'home/riwayat_pemesanan';
 
 
 

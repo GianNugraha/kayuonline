@@ -441,6 +441,11 @@ class M_kayu_online extends CI_Model{
 		return $this->db->get_where('reservasi', array('id_pemesan' => $id, 'status' => 'proses_3'))->result_array();
 	}
 
+	public function lihatReservasi($param){
+		$id = $param;	
+		return $this->db->get_where('reservasi', array('id_pemesan' => $id))->result_array();
+	}
+
 	function do_upload($images)
 	{
 		// $config['upload_path']          = 'assets/img/';

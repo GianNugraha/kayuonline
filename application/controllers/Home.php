@@ -181,7 +181,7 @@ class Home extends CI_Controller {
 	public function order_complete()
 	{
 		$id_pemesan = $this->session->userdata('idUser');
-		$data['reservasi'] = $this->m_kayu_online->getReservasi($id_pemesan);
+		$data['reservasi'] = $this->m_kayu_online->lihatReservasi($id_pemesan);
 		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
 		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
 		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array(); 
@@ -534,11 +534,22 @@ class Home extends CI_Controller {
     public function end_transaction(){
     	$id_pemesan = $this->session->userdata('idUser');
 		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
-    	$data['reservasi'] = $this->m_kayu_online->getReservasi($id_pemesan);
+    	$data['reservasi'] = $this->m_kayu_online->lihatReservasi($id_pemesan);
 		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
     	$data['content'] = 'public/end-transaction';
 		$this->load->view('public/template/layout',$data);
     }
+
+    public function riwayat_pemesanan(){
+    	$id_pemesan = $this->session->userdata('idUser');
+		$data['total_biaya']=$this->m_kayu_online->get_total_biaya($id_pemesan);
+    	$data['reservasi'] = $this->m_kayu_online->lihatReservasi($id_pemesan);
+		$data['order'] = $this->m_kayu_online->getOrders($id_pemesan)->result_array();
+		$data['countWishlist'] = $this->m_kayu_online->getCountWishlist($id_pemesan);
+    	$data['content'] = 'public/riwayat_pemesanan';
+		$this->load->view('public/template/layout',$data);
+    }
+    
 
  
 }
