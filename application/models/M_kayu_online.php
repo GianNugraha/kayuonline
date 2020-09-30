@@ -145,8 +145,8 @@ class M_kayu_online extends CI_Model{
 		return $this->db->get('users'); 
 	}
 
-	public function getBuktiTf(){    
-		$this->db->where('status', 'proses_3');    
+	public function getBuktiTf($param){    
+		$this->db->where('status', $param);    
 		return $this->db->get('reservasi'); 
 	}
 

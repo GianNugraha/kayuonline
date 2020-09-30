@@ -139,7 +139,8 @@ class Admin extends CI_Controller {
 		// }
 		
 		// $data['toko'] = $this->m_kayu_online->getAllProduk();
-		$data['buktiTf'] = $this->m_kayu_online->getBuktiTf();
+		$data['buktiTf'] = $this->m_kayu_online->getBuktiTf('proses_3');
+		$data['TFDone'] = $this->m_kayu_online->getBuktiTf('done');
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		// $data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		// echo "<pre>";
