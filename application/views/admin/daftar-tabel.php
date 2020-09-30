@@ -22,13 +22,6 @@
                   Tambah Admin
                 </div>
                 </a>
-                <!-- <div style="margin-top: 20px;" class="card-header-primary col-md-2">
-                  <h4 class="card-title ">Tambah Admin</h4>
-                  <a href="#">
-                    <i title="Ubah" class="material-icons" style="color: white">add_task</i>
-                  </a>
-                  Tambah Admin
-                </div> -->
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
@@ -48,9 +41,6 @@
                         <th>
                           Nama Pengguna
                         </th>
-                       <!--  <th>
-                          Password
-                        </th> -->
                         <th colspan="2" style="text-align: center;">
                           Aksi
                         </th>
@@ -73,20 +63,14 @@
                           <td>
                             <?php echo $key->username; ?>
                           </td>
-                          <!-- <td>
-                            <?php //echo $this->dataencryption->enc_dec("encrypt", $key->password);  ?>
-                          </td> -->
                           <td>
-                            <!-- <button type="button" > -->
                               <a href="<?php echo base_url('admin/edit/'.$this->dataencryption->enc_dec("encrypt", $key->id)) ?>">
-                                <i title="Ubah" class="material-icons">edit</i>
+                                <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
                               </a>
-                            <!-- </button> -->
-                            <!-- <button type="button" class="btn ">Edit</button> -->
                           </td>
                           <td>
                               <a href="<?php echo base_url('admin/hapus/'.$this->dataencryption->enc_dec("encrypt", $key->id)) ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')">
-                                <i style="color: red" title="Hapus" class="material-icons">delete_forever</i>
+                                <i style="color: red" rel="tooltip" title="Hapus" class="material-icons">delete_forever</i>
                               </a>
                           </td>
                           
@@ -128,9 +112,6 @@
                         <th>
                           Nama Pengguna
                         </th>
-                        <!-- <th>
-                          Password
-                        </th> -->
                         <th colspan="2" style="text-align: center;">
                           Aksi
                         </th>
@@ -152,24 +133,15 @@
                           <td>
                             <?php echo $key->username; ?>
                           </td>
-                          <!-- <td>
-                            <?php echo $key->password; ?>
-                          </td> -->
                           <td>
-                            <!-- <button type="button" > -->
                               <a href="#">
-                                <i title="Ubah" class="material-icons">edit</i>
+                                <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
                               </a>
-                            <!-- </button> -->
-                            <!-- <button type="button" class="btn ">Edit</button> -->
                           </td>
                           <td>
-                            <!-- <button type="button" > -->
                               <a href="#">
-                                <i title="Hapus" class="material-icons">delete_forever</i>
+                                <i title="Hapus" rel="tooltip" class="material-icons">delete_forever</i>
                               </a>
-                            <!-- </button> -->
-                            <!-- <button type="button" class="btn btn-danger">Hapus</button> -->
                           </td>
                           
                         </tr>
@@ -215,18 +187,12 @@
                         <th>
                           Nama Produk
                         </th>
-                        <th>
+                        <th class="text-center">
                           Deskripsi
                         </th>
-                        <th>
+                        <th class="text-center">
                           Detail
                         </th>
-                        <!-- <th>
-                          Password
-                        </th> -->
-                        <!-- <th colspan="2" style="text-align: center;">
-                          Aksi
-                        </th> -->
                       </thead>
                       <tbody>
                         <?php 
@@ -234,39 +200,35 @@
                         foreach ($product as $key): 
                           ?>
                         <tr>
-                          <td><a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                          <td><a rel="tooltip" title="Lihat Detail" style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
                             <?php echo $nomor ?>
                             <a/>
                           </td>
                           <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                            <a rel="tooltip" title="Lihat Detail" style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
                             <?php echo $key->product_code; ?>
                           </a>
                           </td>
                           <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                            <a rel="tooltip" title="Lihat Detail" style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
                             <?php echo $key->category_name; ?>
                             </a>
                           </td>
                           <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                            <a rel="tooltip" title="Lihat Detail" style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
                             <?php echo $key->name; ?>
                             </a>
                           </td>
-                          <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                          <td class="text-center">
+                            <a rel="tooltip" title="Lihat Detail" style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
                             <?php echo $key->description; ?>
                             </a>
                           </td>
-                          <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                          <td class="text-center">
+                            <a rel="tooltip" title="Lihat Detail" style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
                             <?php echo $key->detail; ?>
                           </a>
                           </td>
-                          <!-- <td>
-                            <?php echo $key->password; ?>
-                          </td> -->
-                          
                         </tr>
                          <?php $nomor+=1; endforeach;?>
                       </tbody>
