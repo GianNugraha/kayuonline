@@ -129,6 +129,11 @@ class M_kayu_online extends CI_Model{
 		$this->db->where('id', $id);    
 		return $this->db->delete('users'); // Untuk mengeksekusi perintah delete data  
 	}
+
+	public function hapus_tf($id){    
+		$this->db->where('id', $id);    
+		// return $this->db->delete('reservasi'); // Untuk mengeksekusi perintah delete data  
+	}
 	public function hapus_produk($id)
 	{
 		$this->db->where('id', $id);    
@@ -209,10 +214,7 @@ class M_kayu_online extends CI_Model{
 	public function update_notif_tf($param){
 		$nilai_awal = $param;
 		$nilai_update = $nilai_awal+1;
-		// echo " nilai awal : ".$nilai_awal;
 		return $data['update'] = $this->db->query("UPDATE notifikasi SET bukti_transfer = REPLACE(bukti_transfer, '$nilai_awal', '$nilai_update')");
-		// var_dump($data['update']); die();
-		// return $this->db->update('users' ,$param);
 	}
 
 	public function isNotLogin(){
@@ -232,7 +234,6 @@ class M_kayu_online extends CI_Model{
 	}
 
 	public function getProductCategory($param) {
-		// $db = $this->load->database('second', TRUE);
 		$this->db->select("p.*")->from("products p");
 		// $this->db->select("c.category_code")->from("product_categories c");
 		$this->db->select("s.product_id, MAX(s.price) AS max_price, MIN(s.price) AS min_price")->from("product_has_sizes s");
@@ -246,7 +247,6 @@ class M_kayu_online extends CI_Model{
 	}
 
 	public function getProductByCategory($param, $category) {
-		// $db = $this->load->database('second', TRUE);
 		$this->db->select("p.*")->from("products p");
 		$this->db->select("c.category_code")->from("product_categories c");
 		$this->db->select("s.product_id, MAX(s.price) AS max_price, MIN(s.price) AS min_price")->from("product_has_sizes s");
@@ -262,7 +262,6 @@ class M_kayu_online extends CI_Model{
 	}
 
 	public function getAllProduct() {
-		// $db = $this->load->database('second', TRUE);
 		$this->db->select("p.*")->from("products p");
 		$this->db->select("c.category_code, c.category_name")->from("product_categories c");
 		$this->db->select("s.product_id, MAX(s.price) AS max_price, MIN(s.price) AS min_price")->from("product_has_sizes s");
@@ -270,16 +269,12 @@ class M_kayu_online extends CI_Model{
 		$this->db->group_by("s.product_id")->where("s.product_id = p.id");
 		$this->db->where("p.category_id = c.id");
 		$this->db->where("i.product_id = p.id");
-		// $this->db->where("p.name = '$param'");
-		// $this->db->where("c.id = p.category_id");
-		// $this->db->where("c.category_code = '$category'");
 		$data = $this->db->get();
 
 		return $data->result();
 	}
 
 	public function getUkuran($param, $category) {
-		// $this->db->select("p.*")->from("products p");
 		$this->db->select("p.*")->from("products p");
 		$this->db->select("c.category_code")->from("product_categories c");
 		$this->db->select("s.product_id, s.price, s.stock, s.sold")->from("product_has_sizes s");
@@ -445,7 +440,6 @@ class M_kayu_online extends CI_Model{
 	}
 
 	public function get_total_biaya($id){
-		// echo $id; die();
 		$sql = $this->db->query("SELECT SUM(total) as total FROM orders WHERE id_pemesan = '$id'");
 		return $sql->result();
 	}
@@ -465,10 +459,8 @@ class M_kayu_online extends CI_Model{
 	}
 
 	public function edit_order($param){
-		// echo $id; die();
 		$id = $this->dataencryption->enc_dec("decrypt", $param);
 		return $this->db->get_where('orders', array('id' => $id));
-		// return $sql->result();
 	}
 
 	public function input_data_reservasi($data,$table){
@@ -487,16 +479,11 @@ class M_kayu_online extends CI_Model{
 
 	public function do_upload($images, $path)
 	{
-		// $config['upload_path']          = 'assets/img/';
-		// $config['allowed_types']        = 'gif|jpg|png|jpeg';
-		// $config['max_size']				= '1000';
-		// $config['max_width']  			= '1024';
-		// $config['max_height'] 			= '768';
-		// // $config['max_size']             = 1000;
 		$config['overwrite']            = true;
 
 
 		$config['upload_path'] = 'assets/img/'.$path;
+		$config['upload_path'] = 'assets/img/bukti_tf/';
 		$config['allowed_types'] = 'jpg|png|jpeg';
 		$config['max_size']	= '10000';
 		$config['max_width']  = '10024';
@@ -531,8 +518,6 @@ class M_kayu_online extends CI_Model{
 	}
 
 	public function upload_trf($id, $id_pemesan){
-		// print_r($_FILES['gambar']['name']); 
-		// die();
 
 		if (!empty($_FILES['gambar']['name'])) {
 			$image = $this->do_upload('gambar', 'bukti_tf/');
@@ -545,7 +530,6 @@ class M_kayu_online extends CI_Model{
 			$img = $this->input->post('gambar');
 		}
 
-		// echo $img; die();
 		$data = array(
 			'bukti_transaksi'=>$img,
 			'status' => 'proses_3'

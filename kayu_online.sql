@@ -71,18 +71,12 @@ CREATE TABLE `orders` (
   `total` decimal(10,0) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `orders` */
 
 insert  into `orders`(`id`,`id_pemesan`,`sku_product`,`nama_product`,`ukuran`,`gambar_product`,`id_product`,`jumlah`,`harga`,`total`,`status`) values 
-(36,28,'KO MB01','Merbau ',' 90x15x20','assets/img/merbau.png',2,4,85000,340000,'pesan'),
-(41,27,'KO MB01','Merbau ',' 90x15x20','assets/img/merbau.png',2,1,85000,85000,'pesan'),
-(42,27,'KO EKS-MG','Eksotik-MG',' 2 meter','assets/img/Eksotik-mg-thumbnail_3.png',4,5,70000,350000,'pesan'),
-(47,27,'KO MB01','Merbau ',' 1 meter','assets/img/merbau.png',2,4,100000,400000,'pesan'),
-(48,27,'KO JT01','Jati',' 3 meter','assets/img/default.png',3,3,150000,450000,'pesan'),
-(49,27,'KO JT01','Jati',' 1 meter','assets/img/default.png',3,2,120000,240000,'pesan'),
-(50,27,'DK MB01','Merbau',' 1 meter','assets/img/merbau-decking.png',1,4,100000,400000,'pesan');
+(63,33,'KO MB01','Merbau ',' 1 meter','assets/img/merbau.png',2,2,100000,200000,'pesan');
 
 /*Table structure for table `product_categories` */
 
@@ -122,7 +116,7 @@ CREATE TABLE `product_has_sizes` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `sold` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `product_has_sizes` */
 
@@ -134,7 +128,10 @@ insert  into `product_has_sizes`(`id`,`product_id`,`product_size_id`,`price`,`st
 (5,3,1,120000,12,NULL,NULL,3),
 (6,3,5,150000,25,NULL,NULL,2),
 (7,2,1,100000,22,NULL,NULL,2),
-(8,4,2,70000,54,NULL,NULL,5);
+(8,1,8,0,0,NULL,NULL,5),
+(9,4,2,20000,12,NULL,NULL,NULL),
+(10,5,6,123000,20,NULL,NULL,NULL),
+(11,6,7,3333330,3,NULL,NULL,NULL);
 
 /*Table structure for table `product_images` */
 
@@ -149,7 +146,7 @@ CREATE TABLE `product_images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `product_images` */
 
@@ -159,7 +156,9 @@ insert  into `product_images`(`id`,`product_id`,`image`,`thumbnail_image`,`first
 (3,3,'assets/img/default.png','assets/img/default.png',1,NULL,NULL),
 (4,2,'assets/img/merbau.png','assets/img/merbau.png',1,NULL,NULL),
 (5,2,'assets/img/merbau.png','assets/img/merbau.png',0,NULL,NULL),
-(6,4,'assets/img/Eksotik-mg-thumbnail_3.png','',0,NULL,NULL);
+(6,4,'assets/img/Eksotik-mg-thumbnail_3.png','',0,NULL,NULL),
+(7,5,'assets/img/indah_b/indah B 1.png','',0,NULL,NULL),
+(8,6,'assets/img/cover.jpg','',0,NULL,NULL);
 
 /*Table structure for table `product_sizes` */
 
@@ -168,20 +167,22 @@ DROP TABLE IF EXISTS `product_sizes`;
 CREATE TABLE `product_sizes` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `size` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description_size` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `product_sizes` */
 
-insert  into `product_sizes`(`id`,`size`,`description`,`created_at`,`updated_at`) values 
+insert  into `product_sizes`(`id`,`size`,`description_size`,`created_at`,`updated_at`) values 
 (1,'1 meter','1 m',NULL,NULL),
 (2,'2 meter','2 m',NULL,NULL),
 (3,'90x15x20','90x15x20',NULL,NULL),
 (4,'78x20x30','78x20x30',NULL,NULL),
-(5,'3 meter','3 meter kubik',NULL,NULL);
+(5,'3 meter','3 meter kubik',NULL,NULL),
+(6,'4 meter','',NULL,NULL),
+(7,'3 meter','',NULL,NULL);
 
 /*Table structure for table `product_thumbnail` */
 
@@ -189,9 +190,9 @@ DROP TABLE IF EXISTS `product_thumbnail`;
 
 CREATE TABLE `product_thumbnail` (
   `id` bigint(20) NOT NULL,
-  `product_id` char(50) NOT NULL,
-  `kode_product` char(50) NOT NULL,
-  `kode_kayu` char(50) NOT NULL,
+  `product_id` char(50) DEFAULT NULL,
+  `kode_product` char(50) DEFAULT NULL,
+  `kode_kayu` char(50) DEFAULT NULL,
   `thumbnail` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -202,6 +203,7 @@ CREATE TABLE `product_thumbnail` (
 /*Data for the table `product_thumbnail` */
 
 insert  into `product_thumbnail`(`id`,`product_id`,`kode_product`,`kode_kayu`,`thumbnail`,`name`) values 
+(0,'2','KO','KO IN01',NULL,NULL),
 (1,'2','KO','KO EKS-MG','assets/img/Eksotik-mg-thumbnail.png','Eksotik-MG'),
 (2,'2','KO','KO EKS-MG','assets/img/Eksotik-mg-thumbnail_2.png','Eksotik-MG'),
 (3,'2','KO','KO EKS-MG','assets/img/Eksotik-mg-thumbnail_3.png','Eksotik-MG');
@@ -221,15 +223,17 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `products_product_code_unique` (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `products` */
 
 insert  into `products`(`id`,`category_id`,`product_code`,`name`,`description`,`detail`,`created_at`,`updated_at`) values 
-(1,1,'DK MB01','Merbau','Merbau terutama dimanfaatkan kayunya, yang biasa digunakan dalam konstruksi berat seperti balok-balok, tiang dan bantalan, di bangunan rumah maupun jembatan.Oleh karena kekuatan, keawetan dan penampilannya yang menarik, sekarang kayu merbau juga dimanfaat','ini Detail Merbau Decking','2020-09-02 20:49:41','2020-09-02 20:49:45'),
+(1,1,'DK MB01','Merbau','Merbau terutama dimanfaatkan kayunya, yang biasa digunakan dalam konstruksi berat seperti balok-balok, tiang dan bantalan, di bangunan rumah maupun jembatan.Oleh karena kekuatan, keawetan dan penampilannya yang menarik, sekarang kayu merbau juga dimanfaats','ini Detail Merbau Decking','2020-09-02 20:49:41','2020-09-02 20:49:45'),
 (2,2,'KO MB01','Merbau ','Merbau terutama dimanfaatkan kayunya, yang biasa digunakan dalam konstruksi berat seperti balok-balok, tiang dan bantalan, di bangunan rumah maupun jembatan.Oleh karena kekuatan, keawetan dan penampilannya yang menarik, sekarang kayu merbau juga dimanfaat','Ini adalah detail merbau kayu olahan','2020-09-02 20:49:41','2020-09-02 21:05:39'),
 (3,2,'KO JT01','Jati','Ini merupakan Deskripsi dari kayu olahan jenis jati','Detail kayu olahan Jenis Jati',NULL,NULL),
-(4,2,'KO EKS-MG','Eksotik-MG','ini merupakan deskripsi dari kayu olahan jenis eksotik-mg','ini merupakan detail kayu olahan jenis eksotik-mg',NULL,NULL);
+(4,2,'KO EKS-MG','Eksotik-MG','ini merupakan deskripsi dari kayu olahan jenis eksotik-mg','ini merupakan detail kayu olahan jenis eksotik-mg',NULL,NULL),
+(5,2,'KO IN01','Indah B','Ini Kayu Indah B','Ini Merupakan Kayu Olahan Jenis Indah M',NULL,NULL),
+(6,2,'KO RS01','Rusak','Deskripsi Kayu Rusak',NULL,NULL,NULL);
 
 /*Table structure for table `products2` */
 
@@ -255,6 +259,33 @@ insert  into `products2`(`id`,`category_id`,`name`,`description`,`price`,`create
 ('4','TG','Tangga','Ini Tangga',NULL,NULL,NULL),
 ('5','KS','Kusen','Ini Kusen',NULL,NULL,NULL),
 ('6','LP','Lis Profil','Ini Lis Profil',NULL,NULL,NULL);
+
+/*Table structure for table `reservasi` */
+
+DROP TABLE IF EXISTS `reservasi`;
+
+CREATE TABLE `reservasi` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_pemesan` bigint(20) DEFAULT NULL,
+  `nama_pemesan` varchar(255) DEFAULT NULL,
+  `alamat_pemesan` varchar(255) DEFAULT NULL,
+  `kode_pos` char(50) DEFAULT NULL,
+  `kota` varchar(255) DEFAULT NULL,
+  `kontak` char(50) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `note` text DEFAULT NULL,
+  `bukti_transaksi` char(100) DEFAULT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  `bank` varchar(100) DEFAULT NULL,
+  `verifikasi` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `reservasi` */
+
+insert  into `reservasi`(`id`,`id_pemesan`,`nama_pemesan`,`alamat_pemesan`,`kode_pos`,`kota`,`kontak`,`email`,`note`,`bukti_transaksi`,`status`,`bank`,`verifikasi`) values 
+(8,30,'HIJAS','Jepara','59471','Jepara','082116232727','hijassss@gmail.com',' ','assets/img/bukti_tf/IMG_4978.JPG','tolak','Mandiri',NULL),
+(12,33,'Gian Nugraha','Bayongbong','44162','Garut','081295704758','giannugraha76@gmail.com',' ','assets/img/bukti_tf/downloadMandiri1601361209984.jpg','done','Mandiri',NULL);
 
 /*Table structure for table `user_token` */
 
@@ -288,17 +319,15 @@ CREATE TABLE `users` (
   `role` varbinary(255) DEFAULT NULL,
   `status` char(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`nama`,`email`,`username`,`password`,`no_hp`,`role`,`status`) values 
-(1,'Admin','kayuOnline.co@gmail.com','leaq6vp2yph3','#Alhamdulillah1','089','admin','active'),
-(2,'Gian Nugraha','giannugraha76@gmail.com','siJalu','NmhUTzZTV3JUQjIvaUNNai9DSXQ0UT09',NULL,'admin','active'),
-(3,'Super Admin','SuperAdmin@gmail.com','KayuOnline.co','#Alhamdulillah1',NULL,'admin','active'),
-(25,'Gian Nugraha User','gianzolla9@gmail.com','siJaluUser','Pesat.muda9','081295704758','user','0'),
-(27,'Gian Nugraha','giannugraha76@gmail.com','gian User','NmhUTzZTV3JUQjIvaUNNai9DSXQ0UT09','087821925626','user','0'),
-(28,'nugraha gian','nugrahagian76@gmail.com','nugraha gian','NmhUTzZTV3JUQjIvaUNNai9DSXQ0UT09','087821925626','user',NULL);
+(29,'Armansyah','armansyah.hakim@gmail.com','Arman','KzhuWEF1MUZBMnBCRjZiR0R4K0J3QT09','085974785490','user',NULL),
+(30,'HIJAS','hijassss@gmail.com','hijassss','cDZaNTUwUXMrL08yd2hLNnkybmFTQT09','082116232727','user',NULL),
+(31,'Admin','kayuonline.id@gmail.com','leaq6vp2yph3','c2tnWjg0UUZxakROamNyVjRZMDdpdz09','081241632727','admin','active'),
+(33,'Gian Nugraha','giannugraha76@gmail.com','Giannugraha','NmhUTzZTV3JUQjIvaUNNai9DSXQ0UT09','081295704758','user',NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

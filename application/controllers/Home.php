@@ -530,11 +530,9 @@ class Home extends CI_Controller {
 
     	}
     	else{
-    		// $bukti_transfer = ($data['allNotif'][0]['bukti_transfer']);
     		$this->m_kayu_online->update_notif_tf($bukti_transfer);
     		redirect(base_url().'end-transaction');
     	}
-    	// redirect('end-transaction');
     }
 
     public function end_transaction(){

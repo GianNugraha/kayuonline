@@ -9,20 +9,8 @@ class Admin extends CI_Controller {
 
 	}
 
-	// public function index()
-	// {
-	// 	if (isset($_SESSION['logged_in'])) {
-	// 		$data['produk'] = $this->m_kayu_online->getUsers();
-	// 		$data['content'] = 'admin/index';
-	// 		$this->load->view('admin/template/layout',$data);
-	// 	} else {
-	// 		redirect('admin/login');
-	// 	}
-	// }
-
 	public function index()
 	{
-		// echo $_SESSION['nama']; 
 		if (isset($_SESSION['logged_in']) and $_SESSION['role'] =='admin') {
 			$data['produk'] = $this->m_kayu_online->getProduk();
 			$data['content'] = 'admin/dashboard';
@@ -34,13 +22,6 @@ class Admin extends CI_Controller {
 		}
 		
 	}
-
-	// public function login()
-	// {
-	// 	// $data['produk'] = $this->m_kayu_online->getProduk();
-	// 	$data['content'] = 'login';
-	// 	$this->load->view('login',$data);
-	// }
 
 	public function profil()
 	{
@@ -63,14 +44,6 @@ class Admin extends CI_Controller {
 
 	public function tabel()
 	{
-		
-		// if($_POST){
-		// 	$data['discipline'] = $this->toornament_model->getToornamentByCategory();
-		// }else{
-		// 	$data['discipline'] = $this->toornament_model->getAllGame();
-		// }
-		
-		// $data['toko'] = $this->m_kayu_online->getAllProduk();
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$data['admin'] = $this->m_kayu_online->getAdmin();
 		$data['user'] = $this->m_kayu_online->getUser();
@@ -81,13 +54,6 @@ class Admin extends CI_Controller {
 
 	public function icon()
 	{
-		// if($_POST){
-		// 	$data['discipline'] = $this->toornament_model->getToornamentByCategory();
-		// }else{
-		// 	$data['discipline'] = $this->toornament_model->getAllGame();
-		// }
-		
-		// $data['toko'] = $this->m_kayu_online->getAllProduk();
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$data['produk'] = $this->m_kayu_online->getProduk();
 		$data['content'] = 'admin/icon';
@@ -96,13 +62,6 @@ class Admin extends CI_Controller {
 
 	public function status_transaksi()
 	{
-		// if($_POST){
-		// 	$data['discipline'] = $this->toornament_model->getToornamentByCategory();
-		// }else{
-		// 	$data['discipline'] = $this->toornament_model->getAllGame();
-		// }
-		
-		// $data['toko'] = $this->m_kayu_online->getAllProduk();
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$data['produk'] = $this->m_kayu_online->getProduk();
 		$data['content'] = 'admin/status-transaksi';
@@ -111,20 +70,8 @@ class Admin extends CI_Controller {
 
 	public function daftar_admin()
 	{
-		// if($_POST){
-		// 	$data['discipline'] = $this->toornament_model->getToornamentByCategory();
-		// }else{
-		// 	$data['discipline'] = $this->toornament_model->getAllGame();
-		// }
-		
-		// $data['toko'] = $this->m_kayu_online->getAllProduk();
 		$data['adminDaftar'] = $this->m_kayu_online->getDaftarAdmin();
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
-		// $data['allNotif'] = $this->m_kayu_online->getAllNotif();
-		// echo "<pre>";
-		// print_r($data['allNotif']);
-		// echo "<pre>";
-		// die();
 		$data['adminBlok'] = $this->m_kayu_online->getDaftarBlok();
 		$data['content'] = 'admin/daftar-admin';
 		$this->load->view('admin/template/layout',$data);
@@ -132,41 +79,16 @@ class Admin extends CI_Controller {
 
 	public function daftar_bukti_tf()
 	{
-		// if($_POST){
-		// 	$data['discipline'] = $this->toornament_model->getToornamentByCategory();
-		// }else{
-		// 	$data['discipline'] = $this->toornament_model->getAllGame();
-		// }
-		
-		// $data['toko'] = $this->m_kayu_online->getAllProduk();
 		$data['buktiTf'] = $this->m_kayu_online->getBuktiTf('proses_3');
 		$data['TFDone'] = $this->m_kayu_online->getBuktiTf('done');
+		$data['TFTolak'] = $this->m_kayu_online->getBuktiTf('tolak');
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
-		// $data['allNotif'] = $this->m_kayu_online->getAllNotif();
-		// echo "<pre>";
-		// print_r($data['allNotif']);
-		// echo "<pre>";
-		// die();
-		// $data['adminBlok'] = $this->m_kayu_online->getDaftarBlok();
 		$data['content'] = 'admin/daftar-transfer';
 		$this->load->view('admin/template/layout',$data);
 	}
 
 	public function pemberitahuan()
 	{
-		// $urlEnc = $this->dataencryption->enc_dec("decrypt", $this->uri->segment('2'));
-		// $url =  $this->uri->segment('2');
-		// $urlEnc = $this->dataencryption->enc_dec("encrypt",$url);
-		// $urlDec = $this->dataencryption->enc_dec("decrypt",$urlEnc);
-		// echo $urlDec;
-		// die();
-		// if($_POST){
-		// 	$data['discipline'] = $this->toornament_model->getToornamentByCategory();
-		// }else{
-		// 	$data['discipline'] = $this->toornament_model->getAllGame();
-		// }
-		
-		// $data['toko'] = $this->m_kayu_online->getAllProduk();
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$data['users'] = $this->m_kayu_online->getUsers();
 		$data['content'] = 'admin/pemberitahuan';
@@ -218,7 +140,6 @@ class Admin extends CI_Controller {
 		$datas = [
 			'product_id' => $category_code,
 			'product_size_id' => $id_ukuran,
-			// 'id' => $id_ukuran,
 			'stock' => $stok,
 			'price' => $harga,
 		];
@@ -235,6 +156,7 @@ class Admin extends CI_Controller {
 		// print_r($datass);
 		// die();
 		$simpan = $this->m_kayu_online->input_produk($data, $datas, $datass, $datasss);
+		$simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);
 		if ($simpan) {
 			session()->setFlashdata('success','Data berhasil ditambahkan');
 			return redirect()->to(base_url('admin/tabel'));
@@ -244,7 +166,7 @@ class Admin extends CI_Controller {
 	public function proses_add_admin(){
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif()->result_array();
 		$admin_reg = ($data['allNotif'][0]['admin_reg']);
-		// die();
+
 		if ($this->input->post('jenis') != 'reg') {
 			$nama = $this->input->post('nama');
 			$email = $this->input->post('email');
@@ -435,10 +357,7 @@ class Admin extends CI_Controller {
 		$datass = [
 			'size' => $ukuran,
 		];
-		// ditulis get disini
-		// print_r($data);
-		// print_r($datas);
-		// print_r($datass);
+
 		$this->m_kayu_online->update_produk($data, $datas, $datass, $id, $id_sizes, $id_has_sizes);
 	}
 
@@ -468,10 +387,6 @@ class Admin extends CI_Controller {
 			);
 		$eksis = $this->m_kayu_online->cek_admin($namaPengguna);
 		$cek_user = $this->m_kayu_online->cek_admin2($namaPengguna, $id);
-		// echo "<pre>";
-		// print_r($cek_user);
-		// echo "</pre>";
-		// die();
 
 		if($eksis > 0 and $namaPengguna != $nama_pengguna_awal){
 	    	$this->session->set_flashdata('msg', array('class' => 'danger', 'message'=> 'nama pengguna sudah digunakan, silahkan pilih opsi nama lain'));
@@ -516,18 +431,20 @@ class Admin extends CI_Controller {
 	}
 
 	public function get_product_byCategory(){
-		// echo "masuk";
     	$id = $this->input->get('id');
     	$sku = $this->input->get('sku');
     	$data['allNotif'] = $this->m_kayu_online->getAllNotif();
     	$data['productPerCategory'] = $this->m_kayu_online->get_product_byCategory($id, $sku);
-		// echo "<pre>";
-		// print_r($data['productPerCategory']);
-		// echo "</pre>";
-		// die();
 		$data['content'] = 'admin/product-by-name';
 		$this->load->view('admin/template/layout',$data);
     }
+
+    public function hapusTF($id){ 
+    	$id = $this->dataencryption->enc_dec("decrypt", $id); 
+		$this->m_kayu_online->hapus_tf($id);
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Admin Berhasil !'));
+		redirect(base_url("admin/daftar-bukti-tf")); 
+	}
 	
 
 

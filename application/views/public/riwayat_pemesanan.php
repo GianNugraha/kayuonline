@@ -1,14 +1,6 @@
 <?php 
-  foreach ($order as $key) {
-   // echo "<pre>";
-   // print_r($key);
-   // echo "<pre>";
-  } 
   foreach ($reservasi as $res) {
     $status = $res['status'];
-   // echo "<pre>";
-   // print_r($res);
-   // echo "<pre>";
   } 
 ?>
 <div class="content">
