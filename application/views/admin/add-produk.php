@@ -18,7 +18,7 @@
                   <p class="card-category"></p>
                 </div>
                 <div class="card-body">
-                  <form action="<?= base_url('admin/proses_add_produk') ?>" method="POST">
+                  <form role="form" action="<?= base_url('admin/proses_add_produk') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
@@ -40,6 +40,14 @@
                         <div class="form-group">
                           <label class="bmd-label-floating">Deskripsi</label>
                           <textarea name="deskripsi" rows="5" cols="30" class="form-control"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div>
+                          <label class="bmd-label-floating">Gambar</label>
+                            <input type="file" name="gambar">
                         </div>
                       </div>
                     </div>

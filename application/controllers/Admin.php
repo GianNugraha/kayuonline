@@ -186,6 +186,7 @@ class Admin extends CI_Controller {
 		$data['allProductCategories'] = $this->m_kayu_online->getAllProductCategories();
 		$data['allProductSizes'] = $this->m_kayu_online->getAllProductSizes();
 		$data['allProductHasSizes'] = $this->m_kayu_online->getAllProductHasSizes();
+		$data['allProductImages'] = $this->m_kayu_online->getAllProductImages();
 		$this->load->view('admin/template/layout',$data);
 	}
 
@@ -198,7 +199,8 @@ class Admin extends CI_Controller {
 		// echo $stok = $this->input->post('stok');
 		// echo $harga = $this->input->post('harga');
 		// echo $ukuran = $this->input->post('ukuran');
-
+		echo $image = $this->input->post('deskripsi');
+		die();
 		$category_code = $this->input->post('kategori');
 		$namaproduk = $this->input->post('nama-produk');
 		$sku = $this->input->post('sku');
@@ -223,12 +225,16 @@ class Admin extends CI_Controller {
 		$datass = [
 			'size' => $ukuran,
 		];
+
+		$datasss = [
+			'image' => $gambar,
+		];
 		// ditulis get disini
 		// print_r($data);
 		// print_r($datas);
 		// print_r($datass);
 		// die();
-		$simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);
+		$simpan = $this->m_kayu_online->input_produk($data, $datas, $datass, $datasss);
 		if ($simpan) {
 			session()->setFlashdata('success','Data berhasil ditambahkan');
 			return redirect()->to(base_url('admin/tabel'));
