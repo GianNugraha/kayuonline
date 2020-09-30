@@ -477,7 +477,7 @@ class M_kayu_online extends CI_Model{
 		return $this->db->get_where('reservasi', array('id_pemesan' => $id))->result_array();
 	}
 
-	public function do_upload($images, $path)
+	function do_upload($images, $path)
 	{
 		$config['overwrite']            = true;
 

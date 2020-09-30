@@ -114,6 +114,7 @@ class Admin extends CI_Controller {
 
 	public function proses_add_produk()
 	{
+
 		
 		// echo $category_code = $this->input->post('kategori');
 		// echo $namaproduk = $this->input->post('nama-produk');
@@ -121,7 +122,7 @@ class Admin extends CI_Controller {
 		// echo $stok = $this->input->post('stok');
 		// echo $harga = $this->input->post('harga');
 		// echo $ukuran = $this->input->post('ukuran');
-		echo $image = $this->input->post('deskripsi');
+		echo $image = $this->input->post('gambar');
 		die();
 		$category_code = $this->input->post('kategori');
 		$namaproduk = $this->input->post('nama-produk');
