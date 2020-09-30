@@ -64,11 +64,22 @@ class M_kayu_online extends CI_Model{
 	public function input_data_user($data,$table){
 		$this->db->insert($table,$data);
 	}
-	public function input_produk($data, $datas, $datass, $gambar)
+
+	public function input_produk($data, $datas, $datass, $datasss)
 	{
 		$this->db->insert('products',$data);
 		$this->db->insert('product_has_sizes',$datas);
 		$this->db->insert('product_sizes',$datass);
+		$this->db->insert('product_images',$datasss);
+	}
+
+	public function input_ukuran($data)
+	{
+		$this->db->insert('product_sizes',$data);
+	}
+
+	public function getIDProduct(){
+		return $this->db->get('products');
 	}
 
 	public function update_produk($data, $datas, $datass, $id, $id_has_sizes, $id_sizes)
@@ -477,13 +488,13 @@ class M_kayu_online extends CI_Model{
 		return $this->db->get_where('reservasi', array('id_pemesan' => $id))->result_array();
 	}
 
-	function do_upload($images, $path)
+	public function do_upload($images, $path)
 	{
 		$config['overwrite']            = true;
 
 
 		$config['upload_path'] = 'assets/img/'.$path;
-		$config['upload_path'] = 'assets/img/bukti_tf/';
+		// $config['upload_path'] = 'assets/img/bukti_tf/';
 		$config['allowed_types'] = 'jpg|png|jpeg';
 		$config['max_size']	= '10000';
 		$config['max_width']  = '10024';
@@ -544,7 +555,7 @@ class M_kayu_online extends CI_Model{
 	public function product_upload()
 	{
 		if (!empty($_FILES['gambar']['name'])) {
-			$image = $this->do_upload('gambar', 'img/');
+			$image = $this->do_upload('gambar', 'product/');
 			if($image['resp_code']=='00'){
 				$img = $image['upload_path'].$image['data']['file_name'];
 			}else{
@@ -554,7 +565,30 @@ class M_kayu_online extends CI_Model{
 			$img = $this->input->post('gambar');
 		}
 
-		// echo $img; die();
+		$data = array(
+			'image'=>$img
+		);
+		return $data;
+
+	}
+
+	public function thumbnail_upload()
+	{
+		var_dump(($_FILES['mygambar[]']['name'])); die();
+		if (!empty($_FILES['mygambar[]']['name'])) {
+			echo "masuuuuukkk";
+			die();
+			$image = $this->do_upload('gambar', 'product/');
+			if($image['resp_code']=='00'){
+				$img = $image['upload_path'].$image['data']['file_name'];
+			}else{
+				$img="Error";
+			}
+		} else {
+			echo "tidak masuuuuuk"; die();
+			$img = $this->input->post('gambar');
+		}
+
 		$data = array(
 			'image'=>$img
 		);

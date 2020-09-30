@@ -114,16 +114,14 @@ class Admin extends CI_Controller {
 
 	public function proses_add_produk()
 	{
-
-		
-		// echo $category_code = $this->input->post('kategori');
-		// echo $namaproduk = $this->input->post('nama-produk');
-		// echo $sku = $this->input->post('sku');
-		// echo $stok = $this->input->post('stok');
-		// echo $harga = $this->input->post('harga');
-		// echo $ukuran = $this->input->post('ukuran');
-		echo $image = $this->input->post('gambar');
-		die();
+		$result = $this->m_kayu_online->product_upload();
+		$gambar = $result['image'];
+		// $hasil = $this->m_kayu_online->thumbnail_upload();
+			// echo "<pre>";
+			// print_r($gambar);
+			// echo "</pre>";
+			// die();
+		$thumbnail = $hasil['thumbnail'];
 		$category_code = $this->input->post('kategori');
 		$namaproduk = $this->input->post('nama-produk');
 		$sku = $this->input->post('sku');
@@ -132,23 +130,29 @@ class Admin extends CI_Controller {
 		$ukuran = $this->input->post('ukuran');
 		$id_ukuran = $this->input->post('id_ukuran');
 		$deskripsi = $this->input->post('deskripsi');
-		$data = [
+		$data_product = [
 			'description' => $deskripsi,
 			'category_id' => $category_code,
 			'product_code' => $sku,
 			'name' => $namaproduk,
 		];
-		$datas = [
-			'product_id' => $category_code,
+		$data['getIDProduct'] = $this->m_kayu_online->getIDProduct()->result_array();
+		// print_r($data['getIDProduct']);
+		foreach ($data['getIDProduct'] as $id) {
+			$id_add = $id['id'];
+		}
+		$data_has_sizes = [
+			'product_id' => $id_add+1,
 			'product_size_id' => $id_ukuran,
 			'stock' => $stok,
 			'price' => $harga,
 		];
-		$datass = [
-			'size' => $ukuran,
-		];
+		// $data_sizes = [
+		// 	'size' => $ukuran,
+		// ];
 
-		$datasss = [
+		$data_images = [
+			'product_id' => $id_add+1,
 			'image' => $gambar,
 		];
 		// ditulis get disini
@@ -156,12 +160,24 @@ class Admin extends CI_Controller {
 		// print_r($datas);
 		// print_r($datass);
 		// die();
-		$simpan = $this->m_kayu_online->input_produk($data, $datas, $datass, $datasss);
-		$simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);
-		if ($simpan) {
-			session()->setFlashdata('success','Data berhasil ditambahkan');
-			return redirect()->to(base_url('admin/tabel'));
-		}
+		$simpan = $this->m_kayu_online->input_produk($data_product, $data_has_sizes, $data_images);
+		// $simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Tambah Produk Sukses'));
+				redirect(base_url("admin/tabel"));
+	}
+
+	public function proses_add_ukuran()
+	{
+		$ukuran = $this->input->post('ukuran');
+		$data = [
+			
+			'size' => $ukuran,
+		];
+
+		$simpan = $this->m_kayu_online->input_ukuran($data);
+		// $simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Tambah Ukuran Berhasil'));
+				redirect(base_url("admin/add-produk"));
 	}
 
 	public function proses_add_admin(){
