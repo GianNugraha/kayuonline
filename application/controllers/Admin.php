@@ -121,7 +121,7 @@ class Admin extends CI_Controller {
 			// print_r($gambar);
 			// echo "</pre>";
 			// die();
-		$thumbnail = $hasil['thumbnail'];
+		// $thumbnail = $hasil['thumbnail'];
 		$category_code = $this->input->post('kategori');
 		$namaproduk = $this->input->post('nama-produk');
 		$sku = $this->input->post('sku');
@@ -160,10 +160,17 @@ class Admin extends CI_Controller {
 		// print_r($datas);
 		// print_r($datass);
 		// die();
-		$simpan = $this->m_kayu_online->input_produk($data_product, $data_has_sizes, $data_images);
+		if ($gambar != 'Error') {
+			$simpan = $this->m_kayu_online->input_produk($data_product, $data_has_sizes, $data_images);
 		// $simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);
-		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Tambah Produk Sukses'));
-				redirect(base_url("admin/tabel"));
+			$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Tambah Produk Sukses'));
+			redirect(base_url("admin/tabel"));
+		}
+		else{
+		// $simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);
+			$this->session->set_flashdata('msg', array('class' => 'danger', 'message'=> 'Tambah Produk Gagal, Silahkan Upload Gambar yang lain'));
+			redirect(base_url("admin/tabel"));
+		}
 	}
 
 	public function proses_add_ukuran()

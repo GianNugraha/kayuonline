@@ -86,7 +86,7 @@ CREATE TABLE `product_categories` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `category_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description_categories` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -94,7 +94,7 @@ CREATE TABLE `product_categories` (
 
 /*Data for the table `product_categories` */
 
-insert  into `product_categories`(`id`,`category_code`,`category_name`,`description`,`created_at`,`updated_at`) values 
+insert  into `product_categories`(`id`,`category_code`,`category_name`,`description_categories`,`created_at`,`updated_at`) values 
 (1,'DK','Deking','this is Deking',NULL,NULL),
 (2,'KO','Kayu Olahan','this is kayu olahan',NULL,NULL),
 (3,'PT','Pintu','this is pintu',NULL,NULL),
@@ -116,7 +116,7 @@ CREATE TABLE `product_has_sizes` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `sold` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `product_has_sizes` */
 
@@ -128,10 +128,11 @@ insert  into `product_has_sizes`(`id`,`product_id`,`product_size_id`,`price`,`st
 (5,3,1,120000,12,NULL,NULL,3),
 (6,3,5,150000,25,NULL,NULL,2),
 (7,2,1,100000,22,NULL,NULL,2),
-(8,1,8,0,0,NULL,NULL,5),
 (9,4,2,20000,12,NULL,NULL,NULL),
 (10,5,6,123000,20,NULL,NULL,NULL),
-(11,6,7,3333330,3,NULL,NULL,NULL);
+(13,2,9,20000,20,NULL,NULL,NULL),
+(16,11,2,8000000,20,NULL,NULL,NULL),
+(19,14,1,20000,20,NULL,NULL,NULL);
 
 /*Table structure for table `product_images` */
 
@@ -141,24 +142,22 @@ CREATE TABLE `product_images` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `product_id` bigint(20) unsigned NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `thumbnail_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `first` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `product_images` */
 
-insert  into `product_images`(`id`,`product_id`,`image`,`thumbnail_image`,`first`,`created_at`,`updated_at`) values 
-(1,1,'assets/img/merbau-decking.png','assets/img/merbau-decking-thumbnail.png',1,NULL,NULL),
-(2,1,'assets/img/merbau-decking.png','assets/img/merbau-decking-thumbnail.png',0,NULL,NULL),
-(3,3,'assets/img/default.png','assets/img/default.png',1,NULL,NULL),
-(4,2,'assets/img/merbau.png','assets/img/merbau.png',1,NULL,NULL),
-(5,2,'assets/img/merbau.png','assets/img/merbau.png',0,NULL,NULL),
-(6,4,'assets/img/Eksotik-mg-thumbnail_3.png','',0,NULL,NULL),
-(7,5,'assets/img/indah_b/indah B 1.png','',0,NULL,NULL),
-(8,6,'assets/img/cover.jpg','',0,NULL,NULL);
+insert  into `product_images`(`id`,`product_id`,`image`,`first`,`created_at`,`updated_at`) values 
+(1,1,'assets/img/product/merbau-decking.png',1,NULL,NULL),
+(3,3,'assets/img/default.png',1,NULL,NULL),
+(4,2,'assets/img/product/merbau.png',1,NULL,NULL),
+(6,4,'assets/img/product/eksotik mg 1.png',0,NULL,NULL),
+(7,5,'assets/img/product/eksotik br 1.png',0,NULL,NULL),
+(12,11,'assets/img/product/Eksotik-GSL.jpeg',0,NULL,NULL),
+(15,14,'assets/img/product/nyatoh.png',0,NULL,NULL);
 
 /*Table structure for table `product_sizes` */
 
@@ -171,7 +170,7 @@ CREATE TABLE `product_sizes` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `product_sizes` */
 
@@ -182,7 +181,10 @@ insert  into `product_sizes`(`id`,`size`,`description_size`,`created_at`,`update
 (4,'78x20x30','78x20x30',NULL,NULL),
 (5,'3 meter','3 meter kubik',NULL,NULL),
 (6,'4 meter','',NULL,NULL),
-(7,'3 meter','',NULL,NULL);
+(9,'20 meter','',NULL,NULL),
+(10,'34 meter','',NULL,NULL),
+(12,'5 meter','',NULL,NULL),
+(13,'12x12x12','',NULL,NULL);
 
 /*Table structure for table `product_thumbnail` */
 
@@ -203,10 +205,13 @@ CREATE TABLE `product_thumbnail` (
 /*Data for the table `product_thumbnail` */
 
 insert  into `product_thumbnail`(`id`,`product_id`,`kode_product`,`kode_kayu`,`thumbnail`,`name`) values 
-(0,'2','KO','KO IN01',NULL,NULL),
-(1,'2','KO','KO EKS-MG','assets/img/Eksotik-mg-thumbnail.png','Eksotik-MG'),
-(2,'2','KO','KO EKS-MG','assets/img/Eksotik-mg-thumbnail_2.png','Eksotik-MG'),
-(3,'2','KO','KO EKS-MG','assets/img/Eksotik-mg-thumbnail_3.png','Eksotik-MG');
+(0,'5','KO','KO EKS-BR',NULL,NULL),
+(1,'2','KO','KO EKS-MG','assets/img/product/eksotik mg 2.png','Eksotik-MG'),
+(2,'2','KO','KO EKS-MG','assets/img/product/eksotik mg 3.png','Eksotik-MG'),
+(3,'2','KO','KO EKS-MG','assets/img/product/eksotik mg 4.png','Eksotik-MG'),
+(4,'1','DK','DK MB01','assets/img/product/merbau-decking 2.png','Merbau'),
+(5,'1','DK','DK MB01','assets/img/product/merbau-decking 3.png','Merbau'),
+(7,'5','KO','KO EKS-BR','assets/img/product/eksotik br 3.png','Eksotik-BR');
 
 /*Table structure for table `products` */
 
@@ -223,7 +228,7 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `products_product_code_unique` (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `products` */
 
@@ -232,8 +237,9 @@ insert  into `products`(`id`,`category_id`,`product_code`,`name`,`description`,`
 (2,2,'KO MB01','Merbau ','Merbau terutama dimanfaatkan kayunya, yang biasa digunakan dalam konstruksi berat seperti balok-balok, tiang dan bantalan, di bangunan rumah maupun jembatan.Oleh karena kekuatan, keawetan dan penampilannya yang menarik, sekarang kayu merbau juga dimanfaat','Ini adalah detail merbau kayu olahan','2020-09-02 20:49:41','2020-09-02 21:05:39'),
 (3,2,'KO JT01','Jati','Ini merupakan Deskripsi dari kayu olahan jenis jati','Detail kayu olahan Jenis Jati',NULL,NULL),
 (4,2,'KO EKS-MG','Eksotik-MG','ini merupakan deskripsi dari kayu olahan jenis eksotik-mg','ini merupakan detail kayu olahan jenis eksotik-mg',NULL,NULL),
-(5,2,'KO IN01','Indah B','Ini Kayu Indah B','Ini Merupakan Kayu Olahan Jenis Indah M',NULL,NULL),
-(6,2,'KO RS01','Rusak','Deskripsi Kayu Rusak',NULL,NULL,NULL);
+(5,2,'KO EKS-BR','Eksotik-BR','Ini Kayu Eksotik BR','Ini Merupakan Kayu Olahan Jenis Eksotik-BR',NULL,NULL),
+(11,2,'KO EKS-GSL','Eksotik-GSL','Ini Merupakan Deskripsi Kayu GSL',NULL,NULL,NULL),
+(14,2,'KO NYT01','Nyatoh','Ini Merupakan Deskripsi Kayu Nyatoh',NULL,NULL,NULL);
 
 /*Table structure for table `products2` */
 
@@ -279,13 +285,12 @@ CREATE TABLE `reservasi` (
   `bank` varchar(100) DEFAULT NULL,
   `verifikasi` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `reservasi` */
 
 insert  into `reservasi`(`id`,`id_pemesan`,`nama_pemesan`,`alamat_pemesan`,`kode_pos`,`kota`,`kontak`,`email`,`note`,`bukti_transaksi`,`status`,`bank`,`verifikasi`) values 
-(8,30,'HIJAS','Jepara','59471','Jepara','082116232727','hijassss@gmail.com',' ','assets/img/bukti_tf/IMG_4978.JPG','tolak','Mandiri',NULL),
-(12,33,'Gian Nugraha','Bayongbong','44162','Garut','081295704758','giannugraha76@gmail.com',' ','assets/img/bukti_tf/downloadMandiri1601361209984.jpg','done','Mandiri',NULL);
+(8,30,'HIJAS','Jepara','59471','Jepara','082116232727','hijassss@gmail.com',' ','assets/img/bukti_tf/IMG_4978.JPG','tolak','Mandiri',NULL);
 
 /*Table structure for table `user_token` */
 

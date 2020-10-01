@@ -154,8 +154,8 @@
         <div class="col-md-3">
           <div class="product-top">
             <div class="thumb-img">
-              <a href="<?php echo base_url('produk?kategori=DK&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
-              <!-- <a href="<?php echo base_url('produk?kategori=DK&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a> -->
+              <a href="<?php echo base_url('produk?kategori=KS&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
+              <!-- <a href="<?php echo base_url('produk?kategori=KS&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a> -->
             </div>
             <!-- <div class="overlay">
               <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
@@ -191,19 +191,136 @@
 
   <div id="pintu" class="tabcontent">
     <div class="container">
-      <h2 style="text-align: center; font-weight: bold;">COMING SOON !</h2>
+      <div class="row">
+        <?php
+        if (!empty($productPT)){
+        foreach ($productPT as $key): 
+            ?>
+        <div class="col-md-3">
+          <div class="product-top">
+            <div class="thumb-img">
+              <a href="<?php echo base_url('produk?kategori=PT&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
+              <!-- <a href="<?php echo base_url('produk?kategori=PT&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a> -->
+            </div>
+            <!-- <div class="overlay">
+              <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
+                <span><i class="fa fa-eye" title="Quick View"></i></span>
+              </div> <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+              <a class="btn btn-secondary" href="viewcart.html"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+            </div> -->
+          </div>
+
+          <div class="product-buttom text-center">
+            <h3><?= $key->name ?></h3>
+            <h5><?php if ($key->max_price != $key->min_price) { ?>
+                <p class="description">Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php }else{ ?>
+                <p class="description">Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php } ?>
+        </h5>
+          </div>
+          <br />
+        </div>
+    <?php endforeach;
+    }
+    else{
+    ?>
+    <center>
+        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+    </center>
+<?php } ?>
+
+      </div>
     </div>
   </div>
 
   <div id="lis_profil" class="tabcontent">
     <div class="container">
-      <h2 style="text-align: center; font-weight: bold;">COMING SOON !</h2>
+      <div class="row">
+        <?php
+        if (!empty($productLP)){
+        foreach ($productLP as $key): 
+            ?>
+        <div class="col-md-3">
+          <div class="product-top">
+            <div class="thumb-img">
+              <a href="<?php echo base_url('produk?kategori=LP&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
+              <!-- <a href="<?php echo base_url('produk?kategori=LP&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a> -->
+            </div>
+            <!-- <div class="overlay">
+              <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
+                <span><i class="fa fa-eye" title="Quick View"></i></span>
+              </div> <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+              <a class="btn btn-secondary" href="viewcart.html"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+            </div> -->
+          </div>
+
+          <div class="product-buttom text-center">
+            <h3><?= $key->name ?></h3>
+            <h5><?php if ($key->max_price != $key->min_price) { ?>
+                <p class="description">Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php }else{ ?>
+                <p class="description">Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php } ?>
+        </h5>
+          </div>
+          <br />
+        </div>
+    <?php endforeach;
+    }
+    else{
+    ?>
+    <center>
+        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+    </center>
+<?php } ?>
+
+      </div>
     </div>
   </div>
 
   <div id="tangga" class="tabcontent">
     <div class="container">
-      <h2 style="text-align: center; font-weight: bold;">COMING SOON !</h2>
+      <div class="row">
+        <?php
+        if (!empty($productTG)){
+        foreach ($productTG as $key): 
+            ?>
+        <div class="col-md-3">
+          <div class="product-top">
+            <div class="thumb-img">
+              <a href="<?php echo base_url('produk?kategori=TG&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image; ?>" class="gambar1"></a>
+              <!-- <a href="<?php echo base_url('produk?kategori=TG&nama='.$key->name)?>"><img width="100%" src="<?= base_url('assets/img/lg-3.png'); ?>" class="gambar2"></a> -->
+            </div>
+            <!-- <div class="overlay">
+              <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
+                <span><i class="fa fa-eye" title="Quick View"></i></span>
+              </div> <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
+              <a class="btn btn-secondary" href="viewcart.html"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+            </div> -->
+          </div>
+
+          <div class="product-buttom text-center">
+            <h3><?= $key->name ?></h3>
+            <h5><?php if ($key->max_price != $key->min_price) { ?>
+                <p class="description">Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php }else{ ?>
+                <p class="description">Rp. <?= number_format($key->max_price,2,'.',','); ?></p>
+            <?php } ?>
+        </h5>
+          </div>
+          <br />
+        </div>
+    <?php endforeach;
+    }
+    else{
+    ?>
+    <center>
+        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+    </center>
+<?php } ?>
+
+      </div>
     </div>
   </div>
 

@@ -65,12 +65,12 @@ class M_kayu_online extends CI_Model{
 		$this->db->insert($table,$data);
 	}
 
-	public function input_produk($data, $datas, $datass, $datasss)
+	public function input_produk($data, $datas, $datass)
 	{
 		$this->db->insert('products',$data);
 		$this->db->insert('product_has_sizes',$datas);
-		$this->db->insert('product_sizes',$datass);
-		$this->db->insert('product_images',$datasss);
+		// $this->db->insert('product_sizes',$datass);
+		$this->db->insert('product_images',$datass);
 	}
 
 	public function input_ukuran($data)
@@ -248,7 +248,7 @@ class M_kayu_online extends CI_Model{
 		$this->db->select("p.*")->from("products p");
 		// $this->db->select("c.category_code")->from("product_categories c");
 		$this->db->select("s.product_id, MAX(s.price) AS max_price, MIN(s.price) AS min_price")->from("product_has_sizes s");
-		$this->db->select("i.image, i.thumbnail_image, i.first")->from("product_images i");
+		$this->db->select("i.image, i.first")->from("product_images i");
 		$this->db->group_by("s.product_id")->where("s.product_id = p.id");
 		$this->db->where("i.product_id = p.id");
 		$this->db->where("p.category_id = ".$param);
@@ -261,7 +261,7 @@ class M_kayu_online extends CI_Model{
 		$this->db->select("p.*")->from("products p");
 		$this->db->select("c.category_code")->from("product_categories c");
 		$this->db->select("s.product_id, MAX(s.price) AS max_price, MIN(s.price) AS min_price")->from("product_has_sizes s");
-		$this->db->select("i.image, i.thumbnail_image, i.first")->from("product_images i");
+		$this->db->select("i.image, i.first")->from("product_images i");
 		$this->db->group_by("s.product_id")->where("s.product_id = p.id");
 		$this->db->where("i.product_id = p.id");
 		$this->db->where("p.name = '$param'");
@@ -276,7 +276,7 @@ class M_kayu_online extends CI_Model{
 		$this->db->select("p.*")->from("products p");
 		$this->db->select("c.category_code, c.category_name")->from("product_categories c");
 		$this->db->select("s.product_id, MAX(s.price) AS max_price, MIN(s.price) AS min_price")->from("product_has_sizes s");
-		$this->db->select("i.image, i.thumbnail_image, i.first")->from("product_images i");
+		$this->db->select("i.image, i.first")->from("product_images i");
 		$this->db->group_by("s.product_id")->where("s.product_id = p.id");
 		$this->db->where("p.category_id = c.id");
 		$this->db->where("i.product_id = p.id");
