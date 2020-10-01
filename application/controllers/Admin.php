@@ -123,6 +123,7 @@ class Admin extends CI_Controller {
 			// echo "</pre>";
 			// die();
 		// $thumbnail = $hasil['thumbnail'];
+		$detail = $this->input->post('detail');
 		$category_code = $this->input->post('kategori');
 		$namaproduk = $this->input->post('nama-produk');
 		$sku = $this->input->post('sku');
@@ -132,6 +133,7 @@ class Admin extends CI_Controller {
 		$id_ukuran = $this->input->post('id_ukuran');
 		$deskripsi = $this->input->post('deskripsi');
 		$data_product = [
+			'detail' => $detail,
 			'description' => $deskripsi,
 			'category_id' => $category_code,
 			'product_code' => $sku,

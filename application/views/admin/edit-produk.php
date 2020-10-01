@@ -82,14 +82,10 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Ukuran</label>
-                            <?php foreach ($allProductSizes as $key) {
-                              echo "<input type='hidden' name='id_sizes' value= '{$key['id']}' readonly>";
-                            } ?>
-                            <input type="text" onkeypress="return hanyaAngka(event)" name="ukuran" class="form-control">
-                              <?php foreach ($allProductHasSizes as $key) {
-                                echo "<input type='hidden' name='id_has_sizes' value= '{$key['id']}' readonly>";
-                                }
-                              ?>
+                            <?php foreach($allProductSizes as $key){ 
+                              $categori = $key['size'];
+                              echo "<input type='text' value='$categori'>";
+                            }?>
                         </div>
                       </div>
                     </div>

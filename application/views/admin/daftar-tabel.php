@@ -193,6 +193,9 @@
                         <th class="text-center">
                           Detail
                         </th>
+                        <th>
+                          Aksi
+                        </th>
                       </thead>
                       <tbody>
                         <?php 
@@ -228,6 +231,16 @@
                             <a rel="tooltip" title="Lihat Detail" style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
                             <?php echo $key->detail; ?>
                           </a>
+                          </td>
+                          <td>
+                              <a href="<?php echo base_url('admin/delete/'.$this->dataencryption->enc_dec("encrypt", $key->id)) ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')">
+                                <i style="color: red" rel="tooltip" title="Hapus" class="material-icons">delete_forever</i>
+                              </a>
+                          </td>
+                          <td>
+                              <a href="<?php echo base_url('admin/edit_produk/'.$this->dataencryption->enc_dec("encrypt", $key->id)) ?>">
+                                <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
+                              </a>
                           </td>
                         </tr>
                          <?php $nomor+=1; endforeach;?>

@@ -45,6 +45,14 @@
                     </div>
                     <div class="row">
                       <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Detail</label>
+                          <textarea name="detail" rows="5" cols="30" class="form-control"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
                         <div>
                           <label class="bmd-label-floating">Gambar</label>
                           <input type="file" name="gambar" class="form-control">
