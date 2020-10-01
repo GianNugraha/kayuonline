@@ -106,6 +106,7 @@ class M_kayu_online extends CI_Model{
 		$sql = $this->db->query("SELECT * FROM users where username='$namaPengguna' and role='admin' and status='active' ");
 		return $cek_user = $sql->num_rows();
 	}
+
 	public function getAllProductCategories()
 	{
 		$query = $this->db->query("SELECT * FROM product_categories");
@@ -160,6 +161,22 @@ class M_kayu_online extends CI_Model{
 	{
 		$this->db->where('id',$id);
 		return $this->db->get('products');
+	}
+
+	public function getSizesById($id)
+	{
+		$this->db->where('id',$id);
+		return $this->db->get('product_sizes');
+	}
+	public function getHasSizesById($id)
+	{
+		$this->db->where('id',$id);
+		return $this->db->get('product_has_sizes');
+	}
+	public function getCategoriesById($id)
+	{
+		$this->db->where('id',$id);
+		return $this->db->get('product_categories');
 	}
 
 	public function getAdminById($id){

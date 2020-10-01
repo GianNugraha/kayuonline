@@ -127,6 +127,11 @@
                             <?php echo $key->sold; ?>
                           </a>
                         </td>
+                        <td>
+                          <a href="<?php echo base_url('admin/edit_produk/'.$this->dataencryption->enc_dec("encrypt",$key->product_size_id)) ?>">
+                            <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
+                          </a>
+                        </td>
                           <!-- <td>
                             <?php echo $key->password; ?>
                           </td> -->

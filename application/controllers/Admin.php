@@ -113,6 +113,40 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/layout',$data);
 	}
 
+	public function proses_ubah_produk()
+	{
+		$id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
+		$result = $this->m_kayu_online->product_upload();
+		$gambar = $result['iamge'];
+		$category_code = $this->input->post('kategori');
+		$id_has_sizes = $this->input->post('id_has_sizes');
+		$id_sizes = $this->input->post('id_sizes');
+		$namaproduk = $this->input->post('nama-produk');
+		$sku = $this->input->post('sku');
+		$stok = $this->input->post('stok');
+		$harga = $this->input->post('harga');
+		$ukuran = $this->input->post('ukuran');
+		$deskripsi = $this->input->post('deskripsi');
+		$data = [
+			'description' => $deskripsi,
+			'category_id' => $category_code,
+			// 'product_code' => $sku,
+			'name' => $namaproduk,
+		];
+		$datas = [
+			'product_id' => $category_code,
+			'product_size_id' => $id_has_sizes,
+			// 'id' => $id_ukuran,
+			'stock' => $stok,
+			'price' => $harga,
+		];
+		$datass = [
+			'size' => $ukuran,
+		];
+
+		$this->m_kayu_online->update_produk($data, $datas, $datass, $id, $id_sizes, $id_has_sizes);
+	}
+
 	public function proses_add_produk()
 	{
 		$result = $this->m_kayu_online->product_upload();
@@ -344,9 +378,9 @@ class Admin extends CI_Controller {
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$id = $this->dataencryption->enc_dec("decrypt", $id);
 		$data['produk'] = $this->m_kayu_online->getProdukById($id);
-		$data['allProductCategories'] = $this->m_kayu_online->getAllProductCategories($id);
-		$data['allProductSizes'] = $this->m_kayu_online->getAllProductSizes($id);
-		$data['allProductHasSizes'] = $this->m_kayu_online->getAllProductHasSizes($id);
+		$data['kategori'] = $this->m_kayu_online->getCategoriesById($id);
+		$data['sizes'] = $this->m_kayu_online->getSizesById($id);
+		$data['hassizes'] = $this->m_kayu_online->getHasSizesById($id);
 		$data['content'] = 'admin/edit-produk';
 		$this->load->view('admin/template/layout',$data);
 	}
@@ -357,38 +391,6 @@ class Admin extends CI_Controller {
 		$this->m_kayu_online->hapus_admin($id);
 		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Admin Berhasil !'));
 		redirect(base_url("admin/tabel")); 
-	}
-
-	public function proses_ubah_produk()
-	{
-		$id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
-		$category_code = $this->input->post('kategori');
-		$id_has_sizes = $this->input->post('id_has_sizes');
-		$id_sizes = $this->input->post('id_sizes');
-		$namaproduk = $this->input->post('nama-produk');
-		$sku = $this->input->post('sku');
-		$stok = $this->input->post('stok');
-		$harga = $this->input->post('harga');
-		$ukuran = $this->input->post('ukuran');
-		$deskripsi = $this->input->post('deskripsi');
-		$data = [
-			'description' => $deskripsi,
-			'category_id' => $category_code,
-			// 'product_code' => $sku,
-			'name' => $namaproduk,
-		];
-		$datas = [
-			'product_id' => $category_code,
-			'product_size_id' => $id_has_sizes,
-			// 'id' => $id_ukuran,
-			'stock' => $stok,
-			'price' => $harga,
-		];
-		$datass = [
-			'size' => $ukuran,
-		];
-
-		$this->m_kayu_online->update_produk($data, $datas, $datass, $id, $id_sizes, $id_has_sizes);
 	}
 
 	public function proses_ubah_admin(){

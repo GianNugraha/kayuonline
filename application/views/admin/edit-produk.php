@@ -55,12 +55,27 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
+                          <label class="bmd-label-floating">Detail</label>
+                          <textarea name="detail" rows="5" cols="30" class="form-control"><?= $key->detail ?></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div>
+                          <label class="bmd-label-floating">Gambar</label>
+                          <input type="file" name="gambar" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
                           <label class="bmd-label-floating">Produk Kategori</label>
                           <select name="kategori" class="form-control">
-                            <?php foreach($allProductCategories as $key){ 
-                              $categori = $key['id'];
-                              echo "<option value='$categori'>{$key['category_name']}</option>";
-                            }?>
+                            <?php foreach($kategori->result() as $key){?>
+                              <option value="<?= $key->id?>" name="kategori"><?= $key->category_name; ?></option>
+                            <?php } ?>
                           </select>
                           <!-- <input type="text" name="nama" required class="form-control"> -->
                         </div>
@@ -70,21 +85,25 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Stok</label>
-                          <input type="text" onkeypress="return hanyaAngka(event)" name="stok" class="form-control">
+                          <?php foreach ($hassizes->result() as $key) {
+                              echo "<input type='text' value='$key->stock' onkeypress='return hanyaAngka(event)' name='stok' class='form-control'>";
+                          ?>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Harga</label>
-                              <input type="text" onkeypress="return hanyaAngka(event)" name="harga" class="form-control">
+                          <?php
+                              echo "<input type='text' value='$key->price' onkeypress='return hanyaAngka(event)' name='harga' class='form-control'>";
+                          ?>
                         </div>
                       </div>
+                    <?php } ?>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Ukuran</label>
-                            <?php foreach($allProductSizes as $key){ 
-                              $categori = $key['size'];
-                              echo "<input type='text' value='$categori'>";
+                            <?php foreach($sizes->result() as $key){ 
+                              echo "<input type='text' value='$key->size' name='ukuran' class='form-control'>";
                             }?>
                         </div>
                       </div>
