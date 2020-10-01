@@ -468,7 +468,7 @@ class Home extends CI_Controller {
     		'total' => $total,
     		'status' => 'pesan'
     	);
-
+    
     	$this->m_kayu_online->input_data_orders($data,'orders');
     	redirect(base_url("wishlist"));
     	

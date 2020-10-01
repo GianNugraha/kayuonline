@@ -409,11 +409,15 @@ class M_kayu_online extends CI_Model{
     }
 
     public function cek_orderStatus($id_pemesan, $sku, $ukuran){		
-		$sql = $this->db->query("SELECT * FROM orders where id_pemesan='$id_pemesan' and sku_product='$sku' and ukuran='$ukuran' ");
+		$sql = $this->db->query("SELECT * FROM orders where id_pemesan='$id_pemesan' and sku_product='$sku' and ukuran='$ukuran' and status ='pesan' ");
 		return $sql->result_array();
 	}
 
     public function input_data_orders($data,$table){
+    	// echo "<pre>";
+    	// print_r($data);
+    	// echo "</pre>";
+    	// die();
     	$id_pemesan = $this->session->userdata('idUser');
     	$update_product = $this->m_kayu_online->cek_orderStatus($data['id_pemesan'], $data['sku_product'], $data['ukuran']);
     	if (!empty($update_product)) {
@@ -437,7 +441,8 @@ class M_kayu_online extends CI_Model{
 	}
 
    	public function getOrders($param){
-		return $this->db->get_where('orders', array('id_pemesan' => $param));
+   		// return $sql = "SELECT * FROM orders WHERE id_pemesan='$param' and status='proses_3";
+		return $this->db->get_where('orders', array('id_pemesan' => $param, 'status' => 'pesan'));
 	}	
 
 	public function cek_order($id_pemesan, $sku, $ukuran){	;
@@ -451,7 +456,7 @@ class M_kayu_online extends CI_Model{
 	}
 
 	public function get_total_biaya($id){
-		$sql = $this->db->query("SELECT SUM(total) as total FROM orders WHERE id_pemesan = '$id'");
+		$sql = $this->db->query("SELECT SUM(total) as total FROM orders WHERE id_pemesan = '$id' and status = 'pesan'");
 		return $sql->result();
 	}
 
@@ -609,6 +614,30 @@ class M_kayu_online extends CI_Model{
 		->where('products.product_code', $condition)
 		->get()
 		->result();
+	}
+
+	public function get_pesanan_byIDPemesan($param, $condition){
+
+		return $this->db->from('orders')
+		// ->join('product_categories','product_categories.id = products.category_id')
+		// ->join('product_has_sizes','product_has_sizes.product_id = products.id')
+		// ->join('product_sizes','product_sizes.id = product_has_sizes.product_size_id')
+		// ->join('product_images','product_images.product_id = products.id')
+		// ->where('product_has_sizes.product_id = products.id')
+		// ->where('product_sizes.id = product_has_sizes.product_size_id')
+		->where('orders.id_pemesan', $param)
+		->where('orders.status', $condition)
+		->get()
+		->result();
+	}	
+
+	public function status_pesan( $id_pemesan){
+		$this->db->where('id_pemesan',$id_pemesan);
+		$this->db->where('status','pesan');
+		$data = array(
+			'status' => 'done'
+		);
+		return $this->db->update('orders',$data);
 	}
 	
 

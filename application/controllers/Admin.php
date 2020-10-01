@@ -79,11 +79,12 @@ class Admin extends CI_Controller {
 
 	public function daftar_bukti_tf()
 	{
-		$data['buktiTf'] = $this->m_kayu_online->getBuktiTf('proses_3');
-		$data['TFDone'] = $this->m_kayu_online->getBuktiTf('done');
-		$data['TFTolak'] = $this->m_kayu_online->getBuktiTf('tolak');
-		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
-		$data['content'] = 'admin/daftar-transfer';
+		// $data['getOrder'] 	=
+		$data['buktiTf'] 	= $this->m_kayu_online->getBuktiTf('proses_3');
+		$data['TFDone'] 	= $this->m_kayu_online->getBuktiTf('done');
+		$data['TFTolak'] 	= $this->m_kayu_online->getBuktiTf('tolak');
+		$data['allNotif'] 	= $this->m_kayu_online->getAllNotif();
+		$data['content'] 	= 'admin/daftar-transfer';
 		$this->load->view('admin/template/layout',$data);
 	}
 
@@ -290,7 +291,8 @@ class Admin extends CI_Controller {
 		
 	}
 
-	public function proses_bukti($id, $param){
+	public function proses_bukti($id, $param, $id_pemesan){
+		$id_pemesan = $this->dataencryption->enc_dec("decrypt", $id_pemesan);
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif()->result_array();
 		$bukti_transfer = ($data['allNotif'][0]['bukti_transfer']);
 		$id = $this->dataencryption->enc_dec("decrypt", $id);
@@ -298,6 +300,7 @@ class Admin extends CI_Controller {
 			$data = array(
 				'status' => 'done'
 			);
+			$this->m_kayu_online->status_pesan($id_pemesan);
 			$this->m_kayu_online->terima_transfer($id, $data);
 			$this->m_kayu_online->update_Notifikasi($bukti_transfer, 'kurang', 'bukti_transfer');
 			$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Bukti Pembayaran di Sah kan'));
@@ -460,6 +463,16 @@ class Admin extends CI_Controller {
     	$data['allNotif'] = $this->m_kayu_online->getAllNotif();
     	$data['productPerCategory'] = $this->m_kayu_online->get_product_byCategory($id, $sku);
 		$data['content'] = 'admin/product-by-name';
+		$this->load->view('admin/template/layout',$data);
+    }
+
+    public function get_pesanan_byIDPemesan(){
+    	$id = $this->dataencryption->enc_dec("decrypt", $this->input->get('id'));
+    	// echo $id; die();
+    	// $sku = $this->input->get('sku');
+    	$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+    	$data['pesananByID'] = $this->m_kayu_online->get_pesanan_byIDPemesan($id, 'pesan');
+		$data['content'] = 'admin/product-by-idPemesan';
 		$this->load->view('admin/template/layout',$data);
     }
 

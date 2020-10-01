@@ -233,8 +233,8 @@ else{
                 <select style="height: 30px; text-align: center;" name="bank" required  >
                   <option value=""> -- Pilih Bank -- </option>
                   <option value="Mandiri">Mandiri</option>
-                  <option value="BRI">BRI</option>
-                  <option value="BCA">BCA</option>
+                  <!-- <option value="BRI">BRI</option> -->
+                  <!-- <option value="BCA">BCA</option> -->
                   <!-- <option value="bni">BNI</option> -->
                 </select>
               </div>
