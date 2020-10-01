@@ -65,9 +65,14 @@ class M_kayu_online extends CI_Model{
 		$this->db->insert($table,$data);
 	}
 
-	public function input_produk($data, $datas, $datass)
+	public function input_product($data)
 	{
 		$this->db->insert('products',$data);
+	
+
+	public function input_produk($datas, $datass)
+	{
+		
 		$this->db->insert('product_has_sizes',$datas);
 		// $this->db->insert('product_sizes',$datass);
 		$this->db->insert('product_images',$datass);
