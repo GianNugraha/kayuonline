@@ -191,6 +191,19 @@ class M_kayu_online extends CI_Model{
 		return $this->db->get('product_has_sizes');
 	}
 
+	public function getHasSizesById2($id, $id_product)
+	{
+		$this->db->where('product_size_id', $id);
+		$this->db->where('product_id', $id_product);
+		return $this->db->get('product_has_sizes');
+	}
+
+	public function getUkuranById($id_size)
+	{
+		$this->db->where('id', $id_size);
+		return $this->db->get('product_sizes');
+	}
+
 	public function getDaftarAdmin(){    
 		$this->db->where('status', 'disactive');    
 		return $this->db->get('users'); 

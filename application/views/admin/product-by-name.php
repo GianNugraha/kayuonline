@@ -113,7 +113,7 @@
                           <a href="#">
                             <i style="color:red" title="Hapus" rel="tooltip" class="material-icons">delete</i>
                           </a>
-                          <a href="<?php echo base_url('admin/edit_produk/'.$this->dataencryption->enc_dec("encrypt",$key->product_size_id)) ?>">
+                          <a href="<?php echo base_url('admin/edit_produk/'.$this->dataencryption->enc_dec("encrypt",$key->product_size_id).'/'.$this->dataencryption->enc_dec("encrypt",$key->product_id)) ?>">
                             <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
                           </a>
                           </td>
