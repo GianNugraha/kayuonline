@@ -10,21 +10,40 @@
             </div>
           <?php } ?>
           	<div class="row">
-          		<div class="col-md-8">
+          		<div class="col-md-6">
           			<div class="card">
           				<div class="card-header card-header-primary">
           					<h4>Tambah Stok, Harga, Ukuran Baru</h4>
-          					<p class="card-category">Edit Produk kayu online</p>
+          					<p class="card-category">Hanya untuk harga, ukuran dan stok</p>
           				</div>
-          				<div class="card-body">
-          					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          				</div>
+	          				<div class="card-body">
+	          					<div class="row">
+	          						<div class="col-md-4">
+	          							<div class="form-group">
+	          								<label>Stok</label>
+	          								<input type="text" name="stok" class="form-control">
+	          							</div>
+	          						</div>
+	          					</div>
+	          					<div class="row">
+	          						<div class="col-md-4">
+	          							<div class="form-group">
+	          								<label>Harga</label>
+	          								<input type="text" name="harga" class="form-control">
+	          							</div>
+	          						</div>
+	          					</div>
+	          					<div class="row">
+	          						<div class="col-md-4">
+	          							<div class="form-group">
+	          								<label>Ukuran</label>
+	          								<input type="text" name="ukuran" class="form-control">
+	          							</div>
+	          						</div>
+	          					</div>
+	          				</div>
           			</div>
+          		</div>
           		</div>
           	</div>
 	</div>
