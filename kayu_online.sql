@@ -71,12 +71,17 @@ CREATE TABLE `orders` (
   `total` decimal(10,0) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `orders` */
 
 insert  into `orders`(`id`,`id_pemesan`,`sku_product`,`nama_product`,`ukuran`,`gambar_product`,`id_product`,`jumlah`,`harga`,`total`,`status`) values 
-(63,33,'KO MB01','Merbau ',' 1 meter','assets/img/merbau.png',2,2,100000,200000,'pesan');
+(64,33,'KO MB01','Merbau ',' 20 meter','assets/img/product/merbau.png',2,1,20000,20000,'done'),
+(65,33,'KO EKS-MG','Eksotik-MG',' 2 meter','assets/img/product/eksotik mg 1.png',4,2,20000,40000,'done'),
+(66,33,'KO MB01','Merbau ',' 90x15x20','assets/img/product/merbau.png',2,1,85000,85000,'done'),
+(67,33,'KO EKS-MG','Eksotik-MG',' 2 meter','assets/img/product/eksotik mg 1.png',4,2,20000,40000,'done'),
+(68,33,'KO MB01','Merbau ',' 1 meter','assets/img/product/merbau.png',2,2,100000,200000,'done'),
+(69,33,'KO MB01','Merbau ',' 20 meter','assets/img/product/merbau.png',2,1,20000,20000,'pesan');
 
 /*Table structure for table `product_categories` */
 
@@ -191,26 +196,24 @@ insert  into `product_sizes`(`id`,`size`,`description_size`,`created_at`,`update
 DROP TABLE IF EXISTS `product_thumbnail`;
 
 CREATE TABLE `product_thumbnail` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `product_id` char(50) DEFAULT NULL,
   `kode_product` char(50) DEFAULT NULL,
   `kode_kayu` char(50) DEFAULT NULL,
   `thumbnail` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `product_id` (`product_id`),
-  CONSTRAINT `product_thumbnail_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products2` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `product_thumbnail` */
 
 insert  into `product_thumbnail`(`id`,`product_id`,`kode_product`,`kode_kayu`,`thumbnail`,`name`) values 
-(0,'5','KO','KO EKS-BR',NULL,NULL),
-(1,'2','KO','KO EKS-MG','assets/img/product/eksotik mg 2.png','Eksotik-MG'),
-(2,'2','KO','KO EKS-MG','assets/img/product/eksotik mg 3.png','Eksotik-MG'),
-(3,'2','KO','KO EKS-MG','assets/img/product/eksotik mg 4.png','Eksotik-MG'),
-(4,'1','DK','DK MB01','assets/img/product/merbau-decking 2.png','Merbau'),
-(5,'1','DK','DK MB01','assets/img/product/merbau-decking 3.png','Merbau'),
+(1,'5','KO','KO EKS-BR',NULL,NULL),
+(2,'2','KO','KO EKS-MG','assets/img/product/eksotik mg 2.png','Eksotik-MG'),
+(3,'2','KO','KO EKS-MG','assets/img/product/eksotik mg 3.png','Eksotik-MG'),
+(4,'2','KO','KO EKS-MG','assets/img/product/eksotik mg 4.png','Eksotik-MG'),
+(5,'1','DK','DK MB01','assets/img/product/merbau-decking 2.png','Merbau'),
+(6,'1','DK','DK MB01','assets/img/product/merbau-decking 3.png','Merbau'),
 (7,'5','KO','KO EKS-BR','assets/img/product/eksotik br 3.png','Eksotik-BR');
 
 /*Table structure for table `products` */
@@ -228,7 +231,7 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `products_product_code_unique` (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `products` */
 
@@ -238,33 +241,8 @@ insert  into `products`(`id`,`category_id`,`product_code`,`name`,`description`,`
 (3,2,'KO JT01','Jati','Ini merupakan Deskripsi dari kayu olahan jenis jati','Detail kayu olahan Jenis Jati',NULL,NULL),
 (4,2,'KO EKS-MG','Eksotik-MG','ini merupakan deskripsi dari kayu olahan jenis eksotik-mg','ini merupakan detail kayu olahan jenis eksotik-mg',NULL,NULL),
 (5,2,'KO EKS-BR','Eksotik-BR','Ini Kayu Eksotik BR','Ini Merupakan Kayu Olahan Jenis Eksotik-BR',NULL,NULL),
-(11,2,'KO EKS-GSL','Eksotik-GSL','Ini Merupakan Deskripsi Kayu GSL',NULL,NULL,NULL),
-(14,2,'KO NYT01','Nyatoh','Ini Merupakan Deskripsi Kayu Nyatoh',NULL,NULL,NULL);
-
-/*Table structure for table `products2` */
-
-DROP TABLE IF EXISTS `products2`;
-
-CREATE TABLE `products2` (
-  `id` char(50) NOT NULL,
-  `category_id` char(50) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
-  `price` decimal(10,0) DEFAULT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-/*Data for the table `products2` */
-
-insert  into `products2`(`id`,`category_id`,`name`,`description`,`price`,`created_at`,`updated_at`) values 
-('1','DK','Deking','Ini Decking',NULL,NULL,NULL),
-('2','KO','Kayu Olahan','Ini Kayu Olahan',NULL,NULL,NULL),
-('3','PT','Pintu','Ini Pintu',NULL,NULL,NULL),
-('4','TG','Tangga','Ini Tangga',NULL,NULL,NULL),
-('5','KS','Kusen','Ini Kusen',NULL,NULL,NULL),
-('6','LP','Lis Profil','Ini Lis Profil',NULL,NULL,NULL);
+(11,2,'KO EKS-GSL','Eksotik-GSL','Ini Merupakan Deskripsi Kayu GSL','Ini Merupakan Detail Kayu Olahan ',NULL,NULL),
+(14,2,'KO NYT01','Nyatoh','Ini Merupakan Deskripsi Kayu Nyatoh','Ini Merupakan Detail Kayu Olahan',NULL,NULL);
 
 /*Table structure for table `reservasi` */
 
@@ -285,12 +263,15 @@ CREATE TABLE `reservasi` (
   `bank` varchar(100) DEFAULT NULL,
   `verifikasi` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `reservasi` */
 
 insert  into `reservasi`(`id`,`id_pemesan`,`nama_pemesan`,`alamat_pemesan`,`kode_pos`,`kota`,`kontak`,`email`,`note`,`bukti_transaksi`,`status`,`bank`,`verifikasi`) values 
-(8,30,'HIJAS','Jepara','59471','Jepara','082116232727','hijassss@gmail.com',' ','assets/img/bukti_tf/IMG_4978.JPG','tolak','Mandiri',NULL);
+(8,30,'HIJAS','Jepara','59471','Jepara','082116232727','hijassss@gmail.com',' ','assets/img/bukti_tf/IMG_4978.JPG','tolak','Mandiri',NULL),
+(14,33,'Gian Nugraha','Bayongbong','44162','garut','081295704758','giannugraha76@gmail.com','Kalo sudah Sampai mohon untuk di infokan ke saya ya mas','assets/img/bukti_tf/IMG_20200929_181227.jpg','done','Mandiri',NULL),
+(15,33,'Gian Nugraha','Bayongbong','44162','garut','081295704758','giannugraha76@gmail.com',' Kalo sudah Sampai mohon untuk di infokan ke saya ya mas','assets/img/bukti_tf/decking-and-flooring-500-x-500-pixel-min.png','done','Mandiri',NULL),
+(16,33,'Gian Nugraha','Bayongbong','44162','garut','081295704758','giannugraha76@gmail.com','  Kalo sudah Sampai mohon untuk di infokan ke saya ya mas',NULL,'proses_3','Mandiri',NULL);
 
 /*Table structure for table `user_token` */
 
