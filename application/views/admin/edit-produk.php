@@ -72,10 +72,16 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Produk Kategori</label>
+                          <?php foreach($kategoriid->result() as $key){ ?>
                           <select name="kategori" class="form-control">
+<<<<<<< HEAD
                             <?php foreach($kategori->result() as $key){?>
                               <option value="<?= $key->id?>" name="kategori"><?= $key->category_name; ?></option>
                             <?php } ?>
+=======
+                               <option value='<?=$key->id ?>'> <?=$key->category_name ?></option>";
+                            <?php }?>
+>>>>>>> 10dc96e336608abf246931594037823bd547dd61
                           </select>
                           <!-- <input type="text" name="nama" required class="form-control"> -->
                         </div>
@@ -85,7 +91,11 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Stok</label>
+<<<<<<< HEAD
                           <?php foreach ($hassizes->result() as $key) {
+=======
+                          <?php foreach ($hassizesid->result() as $key) {
+>>>>>>> 10dc96e336608abf246931594037823bd547dd61
                               echo "<input type='text' value='$key->stock' onkeypress='return hanyaAngka(event)' name='stok' class='form-control'>";
                           ?>
                         </div>
@@ -93,16 +103,26 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Harga</label>
+<<<<<<< HEAD
                           <?php
                               echo "<input type='text' value='$key->price' onkeypress='return hanyaAngka(event)' name='harga' class='form-control'>";
                           ?>
+=======
+                            <?php
+                              echo "<input type='text' value='$key->price' onkeypress='return hanyaAngka(event)' name='harga' class='form-control'>"
+                            ?>
+>>>>>>> 10dc96e336608abf246931594037823bd547dd61
                         </div>
                       </div>
                     <?php } ?>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Ukuran</label>
+<<<<<<< HEAD
                             <?php foreach($sizes->result() as $key){ 
+=======
+                            <?php foreach($sizesid->result() as $key){ 
+>>>>>>> 10dc96e336608abf246931594037823bd547dd61
                               echo "<input type='text' value='$key->size' name='ukuran' class='form-control'>";
                             }?>
                         </div>
