@@ -172,7 +172,7 @@
               <div class="product-top">
                 <div class="thumb-img">
                   <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                  <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  <!-- <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a> -->
                 </div>
                 <div class="overlay">
                   <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
@@ -204,13 +204,13 @@
               <div class="sm-col-5">
                 <div class="product-top">
                   <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                    <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+                    <!-- <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a> -->
                   </div>
                   <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                    <!-- <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
                     <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a> -->
                   </div>
                 </div>
 
@@ -239,14 +239,14 @@
               <div class="col-md-3">
                 <div class="product-top">
                   <div class="thumb-img">
-                    <a href="produk.html"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                    <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar2"></a>
+                    <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+                    <!-- <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar2"></a> -->
                   </div>
 
                   <div class="overlay">
-                    <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <!--   <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
                     <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a> -->
                   </div>
                 </div>
 
@@ -275,14 +275,14 @@
             <div class="col-sm">
               <div class="product-top">
                 <div class="thumb-img">
-                  <a href="produk.html"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                  <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                  <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+                  <!-- <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a> -->
                 </div>
 
                 <div class="overlay">
-                  <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
+                  <!-- <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
                   <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a>
+                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a> -->
                 </div>
               </div>
 
@@ -313,15 +313,15 @@
                   <div class="col-sm">
                     <div class="product-top">
                       <div class="thumb-img">
-                        <a href="produk.html"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                        <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                        <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+                        <!-- <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a> -->
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div>
-                    <h3 class="names"><a href="#"> <?php echo strtoupper($key->name); ?> </a>, <a href="#"><?= strtoupper($key->category_name) ?></a></h3>
+                    <h3 class="names"><a href="#" disabled> <?php echo strtoupper($key->name); ?> </a>, <a href="#"><?= strtoupper($key->category_name) ?></a></h3>
                     <h4><?= $key->name; ?></h4>
                     <hr>
                     <p style="font-size: 12px;"><?= $key->description ?></p>
@@ -340,12 +340,12 @@
                       <p>AVAILABLE : <span class="in-stok">IN STOK</span></p>
                     </div>
                     <div class="btn-add">
-                      <a href="#"><span class="link">Add to cart</span></a>
+                      <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><span class="link">Kunjungi</span></a>
                     </div>
-                    <div class="Quick_view">
-                      <a class="title-quick" href="produk.html"><i class="fa fa-eye" title="Quick View"></i> Quick
+                    <!-- <div class="Quick_view">
+                      <a class="title-quick" href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><i class="fa fa-eye" title="Quick View"></i> Quick
                         View</a>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
