@@ -189,36 +189,37 @@ class Admin extends CI_Controller {
 			'product_code' => $sku,
 			'name' => $namaproduk,
 		];
-		$dapetproduk = $this->m_kayu_online->input_product($data_product);
-		$data['getIDProduct'] = $this->m_kayu_online->getIDProduct()->result_array();
-		// print_r($data['getIDProduct']);
-		foreach ($data['getIDProduct'] as $id) {
-			$id_add = $id['id'];
-		}
-		$data_has_sizes = [
-			'product_id' => $id_add,
-			'product_size_id' => $id_ukuran,
-			'stock' => $stok,
-			'price' => $harga,
-		];
-		// $data_sizes = [
-		// 	'size' => $ukuran,
-		// ];
-
-		$data_images = [
-			'product_id' => $id_add,
-			'image' => $gambar,
-		];
-		// ditulis get disini
-		// print_r($data);
-		// print_r($datas);
-		// print_r($datass);
-		// die();
 		if ($gambar != 'Error') {
-			$simpan = $this->m_kayu_online->input_produk($data_product, $data_has_sizes, $data_images);
-		// $simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);
-			$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Tambah Produk Sukses'));
-			redirect(base_url("admin/tabel"));
+			$dapetproduk = $this->m_kayu_online->input_product($data_product);
+			$data['getIDProduct'] = $this->m_kayu_online->getIDProduct()->result_array();
+			// print_r($data['getIDProduct']);
+			foreach ($data['getIDProduct'] as $id) {
+				$id_add = $id['id'];
+			}
+			$data_has_sizes = [
+				'product_id' => $id_add,
+				'product_size_id' => $id_ukuran,
+				'stock' => $stok,
+				'price' => $harga,
+			];
+			// $data_sizes = [
+			// 	'size' => $ukuran,
+			// ];
+
+			$data_images = [
+				'product_id' => $id_add,
+				'image' => $gambar,
+			];
+			// ditulis get disini
+			// print_r($data);
+			// print_r($datas);
+			// print_r($datass);
+			// die();
+			
+				$simpan = $this->m_kayu_online->input_produk($data_has_sizes, $data_images);
+			// $simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);
+				$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Tambah Produk Sukses'));
+				redirect(base_url("admin/tabel"));
 		}
 		else{
 		// $simpan = $this->m_kayu_online->input_produk($data, $datas, $datass);

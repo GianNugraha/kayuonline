@@ -1,9 +1,9 @@
-
+<!-- 
 <?php foreach ($productPerCategory as $key) {
   echo "<pre>";
   print_r($key);
   echo "</pre>";
-} ?>
+} ?> -->
 <div class="content">
         <div class="container-fluid">
           <?php
@@ -22,12 +22,12 @@
                   <h4 class="card-title mt-0"> Daftar Tabel Produk</h4>
                   <p class="card-category"> Here is a subtitle for this table</p>
                 </div>
-                <a href="add-produk">
+                <!-- <a href="add-produk">
                   <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">
                     <i class="material-icons">add_task</i>
-                  Tambah Produk Baru
-                </div>
-                </a>
+                  Tambah Ukuran, Harga & Stok
+                  </div>
+                </a> -->
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
@@ -48,12 +48,6 @@
                           Kategori Produk
                         </th>
                         <th>
-                          Deskripsi
-                        </th>
-                        <th>
-                          Detail
-                        </th>
-                        <th>
                           Ukuran
                         </th>
                         <th>
@@ -65,12 +59,9 @@
                         <th>
                           Terjual
                         </th>
-                        <!-- <th>
-                          Password
-                        </th> -->
-                        <!-- <th colspan="2" style="text-align: center;">
+                        <th colspan="2" style="text-align: center;">
                           Aksi
-                        </th> -->
+                        </th>
                       </thead>
                       <tbody>
                         <?php 
@@ -78,65 +69,55 @@
                         foreach ($productPerCategory as $key): 
                           ?>
                         <tr>
-                          <td><a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                          <td>
+                            <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
                             <?php echo $nomor ?>
                             <a/>
                           </td>
                           <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                            <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
                             <?php echo $key->product_code; ?>
                           </a>
                           </td>
                           <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                            <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
                             <?php echo $key->name; ?>
                             </a>
                           </td>
                           <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                            <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
                             <?php echo $key->category_name; ?>
                             </a>
                           </td>
                           <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
-                            <?php echo $key->description; ?>
-                            </a>
-                          </td>
-                          <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
-                            <?php echo $key->detail; ?>
-                            </a>
-                          </td>
-                          <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                            <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
                             <?php echo $key->size; ?>
                           </a>
-                        </td>
+                          </td>
                           <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                            <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
                             <?php echo $key->price; ?>
                           </a>
                           </td>
                           <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                            <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
                             <?php echo $key->stock; ?>
                           </a>
-                        </td>
-                        <td>
-                            <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>">
+                          </td>
+                          <td>
+                            <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
                             <?php echo $key->sold; ?>
                           </a>
-                        </td>
-                        <td>
+                          </td>
+                          <td style="text-align: center">
+                          <a href="#">
+                            <i style="color:red" title="Hapus" rel="tooltip" class="material-icons">delete</i>
+                          </a>
                           <a href="<?php echo base_url('admin/edit_produk/'.$this->dataencryption->enc_dec("encrypt",$key->product_size_id)) ?>">
                             <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
                           </a>
-                        </td>
-                          <!-- <td>
-                            <?php echo $key->password; ?>
-                          </td> -->
-                          
-                        </tr>
+                          </td>
+                      </tr>
                          <?php $nomor+=1; endforeach;?>
                       </tbody>
                       <?php }
