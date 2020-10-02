@@ -113,38 +113,54 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/layout',$data);
 	}
 
-	public function proses_ubah_produk()
+	public function proses_stok_harga_ukuran($param)
 	{
-		$id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
-		$result = $this->m_kayu_online->product_upload();
-		$gambar = $result['iamge'];
-		$category_code = $this->input->post('kategori');
-		$id_has_sizes = $this->input->post('id_has_sizes');
-		$id_sizes = $this->input->post('id_sizes');
-		$namaproduk = $this->input->post('nama-produk');
-		$sku = $this->input->post('sku');
+		$id = $this->dataencryption->enc_dec("decrypt", $param);
 		$stok = $this->input->post('stok');
 		$harga = $this->input->post('harga');
 		$ukuran = $this->input->post('ukuran');
-		$deskripsi = $this->input->post('deskripsi');
-		$data = [
-			'description' => $deskripsi,
-			'category_id' => $category_code,
-			// 'product_code' => $sku,
-			'name' => $namaproduk,
-		];
-		$datas = [
-			'product_id' => $category_code,
-			'product_size_id' => $id_has_sizes,
-			// 'id' => $id_ukuran,
+		$data_has_sizes = [
 			'stock' => $stok,
 			'price' => $harga,
 		];
-		$datass = [
+		$data_sizes = [
 			'size' => $ukuran,
 		];
+		$this->m_kayu_online->update_stok_harga_ukuran($id,$data_has_sizes,$data_sizes);
+	}
 
-		$this->m_kayu_online->update_produk($data, $datas, $datass, $id, $id_sizes, $id_has_sizes);
+	public function proses_ubah_produk()
+	{
+		// $id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
+		// $result = $this->m_kayu_online->product_upload();
+		// $gambar = $result['iamge'];
+		// $category_code = $this->input->post('kategori');
+		// $id_has_sizes = $this->input->post('id_has_sizes');
+		// $id_sizes = $this->input->post('id_sizes');
+		// $namaproduk = $this->input->post('nama-produk');
+		// $sku = $this->input->post('sku');
+		// $stok = $this->input->post('stok');
+		// $harga = $this->input->post('harga');
+		// $ukuran = $this->input->post('ukuran');
+		// $deskripsi = $this->input->post('deskripsi');
+		// $data = [
+		// 	'description' => $deskripsi,
+		// 	'category_id' => $category_code,
+		// 	// 'product_code' => $sku,
+		// 	'name' => $namaproduk,
+		// ];
+		// $datas = [
+		// 	'product_id' => $category_code,
+		// 	'product_size_id' => $id_has_sizes,
+		// 	// 'id' => $id_ukuran,
+		// 	'stock' => $stok,
+		// 	'price' => $harga,
+		// ];
+		// $datass = [
+		// 	'size' => $ukuran,
+		// ];
+
+		// $this->m_kayu_online->update_produk($data, $datas, $datass, $id, $id_sizes, $id_has_sizes);
 	}
 
 	public function proses_add_produk()
@@ -378,15 +394,9 @@ class Admin extends CI_Controller {
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$id = $this->dataencryption->enc_dec("decrypt", $id);
 		$data['produk'] = $this->m_kayu_online->getProdukById($id);
-<<<<<<< HEAD
-		$data['kategori'] = $this->m_kayu_online->getCategoriesById($id);
-		$data['sizes'] = $this->m_kayu_online->getSizesById($id);
-		$data['hassizes'] = $this->m_kayu_online->getHasSizesById($id);
-=======
 		$data['kategoriid'] = $this->m_kayu_online->getCategoriesById($id);
 		$data['sizesid'] = $this->m_kayu_online->getSizesById($id);
 		$data['hassizesid'] = $this->m_kayu_online->getHasSizesById($id);
->>>>>>> 10dc96e336608abf246931594037823bd547dd61
 		$data['content'] = 'admin/edit-produk';
 		$this->load->view('admin/template/layout',$data);
 	}
