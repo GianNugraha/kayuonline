@@ -1,9 +1,9 @@
-<!-- 
+
 <?php foreach ($productPerCategory as $key) {
   echo "<pre>";
   print_r($key);
   echo "</pre>";
-} ?> -->
+} ?>
 <div class="content">
         <div class="container-fluid">
           <?php
@@ -22,12 +22,12 @@
                   <h4 class="card-title mt-0"> Daftar Tabel Produk</h4>
                   <p class="card-category"> Here is a subtitle for this table</p>
                 </div>
-                <!-- <a href="add-produk">
+                <a href="add-harga-ukuran-stok">
                   <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">
                     <i class="material-icons">add_task</i>
                   Tambah Ukuran, Harga & Stok
                   </div>
-                </a> -->
+                </a>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
