@@ -112,6 +112,12 @@ class Admin extends CI_Controller {
 		$data['allProductImages'] = $this->m_kayu_online->getAllProductImages();
 		$this->load->view('admin/template/layout',$data);
 	}
+	public function add_harga_ukuran_stok()
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$data['content'] = 'admin/add-harga-ukuran-stok';
+		$this->load->view('admin/template/layout',$data);
+	}
 
 	public function proses_stok_harga_ukuran($param)
 	{
