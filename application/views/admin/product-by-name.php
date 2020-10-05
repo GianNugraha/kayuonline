@@ -1,8 +1,5 @@
 
 <?php foreach ($productPerCategory as $key) {
-  echo "<pre>";
-  print_r($key);
-  echo "</pre>";
 } ?>
 <div class="content">
         <div class="container-fluid">
@@ -19,10 +16,24 @@
             <div class="col-md-12">
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
+                  <!-- <p class="card-category"></p> -->
+                </div>
+                <a href="<?= base_url('admin/add-thumbnail?id='.$key->product_id);?>">
+                  <div style="margin-left: 20px; margin-top: 30px;margin-bottom: -10px;">
+                    <i class="material-icons">add_task</i>
+                    Tambah Thumbnail
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-plain">
+                <div class="card-header card-header-primary">
                   <h4 class="card-title mt-0"> Stok Harga & Ukuran Per-Item</h4>
                   <!-- <p class="card-category"></p> -->
                 </div>
-                
                 <a href="<?= base_url('admin/add-harga-ukuran-stok?id='.$key->product_id);?>">
                   <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">
                     <i class="material-icons">add_task</i>
