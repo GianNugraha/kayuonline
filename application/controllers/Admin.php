@@ -120,6 +120,13 @@ class Admin extends CI_Controller {
 		$data['content'] = 'admin/add-harga-ukuran-stok';
 		$this->load->view('admin/template/layout',$data);
 	}
+	public function add_thumbnail()
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$data['id'] = $this->input->get('id');
+		$data['content'] = 'admin/add-thumbnail';
+		$this->load->view('admin/template/layout',$data);
+	}
 
 	public function proses_edit_stok_harga_ukuran($param)
 	{
