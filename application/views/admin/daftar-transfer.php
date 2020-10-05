@@ -14,7 +14,7 @@
     <div class="col-md-12">
       <div class="card card-plain">
         <div class="card-header card-header-primary">
-          <h4 class="card-title mt-0"> Daftar Tabel Transfer Pembeli Yang Terkonfirmasi</h4>
+          <h4 class="card-title mt-0"> Daftar Tabel Transfer Pembeli Yang Belum Di Konfirmasi</h4>
           <p class="card-category"> Ini Merupakan Tabel transfer Pemesanan yang terkonfirmasi oleh Admin Kayu Online</p>
         </div>
         <div class="card-body">

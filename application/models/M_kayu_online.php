@@ -70,10 +70,10 @@ class M_kayu_online extends CI_Model{
 		$this->db->insert('products',$data_product);
 	}
 	
-	public function input_harga_ukuran_stok($data_has_sizes, $data_sizes)
+	public function input_harga_ukuran_stok($data_has_sizes)
 	{
 		$this->db->insert('product_has_sizes', $data_has_sizes);
-		$this->db->insert('product_sizes', $data_sizes);
+		// $this->db->insert('product_sizes', $data_sizes);
 	}
 
 	public function input_produk($datas, $datass)

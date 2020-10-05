@@ -1,8 +1,6 @@
 
 <?php foreach ($productPerCategory as $key) {
-  echo "<pre>";
-  print_r($key);
-  echo "</pre>";
+ 
 } ?>
 <div class="content">
         <div class="container-fluid">
@@ -22,7 +20,7 @@
                   <h4 class="card-title mt-0"> Stok Harga & Ukuran Per-Item</h4>
                   <!-- <p class="card-category"></p> -->
                 </div>
-                <a href="<?= base_url('admin/add-harga-ukuran-stok?id='.$key->category_id.'&sku='.$key->product_code);?>">
+                <a href="<?= base_url('admin/add-harga-ukuran-stok?id='.$key->product_id);?>">
                   <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">
                     <i class="material-icons">add_task</i>
                   Tambah Ukuran, Harga & Stok
@@ -110,12 +108,12 @@
                           </a>
                           </td>
                           <td style="text-align: center">
-                          <a href="#">
-                            <i style="color:red" title="Hapus" rel="tooltip" class="material-icons">delete</i>
-                          </a>
                           <a href="<?php echo base_url('admin/edit_produk/'.$this->dataencryption->enc_dec("encrypt",$key->product_size_id).'/'.$this->dataencryption->enc_dec("encrypt",$key->product_id)) ?>">
                             <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
                           </a>
+                          <!-- <a href="<?= base_url('admin/delete/'.$this->dataencryption->enc_dec("encrypt", $key->product_size_id).'/'.$this->dataencryption->enc_dec("encrypt", $key->product_id))?>">
+                            <i style="color:red" title="Hapus" rel="tooltip" class="material-icons">delete</i>
+                          </a> -->
                           </td>
                       </tr>
                          <?php $nomor+=1; endforeach;?>

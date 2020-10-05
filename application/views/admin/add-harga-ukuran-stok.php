@@ -22,6 +22,7 @@
 		          						<div class="col-md-4">
 		          							<div class="form-group">
 		          								<label>Stok</label>
+		          								<input type="hidden" name="product_id" value="<?php echo $id ?>">
 		          								<input type="text" name="stok" class="form-control" onkeypress="return hanyaAngka(event)">
 		          							</div>
 		          						</div>
