@@ -47,7 +47,7 @@
 							Masuk
 						</button>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="txt1 text-center p-l-110 p-t-54" >
 							<span>
 								Masuk Dengan :
@@ -64,7 +64,7 @@
 								<i class="fa fa-google"></i>
 							</a>
 						</div>
-					</div>
+					</div> -->
 					<div class="row">
 						<div class="txt1 text-center p-l-110 p-t-54" >
 							<span>

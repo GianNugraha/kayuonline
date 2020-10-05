@@ -78,12 +78,12 @@
           <h5 class="copyright">© 2020 Kayuonline - All Right reserved!</h5>
         </div>
         <div class="col-6">
-          <div class="social_media">
+          <!-- <div class="social_media">
             <ul>
               <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/facebook.png'); ?>" alt=""></a></li>
               <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/instagram.png'); ?>" alt=""></a></li>
             </ul>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

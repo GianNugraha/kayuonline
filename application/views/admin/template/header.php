@@ -20,7 +20,7 @@
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-            <form class="navbar-form">
+            <!-- <form class="navbar-form">
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
                 <button type="submit" class="btn btn-white btn-round btn-just-icon">
@@ -28,7 +28,7 @@
                   <div class="ripple-container"></div>
                 </button>
               </div>
-            </form>
+            </form> -->
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('admin'); ?>">
@@ -50,7 +50,6 @@
                   <a class="dropdown-item" href="<?php echo base_url('admin/daftar-admin') ?>">Permintaan Admin <?php if ($admin_reg !=0) { ?> <span class="notification"><?php echo $admin_reg; ?></span><?php } ?></a>
                   <a class="dropdown-item" href="#">Stok Minim <?php if ($stok_barang !=0) { ?> <span class="notification"><?php echo $stok_barang; ?></span><?php } ?></a>
                   <a class="dropdown-item" href="<?php echo base_url('admin/daftar-bukti-tf') ?>">Bukti Transfer <?php if ($bukti_tf >0) { ?> <span class="notification"><?php echo  $bukti_tf; ?></span><?php } ?></a>
-                  <a class="dropdown-item" href="#">Another One</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
