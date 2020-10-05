@@ -91,7 +91,7 @@
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title mt-0"> Daftar Tabel User</h4>
-                  <p class="card-category"> Here is a subtitle for this table</p>
+                  <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -160,7 +160,7 @@
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title mt-0"> Daftar Tabel Produk</h4>
-                  <p class="card-category"> Here is a subtitle for this table</p>
+                  <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
                 </div>
                 <a href="add-produk">
                   <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">

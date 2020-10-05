@@ -104,7 +104,7 @@ class M_kayu_online extends CI_Model{
 	public function update_produk($data, $id)
 	{	
 		$this->db->where('id',$id);
-		return $this->db->update('products',$data);
+		$this->db->update('products' ,$data);
 	}
 
 	public function update_data_admin($data,$table, $id){

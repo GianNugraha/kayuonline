@@ -160,15 +160,14 @@ class Admin extends CI_Controller {
 				redirect(base_url("admin/add-harga-ukuran-stok"));
 	}
 
-	public function proses_edit_depan()
+	public function proses_edit_depan($param)
 	{
-		$id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
+		$id = $this->dataencryption->enc_dec("decrypt", $param);
 		$sku = $this->input->post('sku');
 		$kategori = $this->input->post('kategori');
 		$nama = $this->input->post('nama');
 		$deskripsi = $this->input->post('deskripsi');
 		$detail = $this->input->post('detail');
-
 		$data = [
 			'product_code' => $sku,
 			'category_id' => $kategori,
