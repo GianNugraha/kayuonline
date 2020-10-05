@@ -115,11 +115,12 @@ class Admin extends CI_Controller {
 	public function add_harga_ukuran_stok()
 	{
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$data['productsizes'] = $this->m_kayu_online->getAllProductSizes();
 		$data['content'] = 'admin/add-harga-ukuran-stok';
 		$this->load->view('admin/template/layout',$data);
 	}
 
-	public function proses_stok_harga_ukuran($param)
+	public function proses_edit_stok_harga_ukuran($param)
 	{
 		$id = $this->dataencryption->enc_dec("decrypt", $param);
 		$stok = $this->input->post('stok');
@@ -133,6 +134,28 @@ class Admin extends CI_Controller {
 			'size' => $ukuran,
 		];
 		$this->m_kayu_online->update_stok_harga_ukuran($id,$data_has_sizes,$data_sizes);
+	}
+
+	public function proses_add_harga_ukuran_stok()
+	{
+		$stok = $this->input->post('stok');
+		$harga = $this->input->post('harga');
+		$ukuran = $this->input->post('ukuran');
+		$data['getIDProduct'] = $this->m_kayu_online->getIDProduct()->result_array();
+			// print_r($data['getIDProduct']);
+			foreach ($data['getIDProduct'] as $key) {
+				$id_add = $key['id'];
+			}
+		$data_has_sizes = [
+			'product_id' => $id_add,
+			'product_size_id' => $ukuran,
+			'stock' => $stok,
+			'price' => $harga,
+		];
+		$data_sizes = [
+			'size' => $ukuran,
+		];
+		$this->m_kayu_online->input_harga_ukuran_stok($data_has_sizes, $data_sizes);
 	}
 
 	public function proses_ubah_produk()
@@ -168,6 +191,7 @@ class Admin extends CI_Controller {
 
 		// $this->m_kayu_online->update_produk($data, $datas, $datass, $id, $id_sizes, $id_has_sizes);
 	}
+
 
 	public function proses_add_produk()
 	{

@@ -10,7 +10,7 @@
         </div>
       <?php } ?>
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
           <div class="card">
             <div class="card-header card-header-primary">
               <h4 class="card-title">Edit Stok Harga Ukuran</h4>
@@ -18,8 +18,16 @@
             </div>
             <div class="card-body">
               <?php $url = $this->uri->segment('3'); ?>
-              <form action="<?php echo base_url('admin/proses_stok_harga_ukuran/').$url ?>" method="POST"><br>
+              <form action="<?php echo base_url('admin/proses_edit_stok_harga_ukuran/').$url ?>" method="POST"><br>
                 <?php foreach ($getHasSizes->result() as $data ) { ?>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Produk ID</label>
+                      <?= $this->dataencryption->enc_dec("decrypt",$url) ?>
+                    </div>
+                  </div>
+                </div>
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
@@ -27,10 +35,13 @@
                       <input type='text' value='<?= $data->stock ?>' onkeypress='return hanyaAngka(event)' name='stok' class='form-control'>
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Harga</label>
-                      <input type='text' value='<?= $data->price ?>' onkeypress='return hanyaAngka(event)' name='harga' class='form-control'>
+                </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Harga</label>
+                        <input type='text' value='<?= $data->price ?>' onkeypress='return hanyaAngka(event)' name='harga' class='form-control'>
+                      </div>
                     </div>
                   </div>
                   <!-- <div class="col-md-4">
@@ -39,7 +50,7 @@
                       <input type='text' value='<?= $data->product_size_id ?>' name='ukuran' class='form-control'>
                     </div>
                   </div> -->
-
+                <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">Ukuran</label>
@@ -51,7 +62,6 @@
                       </select>
                     </div>
                   </div>
-
                 </div>
               <?php } ?>
             <button type="submit" class="btn btn-primary pull-right">Ubah</button>

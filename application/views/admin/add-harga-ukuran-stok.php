@@ -12,7 +12,7 @@
           	<div class="row">
           		<div class="col-md-6">
           			<div class="card">
-          				<form action="#" method="post">
+          				<form action="<?= base_url('admin/proses_add_harga_ukuran_stok') ?>" method="post">
 	          				<div class="card-header card-header-primary">
 	          					<h4>Tambah Stok, Harga, Ukuran</h4>
 	          					<p class="card-category">Hanya untuk harga, ukuran dan stok</p>
@@ -22,7 +22,7 @@
 		          						<div class="col-md-4">
 		          							<div class="form-group">
 		          								<label>Stok</label>
-		          								<input type="text" name="stok" class="form-control">
+		          								<input type="text" name="stok" class="form-control" onkeypress="return hanyaAngka(event)">
 		          							</div>
 		          						</div>
 		          					</div>
@@ -30,7 +30,7 @@
 		          						<div class="col-md-4">
 		          							<div class="form-group">
 		          								<label>Harga</label>
-		          								<input type="text" name="harga" class="form-control">
+		          								<input type="text" name="harga" class="form-control" onkeypress="return hanyaAngka(event)">
 		          							</div>
 		          						</div>
 		          					</div>
@@ -38,10 +38,12 @@
 		          						<div class="col-md-4">
 		          							<div class="form-group">
 		          								<label>Ukuran</label>
-		          								<select class="form-control">
-		          									<option value="1">1 meter</option>
-		          									<option value="2">2 meter</option>
-		          								</select>
+		          								<select style="margin-top: -15px" name="ukuran" class="form-control">
+							                    	<?php foreach($productsizes as $key){ 
+							                          $categori = $key['id'];
+							                          echo "<option value='$categori'>{$key['size']}</option>";
+							                        }?>
+							                    </select>
 		          							</div>
 		          						</div>
 		          					</div>
@@ -58,7 +60,7 @@
                   <p class="card-category"></p>
                 </div>
                 <div class="card-body">
-                  <!-- <form role="form" action="<?= base_url('admin/proses_add_ukuran') ?>" method="post" > -->
+                  <form role="form" action="<?= base_url('admin/proses_add_ukuran') ?>" method="post" >
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
@@ -67,10 +69,10 @@
                         </div>
                       </div>
                     </div>
-                    <input type="hidden" value="not-reg" name="jenis">
-                    <input type="submit" value="kirim" class="btn btn-primary pull-right">
-                    <div class="clearfix"></div>
-                  <!-- </form> -->
+						<input type="hidden" value="not-reg" name="jenis">
+						<input type="submit" value="kirim" class="btn btn-primary pull-right">
+					<div class="clearfix"></div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -78,3 +80,12 @@
           	</div>
 	</div>
 </div>
+      <script>
+        function hanyaAngka(evt) {
+          var charCode = (evt.which) ? evt.which : event.keyCode
+           if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+            return false;
+          return true;
+        }
+      </script>

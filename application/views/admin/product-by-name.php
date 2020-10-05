@@ -19,10 +19,10 @@
             <div class="col-md-12">
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title mt-0"> Daftar Tabel Produk</h4>
-                  <p class="card-category"> Here is a subtitle for this table</p>
+                  <h4 class="card-title mt-0"> Stok Harga & Ukuran Per-Item</h4>
+                  <!-- <p class="card-category"></p> -->
                 </div>
-                <a href="add-harga-ukuran-stok">
+                <a href="<?= base_url('admin/add-harga-ukuran-stok?id='.$key->category_id.'&sku='.$key->product_code);?>">
                   <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">
                     <i class="material-icons">add_task</i>
                   Tambah Ukuran, Harga & Stok
