@@ -1,6 +1,8 @@
 
 <?php foreach ($productPerCategory as $key) {
- 
+  echo "<pre>";
+  print_r($key);
+  echo "</pre>";
 } ?>
 <div class="content">
         <div class="container-fluid">
@@ -20,6 +22,7 @@
                   <h4 class="card-title mt-0"> Stok Harga & Ukuran Per-Item</h4>
                   <!-- <p class="card-category"></p> -->
                 </div>
+                
                 <a href="<?= base_url('admin/add-harga-ukuran-stok?id='.$key->product_id);?>">
                   <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">
                     <i class="material-icons">add_task</i>

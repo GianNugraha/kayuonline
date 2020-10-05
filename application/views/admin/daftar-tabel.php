@@ -239,6 +239,9 @@
                             <!-- <img style="height: 100px; width: 100px" src="<?= $key->image;  ?>"> -->
                           </td>
                           <td>
+                              <a href="<?= base_url('admin/edit_produk_depan/'.$this->dataencryption->enc_dec("encrypt", $key->id))?>">
+                                <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
+                              </a>
                               <a href="<?php echo base_url('admin/delete/'.$this->dataencryption->enc_dec("encrypt", $key->id)) ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')">
                                 <i style="color: red" rel="tooltip" title="Hapus" class="material-icons">delete_forever</i>
                               </a>

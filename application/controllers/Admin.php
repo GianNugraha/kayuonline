@@ -160,38 +160,23 @@ class Admin extends CI_Controller {
 				redirect(base_url("admin/add-harga-ukuran-stok"));
 	}
 
-	public function proses_ubah_produk()
+	public function proses_edit_depan()
 	{
-		// $id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
-		// $result = $this->m_kayu_online->product_upload();
-		// $gambar = $result['iamge'];
-		// $category_code = $this->input->post('kategori');
-		// $id_has_sizes = $this->input->post('id_has_sizes');
-		// $id_sizes = $this->input->post('id_sizes');
-		// $namaproduk = $this->input->post('nama-produk');
-		// $sku = $this->input->post('sku');
-		// $stok = $this->input->post('stok');
-		// $harga = $this->input->post('harga');
-		// $ukuran = $this->input->post('ukuran');
-		// $deskripsi = $this->input->post('deskripsi');
-		// $data = [
-		// 	'description' => $deskripsi,
-		// 	'category_id' => $category_code,
-		// 	// 'product_code' => $sku,
-		// 	'name' => $namaproduk,
-		// ];
-		// $datas = [
-		// 	'product_id' => $category_code,
-		// 	'product_size_id' => $id_has_sizes,
-		// 	// 'id' => $id_ukuran,
-		// 	'stock' => $stok,
-		// 	'price' => $harga,
-		// ];
-		// $datass = [
-		// 	'size' => $ukuran,
-		// ];
+		$id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
+		$sku = $this->input->post('sku');
+		$kategori = $this->input->post('kategori');
+		$nama = $this->input->post('nama');
+		$deskripsi = $this->input->post('deskripsi');
+		$detail = $this->input->post('detail');
 
-		// $this->m_kayu_online->update_produk($data, $datas, $datass, $id, $id_sizes, $id_has_sizes);
+		$data = [
+			'product_code' => $sku,
+			'category_id' => $kategori,
+			'name' => $nama,
+			'description' => $deskripsi,
+			'detail' => $detail,
+		];
+		$this->m_kayu_online->update_produk($data, $id);
 	}
 
 
@@ -420,6 +405,14 @@ class Admin extends CI_Controller {
 		$data['admin'] = $this->m_kayu_online->getAdminById($id);
 		$data['content'] = 'admin/edit-admin';
 		$this->load->view('admin/template/layout',$data);
+	}
+	public function edit_produk_depan($id)
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$id = $this->dataencryption->enc_dec("decrypt", $id);
+		$data ['product'] = $this->m_kayu_online->getProdukById($id);
+		$data['content'] = 'admin/edit-produk-depan';
+		$this->load->view('admin/template/layout', $data);
 	}
 
 	public function edit_produk($id, $id_product)

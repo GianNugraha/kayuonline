@@ -101,15 +101,11 @@ class M_kayu_online extends CI_Model{
 		$this->db->update('product_sizes', $data_sizes);
 	}
 
-	// public function update_produk($data, $datas, $datass, $id, $id_has_sizes, $id_sizes)
-	// {	
-	// 	$this->db->where('id',$id);
-	// 	$this->db->update('products',$data);
-	// 	$this->db->where('id',$id_sizes);
-	// 	$this->db->update('product_has_sizes',$datas);
-	// 	$this->db->where('id',$id_has_sizes);
-	// 	$this->db->update('product_sizes',$datass);
-	// }
+	public function update_produk($data, $id)
+	{	
+		$this->db->where('id',$id);
+		return $this->db->update('products',$data);
+	}
 
 	public function update_data_admin($data,$table, $id){
 		$this->db->where('id', $id);

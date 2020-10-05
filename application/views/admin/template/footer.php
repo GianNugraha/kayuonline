@@ -2,25 +2,8 @@
         <div class="container-fluid">
           <nav class="float-left">
             <ul>
-              <!-- <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
               <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li> -->
-              <li>
-                <a href="">
                   Licenses
-                </a>
               </li>
             </ul>
           </nav>
@@ -86,7 +69,7 @@
                   Get the pro version
                 </a>
             </li> -->
-        <li class="button-container">
+        <!-- <li class="button-container">
           <a href="" target="_blank" class="btn btn-default btn-block">
             Sosial Media Kami
           </a>
@@ -100,10 +83,9 @@
           <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot; KayuOnline.id</button>
           <br>
           <br>
-        </li>
-      </ul>
+        </li> -->
     </div>
-  </div> -->
+  </div>
   <!--   Core JS Files   -->
   <script src="<?php echo base_url(); ?>assets/js/core/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/core/popper.min.js"></script>
