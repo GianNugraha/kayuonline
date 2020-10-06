@@ -1,6 +1,41 @@
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="content">
+	<div class="container-fluid">
+		<?php
+          if (!empty($this->session->flashdata('msg'))) {
+            $message = $this->session->flashdata('msg');
+            ?>
+            <div class="alert alert-<?php echo $message['class']?>" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <center><?php echo $message['message'] ?></center>
+            </div>
+          <?php } ?>
+          <div class="row">
+          	<div class="col-md-8">
+          		<div class="card">
+          			<div class="card-header card-header-primary">
+          				<h4>Tambah Thumbnail</h4>
+          			</div>
+          			<div class="card-body">
+          				<form role="form" action="<?= base_url('admin/proses_add_thumbnail') ?>" method="post" enctype="multipart/form-data">
+	          				<div class="row">
+	          					<div class="col-md-5">
+	          						<div class="form-group">
+	          							<input type="hidden" name="product_id" value="<?php echo $id ?>">
+	          						</div>
+	          					</div>
+	          				</div>
+	          				<div class="row">
+	          					<div class="col-md-5">
+	          						<label class="bmd-label-floating">Gambar Thumbnail 1</label>
+	          						<input type="file" name="gambar" class="form-control">
+	          					</div>
+	          				</div><br>
+	          				<button type="submit" class="btn btn-primary pull-right">Tambah</button>
+            				<div class="clearfix"></div>
+          				</form>
+          			</div>
+          		</div>
+          	</div>
+          </div>
+	</div>
+</div>

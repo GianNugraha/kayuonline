@@ -112,6 +112,7 @@ class Admin extends CI_Controller {
 		$data['allProductImages'] = $this->m_kayu_online->getAllProductImages();
 		$this->load->view('admin/template/layout',$data);
 	}
+
 	public function add_harga_ukuran_stok()
 	{
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
@@ -128,6 +129,20 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/layout',$data);
 	}
 
+	public function proses_add_thumbnail()
+	{
+		$result = $this->m_kayu_online->thumbnail_upload_perid();
+		$gambar = $result['image'];
+		$product_id = $this->input->post('product_id');
+		$data = [
+			'product_id' => $product_id,
+			'thumbnail' => $gambar,
+		];
+		$this->m_kayu_online->input_thumbnail($data);
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Tambah Berhasil'));
+				redirect(base_url("admin/tabel"));
+	}
+
 	public function proses_edit_stok_harga_ukuran($param)
 	{
 		$id = $this->dataencryption->enc_dec("decrypt", $param);
@@ -135,15 +150,16 @@ class Admin extends CI_Controller {
 		$harga = $this->input->post('harga');
 		$ukuran = $this->input->post('ukuran');
 		$data_has_sizes = [
+			'product_size_id' => $ukuran,
 			'stock' => $stok,
 			'price' => $harga,
 		];
-		$data_sizes = [
-			'size' => $ukuran,
-		];
-		$this->m_kayu_online->update_stok_harga_ukuran($id,$data_has_sizes,$data_sizes);
+		// $data_sizes = [
+		// 	'size' => $ukuran,
+		// ];
+		$this->m_kayu_online->update_stok_harga_ukuran($id,$data_has_sizes);
 		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Edit Berhasil'));
-				redirect(base_url("admin/edit-produk"));
+				redirect(base_url("admin/tabel"));
 	}
 
 	public function proses_add_harga_ukuran_stok()
@@ -164,7 +180,7 @@ class Admin extends CI_Controller {
 		// ];
 		$this->m_kayu_online->input_harga_ukuran_stok($data_has_sizes);
 		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Tambah Ukuran Harga & Stok Berhasil'));
-				redirect(base_url("admin/add-harga-ukuran-stok"));
+				redirect(base_url("admin/tabel"));
 	}
 
 	public function proses_edit_depan($param)

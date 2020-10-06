@@ -16,6 +16,7 @@
             <div class="col-md-12">
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
+                  <h4 class="card-title mt-0">Daftar Thumbnail</h4>
                   <!-- <p class="card-category"></p> -->
                 </div>
                 <a href="<?= base_url('admin/add-thumbnail?id='.$key->product_id);?>">
@@ -24,6 +25,32 @@
                     Tambah Thumbnail
                   </div>
                 </a>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <th>
+                          No
+                        </th>
+                        <th>
+                          Produk ID
+                        </th>
+                        <th>
+                          Kode Produk
+                        </th>
+                        <th>
+                          Kode Kayu
+                        </th>
+                        <th>
+                          Thumbnail
+                        </th>
+                        <th>
+                          Aksi
+                        </th>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

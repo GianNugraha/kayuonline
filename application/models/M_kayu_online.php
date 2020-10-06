@@ -89,16 +89,19 @@ class M_kayu_online extends CI_Model{
 		$this->db->insert('product_sizes',$data);
 	}
 
+	public function input_thumbnail($data)
+	{
+		$this->db->insert('product_thumbnail', $data);
+	}
+
 	public function getIDProduct(){
 		return $this->db->get('products');
 	}
 
-	public function update_stok_harga_ukuran($id,$data_has_sizes,$data_sizes)
+	public function update_stok_harga_ukuran($id,$data_has_sizes)
 	{
 		$this->db->where('id',$id);
-		$this->db->update('product_has_sizes', $data_has_sizes);
-		$this->db->where('id',$id);
-		$this->db->update('product_sizes', $data_sizes);
+		return $this->db->update('product_has_sizes', $data_has_sizes);
 	}
 
 	public function update_produk($data, $id)
@@ -619,6 +622,25 @@ class M_kayu_online extends CI_Model{
 		);
 		return $data;
 
+	}
+
+	public function thumbnail_upload_perid()
+	{
+		if (!empty($_FILES['gambar']['name'])) {
+			$image = $this->do_upload('gambar', 'product/');
+			if($image['resp_code']=='00'){
+				$img = $image['upload_path'].$image['data']['file_name'];
+			}else{
+				$img="Error";
+			}
+		} else {
+			$img = $this->input->post('gambar');
+		}
+
+		$data = array(
+			'image'=>$img
+		);
+		return $data;
 	}
 
 	public function thumbnail_upload()
