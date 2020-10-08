@@ -199,6 +199,8 @@ class Admin extends CI_Controller {
 			'detail' => $detail,
 		];
 		$this->m_kayu_online->update_produk($data, $id);
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Tambah Ukuran Harga & Stok Berhasil'));
+				redirect(base_url("admin/tabel"));
 	}
 
 
