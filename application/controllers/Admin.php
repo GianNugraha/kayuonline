@@ -428,6 +428,15 @@ class Admin extends CI_Controller {
 		$data['content'] = 'admin/edit-admin';
 		$this->load->view('admin/template/layout',$data);
 	}
+
+	public function edit_user($id)
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$id = $this->dataencryption->enc_dec("decrypt", $id);
+		$data['user'] = $this->m_kayu_online->getUserById($id);
+		$data['content'] = 'admin/edit-user';
+		$this->load->view('admin/template/layout',$data);
+	}
 	public function edit_produk_depan($id)
 	{
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
@@ -456,8 +465,33 @@ class Admin extends CI_Controller {
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif(); 
 		$id = $this->dataencryption->enc_dec("decrypt", $id); 
 		$this->m_kayu_online->hapus_admin($id);
-		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Admin Berhasil !'));
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Berhasil !'));
 		redirect(base_url("admin/tabel")); 
+	}
+
+	public function proses_edit_user()
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$hp = $this->input->post('hp');
+
+		$data = [
+			'id' => $id,
+			'nama' => $nama,
+			'email' => $email,
+			'username' => $username,
+			'password' => $password,
+			'no_hp' => $hp,
+			'role' => 'user',
+		];
+
+		$this->m_kayu_online->update_data_user($data, $id);
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Edit Berhasil'));
+				redirect(base_url("admin/tabel"));
 	}
 
 	public function proses_ubah_admin(){

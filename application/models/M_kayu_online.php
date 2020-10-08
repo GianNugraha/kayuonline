@@ -115,6 +115,12 @@ class M_kayu_online extends CI_Model{
 		return $this->db->update($table,$data);
 	}
 
+	public function update_data_user($data, $id)
+	{
+		$this->db->where('id', $id);
+		$this->db->update('users', $data);
+	}
+
 	public function cek_admin($namaPengguna){		
 		$sql = $this->db->query("SELECT * FROM users where username='$namaPengguna' and role='admin' and status='active' ");
 		return $cek_user = $sql->num_rows();
@@ -177,6 +183,12 @@ class M_kayu_online extends CI_Model{
 	}
 
 	public function getAdminById($id){
+		$this->db->where('id', $id);
+		return $this->db->get('users');
+	}
+
+	public function getUserById($id)
+	{
 		$this->db->where('id', $id);
 		return $this->db->get('users');
 	}

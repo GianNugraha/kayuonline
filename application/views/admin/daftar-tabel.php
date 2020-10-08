@@ -134,13 +134,13 @@
                             <?php echo $key->username; ?>
                           </td>
                           <td>
-                              <a href="#">
+                              <a href="<?= base_url('admin/edit_user/'.$this->dataencryption->enc_dec("encrypt", $key->id))?>">
                                 <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
                               </a>
                           </td>
                           <td>
-                              <a href="#">
-                                <i title="Hapus" rel="tooltip" class="material-icons">delete_forever</i>
+                              <a href="<?php echo base_url('admin/hapus/'.$this->dataencryption->enc_dec("encrypt", $key->id)) ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')">
+                                <i style="color: red" rel="tooltip" title="Hapus" class="material-icons">delete_forever</i>
                               </a>
                           </td>
                           
