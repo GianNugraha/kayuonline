@@ -137,6 +137,11 @@ class M_kayu_online extends CI_Model{
 		$query = $this->db->query("SELECT * FROM product_images");
 		return $query->result_array();
 	}
+	public function getAllProducts()
+	{
+		$query = $this->db->query("SELECT * FROM products");
+		return $query->result_array();
+	}
 
 	public function getAllProductSizes()
 	{
@@ -709,7 +714,7 @@ class M_kayu_online extends CI_Model{
 		->result();
 	}	
 
-	public function status_pesan( $id_pemesan){
+	public function status_pesan($id_pemesan){
 		$this->db->where('id_pemesan',$id_pemesan);
 		$this->db->where('status','pesan');
 		$data = array(

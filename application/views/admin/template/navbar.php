@@ -41,50 +41,20 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item <?php if($active=='profil'){ ?> active <?php } ?> ">
+<!--           <li class="nav-item <?php if($active=='profil'){ ?> active <?php } ?> ">
             <a class="nav-link" href="<?php echo base_url('admin/profil'); ?>">
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item <?php if($active=='tabel'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel'); ?>">
               <i class="material-icons">content_paste</i>
               <p>Table List</p>
             </a>
           </li>
-          <!-- <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
-            </a>
-          </li> -->
-         <!--  <li class="nav-item <?php if($active=='icon'){ ?> active <?php } ?> ">
-            <a class="nav-link" href="<?php echo base_url('admin/icon'); ?>">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li> -->
-          <!-- <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li> -->
-          <!-- <li class="nav-item <?php if($active=='pemberitahuan'){ ?> active <?php } ?>">
-            <a class="nav-link" href="pemberitahuan">
-              <i class="material-icons">notifications</i>
-              <p>Pemberitahuan</p>
-            </a>
-          </li> -->
-         <!--  <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
-              <p>RTL Support</p>
-            </a>
-          </li> -->
           <li class="nav-item <?php if($active=='status_transaksi'){ ?> active <?php } ?>">
-            <a class="nav-link" href="status_transaksi">
+            <a class="nav-link" href="<?php echo base_url('admin/status-transaksi'); ?>">
               <i class="material-icons">unarchive</i>
               <p>Status Transaksi</p>
             </a>

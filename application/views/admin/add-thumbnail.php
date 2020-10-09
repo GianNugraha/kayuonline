@@ -26,10 +26,49 @@
 	          				</div>
 	          				<div class="row">
 	          					<div class="col-md-5">
-	          						<label class="bmd-label-floating">Gambar Thumbnail 1</label>
+	          						<label class="bmd-label-floating">Gambar Thumbnail</label>
 	          						<input type="file" name="gambar" class="form-control">
 	          					</div>
-	          				</div><br>
+	          				</div>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Kategori</label>
+                          <select style="margin-top: -15px" name="kategori" class="form-control">
+                            <?php foreach($allProductCategories as $key){ 
+                              $categori = $key['category_code'];
+                              echo "<option value='$categori'>{$key['category_name']}</option>";
+                            }?>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Kode Produk</label>
+                          <select style="margin-top: -15px" name="kode_produk" class="form-control">
+                            <?php foreach($allProducts as $key){ 
+                              $categori = $key['product_code'];
+                              echo "<option value='$categori'>{$key['product_code']}</option>";
+                            }?>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nama Produk</label>
+                          <select style="margin-top: -15px" name="nama" class="form-control">
+                            <?php foreach($allProducts as $key){ 
+                              $categori = $key['name'];
+                              echo "<option value='$categori'>{$key['name']}</option>";
+                            }?>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
 	          				<button type="submit" class="btn btn-primary pull-right">Tambah</button>
             				<div class="clearfix"></div>
           				</form>

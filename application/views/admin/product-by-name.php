@@ -95,9 +95,6 @@
                         <th>
                           Stok
                         </th>
-                        <th>
-                          Terjual
-                        </th>
                         <th colspan="2" style="text-align: center;">
                           Aksi
                         </th>
@@ -141,11 +138,6 @@
                           <td>
                             <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
                             <?php echo $key->stock; ?>
-                          </a>
-                          </td>
-                          <td>
-                            <!-- <a style="color: black" href="<?= base_url('admin/get-product-byCategory?id='.$key->category_id.'&sku=' .$key->product_code);?>"> -->
-                            <?php echo $key->sold; ?>
                           </a>
                           </td>
                           <td style="text-align: center">

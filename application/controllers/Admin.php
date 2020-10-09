@@ -64,6 +64,9 @@ class Admin extends CI_Controller {
 	{
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$data['produk'] = $this->m_kayu_online->getProduk();
+		$data['buktiTf'] 	= $this->m_kayu_online->getBuktiTf('proses_3');
+		$data['TFDone'] 	= $this->m_kayu_online->getBuktiTf('done');
+		$data['TFTolak'] 	= $this->m_kayu_online->getBuktiTf('tolak');
 		$data['content'] = 'admin/status-transaksi';
 		$this->load->view('admin/template/layout',$data);
 	}
@@ -125,6 +128,8 @@ class Admin extends CI_Controller {
 	{
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$data['id'] = $this->input->get('id');
+		$data['allProductCategories'] = $this->m_kayu_online->getAllProductCategories();
+		$data['allProducts'] = $this->m_kayu_online->getAllProducts();
 		$data['content'] = 'admin/add-thumbnail';
 		$this->load->view('admin/template/layout',$data);
 	}
@@ -134,7 +139,13 @@ class Admin extends CI_Controller {
 		$result = $this->m_kayu_online->thumbnail_upload_perid();
 		$gambar = $result['image'];
 		$product_id = $this->input->post('product_id');
+		$nama = $this->input->post('nama');
+		$kategori = $this->input->post('kategori');
+		$kode_produk = $this->input->post('kode_produk');
 		$data = [
+			'kode_product' => $kategori,
+			'kode_kayu' => $kode_produk,
+			'name' => $nama,
 			'product_id' => $product_id,
 			'thumbnail' => $gambar,
 		];
