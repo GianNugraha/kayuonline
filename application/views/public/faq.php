@@ -13,7 +13,7 @@
 
         <button class="accordion">Apa itu KayuOnline?</button>
         <div class="panel">
-            <p>KayuOnline adalah perusahaan supplier berbagai jenis kayu yang berlokasi  di Ruko Istana Pasteur Regency, Jl. Terusan Gunung Batu, Sukaraja, Cicendo, Kota Bandung, Jawa Barat.</p>
+            <p>KayuOnline adalah perusahaan supplier berbagai jenis kayu yang berlokasi di Ruko Istana Pasteur Regency, Jl. Terusan Gunung Batu, Sukaraja, Cicendo, Kota Bandung, Jawa Barat.</p>
         </div>
 
         <button class="accordion">Apa tujuan KayuOnline dalam dunia bisnis?</button>
@@ -59,27 +59,27 @@
         </div>
         <button class="accordion">Produk apa saja yang ditawarkan oleh KayuOnline?</button>
         <div class="panel">
-            <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            <p>KayuOnline menyediakan berbagai jenis produk berbahan kayu seperti kayu olahan, decking, pintu, lis profil, tangga, dll</p>
         </div>
         <button class="accordion">Bagaimana cara pengambilan produk?</button>
         <div class="panel">
-            <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            <p>Konsumen dapat langsung mengambil barang yang telah dibeli langsung ke toko kami atau bisa kami antarkan langsung ke tempat</p>
         </div>
         <button class="accordion">Apakah barang yang sudah dibeli dapat dibatalkan?</button>
         <div class="panel">
             <p>Barang yang sudah dibeli tidak dapat dibatalkan</p>
         </div>
-        <button class="accordion">Bagaiamana kalau saya tidak pernah melakukan pembayaran setelah booking?</button>
+        <button class="accordion">Bagaimana kalau saya tidak pernah melakukan pembayaran setelah booking?</button>
         <div class="panel">
-            <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            <p>Kami akan mengontak Anda terkait pembelian yang telah Anda lakukan</p>
         </div>
         <button class="accordion">Apakah satu perusahaan bisa memiliki akun user lebih dari satu pada Toko KayuOnline?</button>
         <div class="panel">
-            <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            <p>bisa, namun kami sarankan hanya fokus pada satu akun agar dapat memudahkan Anda</p>
         </div>
         <button class="accordion">Bagaimana kalau saya ingin komplain barang?</button>
         <div class="panel">
-            <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            <p>Silahkan menghubungi kami melalui whatsapp atau email dan jelaskan keluhan Anda pada Kami</p>
         </div>
         
         
