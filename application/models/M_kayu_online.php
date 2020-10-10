@@ -19,6 +19,14 @@ class M_kayu_online extends CI_Model{
 		return $this->db->get('users');
 	}
 
+	public function getAllThumbnail()
+	{
+		return $this->db->from('product_thumbnail')
+		->join('products','products.id = product_thumbnail.product_id')
+		->get()
+		->result();
+	}
+
 	public function getProduct()
 	{
 		return $this->db->from('product_categories')

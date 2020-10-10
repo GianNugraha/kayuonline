@@ -48,6 +48,7 @@ class Admin extends CI_Controller {
 		$data['admin'] = $this->m_kayu_online->getAdmin();
 		$data['user'] = $this->m_kayu_online->getUser();
 		$data['product'] = $this->m_kayu_online->getProduct();
+		$data['thumbnail'] = $this->m_kayu_online->getAllThumbnail();
 		$data['content'] = 'admin/daftar-tabel';
 		$this->load->view('admin/template/layout',$data);
 	}
@@ -474,12 +475,26 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/layout',$data);
 	}
 
+	public function edit_thumbnail($id)
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$data['content'] = 'admin/edit-thumbnail';
+		$this->load->view('admin/template/layout',$data);
+	}
+
 	public function hapus($id){  
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif(); 
 		$id = $this->dataencryption->enc_dec("decrypt", $id); 
 		$this->m_kayu_online->hapus_admin($id);
 		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Berhasil !'));
 		redirect(base_url("admin/tabel")); 
+	}
+
+	public function proses_edit_thumbnail()
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
+
 	}
 
 	public function proses_edit_user()

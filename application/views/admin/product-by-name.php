@@ -25,32 +25,6 @@
                     Tambah Thumbnail
                   </div>
                 </a>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead>
-                        <th>
-                          No
-                        </th>
-                        <th>
-                          Produk ID
-                        </th>
-                        <th>
-                          Kode Produk
-                        </th>
-                        <th>
-                          Kode Kayu
-                        </th>
-                        <th>
-                          Thumbnail
-                        </th>
-                        <th>
-                          Aksi
-                        </th>
-                      </thead>
-                    </table>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -61,6 +35,8 @@
                   <h4 class="card-title mt-0"> Stok Harga & Ukuran Per-Item</h4>
                   <!-- <p class="card-category"></p> -->
                 </div>
+                <?php foreach ($productPerCategory as $key) {
+                } ?>
                 <a href="<?= base_url('admin/add-harga-ukuran-stok?id='.$key->product_id);?>">
                   <div style="margin-left: 20px; margin-top: 30px; margin-bottom: -10px;">
                     <i class="material-icons">add_task</i>

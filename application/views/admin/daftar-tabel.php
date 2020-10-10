@@ -263,7 +263,55 @@
                 </div>
               </div>
             </div>
-            
+              <div class="col-md-12">
+                <div class="card card-plain">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title mt-0">Daftar Thumbnail</h4>
+                    <!-- <p class="card-category"></p> -->
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <th>
+                            No
+                          </th>
+                          <th>
+                            Produk ID
+                          </th>
+                          <th>
+                            Kode Produk
+                          </th>
+                          <th>
+                            Kode Kayu
+                          </th>
+                          <th>
+                            Thumbnail
+                          </th>
+                          <th>
+                            Aksi
+                          </th>
+                        </thead>
+                        <tbody>
+                          <?php $nomor=1; foreach ($thumbnail as $key) : ?>
+                            <tr>
+                              <td><?= $nomor;?></td>
+                              <td><?= $key->name;?></td>
+                              <td><?= $key->kode_product;?></td>
+                              <td><?= $key->kode_kayu;?></td>
+                              <td><img style="height: 100px; width: 100px" src="<?= base_url().$key->thumbnail;  ?>"> </td>
+                              <td>
+                                <a href="<?= base_url('admin/edit_thumbnail/'.$this->dataencryption->enc_dec("encrypt", $key->id))?>">
+                                <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
+                              </a></td>
+                            </tr>
+                            <?php $nomor+=1; endforeach; ?>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
