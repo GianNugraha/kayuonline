@@ -93,7 +93,7 @@
           <div class="col" style="text-align: center">
             <div class="kontakkami">
             <h3> Ada pertanyaan? Kontak kami !</h3>
-            <li><a href="#" style="font-size: 17px">Kontak kami</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=6285974785490&text=Saya%20ingin%20bertanya" style="font-size: 17px">Kontak kami</a></li>
             </div>
           </div>
         </div>

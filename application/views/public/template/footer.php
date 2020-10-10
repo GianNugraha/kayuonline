@@ -23,7 +23,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          <img style="width: 180px;" class="logo-footer" src="<?= base_url('assets/img/footer.png'); ?>" alt="">
+           <img style="width: 180px;" class="logo-footer" src="<?= base_url('assets/img/footer.png'); ?>" alt="logo-kayu-online">
         </div>
         <div class="col-sm-8">
           <form class="form" action="">
