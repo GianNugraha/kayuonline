@@ -141,7 +141,7 @@ s0.parentNode.insertBefore(s1,s0);
                   <span><i class="fa fa-user"></i> Akun Saya</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Profil</a>
+                  <label class="dropdown-item" href="#">&nbsp &nbsp &nbsp &nbsp Halo !</label>
                   <hr>
                   <span style="margin-left: 20px"><a onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('home/logout') ?>"><i class="fa fa-sign-out"></i>     Keluar</a></span>
                 </div>
