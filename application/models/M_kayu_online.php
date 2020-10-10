@@ -184,6 +184,12 @@ class M_kayu_online extends CI_Model{
 		return $hasil_query = $sql->result_array();
 	}
 
+	public function hapus_thumbnail($id)
+	{
+		$this->db->where('id', $id);    
+		return $this->db->delete('product_thumbnail');
+	}
+
 	public function hapus_admin($id){    
 		$this->db->where('id', $id);    
 		return $this->db->delete('users'); // Untuk mengeksekusi perintah delete data  

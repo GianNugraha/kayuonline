@@ -282,7 +282,7 @@
                           <th>
                             Thumbnail
                           </th>
-                          <th>
+                          <th style="text-align: center">
                             Aksi
                           </th>
                         </thead>
@@ -293,10 +293,14 @@
                               <td><?= $key['kode_product'];?></td>
                               <!-- <td><?= $key->kode_kayu;?></td> -->
                               <td><img style="height: 130px; width: 100px" src="<?= base_url().$key['thumbnail'];  ?>"> </td>
-                              <td>
+                              <td style="text-align: center;">
                                 <a href="<?= base_url('admin/edit_thumbnail/'.$key['id']);?>">
-                                <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
-                              </a></td>
+                                  <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
+                                </a>
+                                <a href="<?= base_url('admin/hapus_thumbnail/'.$key['id']);?>">
+                                  <i style="color: red" title="Hapus" rel="tooltip" class="material-icons">delete</i>
+                                </a>
+                              </td>
                             </tr>
                             <?php $nomor+=1; endforeach; ?>
                         </tbody>

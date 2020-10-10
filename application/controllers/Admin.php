@@ -483,6 +483,15 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/layout',$data);
 	}
 
+	public function hapus_thumbnail($id)
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif(); 
+		$data['id'] = $this->input->get('id');
+		$this->m_kayu_online->hapus_thumbnail($id);
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Thumbnail Berhasil !'));
+		redirect(base_url("admin/tabel"));
+	}
+
 	public function hapus($id){  
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif(); 
 		$id = $this->dataencryption->enc_dec("decrypt", $id); 
