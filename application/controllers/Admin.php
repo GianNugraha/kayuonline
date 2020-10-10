@@ -478,6 +478,7 @@ class Admin extends CI_Controller {
 	public function edit_thumbnail($id)
 	{
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$data['thumbnailbyid'] = $this->m_kayu_online->getThumbnailById($id);
 		$data['content'] = 'admin/edit-thumbnail';
 		$this->load->view('admin/template/layout',$data);
 	}
@@ -492,8 +493,26 @@ class Admin extends CI_Controller {
 
 	public function proses_edit_thumbnail()
 	{
+		$result = $this->m_kayu_online->thumbnail_upload_perid();
+		$gambar = $result['image'];
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$id = $this->dataencryption->enc_dec("decrypt", $this->input->post('id'));
+		$nama = $this->input->post('name');
+		$product_id = $this->input->post('product_id');
+		$kode_product = $this->input->post('kode_product');
+		$kode_kayu = $this->input->post('kode_kayu');
+		// $thumbnail = $this->input->post('thumbnail');
+		$data = [
+			'id' => $id,
+			'name' => $nama,
+			'product_id' => $product_id,
+			'kode_product' => $kode_product,
+			'kode_kayu' => $kode_kayu,
+			'thumbnail' => $gambar,
+		];
+		$this->m_kayu_online->update_thumbnail($data, $id);
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Edit Berhasil'));
+				redirect(base_url("admin/tabel"));
 
 	}
 

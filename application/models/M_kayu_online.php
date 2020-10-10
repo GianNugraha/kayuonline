@@ -21,10 +21,14 @@ class M_kayu_online extends CI_Model{
 
 	public function getAllThumbnail()
 	{
-		return $this->db->from('product_thumbnail')
-		->join('products','products.id = product_thumbnail.product_id')
-		->get()
-		->result();
+		$query = $this->db->query("SELECT * FROM product_thumbnail");
+		return $query->result_array();
+	}
+
+	public function getThumbnailById($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->get('product_thumbnail');
 	}
 
 	public function getProduct()
@@ -104,6 +108,12 @@ class M_kayu_online extends CI_Model{
 
 	public function getIDProduct(){
 		return $this->db->get('products');
+	}
+
+	public function update_thumbnail($data, $id)
+	{
+		$this->db->where('id',$id);
+		$this->db->update('product_thumbnail',$data);
 	}
 
 	public function update_stok_harga_ukuran($id,$data_has_sizes)

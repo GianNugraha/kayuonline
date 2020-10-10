@@ -277,12 +277,6 @@
                             No
                           </th>
                           <th>
-                            Produk ID
-                          </th>
-                          <th>
-                            Kode Produk
-                          </th>
-                          <th>
                             Kode Kayu
                           </th>
                           <th>
@@ -296,12 +290,11 @@
                           <?php $nomor=1; foreach ($thumbnail as $key) : ?>
                             <tr>
                               <td><?= $nomor;?></td>
-                              <td><?= $key->name;?></td>
-                              <td><?= $key->kode_product;?></td>
-                              <td><?= $key->kode_kayu;?></td>
-                              <td><img style="height: 100px; width: 100px" src="<?= base_url().$key->thumbnail;  ?>"> </td>
+                              <td><?= $key['kode_product'];?></td>
+                              <!-- <td><?= $key->kode_kayu;?></td> -->
+                              <td><img style="height: 130px; width: 100px" src="<?= base_url().$key['thumbnail'];  ?>"> </td>
                               <td>
-                                <a href="<?= base_url('admin/edit_thumbnail/'.$this->dataencryption->enc_dec("encrypt", $key->id))?>">
+                                <a href="<?= base_url('admin/edit_thumbnail/'.$key['id']);?>">
                                 <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
                               </a></td>
                             </tr>
