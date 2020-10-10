@@ -173,14 +173,16 @@ if (!empty($this->session->flashdata('msg'))) {
 <div class="login-reg-panel">
 		<div class="login-info-box">
 			<h2>Punya Akun?</h2>
-			<p>Lorem ipsum dolor sit amet</p>
+            <br>
+			<!-- <p>Lorem ipsum dolor sit amet</p> -->
 			<label id="label-register" for="log-reg-show">Masuk</label>
 			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
 		</div>
 							
 		<div class="register-info-box">
 			<h2>Tidak Mempunyai Akun?</h2>
-			<p>Lorem ipsum dolor sit amet</p>
+            <br>
+			<!-- <p>Lorem ipsum dolor sit amet</p> -->
 			<label id="label-login" for="log-login-show">Daftar</label>
 			<input type="radio" name="active-log-panel" id="log-login-show">
 		</div>

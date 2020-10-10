@@ -26,7 +26,7 @@
            <img style="width: 180px;" class="logo-footer" src="<?= base_url('assets/img/footer.png'); ?>" alt="logo-kayu-online">
         </div>
         <div class="col-sm-8">
-          <form class="form" action="">
+          <!-- <form class="form" action="">
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Masukan Email Anda" aria-label="Recipient's username"
                 aria-describedby="basic-addon2">
@@ -34,7 +34,7 @@
                 <button class="btn btn-outline-secondary" type="submit">Subscribe</button>
               </div>
             </div>
-          </form>
+          </form> -->
           <!-- <span class="iconify" data-icon="logos:facebook" data-inline="false"></span>
           <a class="instagram" href="#"><img style="margin-top: 15px;"
               src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a> -->
@@ -42,15 +42,26 @@
           <div class="row" style="margin-top: 60px;">
             <div class="col-6">
               <div class="list_footer">
-                <ul>
-                  <li><a href="<?= base_url('faq') ?>">Faq</a></li>
-                  <li><a href="<?= base_url('kebijakan-privasi')?>">Kebijakan Privasi</a></li>
-                  <li><a href="<?php echo base_url('layanan-pelanggan')?>">Layanan Pelanggan</a></li>
-                </ul>
+                  <ul style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                    <li><a href="<?= base_url('faq') ?>">Faq</a></li>
+                  </ul>
+                  <ul style="position: absolute; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                    <li><a href="<?= base_url('kebijakan-privasi')?>">Kebijakan Privasi</a></li>
+                  </ul>
+                  <ul style="position: absolute; top: 115px; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                    <li><a href="<?php echo base_url('layanan-pelanggan')?>">Layanan Pelanggan</a></li>
+                  </ul>
               </div>
             </div>
             <div class="col-6">
-              <img width="100%" src="<?php echo base_url('assets/img/bank.png'); ?>" alt="">
+              <div class="list_footer">
+                <ul style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                  <li><a href="<?= base_url('gudang-kami') ?>">Lokasi Toko</a></li>
+                </ul>
+                  <ul style="position: absolute; font-family:'helvetica',sans-serif; font-size: 15.95px; left: 20px; top: 65px;">
+                    <li>Jam Buka : 09.00-17.00 WIB / Senin - Sabtu</li>
+                  </ul>
+              </div>
             </div>
           </div>
           <!-- <div class="row" >
@@ -78,12 +89,12 @@
           <h5 class="copyright">© 2020 Kayuonline - All Right reserved!</h5>
         </div>
         <div class="col-6">
-          <!-- <div class="social_media">
+          <div class="social_media">
             <ul>
-              <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/facebook.png'); ?>" alt=""></a></li>
-              <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/instagram.png'); ?>" alt=""></a></li>
+              <li><a href=""><img style="width: 260px; position: relative; left: -300px" src="<?php echo base_url('assets/img/bank.png'); ?>" alt=""></a></li>
+              <!-- <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/instagram.png'); ?>" alt=""></a></li> -->
             </ul>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
