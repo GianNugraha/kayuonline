@@ -18,7 +18,7 @@
         <img class="d-block w-100" src="<?= base_url('assets/img/Slider-1.png'); ?>" alt=" First slide">
         <div class="carousel-caption d-none d-md-block">
           <h1>Kayu Online</h1>
-          <h3>Suplayer Kayu Terbaik Di Indonesia</h3>
+          <h3>Supplier Kayu Terbaik di Indonesia</h3>
         </div>
       </div>
       <div class="carousel-item">
@@ -136,7 +136,7 @@
     else{
     ?>
     <center>
-        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+        <span><h1 style="font-size: 40px;"> Coming Soon !</h1></span>
     </center>
 <?php } ?>
 
@@ -181,7 +181,8 @@
     else{
     ?>
     <center>
-        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+        <span><h1 style="font-size: 40px;">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspComing Soon !</h1></span>
     </center>
 <?php } ?>
 
@@ -226,7 +227,8 @@
     else{
     ?>
     <center>
-        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+        <span><h1 style="font-size: 40px;">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspComing Soon !</h1></span>
     </center>
 <?php } ?>
 
@@ -271,7 +273,8 @@
     else{
     ?>
     <center>
-        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+        <span><h1 style="font-size: 40px;">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspComing Soon !</h1></span>
     </center>
 <?php } ?>
 
@@ -316,7 +319,8 @@
     else{
     ?>
     <center>
-        <span><h1 style="font-size: 40px;">Coming Soon !</h1></span>
+        <span><h1 style="font-size: 40px;">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspComing Soon !</h1></span>
     </center>
 <?php } ?>
 

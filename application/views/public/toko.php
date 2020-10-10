@@ -5,7 +5,7 @@
 //    // echo $total ; echo "</br>";
 // endforeach;
  ?>
- <!-- bradcrom -->
+ <!-- breadcrumb -->
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <div class="row">
@@ -17,7 +17,7 @@
       </div>
     </div>
   </div>
-  <!-- bradcrom -->
+  <!-- breadcrumb -->
 
   <!-- tabs -->
   <div class="tab-filter">
@@ -131,14 +131,14 @@
         <div class="col-sm">
           <div class="sort-by">
             <div class="dropdown">
-              <select name="menu_sort" class="menu-dropdown" id="">
+              <!-- <select name="menu_sort" class="menu-dropdown" id="">
                 <option value="default">Default sorting</option>
                 <option value="popular">Sort by popularity</option>
                 <option value="rating">Sort by average rating</option>
                 <option value="lasted">Sort by latest</option>
                 <option value="high">Sort by price: low to high</option>
                 <option value="low">Sort by price: high to low</option>
-              </select>
+              </select> -->
             </div>
           </div>
         </div>
