@@ -1,23 +1,4 @@
-<style >
-  .float{
-  position:fixed;
-  width:60px;
-  height:60px;
-  bottom:80px;
-  right:50px;
-  background-color:#25d366;
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  font-size:30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index:100;
-}
 
-.my-float{
-  margin-top:16px;
-}
-</style>
 <!-- footer -->
   <div class="footer" style="background-color: #E4E4E4;">
     <div class="container">
@@ -42,25 +23,36 @@
           <div class="row" style="margin-top: 60px;">
             <div class="col-6">
               <div class="list_footer">
-                  <ul style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                  <ul class="faq" style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
                     <li><a href="<?= base_url('faq') ?>">Faq</a></li>
                   </ul>
-                  <ul style="position: absolute; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                  
+                  <ul class="kebijakan-privasi" style="position: absolute; font-family:'helvetica',sans-serif; font-size: 15.95px;">
                     <li><a href="<?= base_url('kebijakan-privasi')?>">Kebijakan Privasi</a></li>
                   </ul>
-                  <ul style="position: absolute; top: 115px; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+
+                  <ul class="layanan-pelanggan" style="position: absolute; top: 115px; font-family:'helvetica',sans-serif; font-size: 15.95px;">
                     <li><a href="<?php echo base_url('layanan-pelanggan')?>">Layanan Pelanggan</a></li>
                   </ul>
+
+                  <ul class="layanan-pelanggan2" class="layanan-pelanggan" style="position: absolute; top: 115px; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                    <li><a href="<?php echo base_url('layanan-pelanggan')?>">Layanan Pelanggan</a></li>
+                  </ul>
+
+                  
               </div>
             </div>
             <div class="col-6">
               <div class="list_footer">
-                <ul style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                <ul class="lokasi-toko" style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
                   <li><a href="<?= base_url('gudang-kami') ?>">Lokasi Toko</a></li>
                 </ul>
-                  <ul style="position: absolute; font-family:'helvetica',sans-serif; font-size: 15.95px; left: 20px; top: 65px;">
+                <ul class="jam-buka" style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                  <li><a href="<?= base_url('layanan-pelanggan') ?>">Jam Buka (09.00 - 17.00 / Senin - Sabtu)</a></li>
+                </ul>
+                  <!-- <ul class="jam-buka" style="position: absolute; font-family:'helvetica',sans-serif; font-size: 15.95px; left: 20px; top: 65px;">
                     <li>Jam Buka : 09.00-17.00 WIB / Senin - Sabtu</li>
-                  </ul>
+                  </ul> -->
               </div>
             </div>
           </div>
@@ -78,29 +70,123 @@
       </div>
     </div>
   </div>
-  <a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Bisa Bantu Saya?" class="float" target="_blank">
+  <a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Bisa Bantu Saya?" class="float-wa" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
     </a>
 
-  <div class="footer_socialmedia">
+ <div class="footer_socialmedia"> 
     <div class="container">
       <div class="row">
         <div class="col-6">
-          <h5 class="copyright">© 2020 Kayuonline - All Right reserved!</h5>
+          <!-- <h5 class="copyright" style="margin-top: 30px">© 2020 Kayuonline - All Right reserved!</h5> -->
+          <h4 class="COPYRIGHT">© 2020 Kayuonline - All Right reserved!</h4>
         </div>
         <div class="col-6">
           <div class="social_media">
             <ul>
               <li><a href=""><img style="width: 260px; position: relative; left: -300px" src="<?php echo base_url('assets/img/bank.png'); ?>" alt=""></a></li>
-              <!-- <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/instagram.png'); ?>" alt=""></a></li> -->
+              <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/instagram.png'); ?>" alt=""></a></li> 
             </ul>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> 
+
+  
 
   <!-- akhir footer -->
+
+  <style >
+  .float-wa{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:80px;
+  right:50px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index:50;
+}
+
+.my-float{
+  margin-top:16px;
+}
+
+.COPYRIGHT {
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width:750px) {
+  .footer {
+    font-size: 50px;
+    z-index:10;
+  }
+
+  ul.faq {
+    position: relative;
+    top: -50px;
+    left: 20px;
+  }
+
+  ul.kebijakan-privasi {
+    position: absolute;
+    top: -20px;
+    left: 35px;
+  } 
+
+  ul.layanan-pelanggan {
+    position: relative;
+    top: 100px;
+    left: 35px;
+    z-index: 100;
+
+  .layanan-pelanggan2 {
+      position: relative;
+      top: 110px;
+    }
+    
+  }
+
+  ul.lokasi-toko {
+    position: relative;
+    top: -50px;
+  }
+
+  ul.jam-buka {
+    position: absolute;
+    top: -65px;
+  }
+
+  .footer_socialmedia {
+    position:relative;
+  }
+
+  .float-wa {
+    right: 300px;
+  }
+
+  #button {
+    margin-right: 250px;
+  }
+
+  .copyright {
+    margin-top: 250px;
+  }
+
+  .COPYRIGHT {
+    font-size:10px;
+    text-align: center;
+    margin: 30px 50%;
+    width: 100%;
+  }
+}
+</style>
 
 
 
