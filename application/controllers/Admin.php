@@ -466,10 +466,6 @@ class Admin extends CI_Controller {
 		$id = $this->dataencryption->enc_dec("decrypt", $id);
 		$id_product = $this->dataencryption->enc_dec("decrypt", $id_product);
 		$data['allProductSizes'] = $this->m_kayu_online->getAllProductSizes();
-		$data['produk'] = $this->m_kayu_online->getProdukById($id);
-		$data['kategoriid'] = $this->m_kayu_online->getCategoriesById($id);
-		$data['sizesid'] = $this->m_kayu_online->getSizesById($id);
-		$data['hassizesid'] = $this->m_kayu_online->getHasSizesById($id);
 		$data['getHasSizes'] = $this->m_kayu_online->getHasSizesById2($id, $id_product);
 		$data['content'] = 'admin/edit-produk';
 		$this->load->view('admin/template/layout',$data);
