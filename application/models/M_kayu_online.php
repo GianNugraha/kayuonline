@@ -116,9 +116,10 @@ class M_kayu_online extends CI_Model{
 		$this->db->update('product_thumbnail',$data);
 	}
 
-	public function update_stok_harga_ukuran($id,$data_has_sizes)
+	public function update_stok_harga_ukuran($product_id,$product_size_id,$data_has_sizes)
 	{
-		$this->db->where('id',$id);
+		$this->db->where('product_id',$product_id);
+		$this->db->where('product_size_id',$product_size_id);
 		return $this->db->update('product_has_sizes', $data_has_sizes);
 	}
 

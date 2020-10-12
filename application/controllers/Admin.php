@@ -155,12 +155,13 @@ class Admin extends CI_Controller {
 				redirect(base_url("admin/tabel"));
 	}
 
-	public function proses_edit_stok_harga_ukuran($param)
+	public function proses_edit_stok_harga_ukuran($product_id,$product_size_id)
 	{
-		$id = $this->dataencryption->enc_dec("decrypt", $param);
+		$product_id = $this->dataencryption->enc_dec("decrypt", $product_id);
+		$product_size_id = $this->dataencryption->enc_dec("decrypt", $product_size_id);
 		$stok = $this->input->post('stok');
 		$harga = $this->input->post('harga');
-		$ukuran = $this->input->post('ukuran');
+		$ukuran = $this->input->post('id_ukuran');
 		$data_has_sizes = [
 			'product_size_id' => $ukuran,
 			'stock' => $stok,
@@ -169,7 +170,7 @@ class Admin extends CI_Controller {
 		// $data_sizes = [
 		// 	'size' => $ukuran,
 		// ];
-		$this->m_kayu_online->update_stok_harga_ukuran($id,$data_has_sizes);
+		$this->m_kayu_online->update_stok_harga_ukuran($product_id,$product_size_id,$data_has_sizes);
 		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Edit Berhasil'));
 				redirect(base_url("admin/tabel"));
 	}
@@ -460,13 +461,13 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/layout', $data);
 	}
 
-	public function edit_produk($id, $id_product)
+	public function edit_produk($id_size, $id_product)
 	{
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
-		$id = $this->dataencryption->enc_dec("decrypt", $id);
+		$id_size = $this->dataencryption->enc_dec("decrypt", $id_size);
 		$id_product = $this->dataencryption->enc_dec("decrypt", $id_product);
 		$data['allProductSizes'] = $this->m_kayu_online->getAllProductSizes();
-		$data['getHasSizes'] = $this->m_kayu_online->getHasSizesById2($id, $id_product);
+		$data['getHasSizes'] = $this->m_kayu_online->getHasSizesById2($id_size, $id_product);
 		$data['content'] = 'admin/edit-produk';
 		$this->load->view('admin/template/layout',$data);
 	}
