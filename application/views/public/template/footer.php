@@ -23,23 +23,18 @@
           <div class="row" style="margin-top: 60px;">
             <div class="col-6">
               <div class="list_footer">
-                  <ul class="faq" style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
-                    <li><a href="<?= base_url('faq') ?>">Faq</a></li>
+
+                  <ul class="layanan-pelanggan" style="position: relative; top: 1px; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                    <li><a href="<?php echo base_url('layanan-pelanggan')?>">Layanan Pelanggan</a></li>
                   </ul>
                   
-                  <ul class="kebijakan-privasi" style="position: absolute; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                  <ul class="kebijakan-privasi" style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
                     <li><a href="<?= base_url('kebijakan-privasi')?>">Kebijakan Privasi</a></li>
                   </ul>
 
-                  <ul class="layanan-pelanggan" style="position: absolute; top: 115px; font-family:'helvetica',sans-serif; font-size: 15.95px;">
-                    <li><a href="<?php echo base_url('layanan-pelanggan')?>">Layanan Pelanggan</a></li>
-                  </ul>
-
-                  <ul class="layanan-pelanggan2" class="layanan-pelanggan" style="position: absolute; top: 115px; font-family:'helvetica',sans-serif; font-size: 15.95px;">
-                    <li><a href="<?php echo base_url('layanan-pelanggan')?>">Layanan Pelanggan</a></li>
-                  </ul>
-
-                  
+                  <ul class="faq" style="position: relative; font-family:'helvetica',sans-serif; font-size: 15.95px;">
+                    <li><a href="<?= base_url('faq') ?>">Faq</a></li>
+                  </ul>                  
               </div>
             </div>
             <div class="col-6">
@@ -85,7 +80,7 @@
           <div class="social_media">
             <ul>
               <li><a href=""><img style="width: 260px; position: relative; left: -300px" src="<?php echo base_url('assets/img/bank.png'); ?>" alt=""></a></li>
-              <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/instagram.png'); ?>" alt=""></a></li> 
+              <!-- <li><a href=""><img style="width: 20px;" src="<?php echo base_url('assets/img/instagram.png'); ?>" alt=""></a></li>  -->
             </ul>
           </div>
         </div>
@@ -130,32 +125,26 @@
 
   ul.faq {
     position: relative;
-    top: -50px;
-    left: 20px;
+    top: -137px;
+    left: 35px;
   }
 
   ul.kebijakan-privasi {
-    position: absolute;
-    top: -20px;
+    /*position: absolute;*/
+    top: -65px;
     left: 35px;
   } 
 
   ul.layanan-pelanggan {
     position: relative;
-    top: 100px;
     left: 35px;
     z-index: 100;
-
-  .layanan-pelanggan2 {
-      position: relative;
-      top: 110px;
-    }
     
   }
 
   ul.lokasi-toko {
     position: relative;
-    top: -50px;
+    top: -47px;
   }
 
   ul.jam-buka {
