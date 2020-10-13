@@ -25,6 +25,12 @@ class M_kayu_online extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function getStokMinim()
+	{
+		$query = $this->db->query("SELECT * FROM product_has_sizes WHERE stock <= '10'");
+		return $query->result();
+	}
+
 	public function getThumbnailById($id)
 	{
 		$this->db->where('id', $id);

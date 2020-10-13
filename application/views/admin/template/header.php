@@ -48,7 +48,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="<?php echo base_url('admin/daftar-admin') ?>">Permintaan Admin <?php if ($admin_reg !=0) { ?> <span class="notification"><?php echo $admin_reg; ?></span><?php } ?></a>
-                  <a class="dropdown-item" href="#">Stok Minim <?php if ($stok_barang !=0) { ?> <span class="notification"><?php echo $stok_barang; ?></span><?php } ?></a>
+                  <a class="dropdown-item" href="<?= base_url('admin/stok-minim')?>">Stok Minim <?php if ($stok_barang !=0) { ?> <span class="notification"><?php echo $stok_barang; ?></span><?php } ?></a>
                   <a class="dropdown-item" href="<?php echo base_url('admin/daftar-bukti-tf') ?>">Bukti Transfer <?php if ($bukti_tf >0) { ?> <span class="notification"><?php echo  $bukti_tf; ?></span><?php } ?></a>
                 </div>
               </li>

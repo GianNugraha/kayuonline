@@ -74,6 +74,7 @@ $route['admin/add-produk'] = 'admin/add_produk';
 $route['admin/add-harga-ukuran-stok'] = 'admin/add_harga_ukuran_stok';
 $route['admin/add-thumbnail'] = 'admin/add_thumbnail';
 $route['admin/daftar-admin'] = 'admin/daftar_admin';
+$route['admin/stok-minim'] = 'admin/stok_minim';
 $route['admin/daftar-bukti-tf'] = 'admin/daftar_bukti_tf';
 $route['coba-data'] = 'home/join';
 $route['kayu-olahan'] = 'home/kayu_olahan';

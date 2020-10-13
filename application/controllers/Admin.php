@@ -650,6 +650,14 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/layout',$data);
 	}
 
+	public function stok_minim()
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$data['stokminim'] = $this->m_kayu_online->getStokMinim();
+		$data['content'] = 'admin/stok-minim';
+		$this->load->view('admin/template/layout',$data);
+	}
+
 
  
 }
