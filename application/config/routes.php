@@ -67,6 +67,7 @@ $route['wishlist'] = 'home/wishlist';
 $route['checkout'] = 'home/checkout';
 $route['order-complete'] = 'home/order_complete';
 $route['pemberitahuan'] = 'admin/pemberitahuan';
+$route['admin/tabel-order'] = 'admin/tabel_order';
 $route['admin/status-transaksi'] = 'admin/status_transaksi';
 $route['admin/add-admin'] = 'admin/add_admin';
 $route['admin/add-produk'] = 'admin/add_produk';

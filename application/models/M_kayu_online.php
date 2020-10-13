@@ -173,6 +173,12 @@ class M_kayu_online extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function getAllOrder()
+	{
+		$query = $this->db->query("SELECT * FROM orders");
+		return $query->result();
+	}
+
 	public function cek_user($namaPengguna){		
 		$sql = $this->db->query("SELECT * FROM users where username='$namaPengguna' and role='user'  ");
 

@@ -38,7 +38,7 @@
           <li class="nav-item <?php if($active==''){ ?> active <?php } ?>  ">
             <a class="nav-link" href="<?php echo base_url('admin'); ?>">
               <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+              <p>Beranda</p>
             </a>
           </li>
 <!--           <li class="nav-item <?php if($active=='profil'){ ?> active <?php } ?> ">
@@ -50,12 +50,18 @@
           <li class="nav-item <?php if($active=='tabel'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel'); ?>">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Table List <br> (Admin,User,Produk,Thumbnail)</p>
+            </a>
+          </li>
+          <li class="nav-item <?php if($active=='status_transaksi'){ ?> active <?php } ?>">
+            <a class="nav-link" href="<?php echo base_url('admin/tabel-order'); ?>">
+              <i class="material-icons">stroller</i>
+              <p>Tabel Order</p>
             </a>
           </li>
           <li class="nav-item <?php if($active=='status_transaksi'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/status-transaksi'); ?>">
-              <i class="material-icons">unarchive</i>
+              <i class="material-icons">money</i>
               <p>Status Transaksi</p>
             </a>
           </li>

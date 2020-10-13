@@ -1,6 +1,6 @@
-
+<!-- 
 <?php foreach ($productPerCategory as $key) {
-} ?>
+} ?> -->
 <div class="content">
         <div class="container-fluid">
           <?php

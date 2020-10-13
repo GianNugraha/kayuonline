@@ -642,6 +642,13 @@ class Admin extends CI_Controller {
 		redirect(base_url("admin/daftar-bukti-tf")); 
 	}
 	
+	public function tabel_order()
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$data['order'] = $this->m_kayu_online->getAllOrder();
+		$data['content'] = 'admin/tabel-order';
+		$this->load->view('admin/template/layout',$data);
+	}
 
 
  
