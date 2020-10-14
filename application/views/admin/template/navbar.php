@@ -37,32 +37,32 @@
         <ul class="nav">
           <li class="nav-item <?php if($active==''){ ?> active <?php } ?>  ">
             <a class="nav-link" href="<?php echo base_url('admin'); ?>">
-              <i class="material-icons">dashboard</i>
+              <i style="color: brown" class="material-icons">dashboard</i>
               <p>Beranda</p>
             </a>
           </li>
-<!--           <li class="nav-item <?php if($active=='profil'){ ?> active <?php } ?> ">
-            <a class="nav-link" href="<?php echo base_url('admin/profil'); ?>">
-              <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
-          </li> -->
           <li class="nav-item <?php if($active=='tabel'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel'); ?>">
-              <i class="material-icons">content_paste</i>
+              <i style="color: blue" class="material-icons">content_paste</i>
               <p>Daftar Tabel <br> (Admin,User,Produk,Thumbnail)</p>
             </a>
           </li>
-          <li class="nav-item <?php if($active=='status_transaksi'){ ?> active <?php } ?>">
+          <li class="nav-item <?php if($active=='tabel-order'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel-order'); ?>">
-              <i class="material-icons">stroller</i>
+              <i style="color:orange" class="material-icons">stroller</i>
               <p>Status Transaksi</p>
             </a>
           </li>
-          <li class="nav-item <?php if($active=='status_transaksi'){ ?> active <?php } ?>">
+          <li class="nav-item <?php if($active=='status-transaksi'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/status-transaksi'); ?>">
-              <i class="material-icons">money</i>
+              <i style="color: green" class="material-icons">money</i>
               <p>Konfirmasi Transaksi</p>
+            </a>
+          </li>
+          <li class="nav-item <?php if($active=='stok-minim'){ ?> active <?php } ?>">
+            <a class="nav-link" href="<?php echo base_url('admin/stok-minim'); ?>">
+              <i style="color: red" class="material-icons">warning</i>
+              <p>Stok Minim</p>
             </a>
           </li>
         </ul>

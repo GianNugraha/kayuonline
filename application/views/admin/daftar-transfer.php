@@ -102,7 +102,7 @@
                       </td>
                       <td>
                         <a rel="tooltip" title="Lihat Bukti Transfer" style="color: black" target="_blank" href="<?= base_url().$key->bukti_transaksi;  ?>">
-                          <img style="height: 200px; width: 150px" src="<?= base_url().$key->bukti_transaksi;  ?>"> 
+                          <img style="height: 150px; width: 100px" src="<?= base_url().$key->bukti_transaksi;  ?>"> 
                         </a>
                       </td>
                       <td>

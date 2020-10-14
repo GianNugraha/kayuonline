@@ -22,11 +22,12 @@
                 <?php if (!empty($orderpesan)) { ?>
                   <thead>
                     <th>No</th>
-                    <th>ID Pemesan</th>
+                    <th>ID <br> Pemesan</th>
                     <th>SKU</th>
                     <th>Nama Produk</th>
                     <th>Ukuran Produk</th>
-                    <th>Jumlah yang di pesan</th>
+                    <th>Jumlah yang <br> di pesan</th>
+                    <th>Harga</th>
                     <th>Total Harga</th>
                     <th>Status</th>
                   </thead>
@@ -40,7 +41,8 @@
                         <td><?= $key->nama_product;?></td>
                         <td><?= $key->ukuran;?></td>
                         <td><?= $key->jumlah;?></td>
-                        <td><?= $key->total;?></td>
+                        <td><?= $key->harga;?></td>
+                        <td align="center"><?= $key->total;?></td>
                         <td><?= $key->status;?></td>
                       </tr>
                     <?php $no+=1; } ?>
@@ -68,11 +70,12 @@
                 <?php if (!empty($orderdone)) { ?>
                   <thead>
                     <th>No</th>
-                    <th>ID Pemesan</th>
+                    <th>ID <br> Pemesan</th>
                     <th>SKU</th>
                     <th>Nama Produk</th>
                     <th>Ukuran Produk</th>
-                    <th>Jumlah yang di pesan</th>
+                    <th>Jumlah yang <br> di pesan</th>
+                    <th>Harga</th>
                     <th>Total Harga</th>
                     <th>Status</th>
                   </thead>
@@ -86,7 +89,8 @@
                         <td><?= $key->nama_product;?></td>
                         <td><?= $key->ukuran;?></td>
                         <td><?= $key->jumlah;?></td>
-                        <td><?= $key->total;?></td>
+                        <td><?= $key->harga;?></td>
+                        <td align="center"><?= $key->total;?></td>
                         <td><?= $key->status;?></td>
                       </tr>
                     <?php $no+=1; } ?>

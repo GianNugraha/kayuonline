@@ -60,9 +60,9 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
-                  <div class="dropdown-divider"></div>
+                  <!-- <a class="dropdown-item" href="#">Profile</a> -->
+                  <!-- <a class="dropdown-item" href="#">Settings</a> -->
+                  <!-- <div class="dropdown-divider"></div> -->
                   <a class="dropdown-item"  onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('login/logout') ?>">Log out</a>
                 </div>
               </li>
