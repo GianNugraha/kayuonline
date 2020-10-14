@@ -42,6 +42,25 @@ class M_kayu_online extends CI_Model{
 		->result();
 	}
 
+	public function getOrderStatusPesan()
+	{
+		return $this->db->from("orders")
+		->join('users','users.id = orders.id_pemesan')
+		->where('orders.status','pesan')
+		->get()
+		->result();
+	}
+
+	public function getOrderStatusDone()
+	{
+		return $this->db->from("orders")
+		->join('products','products.id = orders.id_product')
+		->join('users','users.id = orders.id_pemesan')
+		->where('orders.status','done')
+		->get()
+		->result();
+	}
+
 	public function getThumbnailById($id)
 	{
 		$this->db->where('id', $id);
@@ -190,18 +209,6 @@ class M_kayu_online extends CI_Model{
 		return $query->result_array();
 	}
 
-	public function getOrderStatusPesan()
-	{
-		$query = $this->db->query("SELECT * FROM orders WHERE status = 'pesan'");
-		return $query->result();
-	}
-
-	public function getOrderStatusDone()
-	{
-		$query = $this->db->query("SELECT * FROM orders WHERE status = 'done'");
-		return $query->result();
-	}
-
 	public function cek_user($namaPengguna){		
 		$sql = $this->db->query("SELECT * FROM users where username='$namaPengguna' and role='user'  ");
 
@@ -227,7 +234,7 @@ class M_kayu_online extends CI_Model{
 
 	public function hapus_tf($id){    
 		$this->db->where('id', $id);    
-		// return $this->db->delete('reservasi'); // Untuk mengeksekusi perintah delete data  
+		return $this->db->delete('reservasi'); // Untuk mengeksekusi perintah delete data  
 	}
 	public function hapus_produk($id)
 	{

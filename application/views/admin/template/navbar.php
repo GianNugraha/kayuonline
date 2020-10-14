@@ -32,7 +32,8 @@
     -->
       <div class="logo"><a href="<?php echo base_url('admin'); ?>" class="simple-text logo-normal">
          <img src="<?php echo base_url(); ?>assets/img/Logo-hitam.png" style="border-radius: 100px; width: 50px; height: 50px;" /> <?php echo $_SESSION['namaUser']; ?>
-        </a></div>
+        </a>
+      </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item <?php if($active==''){ ?> active <?php } ?>  ">
@@ -47,6 +48,7 @@
               <p>Daftar Tabel <br> (Admin,User,Produk,Thumbnail)</p>
             </a>
           </li>
+          <li>______________________________________</li>
           <li class="nav-item <?php if($active=='tabel-order'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel-order'); ?>">
               <i style="color:orange" class="material-icons">stroller</i>

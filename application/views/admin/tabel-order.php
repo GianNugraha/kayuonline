@@ -1,3 +1,8 @@
+<?php foreach ($orderdone as $key) {
+  echo "<pre>";
+  print_r($key);
+  echo "</pre>";
+} ?>
 <div class="content">
   <div class="container-fluid">
    <?php
@@ -22,28 +27,26 @@
                 <?php if (!empty($orderpesan)) { ?>
                   <thead>
                     <th>No</th>
-                    <th>ID <br> Pemesan</th>
+                    <th>Nama <br> Pemesan</th>
                     <th>SKU</th>
                     <th>Nama Produk</th>
                     <th>Ukuran Produk</th>
-                    <th>Jumlah yang <br> di pesan</th>
+                    <th>Jumlah <br> Pesanan</th>
                     <th>Harga</th>
                     <th>Total Harga</th>
-                    <th>Status</th>
                   </thead>
                   <tbody>
                     <?php $no=1;
                     foreach ($orderpesan as $key) { ?>
                       <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $key->id_pemesan;?></td>
+                        <td><?= $key->nama;?></td>
                         <td><?= $key->sku_product;?></td>
                         <td><?= $key->nama_product;?></td>
                         <td><?= $key->ukuran;?></td>
                         <td><?= $key->jumlah;?></td>
                         <td><?= $key->harga;?></td>
                         <td align="center"><?= $key->total;?></td>
-                        <td><?= $key->status;?></td>
                       </tr>
                     <?php $no+=1; } ?>
                   </tbody>
@@ -70,28 +73,66 @@
                 <?php if (!empty($orderdone)) { ?>
                   <thead>
                     <th>No</th>
-                    <th>ID <br> Pemesan</th>
+                    <th>Nama <br> Pemesan</th>
                     <th>SKU</th>
                     <th>Nama Produk</th>
                     <th>Ukuran Produk</th>
-                    <th>Jumlah yang <br> di pesan</th>
+                    <th>Jumlah <br> Pesanan</th>
                     <th>Harga</th>
                     <th>Total Harga</th>
-                    <th>Status</th>
                   </thead>
                   <tbody>
                     <?php $no=1;
                     foreach ($orderdone as $key) { ?>
                       <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $key->id_pemesan;?></td>
+                        <td><?= $key->nama;?></td>
                         <td><?= $key->sku_product;?></td>
                         <td><?= $key->nama_product;?></td>
                         <td><?= $key->ukuran;?></td>
                         <td><?= $key->jumlah;?></td>
                         <td><?= $key->harga;?></td>
                         <td align="center"><?= $key->total;?></td>
-                        <td><?= $key->status;?></td>
+                      </tr>
+                    <?php $no+=1; } ?>
+                  </tbody>
+                  <?php }
+                    else{
+                      echo "<center><h3>TIDAK ADA DATA !</h3></center>";
+                    } ?>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-plain">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title mt-0"> Stock & Daftar Produk Yang Terjual</h4>
+            <!-- <p class="card-category"> Ini merupakan tabel order yang berstatus (Done) atau sudah di konfirmasi oleh admin</p> -->
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <?php if (!empty($orderdone)) { ?>
+                  <thead>
+                    <th>No</th>
+                    <th>SKU</th>
+                    <th>Nama Produk</th>
+                    <th>Ukuran Produk</th>
+                    <th>Jumlah <br> Terjual</th>
+                  </thead>
+                  <tbody>
+                    <?php $no=1;
+                    foreach ($orderdone as $key) { ?>
+                      <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $key->sku_product;?></td>
+                        <td><?= $key->nama_product;?></td>
+                        <td><?= $key->ukuran;?></td>
+                        <td><?= $key->jumlah;?></td>
                       </tr>
                     <?php $no+=1; } ?>
                   </tbody>

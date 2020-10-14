@@ -639,7 +639,7 @@ class Admin extends CI_Controller {
     	$id = $this->dataencryption->enc_dec("decrypt", $id); 
 		$this->m_kayu_online->hapus_tf($id);
 		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Data Admin Berhasil !'));
-		redirect(base_url("admin/daftar-bukti-tf")); 
+		redirect(base_url("admin/daftar-bukti-tf"));
 	}
 	
 	public function tabel_order()
