@@ -645,7 +645,8 @@ class Admin extends CI_Controller {
 	public function tabel_order()
 	{
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
-		$data['order'] = $this->m_kayu_online->getAllOrder();
+		$data['orderpesan'] = $this->m_kayu_online->getOrderStatusPesan();
+		$data['orderdone'] = $this->m_kayu_online->getOrderStatusDone();
 		$data['content'] = 'admin/tabel-order';
 		$this->load->view('admin/template/layout',$data);
 	}

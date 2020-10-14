@@ -50,19 +50,19 @@
           <li class="nav-item <?php if($active=='tabel'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel'); ?>">
               <i class="material-icons">content_paste</i>
-              <p>Table List <br> (Admin,User,Produk,Thumbnail)</p>
+              <p>Daftar Tabel <br> (Admin,User,Produk,Thumbnail)</p>
             </a>
           </li>
           <li class="nav-item <?php if($active=='status_transaksi'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel-order'); ?>">
               <i class="material-icons">stroller</i>
-              <p>Tabel Order</p>
+              <p>Status Transaksi</p>
             </a>
           </li>
           <li class="nav-item <?php if($active=='status_transaksi'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/status-transaksi'); ?>">
               <i class="material-icons">money</i>
-              <p>Status Transaksi</p>
+              <p>Konfirmasi Transaksi</p>
             </a>
           </li>
         </ul>

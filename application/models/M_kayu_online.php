@@ -179,9 +179,15 @@ class M_kayu_online extends CI_Model{
 		return $query->result_array();
 	}
 
-	public function getAllOrder()
+	public function getOrderStatusPesan()
 	{
-		$query = $this->db->query("SELECT * FROM orders");
+		$query = $this->db->query("SELECT * FROM orders WHERE status = 'pesan'");
+		return $query->result();
+	}
+
+	public function getOrderStatusDone()
+	{
+		$query = $this->db->query("SELECT * FROM orders WHERE status = 'done'");
 		return $query->result();
 	}
 
