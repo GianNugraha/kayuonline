@@ -1,6 +1,5 @@
-<!-- 
 <?php foreach ($productPerCategory as $key) {
-} ?> -->
+} ?>
 <div class="content">
         <div class="container-fluid">
           <?php
@@ -16,7 +15,7 @@
             <div class="col-md-12">
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title mt-0">Daftar Thumbnail</h4>
+                  <h4 class="card-title mt-0">Tambah Thumbnail</h4>
                   <!-- <p class="card-category"></p> -->
                 </div>
                 <a href="<?= base_url('admin/add-thumbnail?id='.$key->product_id);?>">
@@ -49,7 +48,7 @@
                       <?php 
                         if (!empty($productPerCategory)){
                       ?>
-                      <thead class="">
+                      <thead class="text-primary">
                         <th>
                           No
                         </th>
@@ -120,9 +119,9 @@
                           <a href="<?php echo base_url('admin/edit_produk/'.$this->dataencryption->enc_dec("encrypt",$key->product_size_id).'/'.$this->dataencryption->enc_dec("encrypt",$key->product_id)) ?>">
                             <i title="Ubah" rel="tooltip" class="material-icons">edit</i>
                           </a>
-                          <!-- <a href="<?= base_url('admin/delete/'.$this->dataencryption->enc_dec("encrypt", $key->product_size_id).'/'.$this->dataencryption->enc_dec("encrypt", $key->product_id))?>">
+                          <a href="<?= base_url('admin/delete_produk/'.$this->dataencryption->enc_dec("encrypt", $key->product_size_id).'/'.$this->dataencryption->enc_dec("encrypt", $key->product_id))?>">
                             <i style="color:red" title="Hapus" rel="tooltip" class="material-icons">delete</i>
-                          </a> -->
+                          </a>
                           </td>
                       </tr>
                          <?php $nomor+=1; endforeach;?>

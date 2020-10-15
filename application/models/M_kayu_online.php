@@ -243,6 +243,13 @@ class M_kayu_online extends CI_Model{
 		return $this->db->delete('products'); 
 	}
 
+	public function delete_produk($id_size, $id_product)
+	{
+		$this->db->where('product_size_id',$id_size);
+		$this->db->where('product_id', $id_product);
+		return $this->db->delete('product_has_sizes');
+	}
+
 	public function getProdukById($id)
 	{
 		$this->db->where('id',$id);

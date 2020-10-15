@@ -28,7 +28,7 @@
                       <?php 
                         if (!empty($admin->result())){
                       ?>
-                      <thead class=" text-primary">
+                      <thead class="text-primary">
                         <th>
                           No
                         </th>
@@ -99,7 +99,7 @@
                       <?php 
                         if (!empty($user->result())){
                       ?>
-                      <thead class="">
+                      <thead class="text-primary">
                         <th>
                           No
                         </th>
@@ -174,7 +174,7 @@
                       <?php 
                         if (!empty($product)){
                       ?>
-                      <thead class="">
+                      <thead class="text-primary">
                         <th>
                           No
                         </th>

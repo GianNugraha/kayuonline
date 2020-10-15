@@ -32,7 +32,7 @@
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('admin'); ?>">
-                  <i class="material-icons">dashboard</i>
+                  <i style="color: brown" class="material-icons">dashboard</i>
                   <p class="d-lg-none d-md-block">
                     Stats
                   </p>
@@ -40,7 +40,7 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
+                  <i style="color: gold" class="material-icons">notifications</i>
                   <?php if ($semua !=0) { ?><span class="notification"><?php echo $semua; ?></span><?php } ?>
                   <p class="d-lg-none d-md-block">
                     Some Actions
@@ -54,15 +54,15 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">person</i>
+                  <i style="color:red" class="material-icons">power_settings_new</i>
                   <p class="d-lg-none d-md-block">
                     Account
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <!-- <a class="dropdown-item" href="#">Profile</a> -->
-                  <!-- <a class="dropdown-item" href="#">Settings</a> -->
-                  <!-- <div class="dropdown-divider"></div> -->
+                  <!-- <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="#">Settings</a>
+                  <div class="dropdown-divider"></div> -->
                   <a class="dropdown-item"  onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('login/logout') ?>">Log out</a>
                 </div>
               </li>

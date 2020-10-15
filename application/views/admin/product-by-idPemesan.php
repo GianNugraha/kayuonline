@@ -109,7 +109,11 @@
                           echo "<center><h3>TIDAK ADA DATA !</h3></center>";
                         } ?>
                     </table>
-                    <a href="daftar-bukti-tf"><button><span>BACK</span></button></a>
+                    <a href="daftar-bukti-tf">
+                      <i class="fa fa-arrow-left">
+                        Kembali
+                      </i>
+                    </a>
                   </div>
                 </div>
               </div>

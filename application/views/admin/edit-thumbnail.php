@@ -9,8 +9,8 @@
           <center><?php echo $message['message'] ?></center>
         </div>
       <?php } ?>
-		<a href="../tabel">
-			<i class="fa fa-arrow-left">&nbsp Kembali</i>
+		  <a href="../tabel">
+			 <i class="fa fa-arrow-left">&nbsp Kembali</i>
   		</a>
       <div class="row">
         <div class="col-md-6">

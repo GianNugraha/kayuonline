@@ -20,7 +20,7 @@
             <div class="table-responsive">
               <table class="table table-hover">
                 <?php if (!empty($orderpesan)) { ?>
-                  <thead>
+                  <thead class="text-primary">
                     <th>No</th>
                     <th>Nama <br> Pemesan</th>
                     <th>SKU</th>
@@ -66,7 +66,7 @@
             <div class="table-responsive">
               <table class="table table-hover">
                 <?php if (!empty($orderdone)) { ?>
-                  <thead>
+                  <thead class="text-primary">
                     <th>No</th>
                     <th>Nama <br> Pemesan</th>
                     <th>SKU</th>

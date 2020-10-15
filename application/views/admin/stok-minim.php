@@ -12,7 +12,7 @@
 	                <div class="row">
 	                    <div class="col-md-8">
 	                        <div class="card card-plain">
-	                            <div class="card-header card-header-primary">
+	                            <div class="card-header card-header-danger">
 	                                <h4 class="card-title mt-0"> Daftar Produk Stok Minim</h4>
 	                                <!-- <p class="card-category"> </p> -->
 	                            </div>
@@ -20,7 +20,7 @@
 	                                <div class="table-responsive">
 	                                    <table class="table table-hover">
 	                                    	<?php if (!empty($stokminim)) { ?>
-	                                        <thead>
+	                                        <thead class="text-danger">
 	                                            <th>No</th>
 							                    <th>Produk</th>
 							                    <th>SKU</th>
@@ -28,7 +28,7 @@
 							                    <th>Ukuran</th>
 							                    <th>Stok</th>
 	                                        </thead>
-	                                        <tbody>
+	                                        <tbody class="text-danger">
 	                                        <?php $no=1; foreach ($stokminim as $key) { ?>
 	                                        	<td><?= $no;?></td>
 	                                            <td><?= $key->name;?></td>

@@ -472,6 +472,16 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/layout',$data);
 	}
 
+	public function delete_produk($id_size, $id_product)
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$id_size = $this->dataencryption->enc_dec("decrypt", $id_size);
+		$id_product = $this->dataencryption->enc_dec("decrypt", $id_product);
+		$this->m_kayu_online->delete_produk($id_size,$id_product);
+		$this->session->set_flashdata('msg', array('class' => 'info', 'message'=> 'Hapus Ukuran Harga & Stok Berhasil !'));
+		redirect(base_url("admin/tabel"));
+	}
+
 	public function edit_thumbnail($id)
 	{
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();

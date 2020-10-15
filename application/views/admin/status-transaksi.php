@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card card-plain">
-        <div class="card-header card-header-primary">
+        <div class="card-header card-header-warning">
           <h4 class="card-title mt-0"> Daftar Tabel Transfer Pembeli Yang Belum Di Konfirmasi</h4>
           <p class="card-category"> Ini Merupakan Tabel transfer Pemesanan yang terkonfirmasi oleh Admin Kayu Online</p>
         </div>
@@ -21,7 +21,7 @@
           <div class="table-responsive">
             <table class="table table-hover">
               <?php if (!empty($buktiTf->result())) { ?>
-                <thead class=" text-primary">
+                <thead class="text-warning">
                   <th>
                     Nomor
                   </th>
@@ -239,7 +239,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card card-plain">
-      <div class="card-header card-header-primary">
+      <div class="card-header card-header-danger">
         <h4 class="card-title mt-0"> Daftar Tabel Transfer Pembeli Yang Ditolak</h4>
         <p class="card-category"> Ini Merupakan Tabel transfer Pemesanan yang ditolak bukti transfer nya</p>
       </div>
@@ -247,7 +247,7 @@
         <div class="table-responsive">
           <table class="table table-hover">
             <?php if (!empty($TFTolak->result())) { ?>
-              <thead class=" text-primary">
+              <thead class=" text-danger">
                 <th>
                   Nomor
                 </th>
