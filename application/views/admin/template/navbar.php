@@ -48,7 +48,7 @@
               <p>Daftar Tabel <br> (Admin,User,Produk,Thumbnail)</p>
             </a>
           </li>
-          <li>______________________________________</li>
+          <li style="color: purple">======================================</li>
           <li class="nav-item <?php if($active=='tabel-order'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel-order'); ?>">
               <i style="color:orange" class="material-icons">stroller</i>
@@ -65,6 +65,13 @@
             <a class="nav-link" href="<?php echo base_url('admin/stok-minim'); ?>">
               <i style="color: red" class="material-icons">warning</i>
               <p>Stok Minim</p>
+            </a>
+          </li>
+          <li style="color: purple">======================================</li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('login/logout') ?>">
+              <i style="color: red" class="material-icons">logout</i>
+              <p>Keluar</p>
             </a>
           </li>
         </ul>

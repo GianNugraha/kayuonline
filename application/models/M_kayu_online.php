@@ -45,6 +45,7 @@ class M_kayu_online extends CI_Model{
 	public function getOrderStatusPesan()
 	{
 		return $this->db->from("orders")
+		->join('products','products.id = orders.id_product')
 		->join('users','users.id = orders.id_pemesan')
 		->where('orders.status','pesan')
 		->get()

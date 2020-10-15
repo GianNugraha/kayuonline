@@ -1,4 +1,3 @@
-<!-- <?php //echo $_SESSION['idUser']; die(); ?> -->
 <div class="content">
         <div class="container-fluid">
           <div class="row">
