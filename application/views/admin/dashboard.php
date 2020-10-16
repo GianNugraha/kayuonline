@@ -1,4 +1,35 @@
-<div class="content">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+      <style>
+        .accordion {
+          background-color: #eee;
+          color: red;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+          background-color: white; 
+        }
+
+        .panel {
+          padding: 0 18px;
+          display: none;
+          background-color: white;
+          overflow: hidden;
+        }
+      </style>
+  </head>
+<body>
+  <div class="content">
         <div class="container-fluid">
 <!--           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -129,13 +160,13 @@
                       <span class="nav-tabs-title">User Manual :</span><br><br>
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
-                          <a class="nav-link active" href="#profile" data-toggle="tab">
+                          <a class="nav-link active" href="#beranda" data-toggle="tab">
                             <i class="material-icons">dashboard</i> Beranda
                             <div class="ripple-container"></div>
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#messages" data-toggle="tab">
+                          <a class="nav-link" href="#tabel" data-toggle="tab">
                             <i class="material-icons">content_paste</i> Daftar Tabel
                             <div class="ripple-container"></div>
                           </a>
@@ -170,7 +201,7 @@
                 </div>
                 <div class="card-body">
                   <div class="tab-content">
-                    <div class="tab-pane active" id="profile">
+                    <div class="tab-pane active" id="beranda">
                       <table class="table">
                         <tbody>
                           <tr>
@@ -189,53 +220,66 @@
                             </td>
                             <td>Halaman ini berisi daftar user manual untuk memudahkan admin dalam pengolahan data.</td>
                           </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <i class="material-icons" style="color:red">keyboard_arrow_right</i>
+                              </div>
+                            </td>
+                            <td>Untuk penginputan data produk harus berurutan, yaitu mulai dari pendaftaran produk dulu (di bagian menu daftar tabel) setelah itu penginputan data ukuran, harga, stok dan thumbnail dengan cara klik salah satu item yang akan di tambahkan data nya.</td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
-                    <div class="tab-pane" id="messages">
+                    <div class="tab-pane" id="tabel">
                       <table class="table">
                         <tbody>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
+                              <button class="accordion"><h4>Daftar Tabel Admin</h4></button>
+                              <div class="panel">
+                                  Disini admin dapat menambahkan, mengubah, ataupun menghapus admin lainnya. <p>
+                                  <h6 style="color: purple">1. Tambah Admin</h6> <p> Untuk menambahkan admin, kamu dapat menekan tombol &nbsp
+                                    <i style="color: purple" class="material-icons">add_task</i> &nbsp pada bagian "Daftar Tabel Admin".</p>
+                                  <h6 style="color: purple">2. Ubah Admin</h6> <p> Untuk mengubah admin, kamu dapat menekan tombol &nbsp
+                                    <i style="color: purple" class="material-icons">edit</i> &nbsp pada bagian isi dari "Daftar Tabel Admin".</p>
+                                  <h6 style="color: purple">3. Hapus Admin</h6> <p> Untuk menghapus admin, kamu dapat menekan tombol &nbsp
+                                    <i class="material-icons" style="color: red">delete</i> &nbsp pada bagian isi dari "Daftar Tabel Admin".</p>
                               </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
+                              <button class="accordion"><h4>Daftar Tabel User</h4></button>
+                              <div class="panel">
+                                Admin dapat mengubah dan menghapus user yang sudah terdaftar, tetapi admin tidak bisa menambahkan user baru. <p>
+                                <h6 style="color: purple">1. Ubah User</h6> <p> Untuk mengubah user, kamu dapat menekan tombol &nbsp
+                                  <i style="color: purple" class="material-icons">edit</i> &nbsp pada bagian isi dari "Daftar Tabel User".</p>
+                                <h6 style="color: purple">2. Hapus User</h6> <p> Untuk menghapus user, kamu dapat menekan tombol &nbsp
+                                  <i class="material-icons" style="color: red">delete</i> &nbsp pada bagian isi dari "Daftar Tabel User".</p>
                               </div>
                             </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="accordion">Daftar Tabel Produk</button>
+                              <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="accordion">Daftar Tabel Thumbnail</button>
+                              <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                             </td>
                           </tr>
                         </tbody>
@@ -362,3 +406,21 @@
           </div>
         </div>
       </div>
+      <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+      </script>
+</body>
+</html>
