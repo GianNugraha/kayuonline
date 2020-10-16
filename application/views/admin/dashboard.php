@@ -20,7 +20,7 @@
           background-color: white; 
         }
         .accordion:after {
-          content: '\21E8';
+          content: '\21DB';
           color: red;
           font-weight: bold;
           float: left;
