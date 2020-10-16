@@ -157,7 +157,7 @@
                 <div class="card-header card-header-tabs card-header-danger">
                   <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
-                      <span class="nav-tabs-title">User Manual :</span><br><br>
+                      <!-- <span class="nav-tabs-title">User Manual :</span><br><br> -->
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
                           <a class="nav-link active" href="#beranda" data-toggle="tab">
@@ -172,7 +172,7 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#settings" data-toggle="tab">
+                          <a class="nav-link" href="#transaksi" data-toggle="tab">
                             <i class="material-icons">stroller</i> Status Transaksi
                             <div class="ripple-container"></div>
                           </a>
@@ -228,6 +228,14 @@
                             </td>
                             <td>Untuk penginputan data produk harus berurutan, yaitu mulai dari pendaftaran produk dulu (di bagian menu daftar tabel) setelah itu penginputan data ukuran, harga, stok dan thumbnail dengan cara klik salah satu item yang akan di tambahkan data nya.</td>
                           </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <i class="material-icons" style="color:red">keyboard_arrow_right</i>
+                              </div>
+                            </td>
+                            <td>Harap berhati hati dan tolong teliti jika menginput suatu data.</td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -236,7 +244,7 @@
                         <tbody>
                           <tr>
                             <td>
-                              <button class="accordion"><h4>Daftar Tabel Admin</h4></button>
+                              <button class="accordion"><h4><b>Daftar Tabel Admin</b></h4></button>
                               <div class="panel">
                                   Disini admin dapat menambahkan, mengubah, ataupun menghapus admin lainnya. <p>
                                   <h6 style="color: purple">1. Tambah Admin</h6> <p> Untuk menambahkan admin, kamu dapat menekan tombol &nbsp
@@ -250,7 +258,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <button class="accordion"><h4>Daftar Tabel User</h4></button>
+                              <button class="accordion"><h4><b>Daftar Tabel User</b></h4></button>
                               <div class="panel">
                                 Admin dapat mengubah dan menghapus user yang sudah terdaftar, tetapi admin tidak bisa menambahkan user baru. <p>
                                 <h6 style="color: purple">1. Ubah User</h6> <p> Untuk mengubah user, kamu dapat menekan tombol &nbsp
@@ -262,18 +270,25 @@
                           </tr>
                           <tr>
                             <td>
-                              <button class="accordion">Daftar Tabel Produk</button>
-                              <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                              <button class="accordion"><h4><b>Daftar Tabel Produk</b></h4></button>
+                              <div class="panel">
+                                Disini admin dapat menambahkan, mengubah, ataupun menghapus Produk dan Ukuran nya. <p>
+                                  <h6 style="color: purple">1. Tambah Produk</h6> <p> Untuk menambahkan Produk, kamu dapat menekan tombol &nbsp
+                                    <i style="color: purple" class="material-icons">add_task</i> &nbsp pada bagian "Daftar Tabel Produk".</p>
+                                  <h6 style="color: purple">2. Ubah Produk</h6> <p> Untuk mengubah Produk, kamu dapat menekan tombol &nbsp
+                                    <i style="color: purple" class="material-icons">edit</i> &nbsp pada bagian isi dari "Daftar Tabel Produk".</p>
+                                  <h6 style="color: purple">3. Hapus Produk</h6> <p> Untuk menghapus Produk, kamu dapat menekan tombol &nbsp
+                                    <i class="material-icons" style="color: red">delete</i> &nbsp pada bagian isi dari "Daftar Tabel Produk".</p>
+                                  <h6 style="color: purple">4. Tambah Ukuran, Harga & Stok</h6> <p> Untuk menambahkan Ukuran, Harga & Stok pada suatu produk. Kamu dapat memilih salah satu item pada tabel "Daftar Tabel Produk", setelah itu kamu akan di pindahkan ke tab baru. Setelah di pindahkan ke tab baru, kamu akan melihat icon &nbsp<i class="material-icons" style="color: purple">add_task</i>&nbsp pada bagian tabel "Stok Harga & Ukuran Per-Item"</p>
+                                  <h6 style="color: purple">5. Ubah Ukuran, Harga & Stok</h6> <p> Untuk mengubah Ukuran, Harga & Stok pada suatu produk. Kamu dapat menekan tombol &nbsp<i class="material-icons" style="color: purple">edit</i>&nbsp pada bagian tabel "Stok Harga & Ukuran Per-Item"</p>
+                                  <h6 style="color: purple">6. Hapus Ukuran, Harga & Stok</h6> <p> Untuk menghapus Ukuran, Harga & Stok pada suatu produk. Kamu dapat menekan tombol &nbsp<i class="material-icons" style="color: red">delete</i>&nbsp pada bagian tabel "Stok Harga & Ukuran Per-Item"</p>
+                                  <h6 style="color: purple">7. Tambah Thumbnail</h6> <p> Sama seperti menambahkan Ukuran, Harga & Stok, namun untuk menambahkan Thumbnail pada suatu produk. Kamu dapat memilih salah satu item pada tabel "Daftar Tabel Produk", setelah itu kamu akan di pindahkan ke tab baru. Setelah di pindahkan ke tab baru, kamu akan melihat icon &nbsp<i class="material-icons" style="color: purple">add_task</i>&nbsp pada bagian tabel "Tambah Thumbnail". Perlu di ingat, kamu tidak dapat menghapus dan mengubah nya disini.</p>
+                              </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <button class="accordion">Daftar Tabel Thumbnail</button>
+                              <button class="accordion"><h4><b>Daftar Tabel Thumbnail</b></h4></button>
                               <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -285,7 +300,7 @@
                         </tbody>
                       </table>
                     </div>
-                    <div class="tab-pane" id="settings">
+                    <div class="tab-pane" id="transaksi">
                       <table class="table">
                         <tbody>
                           <tr>

@@ -39,7 +39,7 @@
           <li class="nav-item <?php if($active==''){ ?> active <?php } ?>  ">
             <a class="nav-link" href="<?php echo base_url('admin'); ?>">
               <i style="color: brown" class="material-icons">dashboard</i>
-              <p>Beranda</p>
+              <p>User Manual</p>
             </a>
           </li>
           <li class="nav-item <?php if($active=='tabel'){ ?> active <?php } ?>">
@@ -68,6 +68,16 @@
             </a>
           </li>
           <li style="color: purple">=============================</li>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <li class="nav-item">
             <a class="nav-link" onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('login/logout') ?>">
               <i style="color: red" class="material-icons">power_settings_new</i>
