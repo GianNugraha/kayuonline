@@ -289,12 +289,13 @@
                           <tr>
                             <td>
                               <button class="accordion"><h4><b>Daftar Tabel Thumbnail</b></h4></button>
-                              <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                              <div class="panel">
+                                Admin dapat mengubah dan menghapus Thumbnail yang sudah terdaftar, tetapi admin tidak bisa menambahkan Thumbnail baru di sini. <p>
+                                <h6 style="color: purple">1. Ubah Thumbnail</h6> <p> Untuk mengubah Thumbnail, kamu dapat menekan tombol &nbsp
+                                  <i style="color: purple" class="material-icons">edit</i> &nbsp pada bagian isi dari "Daftar Tabel Thumbnail".</p>
+                                <h6 style="color: purple">2. Hapus Thumbnail</h6> <p> Untuk menghapus Thumbnail, kamu dapat menekan tombol &nbsp
+                                  <i style="color: red" class="material-icons">delete</i> &nbsp pada bagian isi dari "Daftar Tabel Thumbnail".</p>
+                              </div>
                             </td>
                           </tr>
                         </tbody>
