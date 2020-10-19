@@ -4,7 +4,7 @@
     <title></title>
       <style>
         .accordion {
-          background-color: #eee;
+          background-color: white;
           color: red;
           cursor: pointer;
           padding: 18px;
@@ -52,7 +52,7 @@
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
                           <a class="nav-link active" href="#beranda" data-toggle="tab">
-                            <i class="material-icons">dashboard</i> Beranda
+                            <i class="material-icons">dashboard</i> User Manual
                             <div class="ripple-container"></div>
                           </a>
                         </li>
@@ -69,14 +69,8 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#bug" data-toggle="tab">
+                          <a class="nav-link" href="#konfirmasi" data-toggle="tab">
                             <i class="material-icons">money</i> Konfirmasi Transaksi
-                            <div class="ripple-container"></div>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#bug" data-toggle="tab">
-                            <i class="material-icons">warning</i> Stok Minim
                             <div class="ripple-container"></div>
                           </a>
                         </li>
@@ -125,7 +119,15 @@
                                 <i class="material-icons" style="color:red">keyboard_arrow_right</i>
                               </div>
                             </td>
-                            <td>Harap berhati hati dan tolong teliti jika menginput suatu data.</td>
+                            <td> <i style="color: red"><h4><b>Harap berhati hati dan tolong teliti jika menginput suatu data.</b></h4></i></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <i class="material-icons" style="color:red">keyboard_arrow_right</i>
+                              </div>
+                            </td>
+                            <td><h4><i style="color: red"><b>Admin harus aktif untuk selalu check keadaan stok barang minim pada menu "Stok Minim".</b></i></h4></td>
                           </tr>
                         </tbody>
                       </table>
@@ -151,7 +153,7 @@
                             <td>
                               <button class="accordion">&nbsp Daftar Tabel User</button>
                               <div class="panel">
-                                Admin dapat mengubah dan menghapus user yang sudah terdaftar, tetapi admin tidak bisa menambahkan user baru. <p>
+                                Admin dapat mengubah dan menghapus user yang sudah terdaftar, <i style="color: red">tetapi admin tidak bisa menambahkan user baru.</i> <p>
                                 <h6 style="color: purple">1. Ubah User</h6> <p> Untuk mengubah user, kamu dapat menekan tombol &nbsp
                                   <i style="color: purple" class="material-icons">edit</i> &nbsp pada bagian isi dari "Daftar Tabel User".</p>
                                 <h6 style="color: purple">2. Hapus User</h6> <p> Untuk menghapus user, kamu dapat menekan tombol &nbsp
@@ -181,7 +183,7 @@
                             <td>
                               <button class="accordion">&nbsp Daftar Tabel Thumbnail</button>
                               <div class="panel">
-                                Admin dapat mengubah dan menghapus Thumbnail yang sudah terdaftar, tetapi admin tidak bisa menambahkan Thumbnail baru di sini. <p>
+                                Admin dapat mengubah dan menghapus Thumbnail yang sudah terdaftar, <i style="color: red"> tetapi admin tidak bisa menambahkan Thumbnail baru di sini.</i> <p>
                                 <h6 style="color: purple">1. Ubah Thumbnail</h6> <p> Untuk mengubah Thumbnail, kamu dapat menekan tombol &nbsp
                                   <i style="color: purple" class="material-icons">edit</i> &nbsp pada bagian isi dari "Daftar Tabel Thumbnail".</p>
                                 <h6 style="color: purple">2. Hapus Thumbnail</h6> <p> Untuk menghapus Thumbnail, kamu dapat menekan tombol &nbsp
@@ -197,66 +199,70 @@
                         <tbody>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
+                              <center><h6 style="color: red">Menu Status Transaksi ini merupakan detail dari pemesan kayu yang isi nya merupakan detail dari harga barang, ukuran, jumlah pesanan, sku produk, nama produk dan nama pemesan.</h6></center>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
+                              <button class="accordion">&nbsp Daftar Tabel Order Yang Berstatus Pesan</button>
+                              <div class="panel">
+                                  1. Admin dapat melihat detail pesanan yang belum di konfirmasi, karena belum di konfirmasi maka pesanan tidak dapat di proses dan stok barang di gudang juga belum berkurang. <p> <p>
+                                  2. Cara agar pesanan ter-konfirmasi, admin dapat melakukannya di menu (Konfirmasi Transaksi).
+                                  <p style="color: red"> <i>3. Mohon untuk di lihat dulu tabel ini sebelum melakukan konfirmasi pesanan di tabel (Konfirmasi Transaksi).</i>
                               </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
+                              <button class="accordion">&nbsp Daftar Tabel Order Yang Berstatus Done</button>
+                              <div class="panel">
+                                  Pesanan yang sebelumnya belum di konfirmasi tampil di "Daftar Tabel Order Yang Berstatus Pesan", pada bagian ini sekarang di tampilkan hanya pesanan yang sudah di konfirmasi saja. Jika sudah di konfirmasi maka stok di gudang pun harusnya berkurang dan pesanan dapat di proses. <p><p>
                               </div>
                             </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="tab-pane" id="konfirmasi">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <center><h6 style="color: red">Di daftar tabel ini, admin dapat mengkonfirmasi pemesanan atau menolak nya.</h6></center>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="accordion">&nbsp Daftar Tabel Transfer Pembeli Yang Belum Di Konfirmasi</button>
+                              <div class="panel">
+                                Setelah user melakukan pemesanan, maka admin akan mendapatkan notifikasi pesanan baru pada gambar lonceng di pojok kanan atas. <p>
+                                  Admin dapat menekan tombol lonceng tersebut atau menekan menu "Konfirmasi Transaksi". Setelah admin menekan tombol tersebut maka akan terdapat proses apakah admin akan mengkonfirmasi pesanan tersebut atau menolaknya. <p>
+                                  Cara caranya adalah : <p>
+                                    1. Mengkonfirmasi pesanan : <p>
+                                      Sebelum mengkonfirmasi pesanan, mohon untuk di lihat terlebih dahulu foto bukti transfer nya. <p>
+                                        Dengan cara klik kanan pada gambar nya lalu klik "Open Image In Newtab" / "Buka Gambar di Tab Baru".<p>
+                                          Setelah itu admin cukup menekan tombol <i class="material-icons" style="color: blue">check</i> maka pesanan akan langsung terkonfirmasi. <p>
+                                            Pesanan yang di konfirmasi akan otomatis berpindah ke "Daftar Tabel Transfer Pembeli Yang Di Konfirmasi". <p>
+                                    2. Menolak pesanan : <p>
+                                      Admin cukup menekan tombol <i class="material-icons" style="color: red">remove_circle</i> maka pesanan akan otomatis di batalkan. <p>
+                                        Pesanan yang di tolak akan otomatis berpindah ke "Daftar Tabel Transfer Pembeli Yang Di Tolak".
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="accordion">&nbsp Daftar Tabel Transfer Pembeli Yang Di Konfirmasi</button>
+                              <div class="panel">
+                                Disini admin dapat menghapus data-data yang telah terkonfirmasi dengan cara menekan tombol <i class="material-icons" style="color: red">delete</i>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="accordion">&nbsp Daftar Tabel Transfer Pembeli Yang Di Tolak</button>
+                              <div class="panel">
+                                Disini admin dapat menghapus data-data yang telah di tolak dengan cara menekan tombol <i class="material-icons" style="color: red">delete</i>
+                              </div>
                             </td>
                           </tr>
                         </tbody>
