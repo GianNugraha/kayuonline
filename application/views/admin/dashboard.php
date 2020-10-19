@@ -75,7 +75,7 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#bug" data-toggle="tab">
+                          <a class="nav-link" href="#lainnya" data-toggle="tab">
                             <i class="material-icons">notifications</i> Fitur Lainnya
                             <div class="ripple-container"></div>
                           </a>
@@ -262,6 +262,42 @@
                               <button class="accordion">&nbsp Daftar Tabel Transfer Pembeli Yang Di Tolak</button>
                               <div class="panel">
                                 Disini admin dapat menghapus data-data yang telah di tolak dengan cara menekan tombol <i class="material-icons" style="color: red">delete</i>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="tab-pane" id="lainnya">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <center>Terdapat 3 menu pilihan pada fitur ini, yaitu :</center>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="accordion">&nbsp Permintaan admin</button>
+                              <div class="panel">
+                                Jika ada permintaan admin baru, admin yang sebelumnya dapat mengkonfirmasi atau menolaknya. <p>
+                                  Dengan cara menekan tombol <i class="material-icons" style="color: blue">check</i> untuk konfirmasi, atau <i class="material-icons" style="color: red">warning</i> untuk menolak.
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="accordion">&nbsp Stok Minim</button>
+                              <div class="panel">
+                                Bagian ini sudah di jelaskan pada tampilan awal di "User Manual".
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="accordion">&nbsp Bukti Transfer</button>
+                              <div class="panel">
+                                Bagian ini sudah di jelaskan di menu pilihan "User Manual > Konfirmasi Transaksi".
                               </div>
                             </td>
                           </tr>
