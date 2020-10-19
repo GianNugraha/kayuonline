@@ -7,16 +7,16 @@
     <div class="col-xs-6 col-md-3">
       <h3>PT. Hira Karya Abadi</h3>
       <ul class="footer-links">
-        <li><a href="#">CRB 62, Ruko Istana Pasteur Regency,Jl. Terusan Gunung Batu, Sukaraja, Cicendo, Kota Bandung, Jawa Barat.</a></li>
+        <li>CRB 62, Ruko Istana Pasteur Regency,Jl. Terusan Gunung Batu, Sukaraja, Cicendo, Kota Bandung, Jawa Barat.</li>
       </ul>
     </div>
     
     <div class="col-xs-6 col-md-3">
       <h3>KONTAK LAYANAN</h3>
       <ul class="footer-links">
-        <li><a href="#"> <strong> Call Center : </strong>(022)-205-86-769</a></li>
-        <li><a href="#"><strong>WhatsApp : </strong>+62 821-9538-3277</a></li>
-        <li><a href="#"><strong>Email : </strong>kayuonline.co@gmail.com</a></li>
+        <li><strong> Call Center : </strong>(022)-205-86-769</li>
+        <li><strong>WhatsApp : </strong>+62 821-9538-3277</li>
+        <li><strong>Email : </strong>kayuonline.co@gmail.com</li>
       </ul>
     </div>
   </div>

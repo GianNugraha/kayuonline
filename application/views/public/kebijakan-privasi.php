@@ -4,8 +4,6 @@
 		<h1 style="font-family: 'Alata';font-size: 26px;">Who We Are?</h1>
 		<p>Our website address is: https://kayuonline.com</p>
 		<h1 style="font-family: 'Alata';font-size: 26px;">What personal data we collect and why we collect it?</h1>
-		<p style="font-family: 'Alata';font-size: 24px; padding-top: 20px">Comments</p>
-		<p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection. <br/>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: <a href="https://automattic.com/privacy/">https://automattic.com/privacy/</a>. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
 		<p style="font-family: 'Alata';font-size: 24px; padding-top: 20px">Media</p>
 		<p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
 
