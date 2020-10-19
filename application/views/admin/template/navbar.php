@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="nav-item <?php if($active=='status-transaksi'){ ?> active <?php } ?>">
-            <a class="nav-link" href="<?php echo base_url('admin/status-transaksi'); ?>">
+            <a class="nav-link" href="<?php echo base_url('admin/daftar-bukti-tf'); ?>">
               <i style="color: green" class="material-icons">money</i>
               <p>Konfirmasi Transaksi</p>
             </a>
