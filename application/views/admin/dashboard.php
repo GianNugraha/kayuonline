@@ -127,7 +127,7 @@
                                 <i class="material-icons" style="color:red">keyboard_arrow_right</i>
                               </div>
                             </td>
-                            <td><h4><i style="color: red"><b>Admin harus aktif untuk selalu check keadaan stok barang minim pada menu "Stok Minim".</b></i></h4></td>
+                            <td><h4><i style="color: red"><b>Admin harus selalu aktif untuk memeriksa keadaan stok barang minim pada menu "Stok Minim".</b></i></h4></td>
                           </tr>
                         </tbody>
                       </table>
