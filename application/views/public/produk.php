@@ -260,7 +260,7 @@ endforeach;
                                   <span class="glyphicon glyphicon-minus">-</span>
                               </button>
                           </span>
-                          <input style="height: 33px; text-align: center" type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="100">
+                          <input style="height: 33px; text-align: center" type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="100" readonly>
                           <span class="input-group-btn">
                             <button type="button"  class="btn btn-success btn-number" data-type="plus" data-type="plus" data-field="quant[1]">
                               <span class="glyphicon glyphicon-plus">+</span>
@@ -309,7 +309,7 @@ endforeach;
             <div class="tab">
                 <button class="tablinks" onclick="openCity(event, 'kayuolahan')" id="defaultOpen">Deskripsi</button>
                 <button class="tablinks" onclick="openCity(event, 'decking')">Informasi Tambahan</button>
-                <button class="tablinks" onclick="openCity(event, 'pintu')">Review (0)</button>
+                <!-- <button class="tablinks" onclick="openCity(event, 'pintu')">Review (0)</button> -->
             </div>
         </div>
 
@@ -329,7 +329,7 @@ endforeach;
                     </h6>
                 </div>
 
-                <div id="pintu" class="tabcontent">
+                <!-- <div id="pintu" class="tabcontent">
                     <h5>Reviews</h5>
                     <p>There are no reviews yet.</p>
                     <hr>
@@ -400,7 +400,7 @@ endforeach;
 
                         <button class="btn btn-primary" type="submit">Submit form</button>
                     </form>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -435,14 +435,14 @@ endforeach;
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                                     </div>
-                                    <div class="overlay">
+                                    <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
                                                 title="Quick View"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
                                                 title="Wishlist"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
                                                 title="Shopping"></i></a>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="product-buttom text-center">
@@ -463,14 +463,14 @@ endforeach;
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                                     </div>
-                                    <div class="overlay">
+                                    <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
                                                 title="Quick View"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
                                                 title="Wishlist"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
                                                 title="Shopping"></i></a>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="product-buttom text-center">
@@ -491,14 +491,14 @@ endforeach;
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                                     </div>
-                                    <div class="overlay">
+                                    <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
                                                 title="Quick View"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
                                                 title="Wishlist"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
                                                 title="Shopping"></i></a>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="product-buttom text-center">
@@ -519,131 +519,14 @@ endforeach;
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                                     </div>
-                                    <div class="overlay">
+                                    <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
                                                 title="Quick View"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
                                                 title="Wishlist"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
                                                 title="Shopping"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="product-buttom text-center">
-                                    <!-- <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
-                                    <h5>Rp.500.00</h5>
-                                </div>
-                                <br />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="product-top">
-                                    <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                                    </div>
-                                    <div class="overlay">
-                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
-                                                title="Quick View"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
-                                                title="Wishlist"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
-                                                title="Shopping"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="product-buttom text-center">
-                                    <!-- <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
-                                    <h5>Rp.500.00</h5>
-                                </div>
-                                <br />
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="product-top">
-                                    <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                                    </div>
-                                    <div class="overlay">
-                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
-                                                title="Quick View"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
-                                                title="Wishlist"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
-                                                title="Shopping"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="product-buttom text-center">
-                                    <!-- <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
-                                    <h5>Rp.500.00</h5>
-                                </div>
-                                <br />
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="product-top">
-                                    <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                                    </div>
-                                    <div class="overlay">
-                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
-                                                title="Quick View"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
-                                                title="Wishlist"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
-                                                title="Shopping"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="product-buttom text-center">
-                                    <!-- <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
-                                    <h5>Rp.500.00</h5>
-                                </div>
-                                <br />
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="product-top">
-                                    <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                                    </div>
-                                    <div class="overlay">
-                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
-                                                title="Quick View"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
-                                                title="Wishlist"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
-                                                title="Shopping"></i></a>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="product-buttom text-center">
@@ -669,14 +552,14 @@ endforeach;
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                                     </div>
-                                    <div class="overlay">
+                                    <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
                                                 title="Quick View"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
                                                 title="Wishlist"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
                                                 title="Shopping"></i></a>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="product-buttom text-center">
@@ -697,14 +580,14 @@ endforeach;
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                                     </div>
-                                    <div class="overlay">
+                                    <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
                                                 title="Quick View"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
                                                 title="Wishlist"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
                                                 title="Shopping"></i></a>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="product-buttom text-center">
@@ -725,14 +608,14 @@ endforeach;
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                                     </div>
-                                    <div class="overlay">
+                                    <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
                                                 title="Quick View"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
                                                 title="Wishlist"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
                                                 title="Shopping"></i></a>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="product-buttom text-center">
@@ -753,14 +636,131 @@ endforeach;
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
                                         <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                                     </div>
-                                    <div class="overlay">
+                                    <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
                                                 title="Quick View"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
                                                 title="Wishlist"></i></a>
                                         <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
                                                 title="Shopping"></i></a>
+                                    </div> -->
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                    <!-- <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                          <i class="fa fa-star-half-o"></i> -->
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
                                     </div>
+                                    <!-- <div class="overlay">
+                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
+                                                title="Quick View"></i></a>
+                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
+                                                title="Wishlist"></i></a>
+                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
+                                                title="Shopping"></i></a>
+                                    </div> -->
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                    <!-- <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                          <i class="fa fa-star-half-o"></i> -->
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                    <!-- <div class="overlay">
+                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
+                                                title="Quick View"></i></a>
+                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
+                                                title="Wishlist"></i></a>
+                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
+                                                title="Shopping"></i></a>
+                                    </div> -->
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                    <!-- <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                          <i class="fa fa-star-half-o"></i> -->
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                    <!-- <div class="overlay">
+                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
+                                                title="Quick View"></i></a>
+                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
+                                                title="Wishlist"></i></a>
+                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
+                                                title="Shopping"></i></a>
+                                    </div> -->
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                    <!-- <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                          <i class="fa fa-star-half-o"></i> -->
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                    <!-- <div class="overlay">
+                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
+                                                title="Quick View"></i></a>
+                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
+                                                title="Wishlist"></i></a>
+                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
+                                                title="Shopping"></i></a>
+                                    </div> -->
                                 </div>
 
                                 <div class="product-buttom text-center">
