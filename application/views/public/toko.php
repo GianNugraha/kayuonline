@@ -1,11 +1,3 @@
-<?php 
-// foreach($countWishlist->result_array() as $row):
-//    // $kota = $row['kota'];
-//  $total = $row['total'];
-//    // echo $total ; echo "</br>";
-// endforeach;
- ?>
- <!-- breadcrumb -->
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <div class="row">
@@ -17,135 +9,15 @@
       </div>
     </div>
   </div>
-  <!-- breadcrumb -->
-
-  <!-- tabs -->
-  <div class="tab-filter">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <div class="filter">
-            <div id="mySidenav" class="filnav">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <p style="font-size: 15px; margin-left: 20px;"><a href="index.html">Home</a>/<a
-                  href="toko.html">Product</a></p>
-              <div style="margin-left: 20px; margin-top: 20px;" class="iner_filter2">
-                <h5 class="widged_title">PRODUCT CATEGORIES</h5>
-                <a class="widget_a" href="">Decking</a>
-                <button class="accordion-2">Kayu olahan</button>
-                <div class="panel">
-                  <div class="ex">
-                    <a href="#">Eksotik - BR</a>
-                  </div>
-                  <div class="ex">
-                    <a href="#">Eksotik - GSL</a>
-                  </div>
-                  <div class="ex">
-                    <a href="#">Eksotik - MG</a>
-                  </div>
-                  <div class="ex">
-                    <a href="#">Indah M</a>
-                  </div>
-                  <div class="ex">
-                    <a href="#">Jati</a>
-                  </div>
-                  <div class="ex">
-                    <a href="#">Krikis</a>
-                  </div>
-                  <div class="ex">
-                    <a href="#">Matoa</a>
-                  </div>
-                  <div class="ex">
-                    <a href="#">Merbau</a>
-                  </div>
-                  <div class="ex">
-                    <a href="#">Nyatoh</a>
-                  </div>
-                </div>
-                <div class="Kusen">
-                  <a class="widget_a" href="">Kusen</a>
-                </div>
-                <div class="lisprofil">
-                  <a class="widget_a" href="">Lis Profil</a>
-                </div>
-                <div class="pintu">
-                  <a class="widget_a" href="">Pintu</a>
-                </div>
-                <div class="tangga">
-                  <a class="widget_a" href="">Tangga</a>
-                </div>
-
-                <div class="tag">
-                  <h4 style="font-size: 20px; margin-top: 30px;">TAGS</h4>
-                </div>
-
-                <div class="tags-btn">
-                  <div class="btn-tags">
-                    <ul>
-                      <a href="">Decking</a>
-                      <a href="">Kayu Olahan</a>
-                    </ul>
-                    <ul>
-                      <a href="">Kusen</a>
-                    </ul>
-                    <ul>
-                      <a href="">Lis Profil</a>
-                      <a href="">Pintu</a>
-                      <a href="">Tangga</a>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-
-            <span style="cursor: pointer;" onclick="openNav()">
-              <p style="margin-top: 25px;"><i class="fa fa-filter" aria-hidden="true"></i><span> Filter</span></p>
-            </span>
-
-            <script>
-              function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-              }
-
-              function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-              }
-            </script>
-            <!-- <a class="filter" href="#">
-              <p><i class="fa fa-filter" aria-hidden="true"></i><span> Filter</span></p>
-            </a> -->
-          </div>
-        </div>
-        <div class="col-sm">
-          <ul class="tabs-column">
-            <li data-tab-target="#column-6" class="active tab"><img class="tab_img" src="<?= base_url() ?>assets/img/6.png" alt=""></li>
-            <li data-tab-target="#column-5" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/5.png" alt=""></li>
-            <li data-tab-target="#column-4" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/4.png" alt=""></li>
-            <li data-tab-target="#column-3" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/3.png" alt=""></li>
-            <li data-tab-target="#column-1" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/1.png" alt=""></li>
-          </ul>
-
-        </div>
-        <div class="col-sm">
-          <div class="sort-by">
-            <div class="dropdown">
-              <!-- <select name="menu_sort" class="menu-dropdown" id="">
-                <option value="default">Default sorting</option>
-                <option value="popular">Sort by popularity</option>
-                <option value="rating">Sort by average rating</option>
-                <option value="lasted">Sort by latest</option>
-                <option value="high">Sort by price: low to high</option>
-                <option value="low">Sort by price: high to low</option>
-              </select> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="col-sm">
+    <ul class="tabs-column">
+      <li data-tab-target="#column-6" class="active tab"><img class="tab_img" src="<?= base_url() ?>assets/img/6.png" alt=""></li>
+      <li data-tab-target="#column-5" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/5.png" alt=""></li>
+      <li data-tab-target="#column-4" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/4.png" alt=""></li>
+      <li data-tab-target="#column-3" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/3.png" alt=""></li>
+      <li data-tab-target="#column-1" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/1.png" alt=""></li>
+    </ul>
   </div>
-  <!-- akhir tabs -->
 
   <!-- name produk kami -->
   <section class="title">
@@ -156,7 +28,6 @@
           <hr>
         </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -172,17 +43,11 @@
               <div class="product-top">
                 <div class="thumb-img">
                   <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                  <!-- <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a> -->
                 </div>
                 <div class="overlay">
-                  <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars">
-                    <!-- <span><i class="fa fa-eye" title="Quick View"></i></span> -->
-                  </div>
-                  <!-- <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a> -->
-                  <!-- <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a> -->
+                  <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars"></div>
                 </div>
               </div>
-
               <div class="product-buttom text-center" style="padding-bottom: 30px">
                 <h3><?= $key->name ?></h3>
                 <h3>(<?= $key->category_name; ?>)</h3>
@@ -195,7 +60,6 @@
             </div>
           <?php } ?>
           </div>
-
         </div>
         <div id="column-5" data-tab-content>
           <div class="container">
@@ -205,27 +69,15 @@
                 <div class="product-top">
                   <div class="thumb-img">
                     <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                    <!-- <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a> -->
-                  </div>
-                  <div class="overlay">
-                    <!-- <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a> -->
                   </div>
                 </div>
-
                 <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-half-o"></i> -->
-                <h3><?= $key->name ?></h3>
-                <?php if ($key->max_price == $key->min_price) { ?>
-                  <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
-                <?php } else{ ?>
-                  <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
-                <?php } ?>
+                  <h3><?= $key->name ?></h3>
+                  <?php if ($key->max_price == $key->min_price) { ?>
+                    <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
+                  <?php } else{ ?>
+                    <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
+                  <?php } ?>
                 </div>
               </div>
               <?php } ?>
@@ -240,22 +92,9 @@
                 <div class="product-top">
                   <div class="thumb-img">
                     <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                    <!-- <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar2"></a> -->
-                  </div>
-
-                  <div class="overlay">
-                  <!--   <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                    <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a> -->
                   </div>
                 </div>
-
                 <div class="product-buttom text-center">
-                  <!-- <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-half-o"></i> -->
                     <h3><?= $key->name ?></h3>
                     <?php if ($key->max_price == $key->min_price) { ?>
                       <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
@@ -268,7 +107,6 @@
             </div>
           </div>
         </div>
-
         <div id="column-3" data-tab-content>
           <div class="row">
             <?php foreach ($produk as $key) { ?>
@@ -276,22 +114,9 @@
               <div class="product-top">
                 <div class="thumb-img">
                   <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                  <!-- <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a> -->
-                </div>
-
-                <div class="overlay">
-                  <!-- <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye" title="Quick View"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o" title="Wishlist"></i></a>
-                  <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart" title="Shopping"></i></a> -->
                 </div>
               </div>
-
               <div class="product-buttom text-center">
-                <!-- <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-half-o"></i> -->
                   <h3><?= $key->name ?></h3>
                   <?php if ($key->max_price == $key->min_price) { ?>
                     <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
@@ -303,7 +128,6 @@
             <?php } ?>
           </div>
         </div>
-
         <div id="column-1" data-tab-content>
           <?php foreach ($produk as $key) { ?>
           <div class="column-1">
@@ -314,7 +138,6 @@
                     <div class="product-top">
                       <div class="thumb-img">
                         <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
-                        <!-- <a href="produk.html"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a> -->
                       </div>
                     </div>
                   </div>
@@ -342,10 +165,6 @@
                     <div class="btn-add">
                       <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><span class="link">Kunjungi</span></a>
                     </div>
-                    <!-- <div class="Quick_view">
-                      <a class="title-quick" href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><i class="fa fa-eye" title="Quick View"></i> Quick
-                        View</a>
-                    </div> -->
                   </div>
                 </div>
               </div>
@@ -400,19 +219,6 @@
         target.classList.add('active')
       })
     })</script>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script> -->
-
-
 
   <!-- javaScript Boot -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -511,22 +317,6 @@
       });
     });
   </script>
-
- <!--  <script>
-    const sidedrawer = document.querySelector(".sidedrawer");
-    const backdrop = document.querySelector(".backdrop")
-    const bars = document.getElementById("bars");
-
-    bars.addEventListener("click", () => {
-      sidedrawer.classList.add('active');
-      backdrop.classList.add('show');
-    });
-
-    backdrop.addEventListener('click', () => {
-      sidedrawer.classList.remove("active");
-      backdrop.classList.remove("show");
-    });
-  </script> -->
 
   <!-- stepper -->
   <script>

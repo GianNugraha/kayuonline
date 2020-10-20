@@ -141,9 +141,9 @@ s0.parentNode.insertBefore(s1,s0);
                   <span><i class="fa fa-user"></i> Akun Saya</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <label style="text-align: center;" class="dropdown-item" href="<?= base_url('home/edit-profile')?>">Edit Profile</label>
+                  <label style="text-align: center;" class="dropdown-item" href="#">Halo, Selamat Datang.</label>
                   <hr>
-                  <span style="margin-left: 20px"><a onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('home/logout') ?>"><i class="fa fa-sign-out"></i>     Keluar</a></span>
+                  <span style="margin-left: 20px"><a onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('home/logout') ?>"><i class="fa fa-sign-out"></i>&nbsp Keluar</a></span>
                 </div>
               </div>
             <?php }else{ ?>
@@ -207,7 +207,7 @@ s0.parentNode.insertBefore(s1,s0);
           <a class="nav-item nav-link" href="<?php echo base_url('gudang-kami')?>"><span class="nav-menu">Gudang Kami</span></a>
           <div class="shopping-bag" title="wishlist">
             <a class="navbar-brand" href="<?php echo base_url('wishlist')?>">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               <!-- <i class="fa fa-shopping-bag" aria-hidden="true"><span class="notification"><?= $total ?></span></i> -->
             </a>
           </div>

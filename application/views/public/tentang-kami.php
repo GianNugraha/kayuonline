@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 style="text-align: center; font-weight: bold;">Kayuonline.co</h4>
+                    <h4 style="text-align: center; font-weight: bold;">Kayuonline</h4>
                     <hr>
                 </div>
             </div>
