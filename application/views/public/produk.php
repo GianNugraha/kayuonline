@@ -19,7 +19,7 @@ endforeach;
 <!--start wrapper-->
 <!-- bradcrom -->
 
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid mb-0 pb-0">
         <div class="container">
             <div class="row">
                 <div class="col-sm">
@@ -29,7 +29,7 @@ endforeach;
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 
     <!-- bradcrom -->
     <div class="detail-produk">
@@ -221,12 +221,15 @@ endforeach;
                                     <div class="row">
                                         <?php
                                         foreach ($produk as $key): 
+                                            // print_r($key);
+                                            // exit();
                                             ?>
                                             <div class="col-lg-5 col-md-5 col-sm-5">
                                                 <input id="option" required class="option" type="radio" name="option_sizes" value="<?php echo $key->price; ?> + <?php echo $key->stock; ?> + <?php echo $key->sold; ?> + <?php echo $key->size; ?>">
                                                 <label for="option"><span ><?php echo $key->size; ?></span></label>
                                                 <input type="hidden" name="foto" value="<?php echo $foto; ?>">
                                                 <!-- <input type="hidden" name="price" value="<?php echo $key->price; ?>"> -->
+                                                <input type="hidden" name="product_size_id" value="<?=$key->product_size_id?>">
                                                 <input type='hidden' class='stock' name='stock' value='<?= $key->stock; ?>' />
                                             </div>
                                             <?php 
@@ -299,6 +302,8 @@ endforeach;
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
     <div style="margin-top: 50px;" class="container">
         <hr>
@@ -415,8 +420,6 @@ endforeach;
                     <hr>
         </div>
     </div>
-
-    <!-- related Products -->
     <div class="relatedproduk">
         <div class="containner">
             <div class="col-sm-12">
@@ -432,8 +435,8 @@ endforeach;
                             <div class="col-md-3">
                                 <div class="product-top">
                                     <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                        <a href="<?= base_url('produk?kategori=KO&nama=merbau')?>"><img width="100%" src="<?= base_url() ?>assets/img/product/merbau.png" class="gambar1"></a>
+                                        <a href="<?= base_url('produk?kategori=KO&nama=merbau')?>"><img width="100%" src="<?= base_url() ?>assets/img/product/merbau.png" class="gambar2"></a>
                                     </div>
                                     <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
@@ -451,7 +454,7 @@ endforeach;
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star-half-o"></i>
                           <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
+                                    <h3>(Kayu Olahan) <br> Merbau</h3>
                                     <h5>Rp.500.00</h5>
                                 </div>
                                 <br />
@@ -460,8 +463,8 @@ endforeach;
                             <div class="col-md-3">
                                 <div class="product-top">
                                     <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                        <a href="<?= base_url('produk?kategori=KO&nama=jati')?>"><img width="100%" src="<?= base_url() ?>assets/img/default.png" class="gambar1"></a>
+                                        <a href="<?= base_url('produk?kategori=KO&nama=jati')?>"><img width="100%" src="<?= base_url() ?>assets/img/default.png" class="gambar2"></a>
                                     </div>
                                     <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
@@ -479,7 +482,7 @@ endforeach;
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star-half-o"></i>
                           <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
+                                    <h3>(Kayu Olahan) <br> Jati</h3>
                                     <h5>Rp.500.00</h5>
                                 </div>
                                 <br />
@@ -488,8 +491,8 @@ endforeach;
                             <div class="col-md-3">
                                 <div class="product-top">
                                     <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                        <a href="<?= base_url('produk?kategori=KO&nama=Eksotik-MG')?>"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="<?= base_url('produk?kategori=KO&nama=Eksotik-MG')?>"><img width="100%" src="<?= base_url() ?>assets/img//product/eksotik mg 2.png" class="gambar2"></a>
                                     </div>
                                     <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
@@ -507,7 +510,7 @@ endforeach;
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star-half-o"></i>
                           <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
+                                    <h3>(Kayu Olahan) <br> Eksotik - MG</h3>
                                     <h5>Rp.500.00</h5>
                                 </div>
                                 <br />
@@ -516,8 +519,8 @@ endforeach;
                             <div class="col-md-3">
                                 <div class="product-top">
                                     <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                        <a href="<?= base_url('produk?kategori=KO&nama=Eksotik-BR')?>"><img width="100%" src="<?= base_url() ?>assets/img/product/eksotik br 1.png" class="gambar1"></a>
+                                        <a href="<?= base_url('produk?kategori=KO&nama=Eksotik-BR')?>"><img width="100%" src="<?= base_url() ?>assets/img/product/eksotik br 2.png" class="gambar2"></a>
                                     </div>
                                     <!-- <div class="overlay">
                                         <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
@@ -535,124 +538,7 @@ endforeach;
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star-half-o"></i>
                           <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
-                                    <h5>Rp.500.00</h5>
-                                </div>
-                                <br />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="product-top">
-                                    <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                                    </div>
-                                    <!-- <div class="overlay">
-                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
-                                                title="Quick View"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
-                                                title="Wishlist"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
-                                                title="Shopping"></i></a>
-                                    </div> -->
-                                </div>
-
-                                <div class="product-buttom text-center">
-                                    <!-- <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
-                                    <h5>Rp.500.00</h5>
-                                </div>
-                                <br />
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="product-top">
-                                    <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                                    </div>
-                                    <!-- <div class="overlay">
-                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
-                                                title="Quick View"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
-                                                title="Wishlist"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
-                                                title="Shopping"></i></a>
-                                    </div> -->
-                                </div>
-
-                                <div class="product-buttom text-center">
-                                    <!-- <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
-                                    <h5>Rp.500.00</h5>
-                                </div>
-                                <br />
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="product-top">
-                                    <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                                    </div>
-                                    <!-- <div class="overlay">
-                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
-                                                title="Quick View"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
-                                                title="Wishlist"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
-                                                title="Shopping"></i></a>
-                                    </div> -->
-                                </div>
-
-                                <div class="product-buttom text-center">
-                                    <!-- <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
-                                    <h5>Rp.500.00</h5>
-                                </div>
-                                <br />
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="product-top">
-                                    <div class="thumb-img">
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
-                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
-                                    </div>
-                                    <!-- <div class="overlay">
-                                        <a class="btn btn-secondary" href="produk.html"><i class="fa fa-eye"
-                                                title="Quick View"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-heart-o"
-                                                title="Wishlist"></i></a>
-                                        <a class="btn btn-secondary" href="#"><i class="fa fa-shopping-cart"
-                                                title="Shopping"></i></a>
-                                    </div> -->
-                                </div>
-
-                                <div class="product-buttom text-center">
-                                    <!-- <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-half-o"></i> -->
-                                    <h3>Eksotik - BR</h3>
+                                    <h3>(Kayu Olahan) <br> Eksotik - BR</h3>
                                     <h5>Rp.500.00</h5>
                                 </div>
                                 <br />
@@ -788,55 +674,8 @@ endforeach;
             </a>
         </div>
     </div>
-</body>
-    <!-- Optional JavaScript -->
 
 
-    <!-- acordion -->
-    <script>
-        var acc = document.getElementsByClassName("accordion-2");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
-    </script>
-    <!-- acordion -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-
-    <!-- javaScript Boot -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-    <!-- Optional JavaScript -->
-
-    <!-- scroll -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>var btn = $('#button');
 
         $(window).scroll(function () {
@@ -887,7 +726,7 @@ endforeach;
         document.getElementById("defaultOpen").click();
     </script>
 
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  
 
 
     <!-- js for img produk -->
@@ -1018,9 +857,531 @@ $(".input-number").keydown(function (e) {
     });
 </script>
 
-<style >
+<style>
     @media only screen and (max-width: 600px) {
       .input-spinner {
         margin-top: 100px;
     }
+    }
 </style>
+    <script>
+        var acc = document.getElementsByClassName("accordion-2");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- related Products -->
+    <!-- <div class="relatedproduk">
+        <div class="containner">
+            <div class="col-sm-12">
+                <h4 style="text-align: center;">Related Products</h4>
+            </div>
+        </div>
+        <br>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                  
+                                </div>
+
+                                <div class="product-buttom text-center">
+                              
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                 
+                                </div>
+
+                                <div class="product-buttom text-center">
+                               
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                   
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                  
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                  
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                  
+                                    </div> 
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                 
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                  
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                    
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                  
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                  
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                 
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                 
+                                    </div> 
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                  
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                   
+                                    </div> 
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                  
+                                    </div> 
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                 
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="product-top">
+                                    <div class="thumb-img">
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-2.png" class="gambar1"></a>
+                                        <a href="#"><img width="100%" src="<?= base_url() ?>assets/img/lg-3.png" class="gambar2"></a>
+                                    </div>
+                                  
+                                </div>
+
+                                <div class="product-buttom text-center">
+                                 
+                                    <h3>Eksotik - BR</h3>
+                                    <h5>Rp.500.00</h5>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+               
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div> -->
+
+    <!--slick slider on progress--->
+ 
+<div class="container">
+    <div id="carouselExample" class="carouselPrograms carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+            <div class="carousel-item col-md-4  active">
+               <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 1" class="thumb">
+                      <img class="img-fluid mx-auto d-block" src="https://kayuonline.id/assets/img/product/eksotik%20mg%201.png" alt="slide 1">
+                    </a>
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4 ">
+               <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 3" class="thumb">
+                     <img class="img-fluid mx-auto d-block" src="//via.placeholder.com/600x400?text=2" alt="slide 2">
+                    </a>
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4 ">
+               <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 4" class="thumb">
+                     <img class="img-fluid mx-auto d-block" src="//via.placeholder.com/600x400?text=3" alt="slide 3">
+                    </a>
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4 ">
+                <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 5" class="thumb">
+                     <img class="img-fluid mx-auto d-block" src="//via.placeholder.com/600x400?text=4" alt="slide 4">
+                    </a>
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4 ">
+              <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 6" class="thumb">
+                      <img class="img-fluid mx-auto d-block" src="//via.placeholder.com/600x400?text=5" alt="slide 5">
+                    </a>
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4 ">
+               <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 7" class="thumb">
+                      <img class="img-fluid mx-auto d-block" src="//via.placeholder.com/600x400?text=6" alt="slide 6">
+                    </a>
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4 ">
+               <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 8" class="thumb">
+                      <img class="img-fluid mx-auto d-block" src="//via.placeholder.com/600x400?text=7" alt="slide 7">
+                    </a>
+                  </div>
+                </div>
+            </div>
+             <div class="carousel-item col-md-4  ">
+                <div class="panel panel-default">
+                  <div class="panel-thumbnail">
+                    <a href="#" title="image 2" class="thumb">
+                     <img class="img-fluid mx-auto d-block" src="//via.placeholder.com/600x400?text=8" alt="slide 8">
+                    </a>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+
+
+<style>
+    @media (min-width: 768px) {
+
+    /* show 3 items */
+    .carouselPrograms .carousel-inner .active,
+    .carouselPrograms .carousel-inner .active + .carousel-item,
+    .carouselPrograms .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+
+    .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+
+    .carouselPrograms .carousel-inner .carousel-item-next,
+    .carouselPrograms .carousel-inner .carousel-item-prev {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .carouselPrograms .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* left or forward direction */
+    .carouselPrograms .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item,
+    .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    .carouselPrograms .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    .carouselPrograms .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+</style>
+<script>
+
+$('#carouselExample').on('slide.bs.carousel', function (e) {
+
+  
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $('.carousel-item').length;
+    
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i=0; i<it; i++) {
+            // append slides to end
+            if (e.direction=="left") {
+                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+            }
+            else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+            }
+        }
+    }
+});
+
+
+
+
+
+  $(document).ready(function() {
+/* show lightbox when clicking a thumbnail */
+    $('a.thumb').click(function(event){
+      event.preventDefault();
+      var content = $('.modal-body');
+      content.empty();
+        var title = $(this).attr("title");
+        $('.modal-title').html(title);        
+        content.html($(this).html());
+        $(".modal-profile").modal({show:true});
+    });
+
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+
+
+    <!-- acordion -->
+
+    <!-- acordion -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script> -->
+
+    <!-- Optional JavaScript -->
+
+    <!-- scroll -->
+    

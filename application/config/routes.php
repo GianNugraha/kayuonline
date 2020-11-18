@@ -86,6 +86,7 @@ $route['end-transaction'] = 'home/end_transaction';
 $route['admin/get-product-byCategory'] = 'admin/get_product_byCategory';
 $route['admin/get-pesanan-byIDPemesan'] = 'admin/get_pesanan_byIDPemesan';
 $route['riwayat'] = 'home/riwayat_pemesanan';
+$route['profil']='home/profil';
 
 
 

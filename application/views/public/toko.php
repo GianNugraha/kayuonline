@@ -1,4 +1,4 @@
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid pb-0 mb-0">
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -9,6 +9,7 @@
       </div>
     </div>
   </div>
+
   <div class="col-sm">
     <ul class="tabs-column">
       <li data-tab-target="#column-6" class="active tab"><img class="tab_img" src="<?= base_url() ?>assets/img/6.png" alt=""></li>
@@ -39,47 +40,47 @@
         <div id="column-6" data-tab-content class="active">
           <div class="row">
             <?php foreach ($produk as $key) { ?>
-            <div class="col-sm-2">
-              <div class="product-top">
-                <div class="thumb-img">
-                  <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+              <div class="col-sm-2">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                  </div>
+                  <div class="overlay">
+                    <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars"></div>
+                  </div>
                 </div>
-                <div class="overlay">
-                  <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars"></div>
+                <div class="product-buttom text-center" style="padding-bottom: 30px">
+                  <h3><?= $key->name ?></h3>
+                  <h3>(<?= $key->category_name; ?>)</h3>
+                  <?php if ($key->max_price == $key->min_price) { ?>
+                    <h5><?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                  <?php } else { ?>
+                    <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                  <?php } ?>
                 </div>
               </div>
-              <div class="product-buttom text-center" style="padding-bottom: 30px">
-                <h3><?= $key->name ?></h3>
-                <h3>(<?= $key->category_name; ?>)</h3>
-                <?php if ($key->max_price == $key->min_price) { ?>
-                <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
-                <?php } else{ ?>
-                  <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
-                <?php } ?>
-              </div>
-            </div>
-          <?php } ?>
+            <?php } ?>
           </div>
         </div>
         <div id="column-5" data-tab-content>
           <div class="container">
             <div class="row">
               <?php foreach ($produk as $key) { ?>
-              <div class="sm-col-5">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+                <div class="sm-col-5">
+                  <div class="product-top">
+                    <div class="thumb-img">
+                      <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                    </div>
+                  </div>
+                  <div class="product-buttom text-center">
+                    <h3><?= $key->name ?></h3>
+                    <?php if ($key->max_price == $key->min_price) { ?>
+                      <h5><?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                    <?php } else { ?>
+                      <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                    <?php } ?>
                   </div>
                 </div>
-                <div class="product-buttom text-center">
-                  <h3><?= $key->name ?></h3>
-                  <?php if ($key->max_price == $key->min_price) { ?>
-                    <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
-                  <?php } else{ ?>
-                    <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
-                  <?php } ?>
-                </div>
-              </div>
               <?php } ?>
             </div>
           </div>
@@ -88,21 +89,21 @@
           <div class="container">
             <div class="row">
               <?php foreach ($produk as $key) { ?>
-              <div class="col-md-3">
-                <div class="product-top">
-                  <div class="thumb-img">
-                    <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+                <div class="col-md-3">
+                  <div class="product-top">
+                    <div class="thumb-img">
+                      <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                    </div>
                   </div>
-                </div>
-                <div class="product-buttom text-center">
+                  <div class="product-buttom text-center">
                     <h3><?= $key->name ?></h3>
                     <?php if ($key->max_price == $key->min_price) { ?>
-                      <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
-                    <?php } else{ ?>
-                      <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
+                      <h5><?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                    <?php } else { ?>
+                      <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                     <?php } ?>
+                  </div>
                 </div>
-              </div>
               <?php } ?>
             </div>
           </div>
@@ -110,67 +111,67 @@
         <div id="column-3" data-tab-content>
           <div class="row">
             <?php foreach ($produk as $key) { ?>
-            <div class="col-sm">
-              <div class="product-top">
-                <div class="thumb-img">
-                  <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+              <div class="col-sm">
+                <div class="product-top">
+                  <div class="thumb-img">
+                    <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                  </div>
                 </div>
-              </div>
-              <div class="product-buttom text-center">
+                <div class="product-buttom text-center">
                   <h3><?= $key->name ?></h3>
                   <?php if ($key->max_price == $key->min_price) { ?>
-                    <h5><?= number_format($key->max_price,2,'.',','); ?></h5>
-                  <?php } else{ ?>
-                    <h5>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></h5>
+                    <h5><?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                  <?php } else { ?>
+                    <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                   <?php } ?>
+                </div>
               </div>
-            </div>
             <?php } ?>
           </div>
         </div>
         <div id="column-1" data-tab-content>
           <?php foreach ($produk as $key) { ?>
-          <div class="column-1">
-            <div class="container">
-              <div style=" padding: 15px 15px;" class="row">
-                <div class="col-sm-3">
-                  <div class="col-sm">
-                    <div class="product-top">
-                      <div class="thumb-img">
-                        <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><img width="100%" src="<?= base_url().$key->image ?>" class="gambar1"></a>
+            <div class="column-1">
+              <div class="container">
+                <div style=" padding: 15px 15px;" class="row">
+                  <div class="col-sm-3">
+                    <div class="col-sm">
+                      <div class="product-top">
+                        <div class="thumb-img">
+                          <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div>
-                    <h3 class="names"><a href="#" disabled> <?php echo strtoupper($key->name); ?> </a>, <a href="#"><?= strtoupper($key->category_name) ?></a></h3>
-                    <h4><?= $key->name; ?></h4>
-                    <hr>
-                    <p style="font-size: 12px;"><?= $key->description ?></p>
+                  <div class="col-sm-6">
+                    <div>
+                      <h3 class="names"><a href="#" disabled> <?php echo strtoupper($key->name); ?> </a>, <a href="#"><?= strtoupper($key->category_name) ?></a></h3>
+                      <h4><?= $key->name; ?></h4>
+                      <hr>
+                      <p style="font-size: 12px;"><?= $key->description ?></p>
+                    </div>
                   </div>
-                </div>
-                <div class="col-sm-3">
-                  <div>
-                    <div class="price">
-                      <?php if ($key->max_price == $key->min_price) { ?>
-                        <span>Rp. <?= number_format($key->max_price,2,'.',','); ?></span>
-                      <?php }else{ ?>
-                        <span>Rp. <?= number_format($key->min_price,2,'.',','); ?> - Rp. <?= number_format($key->max_price,2,'.',','); ?></span>
-                      <?php } ?>
-                    </div>
-                    <div class="stok">
-                      <p>AVAILABLE : <span class="in-stok">IN STOK</span></p>
-                    </div>
-                    <div class="btn-add">
-                      <a href="<?php echo base_url('produk?kategori='.$key->category_code.'&nama='.$key->name)?>"><span class="link">Kunjungi</span></a>
+                  <div class="col-sm-3">
+                    <div>
+                      <div class="price">
+                        <?php if ($key->max_price == $key->min_price) { ?>
+                          <span>Rp. <?= number_format($key->max_price, 2, '.', ','); ?></span>
+                        <?php } else { ?>
+                          <span>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></span>
+                        <?php } ?>
+                      </div>
+                      <div class="stok">
+                        <p>AVAILABLE : <span class="in-stok">IN STOK</span></p>
+                      </div>
+                      <div class="btn-add">
+                        <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><span class="link">Kunjungi</span></a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        <?php } ?>
+          <?php } ?>
 
         </div>
       </div>
@@ -197,13 +198,14 @@
   </div>
   <!-- akhir banner -->
 
-   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   <!-- icon -->
 
 
   <!-- short by -->
 
-  <script>const tabs = document.querySelectorAll('[data-tab-target]')
+  <script>
+    const tabs = document.querySelectorAll('[data-tab-target]')
     const tabContents = document.querySelectorAll('[data-tab-content]')
 
     tabs.forEach(tab => {
@@ -218,27 +220,22 @@
         tab.classList.add('active')
         target.classList.add('active')
       })
-    })</script>
+    })
+  </script>
 
   <!-- javaScript Boot -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 
   <!-- Optional JavaScript -->
 
   <!-- scroll -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
   <script>
     var btn = $('#button');
 
-    $(window).scroll(function () {
+    $(window).scroll(function() {
       if ($(window).scrollTop() > 300) {
         btn.addClass('show');
       } else {
@@ -246,9 +243,11 @@
       }
     });
 
-    btn.on('click', function (e) {
+    btn.on('click', function(e) {
       e.preventDefault();
-      $('html, body').animate({ scrollTop: 0 }, '300');
+      $('html, body').animate({
+        scrollTop: 0
+      }, '300');
     });
   </script>
   <!-- scroll -->
@@ -296,7 +295,7 @@
     var i;
 
     for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
+      acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
         if (panel.style.maxHeight) {
@@ -310,8 +309,8 @@
   <!-- acordion -->
   <!-- search -->
   <script>
-    $(document).ready(function () {
-      $(".fa-search").click(function () {
+    $(document).ready(function() {
+      $(".fa-search").click(function() {
         $("icon").toggleClass("active");
         $("input[type='text']").toggleClass("active");
       });
@@ -354,4 +353,3 @@
       }
     }
   </script>
-

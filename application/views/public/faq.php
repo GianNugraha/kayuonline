@@ -1,3 +1,4 @@
+
     <div class="container">
         <div class="row">
           <div class="col">
@@ -11,7 +12,7 @@
     <br>
     <div class="container">
 
-        <button class="accordion">Apa itu KayuOnline?</button>
+        <button class="accordion bts">Apa itu KayuOnline?</button>
         <div class="panel">
             <p>KayuOnline adalah perusahaan supplier berbagai jenis kayu yang berlokasi di Ruko Istana Pasteur Regency, Jl. Terusan Gunung Batu, Sukaraja, Cicendo, Kota Bandung, Jawa Barat.</p>
         </div>
@@ -196,6 +197,10 @@
   // </script>
 
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-
+<style>
+  body{
+      overflow-y:hidden;
+  }
+</style>
 
 </body>

@@ -4,8 +4,8 @@
 				<?php
 				if (!empty($this->session->flashdata('msg'))) {
 					$message = $this->session->flashdata('msg');
-					?>
-					<div class="alert alert-<?php echo $message['class']?>" role="alert">
+				?>
+					<div class="alert alert-<?php echo $message['class'] ?>" role="alert">
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<center><?php echo $message['message'] ?></center>
 					</div>
@@ -18,22 +18,22 @@
 					<span class="txt1 p-b-11">
 						Nama Pengguna
 					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Nama Harus Di Isi">
-						<input class="input100" type="text" name="userInput" value="<?php echo set_value('userInput'); ?>" >
+					<div class="wrap-input100 validate-input m-b-36" data-validate="Nama Harus Di Isi">
+						<input class="input100" type="text" name="userInput" value="<?php echo set_value('userInput'); ?>">
 						<span class="focus-input100"></span>
 					</div>
-					
+
 					<span class="txt1 p-b-11">
 						Kata Sandi
 					</span>
-					<div class="wrap-input100 validate-input m-b-12" data-validate = "Password Harus Di Isi">
+					<div class="wrap-input100 validate-input m-b-12" data-validate="Password Harus Di Isi">
 						<span class="btn-show-pass">
 							<i class="fa fa-eye"></i>
 						</span>
 						<input class="input100" type="password" name="password" value="<?php echo set_value('password'); ?>">
 						<span class="focus-input100"></span>
 					</div>
-					
+
 					<div class="flex-sb-m w-full p-b-48">
 						<div>
 							<a href="<?php echo base_url('forgot') ?>" class="txt3">
@@ -47,26 +47,50 @@
 							Masuk
 						</button>
 					</div>
+
+					<div class="w-full text-center mx-auto pt-4">
+						Masuk Dengan :
+					</div>
+					<div class="flex-c-m text-center mx-auto">
+						<a href="<?= base_url(); ?>home/fblogin" class="login100-social-item bg1">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="<?= base_url(); ?>home/glogin" class="login100-social-item bg3">
+							<i class="fa fa-google"></i>
+						</a>
+					</div>
+					<div class="w-full text-center mx-auto pt-4">
+						Atau Daftar <a href="<?php echo base_url('user-registration') ?>" style="color: blue;">
+							<i>disini !</i>
+
+						</a>
+						<hr>
+						<p><a href="<?php echo base_url() ?>" style="color: blue;">
+								<i>kembali </i>
+							</a></p>
+					</div>
+
 					<!-- <div class="row">
 						<div class="txt1 text-center p-l-110 p-t-54" >
 							<span>
 								Masuk Dengan :
 							</span>
 						</div>
-					</div>
-					<div  style="margin-left: 100px" class="row">
-						<div class="flex-c-m">
-							<a href="#" class="login100-social-item bg1">
+					</div> -->
+					<!-- <div class="row mx-auto">
+						<div class="flex-c-m text-center" >
+							<a href="<?= base_url(); ?>home/fblogin" class="login100-social-item bg1">
 								<i class="fa fa-facebook"></i>
 							</a>
 
-							<a href="#" class="login100-social-item bg3">
+							<a href="<?= base_url(); ?>home/glogin" class="login100-social-item bg3">
 								<i class="fa fa-google"></i>
 							</a>
 						</div>
 					</div> -->
-					<div class="row">
-						<div class="txt1 text-center p-l-110 p-t-54" >
+					<!-- <div class="row">
+						<div class="txt1 text-center p-l-110 p-t-54">
 							<span>
 								Atau Daftar <a href="<?php echo base_url('user-registration') ?>" style="color: blue;">
 									<i>disini !</i>
@@ -74,15 +98,13 @@
 							</span>
 							<hr>
 							<p><a href="<?php echo base_url() ?>" style="color: blue;">
-								<i>kembali </i>
-							</a></p>
+									<i>kembali </i>
+								</a></p>
 						</div>
-					</div>
-					
+					</div> -->
+
 
 				</form>
 			</div>
 		</div>
 	</div>
-	
-

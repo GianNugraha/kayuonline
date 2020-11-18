@@ -179,13 +179,13 @@ if (!empty($this->session->flashdata('msg'))) {
 			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
 		</div>
 							
-		<div class="register-info-box">
-			<h2>Tidak Mempunyai Akun?</h2>
-            <br>
-			<!-- <p>Lorem ipsum dolor sit amet</p> -->
-			<label id="label-login" for="log-login-show">Daftar</label>
-			<input type="radio" name="active-log-panel" id="log-login-show">
-		</div>
+		<!--<div class="register-info-box">-->
+		<!--	<h2>Tidak Mempunyai Akun?</h2>-->
+  <!--          <br>-->
+		<!--	 <p>Lorem ipsum dolor sit amet</p> -->
+		<!--	<label id="label-login" for="log-login-show">Daftar</label>-->
+		<!--	<input type="radio" name="active-log-panel" id="log-login-show">-->
+		<!--</div>-->
 							
 		<div class="white-panel">
 			<div class="login-show">
@@ -197,7 +197,7 @@ if (!empty($this->session->flashdata('msg'))) {
                     <!-- <input type="button" value="Login"> -->
                     <input type="submit" class="btn btn-success w-100" value="Masuk" />
                 </form>
-				<a href="">Lupa Kata Sandi?</a>
+				<!--<a href="">Lupa Kata Sandi?</a>-->
 			</div>
 			<div class="register-show">
                 <form action="<?php echo base_url('admin/proses_add_admin'); ?>" method="POST">

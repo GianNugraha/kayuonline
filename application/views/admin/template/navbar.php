@@ -48,7 +48,7 @@
               <p>Daftar Tabel <br> (Admin,User,Produk,Thumbnail)</p>
             </a>
           </li>
-          <li style="color: purple">=============================</li>
+          <li style="color: purple"><hr></li>
           <li class="nav-item <?php if($active=='tabel-order'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel-order'); ?>">
               <i style="color:orange" class="material-icons">stroller</i>
@@ -67,7 +67,7 @@
               <p>Stok Minim</p>
             </a>
           </li>
-          <li style="color: purple">=============================</li>
+          <li style="color: purple"><hr></li>
           <br>
           <br>
           <br>

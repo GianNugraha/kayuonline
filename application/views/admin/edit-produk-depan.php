@@ -10,7 +10,7 @@
         </div>
       <?php } ?>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <div class="card">
             <div class="card-header card-header-primary">
               <h4 class="card-title">Edit Produk</h4>
@@ -39,8 +39,8 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Produk Kategori</label>
-                      <input type="text" value="<?= $data->category_id ?>" name="kategori" class="form-control">
+                      
+                      <input type="hidden" value="<?= $data->category_id ?>" name="kategori" class="form-control">
                     </div>
                   </div>
                 </div>

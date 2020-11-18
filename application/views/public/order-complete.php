@@ -1,6 +1,7 @@
 <?php
-$pengiriman = $this->input->post('pengiriman');
-$bank = $this->input->post('bank');
+// $pengiriman = $this->input->post('pengiriman');
+// $bank = $this->input->post('bank');
+
 foreach ($reservasi as $res ) {
     $idPK = $res['id'];
     $bank = $res['bank'];

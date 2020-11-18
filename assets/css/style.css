@@ -2,6 +2,14 @@
   font-family: ro;
 }
 
+html,body{
+  overflow-x: hidden !important;
+  /*overflow:inherit !important;*/
+  max-width: 100%;
+}
+body{
+    overflow-y:hidden !important;
+}
 
 .jumbotron {
     background-color: white;

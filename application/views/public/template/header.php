@@ -1,11 +1,11 @@
-<?php 
-  foreach($countWishlist->result_array() as $row):
-   // $kota = $row['kota'];
-   $total = $row['total'];
-   // echo $total ; echo "</br>";
-  endforeach;
-  // $active = $this->uri->segment(2);
- ?>
+<?php
+foreach ($countWishlist->result_array() as $row) :
+  // $kota = $row['kota'];
+  $total = $row['total'];
+// echo $total ; echo "</br>";
+endforeach;
+// $active = $this->uri->segment(2);
+?>
 
 <!doctype html>
 <html lang="en">
@@ -15,20 +15,29 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/Logo-hitam.png')?>"/>
+  <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/Logo-hitam.png') ?>" />
   <!-- Bootstrap CSS -->
   <!-- <link rel="stylesheet" href="<?= base_url('assets/js/main.js'); ?>"> -->
-  
+
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="<?= base_url('assets/css/main.css'); ?>">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <style>
+ html,body{
+  overflow-x: hidden !important;
+  /*overflow:inherit !important;*/
+  max-width: 100%;
+}
+body{
+    overflow-y:hidden !important;
+}
+  </style>
 </head>
 
 <body>
   <!-- Start of LiveChat (www.livechatinc.com) code -->
-<!-- <script type="text/javascript">
+  <!-- <script type="text/javascript">
   window.__lc = window.__lc || {};
   window.__lc.license = 12235308;
   (function() {
@@ -43,8 +52,8 @@ powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow
 </noscript> -->
 
 
-<!--Start of Tawk.to Script-->
-<!-- <script type="text/javascript">
+  <!--Start of Tawk.to Script-->
+  <!-- <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -55,9 +64,9 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script> -->
-<!--End of Tawk.to Script-->
+  <!--End of Tawk.to Script-->
 
-<!-- End of LiveChat code -->
+  <!-- End of LiveChat code -->
 
   <!-- sidedrawer -->
   <!-- <div class="sidedrawer" style="width: 45%">
@@ -135,18 +144,20 @@ s0.parentNode.insertBefore(s1,s0);
       <div class="mr-auto p-2 dropdown">
         <ul class="bar-links">
           <li>
-            <?php if (isset($_SESSION['logged_in']) and $_SESSION['role'] =='user') { ?>
+            <?php if (isset($_SESSION['logged_in']) and $_SESSION['role'] == 'user') { ?>
               <div class="dropdown">
                 <button class="btn dropdown-toggle" style="background-color: transparent;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span><i class="fa fa-user"></i> Akun Saya</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <label style="text-align: center;" class="dropdown-item" href="#">Halo, Selamat Datang.</label>
-                  <hr>
+                  <label style="" class="dropdown-item mb-0 pb-0" href="#">Halo, <?php echo $_SESSION['namaUser']; ?> <br>Selamat Datang.</label>
+                  <hr class="mb-0 pb-0">
+                  <span style="margin-left: 20px"><a href="<?php echo base_url('profil') ?>"><i class="fa fa-user mb-2 mt-2"></i>&nbsp; Profil</a></span>
+                  <br>
                   <span style="margin-left: 20px"><a onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('home/logout') ?>"><i class="fa fa-sign-out"></i>&nbsp Keluar</a></span>
                 </div>
               </div>
-            <?php }else{ ?>
+            <?php } else { ?>
               <div class="dropdown">
                 <button class="btn dropdown-toggle" style="background-color: transparent;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span><i class="fa fa-user"></i> Masuk / Daftar</span>
@@ -196,17 +207,16 @@ s0.parentNode.insertBefore(s1,s0);
       <a class="navbar-brand" href="<?= base_url(); ?>">
         <img src="<?= base_url('assets/img/Logo-hitam.png'); ?>" width="50" height="50" alt="">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="<?php echo base_url('tentang-kami')?>"><span class="nav-menu">Tentang Kami </span></a>
-          <a class="nav-item nav-link" href="<?php echo base_url('toko')?>"><span class="nav-menu">Toko</span></a>
-          <a class="nav-item nav-link" href="<?php echo base_url('gudang-kami')?>"><span class="nav-menu">Gudang Kami</span></a>
+          <a class="nav-item nav-link" href="<?php echo base_url('tentang-kami') ?>"><span class="nav-menu">Tentang Kami </span></a>
+          <a class="nav-item nav-link" href="<?php echo base_url('toko') ?>"><span class="nav-menu">Toko</span></a>
+          <a class="nav-item nav-link" href="<?php echo base_url('gudang-kami') ?>"><span class="nav-menu">Gudang Kami</span></a>
           <div class="shopping-bag" title="wishlist">
-            <a class="navbar-brand" href="<?php echo base_url('wishlist')?>">
+            <a class="navbar-brand" href="<?php echo base_url('wishlist') ?>">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               <!-- <i class="fa fa-shopping-bag" aria-hidden="true"><span class="notification"><?= $total ?></span></i> -->
             </a>
