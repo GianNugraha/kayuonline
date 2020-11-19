@@ -1,6 +1,6 @@
 <div class="container">
     <div class="col-sm-12">
-        <h4>Tentang kami</h4>
+        <p>
     </div>
 </div>
 <!-- akhir title -->
@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h4 style="text-align: center; font-weight: bold;">Kayuonline</h4>
+                <h2 style="text-align: center; font-weight: bold;">Tentang Kami</h2>
                 <hr>
             </div>
         </div>
@@ -21,44 +21,47 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <h4 style="justify-content: center; text-align: center;">Siapa kami ?</h4>
+        <div class="col-md-7">
+            <h3 style="">Apa itu Kayu Online ?</h3>
+            <p></p>
+            <p style="justify-content; font-size: 18px;">
+                Kami adalah perusahaan penyedia kayu terbaik di Indonesia yang telah berpengalaman selama beberapa tahun dalam bidang perkayuan.
+            <p style="justify-content; font-size: 18px;">
+                Dengan dukungan tim yang solid dan sumber daya serta lingkungan yang mendukung, kami yakin apapun kebutuhan Anda dalam bidang perkayuan dapat kami layani dengan pelayanan terbaik.  
+            </p>
             <br>
-            <p style="justify-content: center; text-align: center; font-size: 15px;">Kami adalah perusahaan supplier
-                kayu terbaik di
-                indonesia yang telah
-                berpengalaman selama beberapa tahun
-                dalam industri kayu.
-                <span>Dengan dukungan tim yang solid dan sumber daya serta
-                    lingkungan yang
-                    mendukung, kami yakin apapun
-                    kebutuhan yang Anda inginkan dapat kami penuhi
-                </span>
+            <p>
+                <h3 style="">Mengapa Memilih Kami ?</h3>
+                <p></p>
+                <p style="justify-content; font-size: 18px;">
+                    Kami adalah perusahaan kayu berpengalaman. <br> Sumber daya dan tim kami telah berpengalaman di industri ini selama bertahun tahun.
+                </p>
+                <p style="justify-content; font-size: 18px;">
+                    Dengan produk kayu kami yang variatif dan berkualitas serta harga yang bersaing juga memudahkan dalam melakukan transaksi, menjadi kelebihan kami dalam industri ini.
+                </p>
             </p>
         </div>
 
-        <div class="col-md-6">
-            <img width="100%" src="<?= base_url() ?>assets/img/kayu-1.png" alt="">
+        <div class="col-md-5">
+            <img width="100%" src="<?= base_url() ?>assets/img/tentang-2.png" alt="">
         </div>
     </div>
-
 </div>
-
+<br>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <img width="100%" src="<?= base_url() ?>assets/img/kayu-2.png" alt="">
+        <div class="col-md-5">
+            <img width="100%" src="<?= base_url() ?>assets/img/tentang-1.png" alt="">
         </div>
-
-        <div class="col-md-6">
-            <h4 style="justify-content: center; text-align: center;">Mengapa harus memilih kami ?</h4>
+        
+        <div class="col-md-7">
             <br>
-            <p style="justify-content: center; text-align: center; font-size: 15px;">Kami adalah perusahaan supplier
-                Pengalaman, sumber daya dan tim kami yang telah berpengalaman di industri ini selama bertahun tahun
-                dan
-                produk kayu kami yang berkualitas, variatif serta harga bersaing juga kemudahan dalam melakukan
-                transaksi menjadi kelebihan kami dalam industri ini.
-                Kami siap melayani segala kebutuhan kayu Anda
+            <p style="justify-content; font-size: 18px">
+                Selain kayu kami juga menyediakan kusen, pintu, lis profil, flooring dan decking yang berkualitas. Anda juga dapat memilih material dan desain sesuai keinginan dan kebutuhan Anda sendiri dengan cara menghubungi kami langsung.
+            </p>
+            <p style="justify-content; font-size: 18px">
+                Tidak perlu risau, kami memberikan pelayanan terbaik kepada semua pelanggan kami, hubungi kami untuk mengetahui pelayanan terbaik dari kami. <br>
+                Setiap produk yang kami miliki sangat kami jaga kualitasnya, tidak perlu khawatir, anda dapat bertanya secara langsung.
             </p>
         </div>
     </div>
