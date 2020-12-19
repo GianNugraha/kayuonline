@@ -53,7 +53,7 @@
                   <h3><?= $key->name ?></h3>
                   <h3>(<?= $key->category_name; ?>)</h3>
                   <?php if ($key->max_price == $key->min_price) { ?>
-                    <h5><?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                    <h5>Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                   <?php } else { ?>
                     <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                   <?php } ?>
@@ -75,7 +75,7 @@
                   <div class="product-buttom text-center">
                     <h3><?= $key->name ?></h3>
                     <?php if ($key->max_price == $key->min_price) { ?>
-                      <h5><?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                      <h5>Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                     <?php } else { ?>
                       <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                     <?php } ?>
@@ -98,7 +98,7 @@
                   <div class="product-buttom text-center">
                     <h3><?= $key->name ?></h3>
                     <?php if ($key->max_price == $key->min_price) { ?>
-                      <h5><?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                      <h5>Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                     <?php } else { ?>
                       <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                     <?php } ?>
@@ -120,7 +120,7 @@
                 <div class="product-buttom text-center">
                   <h3><?= $key->name ?></h3>
                   <?php if ($key->max_price == $key->min_price) { ?>
-                    <h5><?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                    <h5>Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                   <?php } else { ?>
                     <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                   <?php } ?>

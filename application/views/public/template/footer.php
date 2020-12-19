@@ -20,13 +20,13 @@
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4 m-auto">
         <!-- <div class="row">
-          <a class="mx-auto" style="font-size:large; color:black;" href="<?= base_url('gudang-kami') ?>">Lokasi Toko</a>
+          <a class="mx-auto" style="font-size:large; color:black;" href="<?= base_url('gudang-kami') ?>">Lokasi Gudang</a>
         </div>
         <div class="row">
           <a class="mx-auto" style="font-size:large; color:black;" href="<?= base_url('layanan-pelanggan') ?>">Jam Buka (09.00 - 17.00 / Senin - Sabtu)</a>
         </div> -->
         <ul class="list-group h-auto" style="margin:0px !important; padding:0px !important;">
-          <li class=""><a class="" style="font-size:large; color:black;" href="<?= base_url('gudang-kami') ?>">Lokasi Toko</a></li>
+          <li class=""><a class="" style="font-size:large; color:black;" href="<?= base_url('gudang-kami') ?>">Lokasi Gudang</a></li>
         </ul>
         <ul></ul>
         <ul class="list-group h-auto">

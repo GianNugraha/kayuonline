@@ -23,15 +23,32 @@ endforeach;
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="<?= base_url('assets/css/main.css'); ?>">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
- html,body{
-  overflow-x: hidden !important;
-  /*overflow:inherit !important;*/
-  max-width: 100%;
-}
-body{
-    overflow-y:hidden !important;
-}
+    html,
+    body {
+      overflow-x: hidden !important;
+      /*overflow:inherit !important;*/
+      max-width: 100%;
+    }
+
+    body {
+      overflow-y: hidden !important;
+    }
+
+    :root {
+      --animate-delay: 0.7s;
+    }
+
+    .zoom {
+      transition: transform .2s;
+      /* Animation */
+    }
+
+    .zoom:hover {
+      transform: scale(1.1);
+      /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
   </style>
 </head>
 
