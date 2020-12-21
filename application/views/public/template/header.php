@@ -221,9 +221,11 @@ s0.parentNode.insertBefore(s1,s0);
   <!-- navbar -->
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="<?= base_url(); ?>">
-        <img src="<?= base_url('assets/img/Logo-hitam.png'); ?>" width="50" height="50" alt="">
-      </a>
+      <div class="zoom">
+        <a class="navbar-brand" href="<?= base_url(); ?>">
+          <img src="<?= base_url('assets/img/Logo-hitam.png'); ?>" width="50" height="50" alt="">
+        </a>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

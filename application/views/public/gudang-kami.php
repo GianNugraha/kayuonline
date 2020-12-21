@@ -1,16 +1,16 @@
 <!-- title -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="col-sm-12">
             <h4>Gudang Kami</h4>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- maps -->
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 animate__animated animate__fadeInLeft">
                 <h4 style="text-align: center; font-weight: bold;">Jawa Tengah</h4>
                 <hr style="border-top: 4px solid #c60f13; width: 80px;">
                 <div class="map-responsive">
@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 animate__animated animate__fadeInRight animate__delay-1s">
                 <h4 style="text-align: center; font-weight: bold;">Jawa Barat</h4>
                 <hr style="border-top: 4px solid #c60f13; width: 80px;">
                 <div class="map-responsive">

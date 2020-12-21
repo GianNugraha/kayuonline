@@ -2,16 +2,13 @@
     <div class="container">
         <div class="row">
           <div class="col">
-            <h2 style="text-align: center"><strong> FREQUENTLY ASKED QUESTIONS </strong> </h2>
+            <h2 style="text-align: center" class="animate__animated animate__backInLeft animate__delay-1s"><strong> FREQUENTLY ASKED QUESTIONS </strong> </h2>
           </div>
         </div>
     </div>
     <!-- dropdown -->
-
-    <br>
-    <br>
-    <div class="container">
-
+    <div class="container mt-3">
+      <div class="animate__animated animate__fadeInLeft">
         <button class="accordion bts">Apa itu KayuOnline?</button>
         <div class="panel">
             <p>KayuOnline adalah perusahaan supplier berbagai jenis kayu yang berlokasi di Ruko Istana Pasteur Regency, Jl. Terusan Gunung Batu, Sukaraja, Cicendo, Kota Bandung, Jawa Barat.</p>
@@ -28,6 +25,9 @@
             <p>– Memberi akses kepada masyarakat umum terutama yang bergerak di industri terkait agar bisa membeli kayu dengan mudah</p>
             <p>– Informasi tentang kayu yang mudah didapatkan bagi masyarakat</p>
         </div>
+      </div>
+
+      <div class="animate__animated animate__fadeInDown animate__delay-1s">
         <button class="accordion">Siapa saja yang dapat membeli kayu di KayuOnline?</button>
         <div class="panel">
             <p>Semua orang bisa membeli kayu di KayuOnline, baik individu, kelompok ataupun perusahaan</p>
@@ -46,6 +46,9 @@
             <p>–  Pelanggan lakukan pembayaran</p>
             <p>–  Konfirmasi pembayaran</p>
         </div>
+      </div>
+
+      <div class="animate__animated animate__fadeInUp animate__delay-2s">
         <button class="accordion">Apakah total pembayaran saat beli kayu sudah termasuk biaya muat, angkutan, atau cetak dokumen?</button>
         <div class="panel">
             <p>Anda tinggal menunggu barang sampai setelah pembayaran</p>
@@ -62,6 +65,9 @@
         <div class="panel">
             <p>KayuOnline menyediakan berbagai jenis produk berbahan kayu seperti kayu olahan, decking, pintu, lis profil, tangga, dll</p>
         </div>
+      </div>
+
+      <div class="animate__animated animate__fadeInRight animate__delay-3s">
         <button class="accordion">Bagaimana cara pengambilan produk?</button>
         <div class="panel">
             <p>Konsumen dapat langsung mengambil barang yang telah dibeli langsung ke toko kami atau bisa kami antarkan langsung ke tempat</p>
@@ -82,6 +88,7 @@
         <div class="panel">
             <p>Silahkan menghubungi kami melalui whatsapp atau email dan jelaskan keluhan Anda pada Kami</p>
         </div>
+      </div>
         
         
         
@@ -92,9 +99,9 @@
     <div class="container">
         <div class="row">
           <div class="col" style="text-align: center">
-            <div class="kontakkami">
+            <div class="kontakkami animate__animated animate__fadeInUp animate__delay-3s">
             <h3> Ada pertanyaan? Kontak kami !</h3>
-            <li><a href="https://api.whatsapp.com/send?phone=6285974785490&text=Saya%20ingin%20bertanya" style="font-size: 17px">Kontak kami</a></li>
+            <li><a class="btn btn-outline-primary" href="https://api.whatsapp.com/send?phone=6281212151324&text=Saya%20ingin%20bertanya" style="font-size: 17px">Kontak kami</a></li>
             </div>
           </div>
         </div>

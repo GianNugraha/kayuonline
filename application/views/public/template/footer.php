@@ -10,7 +10,7 @@
       <div class="col-xs-12 col-sm-4 col-md-4 m-auto">
 
         <ul class="list-group h-auto">
-          <li><a class="" style="font-size:large; color:black;" href="<?php echo base_url('layanan-pelanggan') ?>">Layanan Pelanggan</a></li>
+          <li><a class="" style="font-size:large; color:black;" href="<?= base_url('layanan-pelanggan') ?>">Layanan Pelanggan</a></li>
         </ul>
         <ul></ul>
         <ul class="list-group h-auto">
@@ -76,7 +76,7 @@
     </div> -->
   </div>
 </div>
-<a href="https://api.whatsapp.com/send?phone=6281295704758&text=Halo Admin, Bisa Bantu Saya?" class="float-wa" target="_blank">
+<a href="https://api.whatsapp.com/send?phone=6281212151324&text=Halo Admin, Bisa Bantu Saya?" class="float-wa" target="_blank">
   <i class="fa fa-whatsapp my-float"></i>
 </a>
 
