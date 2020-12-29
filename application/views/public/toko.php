@@ -43,19 +43,23 @@
               <div class="col-sm-2">
                 <div class="product-top">
                   <div class="thumb-img">
-                    <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                    <h1 class="animate__animated animate__fadeIn animate__delay-1s">
+                      <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
+                        <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
+                      </a>
+                    </h1>
                   </div>
                   <div class="overlay">
                     <div style="margin-left: 17px; margin-bottom: -5px; margin-top: 10px;" id="bars"></div>
                   </div>
                 </div>
                 <div class="product-buttom text-center" style="padding-bottom: 30px">
-                  <h3><?= $key->name ?></h3>
-                  <h3>(<?= $key->category_name; ?>)</h3>
+                  <h3 class="animate__animated animate__fadeInLeft"><?= $key->name ?></h3>
+                  <h3 class="animate__animated animate__fadeInLeft">(<?= $key->category_name; ?>)</h3>
                   <?php if ($key->max_price == $key->min_price) { ?>
-                    <h5>Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                    <h5 class="animate__animated animate__fadeInLeft">Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                   <?php } else { ?>
-                    <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                    <h5 class="animate__animated animate__fadeInLeft">Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                   <?php } ?>
                 </div>
               </div>
@@ -69,15 +73,19 @@
                 <div class="sm-col-5">
                   <div class="product-top">
                     <div class="thumb-img">
-                      <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                      <h1 class="animate__animated animate__fadeIn animate__delay-1s">
+                        <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
+                          <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
+                        </a>
+                      </h1>
                     </div>
                   </div>
                   <div class="product-buttom text-center">
-                    <h3><?= $key->name ?></h3>
+                    <h3 class="animate__animated animate__fadeInLeft"><?= $key->name ?></h3>
                     <?php if ($key->max_price == $key->min_price) { ?>
-                      <h5>Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                      <h5 class="animate__animated animate__fadeInLeft">Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                     <?php } else { ?>
-                      <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                      <h5 class="animate__animated animate__fadeInLeft">Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                     <?php } ?>
                   </div>
                 </div>
@@ -92,15 +100,19 @@
                 <div class="col-md-3">
                   <div class="product-top">
                     <div class="thumb-img">
-                      <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                      <h1 class="animate__animated animate__fadeIn animate__delay-1s">
+                        <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
+                          <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
+                        </a>
+                      </h1>
                     </div>
                   </div>
                   <div class="product-buttom text-center">
-                    <h3><?= $key->name ?></h3>
+                    <h3 class="animate__animated animate__fadeInLeft"><?= $key->name ?></h3>
                     <?php if ($key->max_price == $key->min_price) { ?>
-                      <h5>Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                      <h5 class="animate__animated animate__fadeInLeft">Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                     <?php } else { ?>
-                      <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                      <h5 class="animate__animated animate__fadeInLeft">Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                     <?php } ?>
                   </div>
                 </div>
@@ -114,15 +126,19 @@
               <div class="col-sm">
                 <div class="product-top">
                   <div class="thumb-img">
-                    <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                    <h1 class="animate__animated animate__fadeIn animate__delay-1s">
+                      <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
+                        <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
+                      </a>
+                    </h1>
                   </div>
                 </div>
                 <div class="product-buttom text-center">
-                  <h3><?= $key->name ?></h3>
+                  <h3 class="animate__animated animate__fadeInLeft"><?= $key->name ?></h3>
                   <?php if ($key->max_price == $key->min_price) { ?>
-                    <h5>Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                    <h5 class="animate__animated animate__fadeInLeft">Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                   <?php } else { ?>
-                    <h5>Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
+                    <h5 class="animate__animated animate__fadeInLeft">Rp. <?= number_format($key->min_price, 2, '.', ','); ?> - Rp. <?= number_format($key->max_price, 2, '.', ','); ?></h5>
                   <?php } ?>
                 </div>
               </div>
@@ -138,17 +154,21 @@
                     <div class="col-sm">
                       <div class="product-top">
                         <div class="thumb-img">
-                          <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>"><img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1"></a>
+                          <h1 class="animate__animated animate__fadeIn">
+                            <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
+                              <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
+                            </a>
+                          </h1>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div>
-                      <h3 class="names"><a href="#" disabled> <?php echo strtoupper($key->name); ?> </a>, <a href="#"><?= strtoupper($key->category_name) ?></a></h3>
-                      <h4><?= $key->name; ?></h4>
+                      <h3 class="names animate__animated animate__fadeIn animate__delay-1s"><a href="#" disabled> <?php echo strtoupper($key->name); ?> </a>, <a href="#"><?= strtoupper($key->category_name) ?></a></h3>
+                      <h4 class="animate__animated animate__fadeIn animate__delay-1s"><?= $key->name; ?></h4>
                       <hr>
-                      <p style="font-size: 12px;"><?= $key->description ?></p>
+                      <p style="font-size: 12px;" class="animate__animated animate__fadeInUp"><?= $key->description ?></p>
                     </div>
                   </div>
                   <div class="col-sm-3">
