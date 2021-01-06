@@ -12,11 +12,21 @@
 
   <div class="col-sm">
     <ul class="tabs-column">
-      <li data-tab-target="#column-6" class="active tab"><img class="tab_img" src="<?= base_url() ?>assets/img/6.png" alt=""></li>
-      <li data-tab-target="#column-5" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/5.png" alt=""></li>
-      <li data-tab-target="#column-4" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/4.png" alt=""></li>
-      <li data-tab-target="#column-3" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/3.png" alt=""></li>
-      <li data-tab-target="#column-1" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/1.png" alt=""></li>
+      <div class="zoom">
+        <li data-tab-target="#column-6" class="active tab"><img class="tab_img" src="<?= base_url() ?>assets/img/6.png" alt=""></li>
+      </div>
+      <div class="zoom">
+        <li data-tab-target="#column-5" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/5.png" alt=""></li>
+      </div>
+      <div class="zoom">
+        <li data-tab-target="#column-4" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/4.png" alt=""></li>
+      </div>
+      <div class="zoom">
+        <li data-tab-target="#column-3" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/3.png" alt=""></li>
+      </div>
+      <div class="zoom">
+        <li data-tab-target="#column-1" class="tab"><img class="tab_img" src="<?= base_url() ?>assets/img/1.png" alt=""></li>
+      </div>
     </ul>
   </div>
 
@@ -44,9 +54,11 @@
                 <div class="product-top">
                   <div class="thumb-img">
                     <h1 class="animate__animated animate__fadeIn animate__delay-1s">
-                      <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
-                        <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
-                      </a>
+                      <div class="zoom">
+                        <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
+                          <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
+                        </a>
+                      </div>
                     </h1>
                   </div>
                   <div class="overlay">
@@ -74,9 +86,11 @@
                   <div class="product-top">
                     <div class="thumb-img">
                       <h1 class="animate__animated animate__fadeIn animate__delay-1s">
-                        <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
-                          <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
-                        </a>
+                        <div class="zoom">
+                          <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
+                            <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
+                          </a>
+                        </div>
                       </h1>
                     </div>
                   </div>
@@ -101,9 +115,11 @@
                   <div class="product-top">
                     <div class="thumb-img">
                       <h1 class="animate__animated animate__fadeIn animate__delay-1s">
-                        <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
-                          <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
-                        </a>
+                        <div class="zoom">
+                          <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
+                            <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
+                          </a>
+                        </div>
                       </h1>
                     </div>
                   </div>
@@ -127,9 +143,11 @@
                 <div class="product-top">
                   <div class="thumb-img">
                     <h1 class="animate__animated animate__fadeIn animate__delay-1s">
-                      <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
-                        <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
-                      </a>
+                      <div class="zoom">
+                        <a href="<?php echo base_url('produk?kategori=' . $key->category_code . '&nama=' . $key->name) ?>">
+                          <img width="100%" src="<?= base_url() . $key->image ?>" class="gambar1">
+                        </a>
+                      </div>
                     </h1>
                   </div>
                 </div>

@@ -44,8 +44,20 @@
           </li>
           <li class="nav-item <?php if($active=='tabel'){ ?> active <?php } ?>">
             <a class="nav-link" href="<?php echo base_url('admin/tabel'); ?>">
+              <i style="color: black" class="material-icons">account_circle</i>
+              <p>Tabel Admin & User</p>
+            </a>
+          </li>
+          <li class="nav-item <?php if($active=='tabelProduk'){ ?> active <?php } ?>">
+            <a class="nav-link" href="<?php echo base_url('admin/tabelProduk'); ?>">
               <i style="color: blue" class="material-icons">content_paste</i>
-              <p>Daftar Tabel <br> (Admin,User,Produk,Thumbnail)</p>
+              <p>Tabel Produk</p>
+            </a>
+          </li>
+          <li class="nav-item <?php if($active=='tabelThumbnail'){ ?> active <?php } ?>">
+            <a class="nav-link" href="<?php echo base_url('admin/tabelThumbnail'); ?>">
+              <i style="color: green" class="material-icons">collections</i>
+              <p>Tabel Thumbnail</p>
             </a>
           </li>
           <li style="color: purple"><hr></li>
@@ -67,17 +79,7 @@
               <p>Stok Minim</p>
             </a>
           </li>
-          <li style="color: purple"><hr></li>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+          <hr>
           <li class="nav-item">
             <a class="nav-link" onclick="return confirm('Apakah anda yakin ingin keluar ?')" href="<?php echo base_url('login/logout') ?>">
               <i style="color: red" class="material-icons">power_settings_new</i>

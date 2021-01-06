@@ -55,9 +55,23 @@ class Admin extends CI_Controller
 		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
 		$data['admin'] = $this->m_kayu_online->getAdmin();
 		$data['user'] = $this->m_kayu_online->getUser();
-		$data['product'] = $this->m_kayu_online->getProduct();
-		$data['thumbnail'] = $this->m_kayu_online->getAllThumbnail();
 		$data['content'] = 'admin/daftar-tabel';
+		$this->load->view('admin/template/layout', $data);
+	}
+
+	public function tabelProduk()
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$data['product'] = $this->m_kayu_online->getProduct();
+		$data['content'] = 'admin/daftar-tabel-produk';
+		$this->load->view('admin/template/layout', $data);
+	}
+
+	public function tabelThumbnail()
+	{
+		$data['allNotif'] = $this->m_kayu_online->getAllNotif();
+		$data['thumbnail'] = $this->m_kayu_online->getAllThumbnail();
+		$data['content'] = 'admin/daftar-tabel-thumbnail';
 		$this->load->view('admin/template/layout', $data);
 	}
 
@@ -180,7 +194,7 @@ class Admin extends CI_Controller
 		// ];
 		$this->m_kayu_online->update_stok_harga_ukuran($product_id, $product_size_id, $data_has_sizes);
 		$this->session->set_flashdata('msg', array('class' => 'info', 'message' => 'Edit Berhasil'));
-		redirect(base_url("admin/tabel"));
+		redirect(base_url("admin/tabelProduk"));
 	}
 
 	public function proses_add_harga_ukuran_stok()
@@ -561,7 +575,7 @@ class Admin extends CI_Controller
 		];
 		$this->m_kayu_online->update_thumbnail($data, $id);
 		$this->session->set_flashdata('msg', array('class' => 'info', 'message' => 'Edit Berhasil'));
-		redirect(base_url("admin/tabel"));
+		redirect(base_url("admin/tabelThumbnail"));
 	}
 
 	public function proses_edit_user()
